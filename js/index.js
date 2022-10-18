@@ -4,6 +4,14 @@ const formulario = document.querySelector("#formulario");
 //const btnLink = document.querySelector("#btnIniciarSesion");
 const alerta = document.querySelector("#divAlerta");
 
+const alertaRut = document.querySelector("#alertaRut");
+const validacionRut = /[0-9]/;
+const rutUser = document.querySelector("#rut");
+
+const alertaPass = document.querySelector("#alertaPass");
+const validacionPass = /[0-9]/;
+const passUser = document.querySelector("#pass");
+
 let usuarios = [];
 
 const agregarUsuario = (rut,pass) =>{
@@ -36,10 +44,34 @@ formulario.addEventListener("submit",(e)=>{
     */
     //SE ALMACENAN TODOS LOS DATOS DE LOS INPUT EN EL [...data.values()] Y SE TRANSLADAN A [todo]
     const[rut,pass] = [...data.values()];
-    if(!(rut).trim() || !(pass).trim()){
-        console.log("Completa todos los campos");
+
+    if(!(rut).trim() /*|| !validacionRut.test(rut)*/){
+        console.log("Completa todos los campos 1 ");
+        rutUser.classList.add("is-invalid");
+        rutUser.classList.remove("border-dark");
+        rutUser.classList.add("border-danger");
         alerta.classList.remove("d-none");
         return;
+    }else{
+        rutUser.classList.remove("is-invalid");
+        rutUser.classList.add("is-valid");
+        rutUser.classList.remove("border-dark");
+        rutUser.classList.remove("border-danger");
+        rutUser.classList.add("border-success");
+    }
+    if(!(pass).trim()){
+        console.log("Completa todos los campos 2 ");
+        passUser.classList.add("is-invalid");
+        passUser.classList.remove("border-dark");
+        passUser.classList.add("border-danger");
+        alerta.classList.remove("d-none");
+        return;
+    }else{
+        passUser.classList.remove("is-invalid");
+        passUser.classList.add("is-valid");
+        passUser.classList.remove("border-dark");
+        passUser.classList.remove("border-danger");
+        passUser.classList.add("border-success");
     }
     agregarUsuario(rut,pass);
     console.log(usuarios);

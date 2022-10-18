@@ -5,6 +5,10 @@ const formulario = document.querySelector("#formulario");
 const btnCancelar = document.querySelector("#btnCancelar");
 const alerta = document.querySelector("#divAlerta");
 
+const nuevaPassUser = document.querySelector("#nuevaPass");
+const passReUser = document.querySelector("#passRe");
+
+
 let usuarios = [];
 
 const agregarUsuario = (nuevaPass,passRe) =>{
@@ -42,10 +46,37 @@ formulario.addEventListener("submit",(e)=>{
     */
     //SE ALMACENAN TODOS LOS DATOS DE LOS INPUT EN EL [...data.values()] Y SE TRANSLADAN A [todo]
     const[NuevaPass,PassRe] = [...data.values()];
-    if(!(NuevaPass).trim() || !(PassRe).trim()){
+    if(!(NuevaPass).trim()){
         console.log("Completa todos los campos");
         alerta.classList.remove("d-none");
+        nuevaPassUser.classList.remove("border-dark");
+        nuevaPassUser.classList.remove("border-success");
+        nuevaPassUser.classList.remove("is-valid");
+        nuevaPassUser.classList.add("border-danger");
+        nuevaPassUser.classList.add("is-invalid");
         return;
+    }else{
+        nuevaPassUser.classList.remove("border-dark");
+        nuevaPassUser.classList.remove("border-danger");
+        nuevaPassUser.classList.remove("is-invalid");
+        nuevaPassUser.classList.add("border-success");
+        nuevaPassUser.classList.add("is-valid");
+    }
+    if(!(PassRe).trim()){
+        console.log("Completa todos los campos");
+        alerta.classList.remove("d-none");
+        passReUser.classList.remove("border-dark");
+        passReUser.classList.remove("border-success");
+        passReUser.classList.remove("is-valid");
+        passReUser.classList.add("border-danger");
+        passReUser.classList.add("is-invalid");
+        return;
+    }else{
+        passReUser.classList.remove("border-dark");
+        passReUser.classList.remove("border-danger");
+        passReUser.classList.remove("is-invalid");
+        passReUser.classList.add("border-success");
+        passReUser.classList.add("is-valid");
     }
     agregarUsuario(NuevaPass,PassRe);
     console.log(usuarios);

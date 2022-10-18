@@ -4,6 +4,7 @@ const formulario = document.querySelector("#formulario");
 const btnCancelar = document.querySelector("#btnCancelar");
 //const btnRestablecer = document.querySelector("#btnRestablecer");
 const alerta = document.querySelector("#divAlerta");
+const correoUser = document.querySelector("#correo")
 
 let usuarios = [];
 
@@ -45,7 +46,17 @@ formulario.addEventListener("submit",(e)=>{
     if(!(correo).trim()){
         console.log("Completa todos los campos");
         alerta.classList.remove("d-none");
+        correoUser.classList.remove("border-dark");
+        correoUser.classList.remove("is-valid");
+        correoUser.classList.add("border-danger");
+        correoUser.classList.add("is-invalid");
         return;
+    }else{
+        correoUser.classList.remove("border-dark");
+        correoUser.classList.remove("border-danger");
+        correoUser.classList.remove("is-invalid");
+        correoUser.classList.add("is-valid");
+        correoUser.classList.add("border-success");
     }
     agregarUsuario(correo);
     console.log(usuarios);

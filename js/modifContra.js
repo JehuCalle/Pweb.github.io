@@ -5,6 +5,10 @@ const formulario = document.querySelector("#formulario");
 const btnCancelar = document.querySelector("#btnCancelar");
 const alerta = document.querySelector("#divAlerta");
 
+const passActualUser = document.querySelector("#passActual");
+const nuevaPassUser = document.querySelector("#nuevaPass");
+const passReUser = document.querySelector("#passRe");
+
 let usuarios = [];
 
 const agregarUsuario = (passActual,nuevaPass,passRe) =>{
@@ -43,10 +47,47 @@ formulario.addEventListener("submit",(e)=>{
     */
     //SE ALMACENAN TODOS LOS DATOS DE LOS INPUT EN EL [...data.values()] Y SE TRANSLADAN A [todo]
     const[passActual,nuevaPass,passRe] = [...data.values()];
-    if(!(passActual).trim() || !(nuevaPass).trim() || !(passRe).trim()){
+    if(!(passActual).trim()){
         console.log("Completa todos los campos");
         alerta.classList.remove("d-none");
+        passActualUser.classList.add("is-invalid");
+        passActualUser.classList.remove("border-dark");
+        passActualUser.classList.add("border-danger");
         return;
+    }else{
+        passActualUser.classList.remove("is-invalid");
+        passActualUser.classList.add("is-valid");
+        passActualUser.classList.remove("border-dark");
+        passActualUser.classList.remove("border-danger");
+        passActualUser.classList.add("border-success");
+    }
+    if(!(nuevaPass).trim()){
+        console.log("Completa todos los campos");
+        alerta.classList.remove("d-none");
+        nuevaPassUser.classList.add("is-invalid");
+        nuevaPassUser.classList.remove("border-dark");
+        nuevaPassUser.classList.add("border-danger");
+        return;
+    }else{
+        nuevaPassUser.classList.remove("is-invalid");
+        nuevaPassUser.classList.add("is-valid");
+        nuevaPassUser.classList.remove("border-dark");
+        nuevaPassUser.classList.remove("border-danger");
+        nuevaPassUser.classList.add("border-success");
+    }
+    if(!(passRe).trim()){
+        console.log("Completa todos los campos");
+        alerta.classList.remove("d-none");
+        passReUser.classList.add("is-invalid");
+        passReUser.classList.remove("border-dark");
+        passReUser.classList.add("border-danger");
+        return;
+    }else{
+        passReUser.classList.remove("is-invalid");
+        passReUser.classList.add("is-valid");
+        passReUser.classList.remove("border-dark");
+        passReUser.classList.remove("border-danger");
+        passReUser.classList.add("border-success");
     }
     agregarUsuario(passActual,nuevaPass,passRe);
     console.log(usuarios);
