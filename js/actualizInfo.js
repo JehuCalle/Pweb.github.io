@@ -27,7 +27,7 @@ const agregarUsuario = (razonSocial,giro,direccion,regiones,provincias,comunas,t
 
 btnCancelar.addEventListener('click',(event) => {
     event.preventDefault();
-    setTimeout(()=> location.href="./MisDatos.html");
+    setTimeout(()=> location.href="./Misdatos.html");
 });
 
 formulario.addEventListener("submit",(e)=>{
