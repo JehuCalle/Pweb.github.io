@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="./assets/css/normalize.css">
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/css/styles.css">
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+</head>
+<body>
+  <div class="bg-info center vw-100">
+    <nav class="navbar center navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid align-content-center">
+          <a class="navbar-brand" href="#">Navbar</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-center" id="navbarNavDropdown">
+            <ul class="navbar-nav me-auto">
+              <li class="nav-item bg-danger bg-opacity-100">
+                <a class="nav-link active" aria-current="page" href="./Index.html">Inicio</a>
+              </li>
+              <li class="nav-item bg-danger bg-opacity-75">
+                <a class="nav-link" href="./Misdatos.html">Mis datos</a>
+              </li>
+              <li class="nav-item bg-danger bg-opacity-50">
+                <a class="nav-link" href="./Misdirecciones.html">Mis direcciones</a>
+              </li>
+              <li class="nav-item bg-danger bg-opacity-75">
+                <a class="nav-link" href="./Misordenes.html">Mis Ordenes</a>
+              </li>
+              <li class="nav-item bg-danger bg-opacity-100">
+                <a class="nav-link" href="./Cuencorri.html">Cuenta corriente</a>
+              </li>
+              <li class="nav-item bg-danger bg-opacity-75">
+                <a class="nav-link" href="./Misretiros.html">Retiros</a>
+              </li>
+              <li class="nav-item bg-danger bg-opacity-50">
+                <a class="nav-link" href="./Problemas.html">Problemas</a>
+              </li>
+            </ul>
+            <div class="btn-group">
+                <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                  Jehu Calle
+                </button>
+                <ul class="dropdown-menu dropdown-menu-dark">
+                  <li><a class="dropdown-item" href="./Misdatos.html">Mis datos</a></li>
+                  <li><a class="dropdown-item" href="./Seguienvio.html">¿SeguiEnv?</a></li>
+                  <li><a class="dropdown-item" href="./Seguiretiro.html">¿SeguiRet?</a></li>
+                  <li><a class="dropdown-item" href="./Index.html">Cerrar sesion</a></li>
+                </ul>
+              </div>
+          </div>
+        </div>
+    </nav>
+</div>
+    <main class="vw-100 bg-primary bg-opacity-25 vh-100 border border-5">
+        <div class="container vw-100 bg-danger bg-opacity-50 vh-100 border border-5">
+          <div class="row d-flex justify-content-center position-relative">
+            <form class="position-absolute col-9 bg-secondary bg-opacity-75 col rounded rounded-3">
+              <div class="mb-1 col-12 row justify-content-center">
+                <div class="row justify-content-end pt-3 col-12">
+                  <div class="col-12 row justify-content-center">
+                    <label class="col-12 text-center fw-bold">Realice el seguimiento de su orden</label>
+                    <input type="text" class="rounded rounded-2 border border-2 border-dark col-4 p-1 mb-2 mt-1" placeholder="Ingrese su numero de orden">
+                    <label class="col-12"></label>
+                    <div class="col-6 bg-warning bg-opacity-50">
+                      a
+                    </div>
+                    <div class="col-5">
+                      <table class="table table-hover table-responsive table-borderless justify-content-center bg-secondary">
+                        <thead>
+                          <tr>
+                            <th scope="col" class="text-center col-2 rounded rounded-2  bg-dark bg-opacity-25 h6 fw-bold">Fecha</th>
+                            <th scope="col" class="text-center col-2 rounded rounded-2 bg-dark bg-opacity-25 h6 fw-bold">Hora</th>
+                            <th scope="col" class="text-center col-8 rounded rounded-2 bg-dark bg-opacity-25 h6 fw-bold">Estado</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td class=" rounded rounded-2 bg-light h6 fw-normal text-center">12/12/12</td>
+                            <td class=" rounded rounded-2 bg-light h6 fw-normal text-center">12:12:12</td>
+                            <td class=" rounded rounded-2 bg-light h6 fw-normal text-center p-0">Recibido en agencia</td>
+                          </tr>
+                          <tr>
+                            <td class=" rounded rounded-2 bg-light h6 fw-normal text-center">12/12/12</td>
+                            <td class=" rounded rounded-2 bg-light h6 fw-normal text-center">12:12:12</td>
+                            <td class=" rounded rounded-2 bg-light h6 fw-normal text-center p-0">Recibido en agencia</td>
+                          </tr>
+                          <tr>
+                            <td class=" rounded rounded-2 bg-light h6 fw-normal text-center">12/12/12</td>
+                            <td class=" rounded rounded-2 bg-light h6 fw-normal text-center">12:12:12</td>
+                            <td class=" rounded rounded-2 bg-light h6 fw-normal text-center p-0">Recibido en agencia</td>
+                          </tr>
+                          <tr>
+                            <td class=" rounded rounded-2 bg-light h6 fw-normal text-center">12/12/12</td>
+                            <td class=" rounded rounded-2 bg-light h6 fw-normal text-center">12:12:12</td>
+                            <td class=" rounded rounded-2 bg-light h6 fw-normal text-center p-0">Recibido en agencia</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+
+                  <div class="col-12 bg-light rounded rounded-2 border border-2 border-dark">
+                    <label class="fw-bold h5 col-12">Informacion General</label>
+                    <label class="col-4">N°Orden</label>
+                    <label class="col-3 mx-1"></label>
+                    <label class="col-3 mx-4">Boleta/Factura/Guia</label>
+                    <label class="bg-light rounded rounded-2 border border-2 border-dark col-4 h6 fw-normal p-lg-0 ">123214125412</label>
+                    <label class="col-3 mx-1"></label>
+                    <label class="bg-light rounded rounded-2 border border-2 border-dark col-3 h6 fw-normal p-lg-0 mx-4">123214125412</label>
+                    <label class="col-2">Fecha</label>
+                    <label class="col-2 mx-2">Hora</label>
+                    <label class="col-3">Tipo de pago</label>
+                    <label class="col-4 mx-2">tipo de entrega</label>
+                    <label class="bg-light rounded rounded-2 border border-2 border-dark col-2 h6 fw-normal p-lg-0">12/12/12</label>
+                    <label class="bg-light rounded rounded-2 border border-2 border-dark col-2 h6 fw-normal p-lg-0 mx-2">12:12:12</label>
+                    <label class="bg-light rounded rounded-2 border border-2 border-dark col-3 h6 fw-normal p-lg-0">Cta Cte</label>
+                    <label class="bg-light rounded rounded-2 border border-2 border-dark col-3 h6 fw-normal p-lg-0 mx-2">Bodega</label>
+                  </div>
+                  <div class="col-12 bg-light rounded rounded-2 border border-2 border-dark my-2">
+                    <label class="col-4 fw-bold h5">Datos origen</label>
+                    <label class="col-6 fw-bold h5 mx-2">Datos Remitente</label>
+                    <label class="col-2 h6 fw-normal">Ciudad</label>
+                    <label class="col-2 h6 fw-normal">Agencia</label>
+                    <label class="col-5 h6 fw-normal">Nombre</label>
+                    <label class="col-2 h6 fw-normal">RUT</label>
+                    <label class="bg-light rounded rounded-2 border border-2 border-dark col-2 h6 fw-normal p-lg-0">Chillan</label>
+                    <label class="bg-light rounded rounded-2 border border-2 border-dark col-2 h6 fw-normal p-lg-0">Chillan</label>
+                    <label class="bg-light rounded rounded-2 border border-2 border-dark col-5 h6 fw-normal p-lg-0">Inversiones inversores invesos</label>
+                    <label class="bg-light rounded rounded-2 border border-2 border-dark col-2 h6 fw-normal p-0 p-">12345678-9</label>
+                  </div>
+                  <div class="col-12 bg-light rounded rounded-2 border border-2 border-dark">
+                    <label class="col-4 fw-bold h5">Datos destino</label>
+                    <label class="col-6 fw-bold h5 mx-2">Datos destinatario</label>
+                    <label class="col-2 h6 fw-normal">Ciudad</label>
+                    <label class="col-2 h6 fw-normal">Agencia</label>
+                    <label class="col-5 h6 fw-normal">Nombre</label>
+                    <label class="col-2 h6 fw-normal">RUT</label>
+                    <label class="bg-light rounded rounded-2 border border-2 border-dark col-2 h6 fw-normal p-lg-0">Curanilahue</label>
+                    <label class="bg-light rounded rounded-2 border border-2 border-dark col-2 h6 fw-normal p-lg-0">Curanilahue</label>
+                    <label class="bg-light rounded rounded-2 border border-2 border-dark col-5 h6 fw-normal p-lg-0">Inversiones inversores invesos</label>
+                    <label class="bg-light rounded rounded-2 border border-2 border-dark col-2 h6 fw-normal p-0 p-">12345678-9</label>
+                    <label class="col-4 mx-1"></label>
+                    <label class="col-7 h6 fw-normal">RUT</label>
+                    <label class="col-4 mx-1"></label>
+                    <label class="bg-light rounded rounded-2 border border-2 border-dark col-5 h6 fw-normal p-lg-0">Inversiones inversores invesos</label>
+                  </div>
+                  <div class="col-4 bg-light rounded rounded-2 border border-2 border-dark mt-2 mb-2 justify-content-end" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                    <label class="Col-5 h6 fw-normal p-lg-0">Valor carga:</label>
+                    <label class="Col-5 h6 fw-normal p-lg-0">$3000000</label>
+                    <label class="Col-5 h6 fw-normal p-lg-0">Valor reparto:</label>
+                    <label class="Col-5 h6 fw-normal p-lg-0">$3000000</label>
+                    <label class="Col-5 h6 fw-normal p-lg-0">Valor a pagar:</label>
+                    <label class="Col-5 h6 fw-normal p-lg-0">$3000000</label>
+                  </div>
+
+                  <div class="tab-pane col-12 bg-light rounded rounded-2 border border-2 border-dark" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                    <div class="accordion col-12 h6 fw-normal " id="accordionExample">
+                      <div class="accordion-item bg-secondary bg-opacity-25 col-12">
+                        <h6 class="accordion-header fw-bold col-12" id="headingOne">
+                          <button class="accordion-button p-1 text-dark bg-secondary bg-opacity-50 justify-content-center" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"  aria-controls="collapseOne">
+                            <label class="h5">Detalles de la carga</label>
+                          </button>
+                        </h6>
+                        <div id="collapseOne" class="accordion-collapse collapse bg-secondary bg-opacity-25" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                          <table class="table table-hover table-responsive table-borderless justify-content-center">
+                            <thead>
+                              <tr>
+                                <th scope="col" class="text-center col-1 rounded rounded-2 bg-dark bg-opacity-25 h6 fw-bold">Tipo</th>
+                                <th scope="col" class="text-center col-1 rounded rounded-2 bg-dark bg-opacity-25 h6 fw-bold">Cantidad</th>
+                                <th scope="col" class="text-center col-1 rounded rounded-2 bg-dark bg-opacity-25 h6 fw-bold">Peso(kg)</th>
+                                <th scope="col" class="text-center col-1 rounded rounded-2 bg-dark bg-opacity-25 h6 fw-bold">Alto</th>
+                                <th scope="col" class="text-center col-1 rounded rounded-2 bg-dark bg-opacity-25 h6 fw-bold">Ancho</th>
+                                <th scope="col" class="text-center col-1 rounded rounded-2 bg-dark bg-opacity-25 h6 fw-bold">Largo</th>
+                                <th scope="col" class="text-center col-1 rounded rounded-2 bg-dark bg-opacity-25 h6 fw-bold">Valor</th>
+                                <th scope="col" class="text-center col-1 rounded rounded-2 bg-dark bg-opacity-25 h6 fw-bold">Detalles</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td class=" rounded rounded-2 bg-light h6 fw-normal text-center">Caja</td>
+                                <td class=" rounded rounded-2 bg-light h6 fw-normal text-center">3</td>
+                                <td class=" rounded rounded-2 bg-light h6 fw-normal text-center">50kg</td>
+                                <td class=" rounded rounded-2 bg-light h6 fw-normal text-center">1</td>
+                                <td class=" rounded rounded-2 bg-light h6 fw-normal text-center">2</td>
+                                <td class=" rounded rounded-2 bg-light h6 fw-normal text-center">3</td>
+                                <td class=" rounded rounded-2 bg-light h6 fw-normal text-center">$300000</td>
+                                <td class=" rounded rounded-2 bg-light h6 fw-normal text-center fw-bold"><button type="button" class="btn btn-secondary p-lg-0" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="right" data-bs-content="Right popover">
+                                  Popover derecho
+                                </button></td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+    </main>
+    <section class="position-relative">
+      <footer class="position-relative top-10 pb-10 vw-100">
+        
+      </footer>
+    </section>
+    <!--
+    <footer class="bg-warning border border-3 border-primary">
+      <div class="container row border border-5 border-success col-4">
+        <div class="border border-2 row col-12">
+            <div class="col-2">
+                <img class="resize" src="./img/Board.png">
+            </div>
+            <div class="row col-2">
+              <div class="col-12 align-content-start align-self-end">
+                <img class="resize2" src="./img/Facebook2.png">Chevalier
+              </div>
+              <div class="col-12 align-self-start">
+                <img class="resize2" src="./img/Instagram2.png">@Chevalier
+              </div> 
+            </div>
+        </div>
+      </div>
+    </footer>
+  -->
+    <!--<script src="./js/jsmap.js"></script>-->
+    <script src="./bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

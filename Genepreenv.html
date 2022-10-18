@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="./assets/css/normalize.css">
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/css/styles.css">
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+</head>
+  <body>
+    <div class="bg-info center">
+      <nav class="navbar center navbar-expand-lg navbar-light bg-light">
+          <div class="container-fluid align-content-center">
+            <a class="navbar-brand" href="#">Navbar</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNavDropdown">
+              <ul class="navbar-nav me-auto">
+                <li class="nav-item bg-danger bg-opacity-100">
+                  <a class="nav-link active" aria-current="page" href="./Index.html">Inicio</a>
+                </li>
+                <li class="nav-item bg-danger bg-opacity-75">
+                  <a class="nav-link" href="./Misdatos.html">Mis datos</a>
+                </li>
+                <li class="nav-item bg-danger bg-opacity-50">
+                  <a class="nav-link" href="./Misdirecciones.html">Mis direcciones</a>
+                </li>
+                <li class="nav-item bg-danger bg-opacity-75">
+                  <a class="nav-link" href="./Misordenes.html">Mis Ordenes</a>
+                </li>
+                <li class="nav-item bg-danger bg-opacity-100">
+                  <a class="nav-link" href="./Cuencorri.html">Cuenta corriente</a>
+                </li>
+                <li class="nav-item bg-danger bg-opacity-75">
+                  <a class="nav-link" href="./Misretiros.html">Retiros</a>
+                </li>
+                <li class="nav-item bg-danger bg-opacity-50">
+                  <a class="nav-link" href="./Problemas.html">Problemas</a>
+                </li>
+              </ul>
+              <div class="btn-group">
+                  <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                    Jehu Calle
+                  </button>
+                  <ul class="dropdown-menu dropdown-menu-dark">
+                    <li><a class="dropdown-item" href="./Misdatos.html">Mis datos</a></li>
+                    <li><a class="dropdown-item" href="./Seguienvio.html">¿SeguiEnv?</a></li>
+                    <li><a class="dropdown-item" href="./Seguiretiro.html">¿SeguiRet?</a></li>
+                    <li><a class="dropdown-item" href="./Index.html">Cerrar sesion</a></li>
+                  </ul>
+                </div>
+            </div>
+          </div>
+      </nav>
+    </div>
+    <main class="bg-primary bg-opacity-25 d-flex justify-content-center">
+        <div class="container row justify-content-center col-12">
+          <form class="col-6 bg-dark bg-opacity-75 col rounded rounded-1 border border-5 border-dark">
+            <div class="border border-2 bg-warning bg-opacity-100 row justify-content-center "> 
+              <div class="col-12 row justify-content-center">
+                <div class="col-2">
+                  <img src="./assets/img/Icon.png" alt="">
+                </div>
+                <div class="col-12 row">
+                  <h4 class="text-center fw-bold">Agendar pre-envío</h4>
+                </div>
+              </div>
+            </div>
+            <div class="border border-2 bg-warning bg-opacity-75 row justify-content-center "> 
+              <div class="col-12">
+                <label class="form-control mb-2">Campos sin completar</label>
+                <span class="bg-light rounded rounded-3 border border-danger border-3">* = Campos obligatorios</span>
+              </div>
+            </div>
+            <div class="border border-2 bg-warning bg-opacity-50 row justify-content-center pt-3">
+              <h5 class="fw-bold col-12 ">Direccion</h5>
+              <div class="col-12 mx-3 bg-light">
+                <label class="col-6 h6 fw-normal mx-2" for="Agorigen">Agencia origen<span class="text-danger">*</span></label>
+                <label class="col-5 h6 fw-normal mx-2" for="Adestino">Agencia destino<span class="text-danger">*</span></label>
+                <select class="rounded rounded-2 border border-2 border-dark col-5 p-lg-0 h6 fw-normal mx-2" id="Agorigen">
+                  <option></option>
+                  <option>Arauco</option>
+                  <option>Bio-Bio</option>
+                  <option>Ñuble</option>
+                </select>
+                <label class="col-1"></label>
+                <select class="rounded rounded-2 border border-2 border-dark col-5 p-lg-0 h6 fw-normal " id="Adestino">
+                  <option></option>
+                  <option>Arauco</option>
+                  <option>Bio-Bio</option>
+                  <option>Ñuble</option>
+                </select>
+                <label class="col-6 h6 fw-bold mx-2"></label>
+                <label class="col-5 h6 fw-normal mx-2" for="Cdestino">Comuna de destino<span class="text-danger">*</span></label>
+                <label class="col-6 h6 fw-bold mx-2"></label>
+                <select class="rounded rounded-2 border border-2 border-dark col-5 p-lg-0 h6 fw-normal mx-1" id="Cdestino">
+                  <option></option>
+                  <option>Arauco</option>
+                  <option>Bio-Bio</option>
+                  <option>Ñuble</option>
+                </select>
+              </div>
+              <h5 class="fw-bold col-7">Cargas</h5>
+              <button class="h6 fw-normal col-5 rounded rounded-2 border border-dark border-2">Agregar otra carga</button>
+              <div class="col-12 mx-3 bg-light">
+                <div class="accordion col-12 h6 fw-normal" id="accordionExample">
+                  <div class="accordion-item bg-secondary bg-opacity-25">
+                    <h6 class="accordion-header h6 fw-normal" id="headingOne">
+                      <button class="accordion-button p-1 text-dark bg-secondary bg-opacity-50" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"  aria-controls="collapseOne">
+                        Carga N°1
+                      </button>
+                    </h6>
+                    <div id="collapseOne" class="accordion-collapse collapse bg-secondary bg-opacity-25" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                      <label class="col-3 h6 fw-normal mx-4" for="Tcarga">Tipo de carga<span class="text-danger">*</span></label>
+                      <label class="col-2 h6 fw-normal mx-2">Cantidad<span class="text-danger">*</span></label>
+                      <label class="col-3 h6 fw-normal mx-4">Alto<span class="text-danger">*</span></label>
+                      <select class="rounded rounded-2 border border-2 border-dark col-3 h6 fw-normal mx-4 p-lg-0" id="Tcarga">
+                        <option></option>
+                        <option>Tipo C 1</option>
+                        <option>Tipo C 2</option>
+                        <option>Tipo C 3</option>
+                        <option>Tipo C 4</option>
+                      </select>
+                      <input type="text" class="rounded rounded-2 border border-2 border-dark col-2 mx-2">
+                      <input type="text" class="rounded rounded-2 border border-2 border-dark col-3 mx-4">
+                      <label class="col-3 h6 fw-normal mx-4">Ancho<span class="text-danger">*</span></label>
+                      <label class="col-2 h6 fw-normal mx-2">Largo<span class="text-danger">*</span></label>
+                      <label class="col-3 h6 fw-normal mx-4" for="Tembalaje">Tipo de embalaje<span class="text-danger">*</span></label>
+                      <input type="text" class="rounded rounded-2 border border-2 border-dark col-3 mx-4">
+                      <input type="text" class="rounded rounded-2 border border-2 border-dark col-2 mx-2 p-lg-0">
+                      <select class="rounded rounded-2 border border-2 border-dark col-3 h6 fw-normal mx-4 p-lg-0" id="Tembalaje">
+                        <option></option>
+                        <option>Tipo E 1</option>
+                        <option>Tipo E 2</option>
+                        <option>Tipo E 3</option>
+                        <option>Tipo E 4</option>
+                      </select>
+                      <label class="col-3 h6 fw-normal mx-4">Valor comercial<span class="text-danger">*</span></label>
+                      <label class="col-2 h6 fw-normal mx-2">Peso(kg)<span class="text-danger">*</span></label>
+                      <label class="col-4 h6 fw-normal mx-2">Su pédido supera el pesó limite y será tomada como sobrecarga.</label>
+                      <input type="text" class="rounded rounded-2 border border-2 border-dark col-3 mx-4">
+                      <input type="text" class="rounded rounded-2 border border-2 border-dark col-2 mx-2">
+                      <label class="col-4 h6 fw-normal mx-2">¿Cuenta con herramientas?.</label>
+                      <br>
+                      <label class="col-7"></label>
+                      <input class="form-check-input col-auto" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                      <label class="" for="flexRadioDefault2">
+                        Si
+                      </label>
+                      <input class="form-check-input col-auto" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                      <label class="form-check-label col-auto" for="flexRadioDefault1">
+                        No
+                      </label>
+                      <label class="col-12">Documentos e imagenes de referencia<span class="text-danger">*</span></label>
+                      <input class="form-control col-1" type="file" id="formFile">
+                      <label class="col-12">Tamaño maximo de archivo rar: 10MB<span class="text-danger">*</span></label>
+                    </div>
+                  </div>
+                  <div class="accordion-item bg-secondary bg-opacity-25">
+                    <h6 class="accordion-header h6 fw-normal" id="headingSecond">
+                      <button class="accordion-button p-1 text-dark bg-secondary bg-opacity-50" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSecond" aria-expanded="true" aria-controls="collapseSecond">
+                        Carga N°2
+                      </button>
+                    </h6>
+                    <div id="collapseSecond" class="accordion-collapse collapse bg-secondary bg-opacity-25" aria-labelledby="headingSecond" data-bs-parent="#accordionExample">
+                      <label class="col-3 h6 fw-normal mx-4" for="Tcarga">Tipo de carga<span class="text-danger">*</span></label>
+                      <label class="col-2 h6 fw-normal mx-2">Cantidad<span class="text-danger">*</span></label>
+                      <label class="col-3 h6 fw-normal mx-4">Alto<span class="text-danger">*</span></label>
+                      <select class="rounded rounded-2 border border-2 border-dark col-3 h6 fw-normal mx-4 p-lg-0" id="Tcarga">
+                        <option></option>
+                        <option>Tipo C 1</option>
+                        <option>Tipo C 2</option>
+                        <option>Tipo C 3</option>
+                        <option>Tipo C 4</option>
+                      </select>
+                      <input type="text" class="rounded rounded-2 border border-2 border-dark col-2 mx-2">
+                      <input type="text" class="rounded rounded-2 border border-2 border-dark col-3 mx-4">
+                      <label class="col-3 h6 fw-normal mx-4">Ancho<span class="text-danger">*</span></label>
+                      <label class="col-2 h6 fw-normal mx-2">Largo<span class="text-danger">*</span></label>
+                      <label class="col-3 h6 fw-normal mx-4" for="Tembalaje">Tipo de embalaje<span class="text-danger">*</span></label>
+                      <input type="text" class="rounded rounded-2 border border-2 border-dark col-3 mx-4">
+                      <input type="text" class="rounded rounded-2 border border-2 border-dark col-2 mx-2 p-lg-0">
+                      <select class="rounded rounded-2 border border-2 border-dark col-3 h6 fw-normal mx-4 p-lg-0" id="Tembalaje">
+                        <option></option>
+                        <option>Tipo E 1</option>
+                        <option>Tipo E 2</option>
+                        <option>Tipo E 3</option>
+                        <option>Tipo E 4</option>
+                      </select>
+                      <label class="col-3 h6 fw-normal mx-4">Valor comercial<span class="text-danger">*</span></label>
+                      <label class="col-2 h6 fw-normal mx-2">Peso(kg)<span class="text-danger">*</span></label>
+                      <label class="col-4 h6 fw-normal mx-2">Su pédido supera el pesó limite y será tomada como sobrecarga.</label>
+                      <input type="text" class="rounded rounded-2 border border-2 border-dark col-3 mx-4">
+                      <input type="text" class="rounded rounded-2 border border-2 border-dark col-2 mx-2">
+                      <label class="col-4 h6 fw-normal mx-2">¿Cuenta con herramientas?.</label>
+                      <br>
+                      <label class="col-7"></label>
+                      <input class="form-check-input col-auto" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                      <label class="" for="flexRadioDefault2">
+                        Si
+                      </label>
+                      <input class="form-check-input col-auto" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                      <label class="form-check-label col-auto" for="flexRadioDefault1">
+                        No
+                      </label>
+                      <label class="col-12">Documentos e imagenes de referencia<span class="text-danger">*</span></label>
+                      <input class="form-control col-1" type="file" id="formFile">
+                      <label class="col-12">Tamaño maximo de archivo rar: 10MB<span class="text-danger">*</span></label>
+                    </div>
+                  </div>
+                  <div class="accordion-item bg-secondary bg-opacity-25">
+                    <h6 class="accordion-header h6 fw-normal" id="headingThird">
+                      <button class="accordion-button p-1 text-dark bg-secondary bg-opacity-50" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThird" aria-expanded="true" aria-controls="collapseThird">
+                        Carga N°3
+                      </button>
+                    </h6>
+                    <div id="collapseThird" class="accordion-collapse collapse bg-secondary bg-opacity-25" aria-labelledby="headingThird" data-bs-parent="#accordionExample">
+                      <label class="col-3 h6 fw-normal mx-4" for="Tcarga">Tipo de carga<span class="text-danger">*</span></label>
+                      <label class="col-2 h6 fw-normal mx-2">Cantidad<span class="text-danger">*</span></label>
+                      <label class="col-3 h6 fw-normal mx-4">Alto<span class="text-danger">*</span></label>
+                      <select class="rounded rounded-2 border border-2 border-dark col-3 h6 fw-normal mx-4 p-lg-0" id="Tcarga">
+                        <option></option>
+                        <option>Tipo C 1</option>
+                        <option>Tipo C 2</option>
+                        <option>Tipo C 3</option>
+                        <option>Tipo C 4</option>
+                      </select>
+                      <input type="text" class="rounded rounded-2 border border-2 border-dark col-2 mx-2">
+                      <input type="text" class="rounded rounded-2 border border-2 border-dark col-3 mx-4">
+                      <label class="col-3 h6 fw-normal mx-4">Ancho<span class="text-danger">*</span></label>
+                      <label class="col-2 h6 fw-normal mx-2">Largo<span class="text-danger">*</span></label>
+                      <label class="col-3 h6 fw-normal mx-4" for="Tembalaje">Tipo de embalaje<span class="text-danger">*</span></label>
+                      <input type="text" class="rounded rounded-2 border border-2 border-dark col-3 mx-4">
+                      <input type="text" class="rounded rounded-2 border border-2 border-dark col-2 mx-2 p-lg-0">
+                      <select class="rounded rounded-2 border border-2 border-dark col-3 h6 fw-normal mx-4 p-lg-0" id="Tembalaje">
+                        <option></option>
+                        <option>Tipo E 1</option>
+                        <option>Tipo E 2</option>
+                        <option>Tipo E 3</option>
+                        <option>Tipo E 4</option>
+                      </select>
+                      <label class="col-3 h6 fw-normal mx-4">Valor comercial<span class="text-danger">*</span></label>
+                      <label class="col-2 h6 fw-normal mx-2">Peso(kg)<span class="text-danger">*</span></label>
+                      <label class="col-4 h6 fw-normal mx-2">Su pédido supera el pesó limite y será tomada como sobrecarga.</label>
+                      <input type="text" class="rounded rounded-2 border border-2 border-dark col-3 mx-4">
+                      <input type="text" class="rounded rounded-2 border border-2 border-dark col-2 mx-2">
+                      <label class="col-4 h6 fw-normal mx-2">¿Cuenta con herramientas?.</label>
+                      <br>
+                      <label class="col-7"></label>
+                      <input class="form-check-input col-auto" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                      <label class="" for="flexRadioDefault2">
+                        Si
+                      </label>
+                      <input class="form-check-input col-auto" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                      <label class="form-check-label col-auto" for="flexRadioDefault1">
+                        No
+                      </label>
+                      <label class="col-12">Documentos e imagenes de referencia<span class="text-danger">*</span></label>
+                      <input class="form-control col-1" type="file" id="formFile">
+                      <label class="col-12">Tamaño maximo de archivo rar: 10MB<span class="text-danger">*</span></label>
+                    </div>
+                  </div>
+                  <div class="accordion-item bg-secondary bg-opacity-25">
+                    <h6 class="accordion-header h6 fw-normal" id="headingFourth">
+                      <button class="accordion-button p-1 text-dark bg-secondary bg-opacity-50" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFourth" aria-expanded="true" aria-controls="collapseFourth">
+                        Carga N°4
+                      </button>
+                    </h6>
+                    <div id="collapseFourth" class="accordion-collapse collapse bg-secondary bg-opacity-25" aria-labelledby="headingFourth" data-bs-parent="#accordionExample">
+                      <label class="col-3 h6 fw-normal mx-4" for="Tcarga">Tipo de carga<span class="text-danger">*</span></label>
+                      <label class="col-2 h6 fw-normal mx-2">Cantidad<span class="text-danger">*</span></label>
+                      <label class="col-3 h6 fw-normal mx-4">Alto<span class="text-danger">*</span></label>
+                      <select class="rounded rounded-2 border border-2 border-dark col-3 h6 fw-normal mx-4 p-lg-0" id="Tcarga">
+                        <option></option>
+                        <option>Tipo C 1</option>
+                        <option>Tipo C 2</option>
+                        <option>Tipo C 3</option>
+                        <option>Tipo C 4</option>
+                      </select>
+                      <input type="text" class="rounded rounded-2 border border-2 border-dark col-2 mx-2">
+                      <input type="text" class="rounded rounded-2 border border-2 border-dark col-3 mx-4">
+                      <label class="col-3 h6 fw-normal mx-4">Ancho<span class="text-danger">*</span></label>
+                      <label class="col-2 h6 fw-normal mx-2">Largo<span class="text-danger">*</span></label>
+                      <label class="col-3 h6 fw-normal mx-4" for="Tembalaje">Tipo de embalaje<span class="text-danger">*</span></label>
+                      <input type="text" class="rounded rounded-2 border border-2 border-dark col-3 mx-4">
+                      <input type="text" class="rounded rounded-2 border border-2 border-dark col-2 mx-2 p-lg-0">
+                      <select class="rounded rounded-2 border border-2 border-dark col-3 h6 fw-normal mx-4 p-lg-0" id="Tembalaje">
+                        <option></option>
+                        <option>Tipo E 1</option>
+                        <option>Tipo E 2</option>
+                        <option>Tipo E 3</option>
+                        <option>Tipo E 4</option>
+                      </select>
+                      <label class="col-3 h6 fw-normal mx-4">Valor comercial<span class="text-danger">*</span></label>
+                      <label class="col-2 h6 fw-normal mx-2">Peso(kg)<span class="text-danger">*</span></label>
+                      <label class="col-4 h6 fw-normal mx-2">Su pédido supera el pesó limite y será tomada como sobrecarga.</label>
+                      <input type="text" class="rounded rounded-2 border border-2 border-dark col-3 mx-4">
+                      <input type="text" class="rounded rounded-2 border border-2 border-dark col-2 mx-2">
+                      <label class="col-4 h6 fw-normal mx-2">¿Cuenta con herramientas?.</label>
+                      <br>
+                      <label class="col-7"></label>
+                      <input class="form-check-input col-auto" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                      <label class="" for="flexRadioDefault2">
+                        Si
+                      </label>
+                      <input class="form-check-input col-auto" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                      <label class="form-check-label col-auto" for="flexRadioDefault1">
+                        No
+                      </label>
+                      <label class="col-12">Documentos e imagenes de referencia<span class="text-danger">*</span></label>
+                      <input class="form-control col-1" type="file" id="formFile">
+                      <label class="col-12">Tamaño maximo de archivo rar: 10MB<span class="text-danger">*</span></label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="border border-2 bg-warning bg-opacity-100 row justify-content-center pt-2 pb-2 ">
+                <div class="col-12 row justify-content-evenly">
+                  <a name="" id="" class="btn btn-light col-5 border border-dark border-3 h6 fw-normal" href="./Misordenes.html" role="button">Cancelar</a>
+                  <a name="" id="" class="btn btn-light col-5 border border-dark border-3 h6 fw-normal" href="./Misordenes.html" role="button">Agendar</a>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+    </main>
+    <section class="position-relative">
+      <footer class="position-relative top-1 pb-10 bg-warning">
+        
+      </footer>
+    </section>
+    <!--
+    <footer class="bg-warning border border-3 border-primary">
+      <div class="container row border border-5 border-success col-4">
+        <div class="border border-2 row col-12">
+            <div class="col-2">
+                <img class="resize" src="./img/Board.png">
+            </div>
+            <div class="row col-2">
+              <div class="col-12 align-content-start align-self-end">
+                <img class="resize2" src="./img/Facebook2.png">Chevalier
+              </div>
+              <div class="col-12 align-self-start">
+                <img class="resize2" src="./img/Instagram2.png">@Chevalier
+              </div> 
+            </div>
+        </div>
+      </div>
+    </footer>
+  -->
+    <!--<script src="./js/jsmap.js"></script>-->
+    <script src="./bootstrap/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

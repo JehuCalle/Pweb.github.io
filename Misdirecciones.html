@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="./assets/css/normalize.css">
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/css/styles.css">
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+</head>
+<body>
+  <div class="bg-info center">
+    <nav class="navbar center navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid align-content-center">
+          <a class="navbar-brand" href="#">Navbar</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-center" id="navbarNavDropdown">
+            <ul class="navbar-nav me-auto">
+              <li class="nav-item bg-danger bg-opacity-100">
+                <a class="nav-link active" aria-current="page" href="./Index.html">Inicio</a>
+              </li>
+              <li class="nav-item bg-danger bg-opacity-75">
+                <a class="nav-link" href="./Misdatos.html">Mis datos</a>
+              </li>
+              <li class="nav-item bg-danger bg-opacity-50">
+                <a class="nav-link" href="./Misdirecciones.html">Mis direcciones</a>
+              </li>
+              <li class="nav-item bg-danger bg-opacity-75">
+                <a class="nav-link" href="./Misordenes.html">Mis Ordenes</a>
+              </li>
+              <li class="nav-item bg-danger bg-opacity-100">
+                <a class="nav-link" href="./Cuencorri.html">Cuenta corriente</a>
+              </li>
+              <li class="nav-item bg-danger bg-opacity-75">
+                <a class="nav-link" href="./Misretiros.html">Retiros</a>
+              </li>
+              <li class="nav-item bg-danger bg-opacity-50">
+                <a class="nav-link" href="./Problemas.html">Problemas</a>
+              </li>
+            </ul>
+            <div class="btn-group">
+                <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                  Jehu Calle
+                </button>
+                <ul class="dropdown-menu dropdown-menu-dark">
+                  <li><a class="dropdown-item" href="./Misdatos.html">Mis datos</a></li>
+                  <li><a class="dropdown-item" href="./Seguienvio.html">¿SeguiEnv?</a></li>
+                  <li><a class="dropdown-item" href="./Seguiretiro.html">¿SeguiRet?</a></li>
+                  <li><a class="dropdown-item" href="./Index.html">Cerrar sesion</a></li>
+                </ul>
+              </div>
+          </div>
+        </div>
+    </nav>
+</div>
+    <main class="bg-primary bg-opacity-25 d-flex justify-content-center">
+        <div class="container row justify-content-center col-12">
+          <form class="col-9 bg-dark bg-opacity-75 col rounded rounded-1 border border-5 border-dark">
+            <h2 class="text-light">Mis direcciones / Transportes Chevalier</h2>
+            <div class="border border-2 bg-warning bg-opacity-100 row justify-content-center "> 
+              <div class="col-12 row justify-content-center">
+                <div class="col-1">
+                  <img src="./assets/img/Icon.png" alt="">
+                </div>
+                <div class="col-12 row">
+                  <h4 class="text-center fw-bold">Direcciones de retiros</h4>
+                </div>
+              </div>
+            </div>
+            <div class="border border-2 bg-warning bg-opacity-75 row justify-content-center"> 
+              <div class="col-12">
+                <label class="form-control mb-2">Campos obligatorios sin completar</label>
+              </div>
+            </div>
+
+            <div class="border border-2 bg-warning bg-opacity-50 row justify-content-center pt-3">
+              <div class="col-12">
+                <select class="rounded rounded-2 border border-2 border-dark col-1 p-lg-1 mb-2" id="Provincias">
+                  <option>5</option>
+                  <option>10</option>
+                  <option>15</option>
+                  <option>20</option>
+                </select>
+                <label class="col-6" for="Comunas">Registros por Pagina</label>
+                <label class="col-1" for="Comunas">Buscar</label>
+                <input type="text" class="rounded rounded-2 border border-2 border-dark col-3" placeholder="Buscar">
+
+                <table class="table table-secondary table-hover table-responsive table-borderless">
+                  <thead>
+                    <tr>
+                      <th scope="col" class="text-center col-8 rounded rounded-2 bg-secondary">Direccion</th>
+                      <th scope="col" class="text-center col-2 rounded rounded-2 bg-secondary">Referencia</th>
+                      <th scope="col" class="text-center col-2 rounded rounded-2 bg-secondary">Acciones</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class=" rounded rounded-2 bg-light">Camino las mariposas km 13.5 Villa mirasol Pasaje N°4 casa N°4</td>
+                      <td class=" rounded rounded-2 bg-light"><a class="btn btn-dark" data-bs-toggle="modal" href="#modal1" role="button">Imagen Referencia</a></td>
+                      <div aria-hidden="true" aria-labelledby="..." class="modal fade" id="modal1" tabindex="-1">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <!-- ... -->
+                                <div class="modal-footer">
+                                  <a>11111</a>
+                                  <img src="./assets/img/Icon.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                      </div>
+                      <td class=" rounded rounded-2 bg-light">Accion1 Accion2</td>
+                    </tr>
+                    <tr>
+                      <td class=" rounded rounded-2 bg-light">Camino las mariposas km 13.5 Villa mirasol Pasaje N°4 casa N°4</td>
+                      <td class=" rounded rounded-2 bg-light"><a class="btn btn-dark" data-bs-toggle="modal" href="#modal2" role="button">Imagen Referencia</a></td>
+                      <div aria-hidden="true" aria-labelledby="..." class="modal fade" id="modal2" tabindex="-1">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <!-- ... -->
+                                <div class="modal-footer">
+                                  <a>222222</a>
+                                  <img src="./assets/img/Icon.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                      </div>
+                      <td class=" rounded rounded-2 bg-light">Accion1 Accion2</td>
+                    </tr>
+                    <tr>
+                      <td class=" rounded rounded-2 bg-light">Camino las mariposas km 13.5 Villa mirasol Pasaje N°4 casa N°4</td>
+                      <td class=" rounded rounded-2 bg-light"><a class="btn btn-dark" data-bs-toggle="modal" href="#modal3" role="button">Imagen Referencia</a></td>
+                      <div aria-hidden="true" aria-labelledby="..." class="modal fade" id="modal3" tabindex="-1">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <!-- ... -->
+                                <div class="modal-footer">
+                                  <a>333333</a>
+                                  <img src="./assets/img/Icon.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                      </div>
+                      <td class=" rounded rounded-2 bg-light">Accion1 Accion2</td>
+                    </tr>
+                    <tr>
+                      <td class=" rounded rounded-2 bg-light">Camino las mariposas km 13.5 Villa mirasol Pasaje N°4 casa N°4</td>
+                      <td class=" rounded rounded-2 bg-light"><a class="btn btn-dark" data-bs-toggle="modal" href="#modal4" role="button">Imagen Referencia</a></td>
+                      <div aria-hidden="true" aria-labelledby="..." class="modal fade" id="modal4" tabindex="-1">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <!-- ... -->
+                                <div class="modal-footer">
+                                  <a>4444444</a>
+                                  <img src="./assets/img/Icon.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                      </div>
+                      <td class=" rounded rounded-2 bg-light">Accion1 Accion2</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div class="border border-2 bg-warning bg-opacity-100 row justify-content-between pt-1 pb-3">
+              <div class="col-8 row justify-content-end">
+                <a name="" id="" class="btn btn-light col-6 border border-dark border-2" href="./Agredirec.html" role="button">Agregar Direccion</a>
+              </div>
+            </div>
+            <div class="border border-2 bg-warning bg-opacity-100 row justify-content-center pt-1 pb-3">
+              <ul class="pagination justify-content-center ">
+                <li class="page-item disabled">
+                  <a class="page-link" href="#">&laquo;</a>
+                </li>
+                <li class="page-item active">
+                  <a class="page-link" href="#">1</a>
+                </li>
+                <li class="page-item">
+                  <a class="page-link" href="#">2</a>
+                </li>
+                <li class="page-item">
+                  <a class="page-link" href="#">3</a>
+                </li>
+                <li class="page-item">
+                  <a class="page-link" href="#">4</a>
+                </li>
+                <li class="page-item">
+                  <a class="page-link" href="#">5</a>
+                </li>
+                <li class="page-item">
+                  <a class="page-link" href="#">6</a>
+                </li>
+                <li class="page-item">
+                  <a class="page-link" href="#">7</a>
+                </li>
+                <li class="page-item">
+                  <a class="page-link" href="#">8</a>
+                </li>
+                <li class="page-item">
+                  <a class="page-link" href="#">9</a>
+                </li>
+                <li class="page-item">
+                  <a class="page-link" href="#">10</a>
+                </li>
+                <li class="page-item">
+                  <a class="page-link" href="#">11</a>
+                </li>
+                <li class="page-item">
+                  <a class="page-link" href="#">12</a>
+                </li>
+                <li class="page-item">
+                  <a class="page-link" href="#">13</a>
+                </li>
+                <li class="page-item">
+                  <a class="page-link" href="#">14</a>
+                </li>
+                <li class="page-item">
+                  <a class="page-link" href="#">&raquo;</a>
+                </li>
+              </ul>
+            </div>
+          </form>
+        </div>
+    </main>
+    <section class="position-relative">
+      <footer class="position-relative top-1 pb-10 bg-warning">
+        
+      </footer>
+    </section>
+    <!--
+    <footer class="bg-warning border border-3 border-primary">
+      <div class="container row border border-5 border-success col-4">
+        <div class="border border-2 row col-12">
+            <div class="col-2">
+                <img class="resize" src="./img/Board.png">
+            </div>
+            <div class="row col-2">
+              <div class="col-12 align-content-start align-self-end">
+                <img class="resize2" src="./img/Facebook2.png">Chevalier
+              </div>
+              <div class="col-12 align-self-start">
+                <img class="resize2" src="./img/Instagram2.png">@Chevalier
+              </div> 
+            </div>
+        </div>
+      </div>
+    </footer>
+  -->
+    <!--<script src="./js/jsmap.js"></script>-->
+    <script src="./bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="./assets/css/normalize.css">
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/css/styles.css">
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+</head>
+<body>
+  <div class="bg-info center">
+    <nav class="navbar center navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid align-content-center">
+          <a class="navbar-brand" href="#">Navbar</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-center" id="navbarNavDropdown">
+            <ul class="navbar-nav me-auto">
+              <li class="nav-item bg-danger bg-opacity-100">
+                <a class="nav-link active" aria-current="page" href="./Index.html">Inicio</a>
+              </li>
+              <li class="nav-item bg-danger bg-opacity-75">
+                <a class="nav-link" href="./Misdatos.html">Mis datos</a>
+              </li>
+              <li class="nav-item bg-danger bg-opacity-50">
+                <a class="nav-link" href="./Misdirecciones.html">Mis direcciones</a>
+              </li>
+              <li class="nav-item bg-danger bg-opacity-75">
+                <a class="nav-link" href="./Misordenes.html">Mis Ordenes</a>
+              </li>
+              <li class="nav-item bg-danger bg-opacity-100">
+                <a class="nav-link" href="./Cuencorri.html">Cuenta corriente</a>
+              </li>
+              <li class="nav-item bg-danger bg-opacity-75">
+                <a class="nav-link" href="./Misretiros.html">Retiros</a>
+              </li>
+              <li class="nav-item bg-danger bg-opacity-50">
+                <a class="nav-link" href="./Problemas.html">Problemas</a>
+              </li>
+            </ul>
+            <div class="btn-group">
+                <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                  Jehu Calle
+                </button>
+                <ul class="dropdown-menu dropdown-menu-dark">
+                  <li><a class="dropdown-item" href="./Misdatos.html">Mis datos</a></li>
+                  <li><a class="dropdown-item" href="./Seguienvio.html">¿SeguiEnv?</a></li>
+                  <li><a class="dropdown-item" href="./Seguiretiro.html">¿SeguiRet?</a></li>
+                  <li><a class="dropdown-item" href="./Index.html">Cerrar sesion</a></li>
+                </ul>
+              </div>
+          </div>
+        </div>
+    </nav>
+</div>
+    <main class="bg-primary bg-opacity-25 d-flex justify-content-center">
+      <form class="col-12 bg-dark bg-opacity-75 col rounded rounded-1 border border-5 border-dark">
+        <h2 class="text-light">Mis reclamos / Transportes Chevalier</h2>
+        <div class="border border-2 bg-warning bg-opacity-100 row justify-content-center "> 
+          <div class="col-12 row justify-content-center">
+            <div class="col-1">
+              <img src="./assets/img/Icon.png" alt="">
+            </div>
+            <div class="col-12 row">
+              <h4 class="text-center fw-bold">Lista de problemas</h4>
+            </div>
+          </div>
+        </div>
+        <div class="border border-2 bg-warning bg-opacity-75 row justify-content-center"> 
+          <div class="col-12">
+            <label class="form-control mb-2 h6 fw-bold">Campos obligatorios sin completar</label>
+          </div>
+        </div>
+
+        <div class="border border-2 bg-warning bg-opacity-50 row justify-content-center pt-3 ">
+          <div class="col-12">
+            <div class="row justify-content-end col-12">
+              <div class="col-5 row justify-content-center">
+                <div class="row justify-content-evenly">
+                  <label class="col-4 h6 fw-bold">Fecha desde:</label>
+                  <label class="col-7"></label>
+                  <input type="text" class="rounded rounded-2 border border-2 border-dark col-4 p-lg-0 h6 fw-normal text-center" placeholder="dd/mm/yyyy">
+                  <label class="col-6"></label>
+                  <label class="col-4 h6 fw-bold">Fecha hasta:</label>
+                  <label class="col-7 h6 fw-bold">Documento de referencia:</label>
+                  <input type="text" class="rounded rounded-2 border border-2 border-dark col-4 p-lg-0 h6 fw-normal text-center" placeholder="dd/mm/yyyy">
+                  <input type="text" class="rounded rounded-2 border border-2 border-dark col-6 p-lg-0 h6 fw-normal text-center" placeholder="Guia/Factura/Boleta">
+                  <a name="" id="" class="btn btn-light border border-dark border-2 mt-2 h6 fw-normal col-3" href="#" role="button">Buscar</a>
+                </div>
+              </div>
+              <div class="col-3 row justify-content-center mx-4">
+                <div class="row justify-content-center align-items-center">
+                  <a name="" id="" class="btn btn-light col-10 border border-dark border-2 mb-3 mt-1" href="./Redactproblem.html" role="button">Agregar problema</a>
+                </div>
+              </div>
+            </div>
+            <div class="container p-3">
+              <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link active bg-secondary text-dark h6 fw-bold" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Remitente</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link bg-secondary text-dark h6 fw-bold" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Destinatario</button>
+                </li>
+              </ul>
+              <div class="tab-content bg-secondary">
+                <select class="rounded rounded-2 border border-2 border-dark p-lg-1 mb-2 mt-2 fw-bold mx-3" id="Provincias">
+                  <option>5</option>
+                  <option>10</option>
+                  <option>15</option>
+                  <option>20</option>
+                </select>
+                <label class="col-7 h6 fw-bold" for="Comunas">Registros por Pagina</label>
+                <input type="text" class="rounded rounded-2 border border-2 border-dark col-3 fw-bold" placeholder="Buscar">
+
+                <div class="tab-pane active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                  <table class="table table-hover table-responsive table-borderless justify-content-center">
+                    <thead>
+                      <tr>
+                        <th scope="col" class="text-center col-1 rounded rounded-2 bg-dark bg-opacity-25 h6 fw-bold">N°ticket</th>
+                        <th scope="col" class="text-center col-1 rounded rounded-2 bg-dark bg-opacity-25 h6 fw-bold">N°orden</th>
+                        <th scope="col" class="text-center col-2 rounded rounded-2 bg-dark bg-opacity-25 h6 fw-bold">Boleta/Factura/Guia</th>
+                        <th scope="col" class="text-center col-1 rounded rounded-2 bg-dark bg-opacity-25 h6 fw-bold">Fecha</th>
+                        <th scope="col" class="text-center col-2 rounded rounded-2 bg-dark bg-opacity-25 h6 fw-bold">Comentario</th>
+                        <th scope="col" class="text-center col-1 rounded rounded-2 bg-dark bg-opacity-25 h6 fw-bold">Tipo</th>
+                        <th scope="col" class="text-center col-1 rounded rounded-2 bg-dark bg-opacity-25 h6 fw-bold">Estado</th>
+                        <th scope="col" class="text-center col-1 rounded rounded-2 bg-dark bg-opacity-25 h6 fw-bold">Acciones</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td class=" rounded rounded-2 bg-light h6 fw-normal text-center">12345678912</td>
+                        <td class=" rounded rounded-2 bg-light h6 fw-normal text-center">12345678912</td>
+                        <td class=" rounded rounded-2 bg-light h6 fw-normal text-center">12345678912</td>
+                        <td class=" rounded rounded-2 bg-light h6 fw-normal text-center">04/10/2022</td>
+                        <td class=" rounded rounded-2 bg-light h6 fw-normal">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ratione, ut accusamus. Laborum sit ullam recusandae!</td>
+                        <td class=" rounded rounded-2 bg-light h6 fw-normal text-center">textoejemplo</td>
+                        <td class=" rounded rounded-2 bg-light h6 fw-normal text-center">Agendado</td>
+                        <td class=" rounded rounded-2 bg-light h6 fw-normal text-center fw-bold"><a class="text-danger" href="./Detaproblem.html">Ver detalles</a></td>
+                      </tr>
+                      <tr>
+                        <td class=" rounded rounded-2 bg-light h6 fw-normal text-center">12345678912</td>
+                        <td class=" rounded rounded-2 bg-light h6 fw-normal text-center">12345678912</td>
+                        <td class=" rounded rounded-2 bg-light h6 fw-normal text-center">12345678912</td>
+                        <td class=" rounded rounded-2 bg-light h6 fw-normal text-center">04/10/2022</td>
+                        <td class=" rounded rounded-2 bg-light h6 fw-normal">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ratione, ut accusamus. Laborum sit ullam recusandae!</td>
+                        <td class=" rounded rounded-2 bg-light h6 fw-normal text-center">textoejemplo</td>
+                        <td class=" rounded rounded-2 bg-light h6 fw-normal text-center">Agendado</td>
+                        <td class=" rounded rounded-2 bg-light h6 fw-normal text-center fw-bold"><a class="text-danger" href="./Detaproblem.html">Ver detalles</a></td>
+                      </tr>
+                      <tr>
+                        <td class=" rounded rounded-2 bg-light h6 fw-normal text-center">12345678912</td>
+                        <td class=" rounded rounded-2 bg-light h6 fw-normal text-center">12345678912</td>
+                        <td class=" rounded rounded-2 bg-light h6 fw-normal text-center">12345678912</td>
+                        <td class=" rounded rounded-2 bg-light h6 fw-normal text-center">04/10/2022</td>
+                        <td class=" rounded rounded-2 bg-light h6 fw-normal">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ratione, ut accusamus. Laborum sit ullam recusandae!</td>
+                        <td class=" rounded rounded-2 bg-light h6 fw-normal text-center">textoejemplo</td>
+                        <td class=" rounded rounded-2 bg-light h6 fw-normal text-center">Agendado</td>
+                        <td class=" rounded rounded-2 bg-light h6 fw-normal text-center fw-bold"><a class="text-danger" href="./Detaproblem.html">Ver detalles</a></td>
+                      </tr>
+                      <tr>
+                        <td class=" rounded rounded-2 bg-light h6 fw-normal text-center">12345678912</td>
+                        <td class=" rounded rounded-2 bg-light h6 fw-normal text-center">12345678912</td>
+                        <td class=" rounded rounded-2 bg-light h6 fw-normal text-center">12345678912</td>
+                        <td class=" rounded rounded-2 bg-light h6 fw-normal text-center">04/10/2022</td>
+                        <td class=" rounded rounded-2 bg-light h6 fw-normal">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ratione, ut accusamus. Laborum sit ullam recusandae!</td>
+                        <td class=" rounded rounded-2 bg-light h6 fw-normal text-center">textoejemplo</td>
+                        <td class=" rounded rounded-2 bg-light h6 fw-normal text-center">Agendado</td>
+                        <td class=" rounded rounded-2 bg-light h6 fw-normal text-center fw-bold"><a class="text-danger" href="./Detaproblem.html">Ver detalles</a></td>
+                      </tr>
+                      <tr>
+                        <td class=" rounded rounded-2 bg-light h6 fw-normal text-center">12345678912</td>
+                        <td class=" rounded rounded-2 bg-light h6 fw-normal text-center">12345678912</td>
+                        <td class=" rounded rounded-2 bg-light h6 fw-normal text-center">12345678912</td>
+                        <td class=" rounded rounded-2 bg-light h6 fw-normal text-center">04/10/2022</td>
+                        <td class=" rounded rounded-2 bg-light h6 fw-normal">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ratione, ut accusamus. Laborum sit ullam recusandae!</td>
+                        <td class=" rounded rounded-2 bg-light h6 fw-normal text-center">textoejemplo</td>
+                        <td class=" rounded rounded-2 bg-light h6 fw-normal text-center">Agendado</td>
+                        <td class=" rounded rounded-2 bg-light h6 fw-normal text-center fw-bold"><a class="text-danger" href="./Detaproblem.html">Ver detalles</a></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="tab-pane" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                  <table class="table table-hover table-responsive table-borderless justify-content-center">
+                    <thead>
+                      <tr>
+                        <th scope="col" class="text-center col-1 rounded rounded-2 bg-dark bg-opacity-25 h6 fw-bold">N°ticket</th>
+                        <th scope="col" class="text-center col-1 rounded rounded-2 bg-dark bg-opacity-25 h6 fw-bold">N°orden</th>
+                        <th scope="col" class="text-center col-2 rounded rounded-2 bg-dark bg-opacity-25 h6 fw-bold">Boleta/Factura/Guia</th>
+                        <th scope="col" class="text-center col-1 rounded rounded-2 bg-dark bg-opacity-25 h6 fw-bold">Fecha</th>
+                        <th scope="col" class="text-center col-2 rounded rounded-2 bg-dark bg-opacity-25 h6 fw-bold">Comentario</th>
+                        <th scope="col" class="text-center col-1 rounded rounded-2 bg-dark bg-opacity-25 h6 fw-bold">Tipo</th>
+                        <th scope="col" class="text-center col-1 rounded rounded-2 bg-dark bg-opacity-25 h6 fw-bold">Estado</th>
+                        <th scope="col" class="text-center col-1 rounded rounded-2 bg-dark bg-opacity-25 h6 fw-bold">Acciones</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td class=" rounded rounded-2 bg-light h6 fw-normal text-center">12345678912</td>
+                        <td class=" rounded rounded-2 bg-light h6 fw-normal text-center">12345678912</td>
+                        <td class=" rounded rounded-2 bg-light h6 fw-normal text-center">12345678912</td>
+                        <td class=" rounded rounded-2 bg-light h6 fw-normal text-center">04/10/2022</td>
+                        <td class=" rounded rounded-2 bg-light h6 fw-normal">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ratione, ut accusamus. Laborum sit ullam recusandae!</td>
+                        <td class=" rounded rounded-2 bg-light h6 fw-normal text-center">textoejemplo</td>
+                        <td class=" rounded rounded-2 bg-light h6 fw-normal text-center">Agendado</td>
+                        <td class=" rounded rounded-2 bg-light h6 fw-normal text-center fw-bold"><a class="text-danger" href="./Detaproblem.html">Ver detalles</a></td>
+                      </tr>
+                      <tr>
+                        <td class=" rounded rounded-2 bg-light h6 fw-normal text-center">12345678912</td>
+                        <td class=" rounded rounded-2 bg-light h6 fw-normal text-center">12345678912</td>
+                        <td class=" rounded rounded-2 bg-light h6 fw-normal text-center">12345678912</td>
+                        <td class=" rounded rounded-2 bg-light h6 fw-normal text-center">04/10/2022</td>
+                        <td class=" rounded rounded-2 bg-light h6 fw-normal">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ratione, ut accusamus. Laborum sit ullam recusandae!</td>
+                        <td class=" rounded rounded-2 bg-light h6 fw-normal text-center">textoejemplo</td>
+                        <td class=" rounded rounded-2 bg-light h6 fw-normal text-center">Agendado</td>
+                        <td class=" rounded rounded-2 bg-light h6 fw-normal text-center fw-bold"><a class="text-danger" href="./Detaproblem.html">Ver detalles</a></td>
+                      </tr>
+                      <tr>
+                        <td class=" rounded rounded-2 bg-light h6 fw-normal text-center">12345678912</td>
+                        <td class=" rounded rounded-2 bg-light h6 fw-normal text-center">12345678912</td>
+                        <td class=" rounded rounded-2 bg-light h6 fw-normal text-center">12345678912</td>
+                        <td class=" rounded rounded-2 bg-light h6 fw-normal text-center">04/10/2022</td>
+                        <td class=" rounded rounded-2 bg-light h6 fw-normal">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ratione, ut accusamus. Laborum sit ullam recusandae!</td>
+                        <td class=" rounded rounded-2 bg-light h6 fw-normal text-center">textoejemplo</td>
+                        <td class=" rounded rounded-2 bg-light h6 fw-normal text-center">Agendado</td>
+                        <td class=" rounded rounded-2 bg-light h6 fw-normal text-center fw-bold"><a class="text-danger" href="./Detaproblem.html">Ver detalles</a></td>
+                      </tr>
+                      <tr>
+                        <td class=" rounded rounded-2 bg-light h6 fw-normal text-center">12345678912</td>
+                        <td class=" rounded rounded-2 bg-light h6 fw-normal text-center">12345678912</td>
+                        <td class=" rounded rounded-2 bg-light h6 fw-normal text-center">12345678912</td>
+                        <td class=" rounded rounded-2 bg-light h6 fw-normal text-center">04/10/2022</td>
+                        <td class=" rounded rounded-2 bg-light h6 fw-normal">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ratione, ut accusamus. Laborum sit ullam recusandae!</td>
+                        <td class=" rounded rounded-2 bg-light h6 fw-normal text-center">textoejemplo</td>
+                        <td class=" rounded rounded-2 bg-light h6 fw-normal text-center">Agendado</td>
+                        <td class=" rounded rounded-2 bg-light h6 fw-normal text-center fw-bold"><a class="text-danger" href="./Detaproblem.html">Ver detalles</a></td>
+                      </tr>
+                      <tr>
+                        <td class=" rounded rounded-2 bg-light h6 fw-normal text-center">12345678912</td>
+                        <td class=" rounded rounded-2 bg-light h6 fw-normal text-center">12345678912</td>
+                        <td class=" rounded rounded-2 bg-light h6 fw-normal text-center">12345678912</td>
+                        <td class=" rounded rounded-2 bg-light h6 fw-normal text-center">04/10/2022</td>
+                        <td class=" rounded rounded-2 bg-light h6 fw-normal">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ratione, ut accusamus. Laborum sit ullam recusandae!</td>
+                        <td class=" rounded rounded-2 bg-light h6 fw-normal text-center">textoejemplo</td>
+                        <td class=" rounded rounded-2 bg-light h6 fw-normal text-center">Agendado</td>
+                        <td class=" rounded rounded-2 bg-light h6 fw-normal text-center fw-bold"><a class="text-danger" href="./Detaproblem.html">Ver detalles</a></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="border border-2 bg-warning bg-opacity-100 row justify-content-center pt-1 pb-3">
+          <ul class="pagination justify-content-center ">
+            <li class="page-item disabled">
+              <a class="page-link" href="#">&laquo;</a>
+            </li>
+            <li class="page-item active">
+              <a class="page-link" href="#">1</a>
+            </li>
+            <li class="page-item">
+              <a class="page-link" href="#">2</a>
+            </li>
+            <li class="page-item">
+              <a class="page-link" href="#">3</a>
+            </li>
+            <li class="page-item">
+              <a class="page-link" href="#">4</a>
+            </li>
+            <li class="page-item">
+              <a class="page-link" href="#">5</a>
+            </li>
+            <li class="page-item">
+              <a class="page-link" href="#">6</a>
+            </li>
+            <li class="page-item">
+              <a class="page-link" href="#">7</a>
+            </li>
+            <li class="page-item">
+              <a class="page-link" href="#">8</a>
+            </li>
+            <li class="page-item">
+              <a class="page-link" href="#">9</a>
+            </li>
+            <li class="page-item">
+              <a class="page-link" href="#">10</a>
+            </li>
+            <li class="page-item">
+              <a class="page-link" href="#">11</a>
+            </li>
+            <li class="page-item">
+              <a class="page-link" href="#">12</a>
+            </li>
+            <li class="page-item">
+              <a class="page-link" href="#">13</a>
+            </li>
+            <li class="page-item">
+              <a class="page-link" href="#">14</a>
+            </li>
+            <li class="page-item">
+              <a class="page-link" href="#">&raquo;</a>
+            </li>
+          </ul>
+        </div>
+      </form>
+    </main>
+    <!--
+    <section class="position-relative">
+      <footer class="top-10 pb-10 vw-100">
+        
+      </footer>
+    </section>
+    
+    <footer class="bg-warning border border-3 border-primary">
+      <div class="container row border border-5 border-success col-4">
+        <div class="border border-2 row col-12">
+            <div class="col-2">
+                <img class="resize" src="./img/Board.png">
+            </div>
+            <div class="row col-2">
+              <div class="col-12 align-content-start align-self-end">
+                <img class="resize2" src="./img/Facebook2.png">Chevalier
+              </div>
+              <div class="col-12 align-self-start">
+                <img class="resize2" src="./img/Instagram2.png">@Chevalier
+              </div> 
+            </div>
+        </div>
+      </div>
+    </footer>
+  -->
+    <!--<script src="./js/jsmap.js"></script>-->
+    <script src="./bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

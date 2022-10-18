@@ -1,0 +1,42 @@
+:root{
+    --color-fondo-os: hsl(44, 100%, 57%);
+    --color-fondo-cl: hsl(44, 100%, 81%);
+    --color-fondo-b1: hsl(89, 80%, 80%);
+    --color-fondo-b2: hsl(360, 60%, 80%);
+}
+
+body{
+  font-family: Cascadia Code;
+}
+
+.resize{
+  width: 200px;
+  height: 125px;
+}
+.resize2{
+  width: 25px;
+  height: 25px;
+}
+
+
+.fondo-imag{
+  background-image: url(../img/defawall.jpg);
+  background-repeat: no-repeat;
+  width: 100%;
+}
+
+.start-25{
+  left: 25% !important;
+}
+
+.end-10 {
+  right: 10 !important;
+}
+
+.pt-10 {
+  padding-top: 6rem !important;
+}
+
+.pb-10 {
+  padding-bottom: 6rem !important;
+}

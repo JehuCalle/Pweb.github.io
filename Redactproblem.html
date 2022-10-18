@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="./assets/css/normalize.css">
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/css/styles.css">
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+</head>
+  <body>
+    <div class="bg-info center">
+      <nav class="navbar center navbar-expand-lg navbar-light bg-light">
+          <div class="container-fluid align-content-center">
+            <a class="navbar-brand" href="#">Navbar</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNavDropdown">
+              <ul class="navbar-nav me-auto">
+                <li class="nav-item bg-danger bg-opacity-100">
+                  <a class="nav-link active" aria-current="page" href="./Index.html">Inicio</a>
+                </li>
+                <li class="nav-item bg-danger bg-opacity-75">
+                  <a class="nav-link" href="./Misdatos.html">Mis datos</a>
+                </li>
+                <li class="nav-item bg-danger bg-opacity-50">
+                  <a class="nav-link" href="./Misdirecciones.html">Mis direcciones</a>
+                </li>
+                <li class="nav-item bg-danger bg-opacity-75">
+                  <a class="nav-link" href="./Misordenes.html">Mis Ordenes</a>
+                </li>
+                <li class="nav-item bg-danger bg-opacity-100">
+                  <a class="nav-link" href="./Cuencorri.html">Cuenta corriente</a>
+                </li>
+                <li class="nav-item bg-danger bg-opacity-75">
+                  <a class="nav-link" href="./Misretiros.html">Retiros</a>
+                </li>
+                <li class="nav-item bg-danger bg-opacity-50">
+                  <a class="nav-link" href="./Problemas.html">Problemas</a>
+                </li>
+              </ul>
+              <div class="btn-group">
+                  <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                    Jehu Calle
+                  </button>
+                  <ul class="dropdown-menu dropdown-menu-dark">
+                    <li><a class="dropdown-item" href="./Misdatos.html">Mis datos</a></li>
+                    <li><a class="dropdown-item" href="./Seguienvio.html">¿SeguiEnv?</a></li>
+                    <li><a class="dropdown-item" href="./Seguiretiro.html">¿SeguiRet?</a></li>
+                    <li><a class="dropdown-item" href="./Index.html">Cerrar sesion</a></li>
+                  </ul>
+                </div>
+            </div>
+          </div>
+      </nav>
+  </div>
+    <main class="bg-primary bg-opacity-25 d-flex justify-content-center">
+        <div class="container row justify-content-center col-12">
+          <div class="row d-flex justify-content-center position-relative">
+            <form class="col-6 bg-dark bg-opacity-75 col rounded rounded-1 border border-5 border-dark">
+              <div class="border border-2 bg-warning bg-opacity-100 row justify-content-center "> 
+                <div class="col-12 row justify-content-center">
+                  <div class="col-2">
+                    <img src="./assets/img/Icon.png" alt="">
+                  </div>
+                  <div class="col-12 row">
+                    <h4 class="text-center fw-bold">Agregar problema</h4>
+                  </div>
+                </div>
+              </div>
+              <div class="border border-2 bg-warning bg-opacity-75 row justify-content-center "> 
+                <div class="col-12">
+                  <label class="form-control mb-2">Campos sin completar</label>
+                  <span class="bg-light rounded rounded-3 border border-danger border-3">* = Campos obligatorios</span>
+                </div>
+              </div>
+              <div class="border border-2 bg-warning bg-opacity-50 row justify-content-center">
+                <div class="col-12 mx-3 bg-light">
+                  <label class="col-6 h6 fw-normal mx-2" for="Agorigen">Tipo de problema<span class="text-danger">*</span></label>
+                  <label class="col-5 h6 fw-normal mx-2" for="Adestino">¿Quien redacta el problema?<span class="text-danger">*</span></label>
+                  <select class="rounded rounded-2 border border-2 border-dark col-5 p-lg-0 h6 fw-normal mx-2" id="Agorigen">
+                    <option></option>
+                    <option>Arauco</option>
+                    <option>Bio-Bio</option>
+                    <option>Ñuble</option>
+                  </select>
+                  <label class="col-1"></label>
+                  <select class="rounded rounded-2 border border-2 border-dark col-5 p-lg-0 h6 fw-normal " id="Adestino">
+                    <option></option>
+                    <option>Arauco</option>
+                    <option>Bio-Bio</option>
+                    <option>Ñuble</option>
+                  </select>
+                  <label class="col-6 h6 fw-normal mx-2" for="Cdestino">N°Orden/Retiro<span class="text-danger">*</span></label>
+                  <label class="col-5 h6 fw-normal mx-2" for="Cdestino">Boleta/Factura/Guia<span class="text-danger">*</span></label>
+                  <input type="text" class="rounded rounded-2 border border-2 border-dark col-5 mx-2 h6 fw-normal">
+                  <label class="col-auto mx-3"></label>
+                  <input type="text" class="rounded rounded-2 border border-2 border-dark col-5 mx-2 h6 fw-normal">
+                  <label class="col-12">Adjunte los archivos necesarios<span class="text-danger">*</span></label>
+                  <input class="form-control col-1" type="file" id="formFile">
+                  <label class="col-12 h6 fw-normal p-0">Tamaño maximo de archivo rar: 10MB<span class="text-danger">*</span></label>
+                  <label class="col-12 fw-bold">Comentario<span class="text-danger">*</span></label>
+                  <textarea class="form-control mb-2" id="exampleTextarea" rows="3">
+                  </textarea>
+                </div>
+
+                <div class="border border-2 bg-warning bg-opacity-100 row justify-content-center pt-2 pb-2 ">
+                  <div class="col-12 row justify-content-evenly">
+                    <a name="" id="" class="btn btn-light col-5 border border-dark border-3 h6 fw-normal" href="./Problemas.html" role="button">Cancelar</a>
+                    <a name="" id="" class="btn btn-light col-5 border border-dark border-3 h6 fw-normal" href="./Problemas.html" role="button">Agendar problema</a>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+    </main>
+    <section class="position-relative">
+      <footer class="position-relative top-1 pb-10 bg-warning">
+        
+      </footer>
+    </section>
+    <!--
+    <footer class="bg-warning border border-3 border-primary">
+      <div class="container row border border-5 border-success col-4">
+        <div class="border border-2 row col-12">
+            <div class="col-2">
+                <img class="resize" src="./img/Board.png">
+            </div>
+            <div class="row col-2">
+              <div class="col-12 align-content-start align-self-end">
+                <img class="resize2" src="./img/Facebook2.png">Chevalier
+              </div>
+              <div class="col-12 align-self-start">
+                <img class="resize2" src="./img/Instagram2.png">@Chevalier
+              </div> 
+            </div>
+        </div>
+      </div>
+    </footer>
+  -->
+    <!--<script src="./js/prim.js"></script>-->
+    <script src="./bootstrap/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
