@@ -25,7 +25,7 @@ const agregarUsuario = (rut,razonSocial,correo,telefono,pass,passRe,nombreContac
 
 btnCancelar.addEventListener('click',(event) => {
     event.preventDefault();
-    setTimeout(()=> location.href="./Index.html");
+    setTimeout(()=> location.href="./index.html");
 });
 /*
 btnEnviar.addEventListener('click',(event) => {

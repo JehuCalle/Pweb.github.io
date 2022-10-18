@@ -28,7 +28,7 @@ const agregarUsuario = (agOrigen,agDestino,cDestino,tipoCarga,cantidad,alto,anch
 /*
 btnIniciarSesion.addEventListener('click',(event) => {
     event.preventDefault();
-    setTimeout(()=> location.href="./Index.html");
+    setTimeout(()=> location.href="./index.html");
 });
 */
 btnCancelar.addEventListener('click',(event) => {

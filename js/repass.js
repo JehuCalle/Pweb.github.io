@@ -15,7 +15,7 @@ const agregarUsuario = (correo) =>{
 
 btnCancelar.addEventListener('click',(event2) => {
     event2.preventDefault();
-    setTimeout(()=> location.href="./Index.html");
+    setTimeout(()=> location.href="./index.html");
 }); 
 /*
 btnRestablecer.addEventListener('click',(event) => {

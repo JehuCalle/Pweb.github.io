@@ -17,7 +17,7 @@ const agregarUsuario = (passActual,nuevaPass,passRe) =>{
 /*
 btnIniciarSesion.addEventListener('click',(event) => {
     event.preventDefault();
-    setTimeout(()=> location.href="./Index.html");
+    setTimeout(()=> location.href="./index.html");
 });
 */
 btnCancelar.addEventListener('click',(event) => {

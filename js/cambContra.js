@@ -16,12 +16,12 @@ const agregarUsuario = (nuevaPass,passRe) =>{
 /*
 btnIniciarSesion.addEventListener('click',(event) => {
     event.preventDefault();
-    setTimeout(()=> location.href="./Index.html");
+    setTimeout(()=> location.href="./index.html");
 });
 */
 btnCancelar.addEventListener('click',(event) => {
     event.preventDefault();
-    setTimeout(()=> location.href="./Index.html");
+    setTimeout(()=> location.href="./index.html");
 });
 
 formulario.addEventListener("submit",(e)=>{
@@ -47,7 +47,7 @@ formulario.addEventListener("submit",(e)=>{
     }
     agregarUsuario(NuevaPass,PassRe);
     console.log(usuarios);
-    setTimeout(()=> location.href="./Index.html",2000);
+    setTimeout(()=> location.href="./index.html",2000);
 });
 
 //PARA QUE LOS DATOS SIGAN PRESENETES DESPUES DE ACTUALIZAR LA PAGINA
