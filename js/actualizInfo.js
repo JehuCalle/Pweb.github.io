@@ -53,7 +53,7 @@ formulario.addEventListener("submit",(e)=>{
     }
     agregarUsuario(razonSocial,giro,direccion,regiones,provincias,comunas,telefono,telefonoContact,correo,correoContact,celular,celularContact,contactoPago);
     console.log(usuarios);
-    setTimeout(()=> location.href="./MisDatos.html",2000);
+    setTimeout(()=> location.href="./Misdatos.html",2000);
 });
 
 //PARA QUE LOS DATOS SIGAN PRESENETES DESPUES DE ACTUALIZAR LA PAGINA
