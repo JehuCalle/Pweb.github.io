@@ -3,6 +3,7 @@ console.log("😼");
 const formulario = document.querySelector("#formulario");
 //const btnIniciarSesion = document.querySelector("#btnIniciarSesion");
 const btnCancelar = document.querySelector("#btnCancelar");
+const alerta = document.querySelector("#divAlerta");
 
 let usuarios = [];
 
@@ -27,7 +28,7 @@ btnCancelar.addEventListener('click',(event) => {
 
 formulario.addEventListener("submit",(e)=>{
     e.preventDefault();
-
+    alerta.classList.add("d-none");
     //console.log("Testeo Formulario");
 
     //CAPTURA TODOS LOS INPUT DE FORMULARIO
@@ -44,6 +45,7 @@ formulario.addEventListener("submit",(e)=>{
     const[passActual,nuevaPass,passRe] = [...data.values()];
     if(!(passActual).trim() || !(nuevaPass).trim() || !(passRe).trim()){
         console.log("Completa todos los campos");
+        alerta.classList.remove("d-none");
         return;
     }
     agregarUsuario(passActual,nuevaPass,passRe);

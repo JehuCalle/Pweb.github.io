@@ -4,6 +4,7 @@ const formulario = document.querySelector("#formulario");
 //const btnIniciarSesion = document.querySelector("#btnIniciarSesion");
 const btnCancelar = document.querySelector("#btnCancelar");
 const btnAgregarCarga = document.querySelector("#agregarCarga");
+const alerta = document.querySelector("#divAlerta");
 
 let usuarios = [];
 
@@ -45,7 +46,7 @@ btnCancelar.addEventListener('click',(event) => {
 
 formulario.addEventListener("submit",(e)=>{
     e.preventDefault();
-
+    alerta.classList.add("d-none");
     //console.log("Testeo Formulario");
 
     //CAPTURA TODOS LOS INPUT DE FORMULARIO
@@ -62,6 +63,7 @@ formulario.addEventListener("submit",(e)=>{
     const[aOrigen,aDestino,cDestino,tipoCarga,cantidad,alto,ancho,largo,tipoEmbalaje,valorComercial,peso,flexRadioSiNO,archivo,descripcion] = [...data.values()];
     if(!(aOrigen).trim() || !(aDestino).trim() || !(cDestino).trim() || !(tipoCarga).trim() || !(cantidad).trim() || !(alto).trim() || !(ancho).trim() || !(largo).trim() || !(tipoEmbalaje).trim() || !(valorComercial).trim() || !(peso).trim() || !(descripcion).trim()){
         console.log("Completa todos los campos");
+        alerta.classList.remove("d-none");
         return;
     }
     agregarUsuario(aOrigen,aDestino,cDestino,tipoCarga,cantidad,alto,ancho,largo,tipoEmbalaje,valorComercial,peso,flexRadioSiNO,archivo,descripcion);

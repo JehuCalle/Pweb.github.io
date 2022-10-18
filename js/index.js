@@ -2,6 +2,7 @@ console.log("😼");
 
 const formulario = document.querySelector("#formulario");
 //const btnLink = document.querySelector("#btnIniciarSesion");
+const alerta = document.querySelector("#divAlerta");
 
 let usuarios = [];
 
@@ -20,7 +21,7 @@ btnLink.addEventListener('click',(event) => {
 */
 formulario.addEventListener("submit",(e)=>{
     e.preventDefault();
-
+    alerta.classList.add("d-none");
     //console.log("Testeo Formulario");
 
     //CAPTURA TODOS LOS INPUT DE FORMULARIO
@@ -37,6 +38,7 @@ formulario.addEventListener("submit",(e)=>{
     const[rut,pass] = [...data.values()];
     if(!(rut).trim() || !(pass).trim()){
         console.log("Completa todos los campos");
+        alerta.classList.remove("d-none");
         return;
     }
     agregarUsuario(rut,pass);

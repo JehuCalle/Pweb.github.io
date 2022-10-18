@@ -2,6 +2,7 @@ console.log("😼");
 
 const formulario = document.querySelector("#formulario");
 const btnCancelar = document.querySelector("#btnCancelar");
+const alerta = document.querySelector("#divAlerta");
 
 let usuarios = [];
 
@@ -24,7 +25,7 @@ const agregarUsuario = (secPobVill,calle,numCasaDept,regiones,provincias,comunas
 
 formulario.addEventListener("submit",(e)=>{
     e.preventDefault();
-
+    alerta.classList.add("d-none");
     //console.log("Testeo Formulario");
 
     //CAPTURA TODOS LOS INPUT DE FORMULARIO
@@ -41,6 +42,7 @@ formulario.addEventListener("submit",(e)=>{
     const[secPobVill,calle,numCasaDept,regiones,provincias,comunas] = [...data.values()];
     if(!(secPobVill).trim() || !(calle).trim() || !(numCasaDept).trim() || !(regiones).trim() || !(provincias).trim() || !(comunas).trim()){
         console.log("Completa todos los campos");
+        alerta.classList.remove("d-none");
         return;
     }
     agregarUsuario(secPobVill,calle,numCasaDept,regiones,provincias,comunas);

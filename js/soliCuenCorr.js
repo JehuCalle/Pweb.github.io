@@ -2,6 +2,7 @@ console.log("😼");
 
 const formulario = document.querySelector("#formulario");
 const btnCancelar = document.querySelector("#btnCancelar");
+const alerta = document.querySelector("#divAlerta");
 
 let usuarios = [];
 
@@ -34,7 +35,7 @@ btnCancelar.addEventListener('click',(event) => {
 
 formulario.addEventListener("submit",(e)=>{
     e.preventDefault();
-
+    alerta.classList.add("d-none");
     //console.log("Testeo Formulario");
 
     //CAPTURA TODOS LOS INPUT DE FORMULARIO
@@ -51,6 +52,7 @@ formulario.addEventListener("submit",(e)=>{
     const[rut,razonSocial,direccion,regiones,provincias,comunas,tipoCarga,kilosDiarios,rutContact,nombres,apellidos,telefono,emailContacto,archivos,comentario] = [...data.values()];
     if(!(rut).trim() || !(razonSocial).trim() || !(direccion).trim() || !(regiones).trim() || !(provincias).trim() || !(comunas).trim() || !(tipoCarga).trim() || !(kilosDiarios).trim() || !(rutContact).trim() || !(nombres).trim() || !(apellidos).trim() || !(telefono).trim() || !(emailContacto).trim() || !(comentario).trim()){
         console.log("Completa todos los campos");
+        alerta.classList.remove("d-none");
         return;
     }
     agregarUsuario(rut,razonSocial,direccion,regiones,provincias,comunas,tipoCarga,kilosDiarios,rutContact,nombres,apellidos,telefono,emailContacto,archivos,comentario);

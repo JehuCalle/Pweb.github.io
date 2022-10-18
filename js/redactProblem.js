@@ -3,6 +3,7 @@ console.log("😼");
 const formulario = document.querySelector("#formulario");
 //const btnIniciarSesion = document.querySelector("#btnIniciarSesion");
 const btnCancelar = document.querySelector("#btnCancelar");
+const alerta = document.querySelector("#divAlerta");
 
 let usuarios = [];
 
@@ -31,7 +32,7 @@ btnCancelar.addEventListener('click',(event) => {
 
 formulario.addEventListener("submit",(e)=>{
     e.preventDefault();
-
+    alerta.classList.add("d-none");
     //console.log("Testeo Formulario");
 
     //CAPTURA TODOS LOS INPUT DE FORMULARIO
@@ -48,6 +49,7 @@ formulario.addEventListener("submit",(e)=>{
     const[tipoProblem,quienRedacta,numOrdenRetiro,boletFacturGuia,archivo,comentario] = [...data.values()];
     if(!(tipoProblem).trim() || !(quienRedacta).trim() || !(numOrdenRetiro).trim() || !(boletFacturGuia).trim() || !(comentario).trim()){
         console.log("Completa todos los campos");
+        alerta.classList.remove("d-none");
         return;
     }
     agregarUsuario(tipoProblem,quienRedacta,numOrdenRetiro,boletFacturGuia,archivo,comentario);
