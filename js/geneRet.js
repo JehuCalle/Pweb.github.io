@@ -157,14 +157,14 @@ formulario.addEventListener("submit",(e)=>{
         }
         c++;
     }
-if(!contenImputs[0].value == "" && !contenImputs[1].value == "" && !contenImputs[2].value == "" && !contenImputs[3].value == "" && !contenImputs[4].value == "" && !contenImputs[5].value == "" && !contenImputs[6].value == "" && !contenFlexRadio[0].value == "" && !contenFlexRadio[1].value == "" && !contenSelect[0].value == "" && !contenSelect[1].value == "" && !contenSelect[2].value == "" && !contenSelect[3].value == "" && !contenSelect[4].value == "" && !contenTextarea[0].value == ""){
-    console.log("FIN")
-    agregarUsuario(aOrigen,aDestino,cDestino,tipoCarga,cantidad,alto,ancho,largo,tipoEmbalaje,valorComercial,peso,flexRadioSiNO,archivo,descripcion);
-    alerta.classList.add("d-none");
-    console.log(usuarios)
-    setTimeout(()=> location.href="./Misretiros.html",2000);
-    return;
-}
+    if(!contenImputs[0].value == "" && !contenImputs[1].value == "" && !contenImputs[2].value == "" && !contenImputs[3].value == "" && !contenImputs[4].value == "" && !contenImputs[5].value == "" && !contenImputs[6].value == "" && !contenFlexRadio[0].value == "" && !contenFlexRadio[1].value == "" && !contenSelect[0].value == "" && !contenSelect[1].value == "" && !contenSelect[2].value == "" && !contenSelect[3].value == "" && !contenSelect[4].value == "" && !contenTextarea[0].value == ""){
+        console.log("FIN")
+        agregarUsuario(aOrigen,aDestino,cDestino,tipoCarga,cantidad,alto,ancho,largo,tipoEmbalaje,valorComercial,peso,flexRadioSiNO,archivo,descripcion);
+        alerta.classList.add("d-none");
+        console.log(usuarios)
+        setTimeout(()=> location.href="./Misretiros.html",2000);
+        return;
+    }
 ///////////////////////////////////////////////
 });
 

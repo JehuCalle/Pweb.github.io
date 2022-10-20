@@ -7,11 +7,14 @@ const btnAgregarCarga = document.querySelector("#agregarCarga");
 const alerta = document.querySelector("#divAlerta");
 
 ///////////////////////////////////////////////
+const test = document.querySelectorAll(".shadow-sm");
+const contenImputs = [];
+
 const test2 = document.querySelectorAll("select");
 const contenSelect = [];
 
-const test = document.querySelectorAll("input");
-const contenImputs = [];
+const test4 = document.querySelectorAll("input[type='radio']");
+const contenFlexRadio = [];
 ///////////////////////////////////////////////
 
 let usuarios = [];
@@ -64,51 +67,71 @@ formulario.addEventListener("submit",(e)=>{
     //SE ALMACENAN TODOS LOS DATOS DE LOS INPUT EN EL [...data.values()] Y SE TRANSLADAN A [todo]
     const[aOrigen,aDestino,cDestino,tipoCarga,cantidad,alto,ancho,largo,tipoEmbalaje,valorComercial,peso,flexRadioSiNO,archivo] = [...data.values()];
 ///////////////////////////////////////////////
-let i = 0
-contenImputs.splice(0,7);
-while (i < 6) {
-    const inputCorr = test[i];
-    contenImputs.push(inputCorr);
-    if(contenImputs[i].value == ""){
-        contenImputs[i].classList.remove("border-dark");
-        contenImputs[i].classList.add("border-danger");
-        console.log("FALTAN-V1")
-    }else if(!contenImputs[i].value == ""){
-        contenImputs[i].classList.remove("border-danger");
-        contenImputs[i].classList.remove("border-dark");
-        contenImputs[i].classList.add("border-success");
-        console.log("FALTAN-V2")
+    let i = 0
+    contenImputs.splice(0,8);
+    while (i < 7) {
+        const inputCorr = test[i];
+        contenImputs.push(inputCorr);
+        if(contenImputs[i].value == ""){
+            contenImputs[i].classList.remove("border-dark");
+            contenImputs[i].classList.add("border-danger");
+            console.log("FALTAN-V1")
+        }else if(!contenImputs[i].value == ""){
+            contenImputs[i].classList.remove("border-danger");
+            contenImputs[i].classList.remove("border-dark");
+            contenImputs[i].classList.add("border-success");
+            console.log("FALTAN-V2")
+        }
+        i++
     }
-    i++
-}
-let a = 0
-contenSelect.splice(0,6);
-while (a < 5) {
-    const selectCorr = test2[a];
-    contenSelect.push(selectCorr);
-    if(contenSelect[a].value == ""){
-        contenSelect[a].classList.remove("border-dark");
-        contenSelect[a].classList.add("border-danger");
-        alerta.classList.remove("d-none");
-        console.log("FALTAN-V1")
-    }else if(!contenSelect[a].value == ""){
-        contenSelect[a].classList.remove("border-danger");
-        contenSelect[a].classList.remove("border-dark");
-        contenSelect[a].classList.add("border-success");
-        alerta.classList.remove("d-none");
-        console.log("FALTAN-V2")
+    let a = 0
+    contenSelect.splice(0,6);
+    while (a < 5) {
+        const selectCorr = test2[a];
+        contenSelect.push(selectCorr);
+        if(contenSelect[a].value == ""){
+            contenSelect[a].classList.remove("border-dark");
+            contenSelect[a].classList.add("border-danger");
+            alerta.classList.remove("d-none");
+            console.log("FALTAN-V1")
+        }else if(!contenSelect[a].value == ""){
+            contenSelect[a].classList.remove("border-danger");
+            contenSelect[a].classList.remove("border-dark");
+            contenSelect[a].classList.add("border-success");
+            alerta.classList.remove("d-none");
+            console.log("FALTAN-V2")
+        }
+        a++
     }
-    a++
-}
+    let c = 0;
+    contenFlexRadio.splice(0,3);
+    //console.log(contenTextarea)
+    //contenTextarea[0].value == "on"
+    while (c < 2) {
+        const selectCorr = test4[c];
+        contenFlexRadio.push(selectCorr);
+        if(contenFlexRadio[c].checked === false){
+            contenFlexRadio[c].classList.remove("border-success");
+            contenFlexRadio[c].classList.add("border-dark");
+            console.log("FALTAN-V1");
+        }else if(!contenFlexRadio[c].checked === false){
+            contenFlexRadio[c].classList.remove("border-danger");
+            contenFlexRadio[c].classList.remove("border-dark");
+            contenFlexRadio[c].classList.add("border-success");
+            alerta.classList.remove("d-none");
+            console.log("FALTAN-V2");
+        }
+        c++;
+    }
 
-if(!contenImputs[0].value == "" && !contenImputs[1].value == "" && !contenImputs[2].value == "" && !contenImputs[3].value == "" && !contenImputs[4].value == "" && !contenSelect[0].value == "" && !contenSelect[1].value == "" && !contenSelect[2].value == "" && !contenSelect[3].value == "" && !contenSelect[4].value == ""){
-    console.log("FIN")
-    agregarUsuario(aOrigen,aDestino,cDestino,tipoCarga,cantidad,alto,ancho,largo,tipoEmbalaje,valorComercial,peso,flexRadioSiNO,archivo);
-    alerta.classList.add("d-none");
-    console.log(usuarios)
-    setTimeout(()=> location.href="./Misordenes.html",2000);
-    return;
-}
+    if(!contenImputs[0].value == "" && !contenImputs[1].value == "" && !contenImputs[2].value == "" && !contenImputs[3].value == "" && !contenImputs[4].value == "" && !contenImputs[5].value == "" && !contenImputs[6].value == "" && !contenFlexRadio[0].value == "" && !contenFlexRadio[1].value == "" && !contenSelect[0].value == "" && !contenSelect[1].value == "" && !contenSelect[2].value == "" && !contenSelect[3].value == "" && !contenSelect[4].value == ""){
+        console.log("FIN")
+        agregarUsuario(aOrigen,aDestino,cDestino,tipoCarga,cantidad,alto,ancho,largo,tipoEmbalaje,valorComercial,peso,flexRadioSiNO,archivo);
+        alerta.classList.add("d-none");
+        console.log(usuarios)
+        setTimeout(()=> location.href="./Misordenes.html",2000);
+        return;
+    }
 ///////////////////////////////////////////////
 });
 
