@@ -79,7 +79,7 @@ formulario.addEventListener("submit",(e)=>{
         agregarUsuario(passActual,nuevaPass,passRe);
         alerta.classList.add("d-none");
         console.log(usuarios)
-        setTimeout(()=> location.href="./MisDatos.html",2000);
+        setTimeout(()=> location.href="./Misdatos.html",2000);
         return;
     }
 ///////////////////////////////////////////////
