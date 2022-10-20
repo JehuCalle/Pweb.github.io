@@ -6,12 +6,20 @@ const btnCancelar = document.querySelector("#btnCancelar");
 const btnAgregarCarga = document.querySelector("#agregarCarga");
 const alerta = document.querySelector("#divAlerta");
 
+///////////////////////////////////////////////
+const test2 = document.querySelectorAll("select");
+const contenSelect = [];
+
+const test = document.querySelectorAll("input");
+const contenImputs = [];
+///////////////////////////////////////////////
+
 let usuarios = [];
 
-const agregarUsuario = (agOrigen,agDestino,cDestino,tipoCarga,cantidad,alto,ancho,largo,tipoEmbalaje,valorComercial,peso,flexRadioSiNO,archivo) =>{
+const agregarUsuario = (aOrigen,aDestino,cDestino,tipoCarga,cantidad,alto,ancho,largo,tipoEmbalaje,valorComercial,peso,flexRadioSiNO,archivo) =>{
     const objetoTodo = {
-        AgenciaOrigen: agOrigen,
-        AgenciaDestino: agDestino,
+        AgenciaOrigen: aOrigen,
+        AgenciaDestino: aDestino,
         ComunaDestino: cDestino,
         TipoCarg: tipoCarga,
         Cantidad: cantidad,
@@ -41,7 +49,8 @@ formulario.addEventListener("submit",(e)=>{
     e.preventDefault();
     alerta.classList.add("d-none");
     //console.log("Testeo Formulario");
-
+    //PARA QUE NO SE PUEDA AGREGAR MÁS USUARIOS AL APRETAR INICIAR SESION REPETIDAS VECES
+    usuarios.pop();
     //CAPTURA TODOS LOS INPUT DE FORMULARIO
     const data = new FormData(formulario);
     /*
@@ -53,15 +62,54 @@ formulario.addEventListener("submit",(e)=>{
     })
     */
     //SE ALMACENAN TODOS LOS DATOS DE LOS INPUT EN EL [...data.values()] Y SE TRANSLADAN A [todo]
-    const[agOrigen,agDestino,cDestino,tipoCarga,cantidad,alto,ancho,largo,tipoEmbalaje,valorComercial,peso,flexRadioSiNO,archivo] = [...data.values()];
-    if(!(agOrigen).trim() || !(agDestino).trim() || !(cDestino).trim() || !(tipoCarga).trim() || !(cantidad).trim() || !(alto).trim() || !(ancho).trim() || !(largo).trim() || !(tipoEmbalaje).trim() || !(valorComercial).trim() || !(peso).trim()){
-        console.log("Completa todos los campos");
-        alerta.classList.remove("d-none");
-        return;
+    const[aOrigen,aDestino,cDestino,tipoCarga,cantidad,alto,ancho,largo,tipoEmbalaje,valorComercial,peso,flexRadioSiNO,archivo] = [...data.values()];
+///////////////////////////////////////////////
+let i = 0
+contenImputs.splice(0,7);
+while (i < 6) {
+    const inputCorr = test[i];
+    contenImputs.push(inputCorr);
+    if(contenImputs[i].value == ""){
+        contenImputs[i].classList.remove("border-dark");
+        contenImputs[i].classList.add("border-danger");
+        console.log("FALTAN-V1")
+    }else if(!contenImputs[i].value == ""){
+        contenImputs[i].classList.remove("border-danger");
+        contenImputs[i].classList.remove("border-dark");
+        contenImputs[i].classList.add("border-success");
+        console.log("FALTAN-V2")
     }
-    agregarUsuario(agOrigen,agDestino,cDestino,tipoCarga,cantidad,alto,ancho,largo,tipoEmbalaje,valorComercial,peso,flexRadioSiNO,archivo);
-    console.log(usuarios);
-    setTimeout(()=> location.href="./Misordenes.html",500);
+    i++
+}
+let a = 0
+contenSelect.splice(0,6);
+while (a < 5) {
+    const selectCorr = test2[a];
+    contenSelect.push(selectCorr);
+    if(contenSelect[a].value == ""){
+        contenSelect[a].classList.remove("border-dark");
+        contenSelect[a].classList.add("border-danger");
+        alerta.classList.remove("d-none");
+        console.log("FALTAN-V1")
+    }else if(!contenSelect[a].value == ""){
+        contenSelect[a].classList.remove("border-danger");
+        contenSelect[a].classList.remove("border-dark");
+        contenSelect[a].classList.add("border-success");
+        alerta.classList.remove("d-none");
+        console.log("FALTAN-V2")
+    }
+    a++
+}
+
+if(!contenImputs[0].value == "" && !contenImputs[1].value == "" && !contenImputs[2].value == "" && !contenImputs[3].value == "" && !contenImputs[4].value == "" && !contenSelect[0].value == "" && !contenSelect[1].value == "" && !contenSelect[2].value == "" && !contenSelect[3].value == "" && !contenSelect[4].value == ""){
+    console.log("FIN")
+    agregarUsuario(aOrigen,aDestino,cDestino,tipoCarga,cantidad,alto,ancho,largo,tipoEmbalaje,valorComercial,peso,flexRadioSiNO,archivo);
+    alerta.classList.add("d-none");
+    console.log(usuarios)
+    setTimeout(()=> location.href="./Misordenes.html",2000);
+    return;
+}
+///////////////////////////////////////////////
 });
 
 //PARA QUE LOS DATOS SIGAN PRESENETES DESPUES DE ACTUALIZAR LA PAGINA

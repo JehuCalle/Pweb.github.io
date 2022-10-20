@@ -5,7 +5,10 @@ const btnCancelar = document.querySelector("#btnCancelar");
 //const btnRestablecer = document.querySelector("#btnRestablecer");
 const alerta = document.querySelector("#divAlerta");
 const correoUser = document.querySelector("#correo")
-
+///////////////////////////////////////////////
+const test = document.querySelectorAll("input");
+const contenImputs = [];
+///////////////////////////////////////////////
 let usuarios = [];
 
 const agregarUsuario = (correo) =>{
@@ -31,6 +34,9 @@ formulario.addEventListener("submit",(e)=>{
     alerta.classList.add("d-none");
     //console.log("Testeo Formulario");
 
+    //PARA QUE NO SE PUEDA AGREGAR MÁS USUARIOS AL APRETAR INICIAR SESION REPETIDAS VECES
+    usuarios.pop();
+
     //CAPTURA TODOS LOS INPUT DE FORMULARIO
     const data = new FormData(formulario);
     /*
@@ -43,24 +49,37 @@ formulario.addEventListener("submit",(e)=>{
     */
     //SE ALMACENAN TODOS LOS DATOS DE LOS INPUT EN EL [...data.values()] Y SE TRANSLADAN A [todo]
     const[correo] = [...data.values()];
-    if(!(correo).trim()){
-        console.log("Completa todos los campos");
+
+///////////////////////////////////////////////
+let i = 0
+contenImputs.splice(0,2);
+while (i < 1) {
+    const inputCorr = test[i];
+    contenImputs.push(inputCorr);
+    if(contenImputs[i].value == ""){
+        contenImputs[i].classList.remove("border-dark");
+        contenImputs[i].classList.add("border-danger");
         alerta.classList.remove("d-none");
-        correoUser.classList.remove("border-dark");
-        correoUser.classList.remove("is-valid");
-        correoUser.classList.add("border-danger");
-        correoUser.classList.add("is-invalid");
-        return;
-    }else{
-        correoUser.classList.remove("border-dark");
-        correoUser.classList.remove("border-danger");
-        correoUser.classList.remove("is-invalid");
-        correoUser.classList.add("is-valid");
-        correoUser.classList.add("border-success");
+        console.log("FALTAN-V1")
+    }else if(!contenImputs[i].value == ""){
+        contenImputs[i].classList.remove("border-danger");
+        contenImputs[i].classList.remove("border-dark");
+        contenImputs[i].classList.add("border-success");
+        alerta.classList.remove("d-none");
+        console.log("FALTAN-V2")
     }
+    i++
+}
+
+if(!contenImputs[0].value == ""){
+    console.log("FIN")
     agregarUsuario(correo);
-    console.log(usuarios);
+    alerta.classList.add("d-none");
+    console.log(usuarios)
     setTimeout(()=> location.href="./Cambcontra.html",2000);
+    return;
+}
+///////////////////////////////////////////////
 });
 
 //PARA QUE LOS DATOS SIGAN PRESENETES DESPUES DE ACTUALIZAR LA PAGINA

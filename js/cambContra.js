@@ -8,6 +8,10 @@ const alerta = document.querySelector("#divAlerta");
 const nuevaPassUser = document.querySelector("#nuevaPass");
 const passReUser = document.querySelector("#passRe");
 
+///////////////////////////////////////////////
+const test = document.querySelectorAll("input");
+const contenImputs = [];
+///////////////////////////////////////////////
 
 let usuarios = [];
 
@@ -34,6 +38,9 @@ formulario.addEventListener("submit",(e)=>{
     alerta.classList.add("d-none");
     //console.log("Testeo Formulario");
 
+    //PARA QUE NO SE PUEDA AGREGAR MÁS USUARIOS AL APRETAR INICIAR SESION REPETIDAS VECES
+    usuarios.pop();
+
     //CAPTURA TODOS LOS INPUT DE FORMULARIO
     const data = new FormData(formulario);
     /*
@@ -46,41 +53,36 @@ formulario.addEventListener("submit",(e)=>{
     */
     //SE ALMACENAN TODOS LOS DATOS DE LOS INPUT EN EL [...data.values()] Y SE TRANSLADAN A [todo]
     const[NuevaPass,PassRe] = [...data.values()];
-    if(!(NuevaPass).trim()){
-        console.log("Completa todos los campos");
-        alerta.classList.remove("d-none");
-        nuevaPassUser.classList.remove("border-dark");
-        nuevaPassUser.classList.remove("border-success");
-        nuevaPassUser.classList.remove("is-valid");
-        nuevaPassUser.classList.add("border-danger");
-        nuevaPassUser.classList.add("is-invalid");
-        return;
-    }else{
-        nuevaPassUser.classList.remove("border-dark");
-        nuevaPassUser.classList.remove("border-danger");
-        nuevaPassUser.classList.remove("is-invalid");
-        nuevaPassUser.classList.add("border-success");
-        nuevaPassUser.classList.add("is-valid");
+///////////////////////////////////////////////
+    let i = 0
+    contenImputs.splice(0,3);
+    while (i < 2) {
+        const inputCorr = test[i];
+        contenImputs.push(inputCorr);
+        if(contenImputs[i].value == ""){
+            contenImputs[i].classList.remove("border-dark");
+            contenImputs[i].classList.add("border-danger");
+            alerta.classList.remove("d-none");
+            console.log("FALTAN-V1")
+        }else if(!contenImputs[i].value == ""){
+            contenImputs[i].classList.remove("border-danger");
+            contenImputs[i].classList.remove("border-dark");
+            contenImputs[i].classList.add("border-success");
+            alerta.classList.remove("d-none");
+            console.log("FALTAN-V2")
+        }
+        i++
     }
-    if(!(PassRe).trim()){
-        console.log("Completa todos los campos");
-        alerta.classList.remove("d-none");
-        passReUser.classList.remove("border-dark");
-        passReUser.classList.remove("border-success");
-        passReUser.classList.remove("is-valid");
-        passReUser.classList.add("border-danger");
-        passReUser.classList.add("is-invalid");
+
+    if(!contenImputs[0].value == "" && !contenImputs[1].value == ""){
+        console.log("FIN")
+        agregarUsuario(NuevaPass,PassRe);
+        alerta.classList.add("d-none");
+        console.log(usuarios)
+        setTimeout(()=> location.href="./index.html",2000);
         return;
-    }else{
-        passReUser.classList.remove("border-dark");
-        passReUser.classList.remove("border-danger");
-        passReUser.classList.remove("is-invalid");
-        passReUser.classList.add("border-success");
-        passReUser.classList.add("is-valid");
     }
-    agregarUsuario(NuevaPass,PassRe);
-    console.log(usuarios);
-    setTimeout(()=> location.href="./index.html",2000);
+///////////////////////////////////////////////
 });
 
 //PARA QUE LOS DATOS SIGAN PRESENETES DESPUES DE ACTUALIZAR LA PAGINA

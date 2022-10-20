@@ -58,41 +58,41 @@
     </nav>
 </div>
     <main class="bg-primary bg-opacity-25 d-flex justify-content-center">
-      <form class="col-12 bg-dark bg-opacity-75 col rounded rounded-1 border border-5 border-dark">
-        <h2 class="text-light">Mis retiros / Transportes Chevalier</h2>
-        <div class="border border-2 bg-warning bg-opacity-100 row justify-content-center "> 
-          <div class="col-12 row justify-content-center">
-            <div class="col-1">
-              <img src="./assets/img/Icon.png" alt="">
-            </div>
-            <div class="col-12 row">
-              <h4 class="text-center fw-bold">Lista de retiros</h4>
-            </div>
-          </div>
-        </div>
-        <div class="border border-2 bg-warning bg-opacity-75 row justify-content-center"> 
-          <div class="col-12">
-            <label id="divAlerta" class="bg-light mb-2 border border-3 border-success rounded rounded-3 p-1 col-12">Retiro agendado correctamente</label>
-          </div>
-        </div>
-
-        <div class="border border-2 bg-warning bg-opacity-50 row justify-content-center pt-3 p-0">
-          <div class="col-12 row justify-content-center">
-
-            <div class="row justify-content-end col-12">
-              <div class="col-7 row justify-content-center ">
-                <div class="row justify-content-center align-items-center">
-                  <label class="col-3 h6 fw-bold mt-5 mb-0">Fecha desde</label>
-                  <label class="col-5 h6 fw-bold mx-2 mt-5 mb-0">Fecha hasta</label>
-                  <label class="col-2 h6 fw-bold"></label>
-                  <input type="text" class="rounded rounded-2 border border-2 border-dark col-3 p-0 h6 fw-normal text-center mb-5" placeholder="dd/mm/yyyy">
-                  <input type="text" class="rounded rounded-2 border border-2 border-dark col-3 p-0 h6 fw-normal text-center mx-2 mb-5" placeholder="dd/mm/yyyy">
-                  <a name="" id="" class="btn btn-light border border-dark border-2 mt-2 h6 fw-normal col-2 p-0 mx-4 mb-5" href="#" role="button">Buscar</a>
-                  <label class="col-1 h6 fw-bold"></label>
-                </div>
+      <div class="container row justify-content-center col-12">
+        <form class="col-12 bg-dark bg-opacity-75 col rounded rounded-1 border border-5 border-dark">
+          <h2 class="text-light">Mis retiros / Transportes Chevalier</h2>
+          <div class="border border-2 bg-warning bg-opacity-100 row justify-content-center "> 
+            <div class="col-12 row justify-content-center">
+              <div class="col-1">
+                <img src="./assets/img/Icon.png" alt="">
               </div>
-              <div class="col-5 row justify-content-center ">
-                <div class="row justify-content-start align-items-center">
+              <div class="col-12 row">
+                <h4 class="text-center fw-bold">Lista de retiros</h4>
+              </div>
+            </div>
+          </div>
+          <div class="border border-2 bg-warning bg-opacity-75 row justify-content-center"> 
+            <div class="col-12">
+              <label id="divAlerta" class="bg-light mb-2 border border-3 border-success rounded rounded-3 p-1 col-12">Retiro agendado correctamente</label>
+            </div>
+          </div>
+  
+          <div class="border border-2 bg-warning bg-opacity-50 row justify-content-center pt-3 p-0">
+            <div class="col-12 row justify-content-center">
+  
+              <div class="row justify-content-end col-12">
+                <div class="col-7 row justify-content-center ">
+                  <div class="row justify-content-center align-items-center">
+                    <label class="col-3 h6 fw-bold mt-5 mb-0">Fecha desde</label>
+                    <label class="col-5 h6 fw-bold mx-2 mt-5 mb-0">Fecha hasta</label>
+                    <label class="col-2 h6 fw-bold"></label>
+                    <input type="text" class="rounded rounded-2 border border-2 border-dark col-3 p-0 h6 fw-normal text-center mb-5" placeholder="dd/mm/yyyy">
+                    <input type="text" class="rounded rounded-2 border border-2 border-dark col-3 p-0 h6 fw-normal text-center mx-2 mb-5" placeholder="dd/mm/yyyy">
+                    <a name="" id="" class="btn btn-light border border-dark border-2 h6 fw-normal col-2 p-0 mx-4 mb-5" href="#" role="button">Buscar</a>
+                    <label class="col-1 h6 fw-bold"></label>
+                  </div>
+                </div>
+                <div class="col-5 row align-items-center">
                   <label class="col-5 h5 fw-bold text-center">Carga masiva</label>
                   <label class="col-6 h5 fw-bold text-center mx-1">Carga simple</label>
                   
@@ -101,153 +101,152 @@
                   <a name="" id="" class="btn btn-light col-5 border border-dark border-2 mb-3 mt-1 p-0" href="./Generet.html" role="button">Agendar retiro</a>
                 </div>
               </div>
-            </div>
-
-            <div class="container p-3 row justify-content-center">
-              <div class="tab-content bg-secondary rounded rounded-2 border border-dark border-2 p-0">
-                <select class="rounded rounded-2 border border-2 border-dark p-0 mb-2 mt-2 fw-bold mx-3" id="Provincias">
-                  <option>5</option>
-                  <option>10</option>
-                  <option>15</option>
-                  <option>20</option>
-                </select>
-                <label class="col-7 h6 fw-bold" for="Comunas">Registros por Pagina</label>
-                <input type="text" class="rounded rounded-2 border border-2 border-dark col-3 fw-bold" placeholder="Buscar">
-
-                <div class="tab-pane active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                  <table class="table table-hover table-responsive table-borderless justify-content-center">
-                    <thead>
-                      <tr>
-                        <th scope="col" class="text-center col-2 rounded rounded-2 bg-dark bg-opacity-25 h6 fw-bold">Direccion</th>
-                        <th scope="col" class="text-center col-1 rounded rounded-2 bg-dark bg-opacity-25 h6 fw-bold">Cantidad</th>
-                        <th scope="col" class="text-center col-1 rounded rounded-2 bg-dark bg-opacity-25 h6 fw-bold">Telefono</th>
-                        <th scope="col" class="text-center col-1 rounded rounded-2 bg-dark bg-opacity-25 h6 fw-bold">Fecha</th>
-                        <th scope="col" class="text-center col-2 rounded rounded-2 bg-dark bg-opacity-25 h6 fw-bold">Comentario</th>
-                        <th scope="col" class="text-center col-1 rounded rounded-2 bg-dark bg-opacity-25 h6 fw-bold">Estado</th>
-                        <th scope="col" class="text-center col-1 rounded rounded-2 bg-dark bg-opacity-25 h6 fw-bold">Acciones</th>
-                        <th scope="col" class="text-center col-1 rounded rounded-2 bg-dark bg-opacity-25 h6 fw-bold">Detalles</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td class=" rounded rounded-2 bg-light h6 fw-normal p-0 text-center">Camino las mariposas km 13.5 Villa mirasol Pasaje 4 Casa 4</td>
-                        <td class=" rounded rounded-2 bg-light h6 fw-normal text-center">99</td>
-                        <td class=" rounded rounded-2 bg-light h6 fw-normal text-center">9 88906865</td>
-                        <td class=" rounded rounded-2 bg-light h6 fw-normal text-center">99/99/99</td>
-                        <td class=" rounded rounded-2 bg-light h6 fw-normal text-center p-0">Lorem ipsum dolor sit amet consectetur adipisicing elit.</td>
-                        <td class=" rounded rounded-2 bg-light h6 fw-normal text-center">Cancelado</td>
-                        <td class=" rounded rounded-2 bg-light h6 fw-normal"></td>
-                        <td class=" rounded rounded-2 bg-light h6 fw-normal text-center fw-bold pt-2"><a class="text-danger text-decoration-none" href="./Detaretiro.html">Ver detalles</a></td>
-                      </tr>
-                      <tr>
-                        <td class=" rounded rounded-2 bg-light h6 fw-normal p-0 text-center">Camino las mariposas km 13.5 Villa mirasol Pasaje 4 Casa 4</td>
-                        <td class=" rounded rounded-2 bg-light h6 fw-normal text-center">99</td>
-                        <td class=" rounded rounded-2 bg-light h6 fw-normal text-center">9 88906865</td>
-                        <td class=" rounded rounded-2 bg-light h6 fw-normal text-center">99/99/99</td>
-                        <td class=" rounded rounded-2 bg-light h6 fw-normal text-center p-0">Lorem ipsum dolor sit amet consectetur adipisicing elit.</td>
-                        <td class=" rounded rounded-2 bg-light h6 fw-normal text-center">Cancelado</td>
-                        <td class=" rounded rounded-2 bg-light h6 fw-normal"></td>
-                        <td class=" rounded rounded-2 bg-light h6 fw-normal text-center fw-bold pt-2"><a class="text-danger text-decoration-none" href="./Detaretiro.html">Ver detalles</a></td>
-                      </tr>
-                      <tr>
-                        <td class=" rounded rounded-2 bg-light h6 fw-normal p-0 text-center">Camino las mariposas km 13.5 Villa mirasol Pasaje 4 Casa 4</td>
-                        <td class=" rounded rounded-2 bg-light h6 fw-normal text-center">99</td>
-                        <td class=" rounded rounded-2 bg-light h6 fw-normal text-center">9 88906865</td>
-                        <td class=" rounded rounded-2 bg-light h6 fw-normal text-center">99/99/99</td>
-                        <td class=" rounded rounded-2 bg-light h6 fw-normal text-center p-0">Lorem ipsum dolor sit amet consectetur adipisicing elit.</td>
-                        <td class=" rounded rounded-2 bg-light h6 fw-normal text-center">Cancelado</td>
-                        <td class=" rounded rounded-2 bg-light h6 fw-normal"></td>
-                        <td class=" rounded rounded-2 bg-light h6 fw-normal text-center fw-bold pt-2"><a class="text-danger text-decoration-none" href="./Detaretiro.html">Ver detalles</a></td>
-                      </tr>
-                      <tr>
-                        <td class=" rounded rounded-2 bg-light h6 fw-normal p-0 text-center">Camino las mariposas km 13.5 Villa mirasol Pasaje 4 Casa 4</td>
-                        <td class=" rounded rounded-2 bg-light h6 fw-normal text-center">99</td>
-                        <td class=" rounded rounded-2 bg-light h6 fw-normal text-center">9 88906865</td>
-                        <td class=" rounded rounded-2 bg-light h6 fw-normal text-center">99/99/99</td>
-                        <td class=" rounded rounded-2 bg-light h6 fw-normal text-center p-0">Lorem ipsum dolor sit amet consectetur adipisicing elit.</td>
-                        <td class=" rounded rounded-2 bg-light h6 fw-normal text-center">Cancelado</td>
-                        <td class=" rounded rounded-2 bg-light h6 fw-normal"></td>
-                        <td class=" rounded rounded-2 bg-light h6 fw-normal text-center fw-bold pt-2"><a class="text-danger text-decoration-none" href="./Detaretiro.html">Ver detalles</a></td>
-                      </tr>
-                      <tr>
-                        <td class=" rounded rounded-2 bg-light h6 fw-normal p-0 text-center">Camino las mariposas km 13.5 Villa mirasol Pasaje 4 Casa 4</td>
-                        <td class=" rounded rounded-2 bg-light h6 fw-normal text-center">99</td>
-                        <td class=" rounded rounded-2 bg-light h6 fw-normal text-center">9 88906865</td>
-                        <td class=" rounded rounded-2 bg-light h6 fw-normal text-center">99/99/99</td>
-                        <td class=" rounded rounded-2 bg-light h6 fw-normal text-center p-0">Lorem ipsum dolor sit amet consectetur adipisicing elit.</td>
-                        <td class=" rounded rounded-2 bg-light h6 fw-normal text-center">Cancelado</td>
-                        <td class=" rounded rounded-2 bg-light h6 fw-normal"></td>
-                        <td class=" rounded rounded-2 bg-light h6 fw-normal text-center fw-bold pt-2"><a class="text-danger text-decoration-none" href="./Detaretiro.html">Ver detalles</a></td>
-                      </tr>
-                    </tbody>
-                  </table>
+  
+              <div class="container row justify-content-center p-0">
+                <div class="tab-content bg-secondary rounded rounded-2 border border-dark border-2 p-0">
+                  <select class="rounded rounded-2 border border-2 border-dark p-0 mb-2 mt-2 fw-bold mx-3" id="Provincias">
+                    <option>5</option>
+                    <option>10</option>
+                    <option>15</option>
+                    <option>20</option>
+                  </select>
+                  <label class="col-7 h6 fw-bold" for="Comunas">Registros por Pagina</label>
+                  <input type="text" class="rounded rounded-2 border border-2 border-dark col-3 fw-bold" placeholder="Buscar">
+  
+                  <div class="tab-pane active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                    <table class="table table-hover table-responsive table-borderless justify-content-center">
+                      <thead>
+                        <tr>
+                          <th scope="col" class="text-center col-2 rounded rounded-2 bg-dark bg-opacity-25 h6 fw-bold">Direccion</th>
+                          <th scope="col" class="text-center col-1 rounded rounded-2 bg-dark bg-opacity-25 h6 fw-bold">Cantidad</th>
+                          <th scope="col" class="text-center col-1 rounded rounded-2 bg-dark bg-opacity-25 h6 fw-bold">Telefono</th>
+                          <th scope="col" class="text-center col-1 rounded rounded-2 bg-dark bg-opacity-25 h6 fw-bold">Fecha</th>
+                          <th scope="col" class="text-center col-2 rounded rounded-2 bg-dark bg-opacity-25 h6 fw-bold">Comentario</th>
+                          <th scope="col" class="text-center col-1 rounded rounded-2 bg-dark bg-opacity-25 h6 fw-bold">Estado</th>
+                          <th scope="col" class="text-center col-1 rounded rounded-2 bg-dark bg-opacity-25 h6 fw-bold">Acciones</th>
+                          <th scope="col" class="text-center col-1 rounded rounded-2 bg-dark bg-opacity-25 h6 fw-bold">Detalles</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td class=" rounded rounded-2 bg-light h6 fw-normal p-0 text-center">Camino las mariposas km 13.5 Villa mirasol Pasaje 4 Casa 4</td>
+                          <td class=" rounded rounded-2 bg-light h6 fw-normal text-center">99</td>
+                          <td class=" rounded rounded-2 bg-light h6 fw-normal text-center">9 88906865</td>
+                          <td class=" rounded rounded-2 bg-light h6 fw-normal text-center">99/99/99</td>
+                          <td class=" rounded rounded-2 bg-light h6 fw-normal text-center p-0">Lorem ipsum dolor sit amet consectetur adipisicing elit.</td>
+                          <td class=" rounded rounded-2 bg-light h6 fw-normal text-center">Cancelado</td>
+                          <td class=" rounded rounded-2 bg-light h6 fw-normal"></td>
+                          <td class=" rounded rounded-2 bg-light h6 fw-normal text-center fw-bold pt-2"><a class="text-danger text-decoration-none" href="./Detaretiro.html">Ver detalles</a></td>
+                        </tr>
+                        <tr>
+                          <td class=" rounded rounded-2 bg-light h6 fw-normal p-0 text-center">Camino las mariposas km 13.5 Villa mirasol Pasaje 4 Casa 4</td>
+                          <td class=" rounded rounded-2 bg-light h6 fw-normal text-center">99</td>
+                          <td class=" rounded rounded-2 bg-light h6 fw-normal text-center">9 88906865</td>
+                          <td class=" rounded rounded-2 bg-light h6 fw-normal text-center">99/99/99</td>
+                          <td class=" rounded rounded-2 bg-light h6 fw-normal text-center p-0">Lorem ipsum dolor sit amet consectetur adipisicing elit.</td>
+                          <td class=" rounded rounded-2 bg-light h6 fw-normal text-center">Cancelado</td>
+                          <td class=" rounded rounded-2 bg-light h6 fw-normal"></td>
+                          <td class=" rounded rounded-2 bg-light h6 fw-normal text-center fw-bold pt-2"><a class="text-danger text-decoration-none" href="./Detaretiro.html">Ver detalles</a></td>
+                        </tr>
+                        <tr>
+                          <td class=" rounded rounded-2 bg-light h6 fw-normal p-0 text-center">Camino las mariposas km 13.5 Villa mirasol Pasaje 4 Casa 4</td>
+                          <td class=" rounded rounded-2 bg-light h6 fw-normal text-center">99</td>
+                          <td class=" rounded rounded-2 bg-light h6 fw-normal text-center">9 88906865</td>
+                          <td class=" rounded rounded-2 bg-light h6 fw-normal text-center">99/99/99</td>
+                          <td class=" rounded rounded-2 bg-light h6 fw-normal text-center p-0">Lorem ipsum dolor sit amet consectetur adipisicing elit.</td>
+                          <td class=" rounded rounded-2 bg-light h6 fw-normal text-center">Cancelado</td>
+                          <td class=" rounded rounded-2 bg-light h6 fw-normal"></td>
+                          <td class=" rounded rounded-2 bg-light h6 fw-normal text-center fw-bold pt-2"><a class="text-danger text-decoration-none" href="./Detaretiro.html">Ver detalles</a></td>
+                        </tr>
+                        <tr>
+                          <td class=" rounded rounded-2 bg-light h6 fw-normal p-0 text-center">Camino las mariposas km 13.5 Villa mirasol Pasaje 4 Casa 4</td>
+                          <td class=" rounded rounded-2 bg-light h6 fw-normal text-center">99</td>
+                          <td class=" rounded rounded-2 bg-light h6 fw-normal text-center">9 88906865</td>
+                          <td class=" rounded rounded-2 bg-light h6 fw-normal text-center">99/99/99</td>
+                          <td class=" rounded rounded-2 bg-light h6 fw-normal text-center p-0">Lorem ipsum dolor sit amet consectetur adipisicing elit.</td>
+                          <td class=" rounded rounded-2 bg-light h6 fw-normal text-center">Cancelado</td>
+                          <td class=" rounded rounded-2 bg-light h6 fw-normal"></td>
+                          <td class=" rounded rounded-2 bg-light h6 fw-normal text-center fw-bold pt-2"><a class="text-danger text-decoration-none" href="./Detaretiro.html">Ver detalles</a></td>
+                        </tr>
+                        <tr>
+                          <td class=" rounded rounded-2 bg-light h6 fw-normal p-0 text-center">Camino las mariposas km 13.5 Villa mirasol Pasaje 4 Casa 4</td>
+                          <td class=" rounded rounded-2 bg-light h6 fw-normal text-center">99</td>
+                          <td class=" rounded rounded-2 bg-light h6 fw-normal text-center">9 88906865</td>
+                          <td class=" rounded rounded-2 bg-light h6 fw-normal text-center">99/99/99</td>
+                          <td class=" rounded rounded-2 bg-light h6 fw-normal text-center p-0">Lorem ipsum dolor sit amet consectetur adipisicing elit.</td>
+                          <td class=" rounded rounded-2 bg-light h6 fw-normal text-center">Cancelado</td>
+                          <td class=" rounded rounded-2 bg-light h6 fw-normal"></td>
+                          <td class=" rounded rounded-2 bg-light h6 fw-normal text-center fw-bold pt-2"><a class="text-danger text-decoration-none" href="./Detaretiro.html">Ver detalles</a></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-
-        <div class="border border-2 bg-warning bg-opacity-100 row justify-content-center pt-1 pb-3">
-          <ul class="pagination justify-content-center ">
-            <li class="page-item disabled">
-              <a class="page-link" href="#">&laquo;</a>
-            </li>
-            <li class="page-item active">
-              <a class="page-link" href="#">1</a>
-            </li>
-            <li class="page-item">
-              <a class="page-link" href="#">2</a>
-            </li>
-            <li class="page-item">
-              <a class="page-link" href="#">3</a>
-            </li>
-            <li class="page-item">
-              <a class="page-link" href="#">4</a>
-            </li>
-            <li class="page-item">
-              <a class="page-link" href="#">5</a>
-            </li>
-            <li class="page-item">
-              <a class="page-link" href="#">6</a>
-            </li>
-            <li class="page-item">
-              <a class="page-link" href="#">7</a>
-            </li>
-            <li class="page-item">
-              <a class="page-link" href="#">8</a>
-            </li>
-            <li class="page-item">
-              <a class="page-link" href="#">9</a>
-            </li>
-            <li class="page-item">
-              <a class="page-link" href="#">10</a>
-            </li>
-            <li class="page-item">
-              <a class="page-link" href="#">11</a>
-            </li>
-            <li class="page-item">
-              <a class="page-link" href="#">12</a>
-            </li>
-            <li class="page-item">
-              <a class="page-link" href="#">13</a>
-            </li>
-            <li class="page-item">
-              <a class="page-link" href="#">14</a>
-            </li>
-            <li class="page-item">
-              <a class="page-link" href="#">&raquo;</a>
-            </li>
-          </ul>
-        </div>
-      </form>
+  
+          <div class="border border-2 bg-warning bg-opacity-100 row justify-content-center pt-1 pb-3">
+            <ul class="pagination justify-content-center ">
+              <li class="page-item disabled">
+                <a class="page-link" href="#">&laquo;</a>
+              </li>
+              <li class="page-item active">
+                <a class="page-link" href="#">1</a>
+              </li>
+              <li class="page-item">
+                <a class="page-link" href="#">2</a>
+              </li>
+              <li class="page-item">
+                <a class="page-link" href="#">3</a>
+              </li>
+              <li class="page-item">
+                <a class="page-link" href="#">4</a>
+              </li>
+              <li class="page-item">
+                <a class="page-link" href="#">5</a>
+              </li>
+              <li class="page-item">
+                <a class="page-link" href="#">6</a>
+              </li>
+              <li class="page-item">
+                <a class="page-link" href="#">7</a>
+              </li>
+              <li class="page-item">
+                <a class="page-link" href="#">8</a>
+              </li>
+              <li class="page-item">
+                <a class="page-link" href="#">9</a>
+              </li>
+              <li class="page-item">
+                <a class="page-link" href="#">10</a>
+              </li>
+              <li class="page-item">
+                <a class="page-link" href="#">11</a>
+              </li>
+              <li class="page-item">
+                <a class="page-link" href="#">12</a>
+              </li>
+              <li class="page-item">
+                <a class="page-link" href="#">13</a>
+              </li>
+              <li class="page-item">
+                <a class="page-link" href="#">14</a>
+              </li>
+              <li class="page-item">
+                <a class="page-link" href="#">&raquo;</a>
+              </li>
+            </ul>
+          </div>
+        </form>
+      </div>
     </main>
-    <!--
     <section class="position-relative">
-      <footer class="top-10 pb-10 vw-100">
+      <footer class="position-relative top-1 pb-10 bg-warning">
         
       </footer>
     </section>
-    
+    <!--
     <footer class="bg-warning border border-3 border-primary">
       <div class="container row border border-5 border-success col-4">
         <div class="border border-2 row col-12">

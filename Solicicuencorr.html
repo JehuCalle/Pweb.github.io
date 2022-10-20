@@ -81,12 +81,12 @@
             <div class="col-12 mx-3">
               <label class="col-5 mx-3">RUT Empresa<span class="text-danger">*</span></label>
               <label class="col-5 mx-3">Nombre/Razon social<span class="text-danger">*</span></label>
-              <input type="text" name="rut" class="rounded rounded-2 border border-2 border-dark col-5 mx-3">
-              <input type="text" name="razonSocial" class="rounded rounded-2 border border-2 border-dark col-5 mx-3">
+              <input type="text" id="rut" name="rut" class="rounded rounded-2 border border-3 border-dark col-5 mx-3">
+              <input type="text" id="razonSocial" name="razonSocial" class="rounded rounded-2 border border-3 border-dark col-5 mx-3">
               <label class="col-5 mx-3">Dirección<span class="text-danger">*</span></label>
               <label class="col-5 mx-3" for="Regiones">Region<span class="text-danger">*</span></label>
-              <input type="text" name="direccion" class="rounded rounded-2 border border-2 border-dark col-5 mx-3">
-              <select name="regiones" class="rounded rounded-2 border border-2 border-dark col-5 mx-3 col-5 p-lg-1" id="Regiones">
+              <input type="text" id="direccion" name="direccion" class="rounded rounded-2 border border-3 border-dark col-5 mx-3">
+              <select name="regiones" class="rounded rounded-2 border border-3 border-dark col-5 mx-3 col-5 p-lg-1" id="Regiones">
                 <option></option>
                 <option>Metropolitana</option>
                 <option>Bio-Bio</option>
@@ -95,13 +95,13 @@
               </select>
               <label class="col-5 mx-3" for="Provincias">Provincia<span class="text-danger">*</span></label>
               <label class="col-5 mx-3" for="Comunas">Comuna<span class="text-danger">*</span></label>
-              <select name="provincias" class="rounded rounded-2 border border-2 border-dark col-5 mx-3 col-5 p-lg-1" id="Provincias">
+              <select name="provincias" class="rounded rounded-2 border border-3 border-dark col-5 mx-3 col-5 p-lg-1" id="Provincias">
                 <option></option>
                 <option>Arauco</option>
                 <option>Bio-Bio</option>
                 <option>Ñuble</option>
               </select>
-              <select name="comunas" class="rounded rounded-2 border border-2 border-dark col-5 mx-3 col-5 p-lg-1" id="Comunas">
+              <select name="comunas" class="rounded rounded-2 border border-3 border-dark col-5 mx-3 col-5 p-lg-1" id="Comunas">
                 <option></option>
                 <option>Chiguayante</option>
                 <option>Concepcion</option>
@@ -118,7 +118,7 @@
               </select>
               <label class="col-5 mx-3" for="Tcarga">Tipo de carga<span class="text-danger">*</span></label>
               <label class="col-5 mx-3">Kilos diarios<span class="text-danger">*</span></label>
-              <select name="tipoCarga" class="rounded rounded-2 border border-2 border-dark col-5 mx-3 col-5 p-lg-1" id="TipoCarga">
+              <select name="tipoCarga" class="rounded rounded-2 border border-3 border-dark col-5 mx-3 col-5 p-lg-1" id="TipoCarga">
                 <option></option>
                 <option>Caja</option>
                 <option>Sobre</option>
@@ -126,22 +126,22 @@
                 <option>T 4</option>
                 <option>T 5</option>
               </select>
-              <input type="text" name="kilosDiarios" class="rounded rounded-2 border border-2 border-dark col-5 mx-3">
+              <input type="text" id="kilosDiarios" name="kilosDiarios" class="rounded rounded-2 border border-3 border-dark col-5 mx-3">
               <label class="col-5 mx-3">RUT Contacto<span class="text-danger">*</span></label>
               <label class="col-5 mx-3">Nombres<span class="text-danger">*</span></label>
-              <input type="text" name="rutContact" class="rounded rounded-2 border border-2 border-dark col-5 mx-3">
-              <input type="text" name="nombres" class="rounded rounded-2 border border-2 border-dark col-5 mx-3">
+              <input type="text" id="rutContact" name="rutContact" class="rounded rounded-2 border border-3 border-dark col-5 mx-3">
+              <input type="text" name="nombres" class="rounded rounded-2 border border-3 border-dark col-5 mx-3">
               <label class="col-5 mx-3">Apellidos<span class="text-danger">*</span></label>
               <label class="col-5 mx-3">Telefono<span class="text-danger">*</span></label>
-              <input type="text" name="apellidos" class="rounded rounded-2 border border-2 border-dark col-5 mx-3">
-              <input type="text" name="telefono" class="rounded rounded-2 border border-2 border-dark col-5 mx-3">
+              <input type="text" id="apellidos" name="apellidos" class="rounded rounded-2 border border-3 border-dark col-5 mx-3">
+              <input type="text" id="telefono" name="telefono" class="rounded rounded-2 border border-3 border-dark col-5 mx-3">
               <label class="col-12 mx-3">Email contacto<span class="text-danger">*</span></label>
-              <input type="text" name="emailContacto" class="rounded rounded-2 border border-2 border-dark col-5 mx-3">
+              <input type="text" id="emailContacto" name="emailContacto" class="rounded rounded-2 border border-3 border-dark col-5 mx-3">
               <label class="col-12 fw-bold">Adjunte los archivos necesarios<span class="text-danger">*</span></label>
-              <input class="form-control col-1" name="archivos" type="file" id="formFile" required>
+              <input class="form-control col-1 border border-3 border-dark" name="archivos" type="file" id="archivo">
               <label class="col-12">Tamaño maximo de archivo rar 10MB</label>
               <label class="col-12 fw-bold">Comentarios<span class="text-danger">*</span></label>
-              <textarea class="form-control mb-2" name="comentario" id="exampleTextarea" rows="3"></textarea>
+              <textarea class="form-control mb-2 border border-3 border-dark" name="comentario" id="comentario" rows="3"></textarea>
             <div class="col-6">
               <div class="col-12">
                 <!--

@@ -4,6 +4,9 @@ const formulario = document.querySelector("#formulario");
 //const btnLink = document.querySelector("#btnIniciarSesion");
 const alerta = document.querySelector("#divAlerta");
 
+const test = document.querySelectorAll("input");
+const contenImputs = [];
+/*
 const alertaRut = document.querySelector("#alertaRut");
 const validacionRut = /[0-9]/;
 const rutUser = document.querySelector("#rut");
@@ -11,7 +14,7 @@ const rutUser = document.querySelector("#rut");
 const alertaPass = document.querySelector("#alertaPass");
 const validacionPass = /[0-9]/;
 const passUser = document.querySelector("#pass");
-
+*/
 let usuarios = [];
 
 const agregarUsuario = (rut,pass) =>{
@@ -30,7 +33,9 @@ btnLink.addEventListener('click',(event) => {
 formulario.addEventListener("submit",(e)=>{
     e.preventDefault();
     alerta.classList.add("d-none");
-    //console.log("Testeo Formulario");
+
+    //PARA QUE NO SE PUEDA AGREGAR MÁS USUARIOS AL APRETAR INICIAR SESION REPETIDAS VECES
+    usuarios.pop();
 
     //CAPTURA TODOS LOS INPUT DE FORMULARIO
     const data = new FormData(formulario);
@@ -45,37 +50,34 @@ formulario.addEventListener("submit",(e)=>{
     //SE ALMACENAN TODOS LOS DATOS DE LOS INPUT EN EL [...data.values()] Y SE TRANSLADAN A [todo]
     const[rut,pass] = [...data.values()];
 
-    if(!(rut).trim() /*|| !validacionRut.test(rut)*/){
-        console.log("Completa todos los campos 1 ");
-        rutUser.classList.add("is-invalid");
-        rutUser.classList.remove("border-dark");
-        rutUser.classList.add("border-danger");
-        alerta.classList.remove("d-none");
-        return;
-    }else{
-        rutUser.classList.remove("is-invalid");
-        rutUser.classList.add("is-valid");
-        rutUser.classList.remove("border-dark");
-        rutUser.classList.remove("border-danger");
-        rutUser.classList.add("border-success");
+    let i = 0
+    contenImputs.splice(0,3);
+    while (i < 2) {
+        const inputCorr = test[i];
+        contenImputs.push(inputCorr);
+        if(contenImputs[i].value == ""){
+            contenImputs[i].classList.remove("border-dark");
+            contenImputs[i].classList.add("border-danger");
+            alerta.classList.remove("d-none");
+            console.log("FALTAN-V1")
+        }else if(!contenImputs[i].value == ""){
+            contenImputs[i].classList.remove("border-danger");
+            contenImputs[i].classList.remove("border-dark");
+            contenImputs[i].classList.add("border-success");
+            alerta.classList.remove("d-none");
+            console.log("FALTAN-V2")
+        }
+        i++
     }
-    if(!(pass).trim()){
-        console.log("Completa todos los campos 2 ");
-        passUser.classList.add("is-invalid");
-        passUser.classList.remove("border-dark");
-        passUser.classList.add("border-danger");
-        alerta.classList.remove("d-none");
+    
+    if(!contenImputs[0].value == "" && !contenImputs[1].value == ""){
+        console.log("FIN")
+        agregarUsuario(rut,pass);
+        alerta.classList.add("d-none");
+        console.log(usuarios)
+        setTimeout(()=> location.href="./MisDatos.html",2000);
         return;
-    }else{
-        passUser.classList.remove("is-invalid");
-        passUser.classList.add("is-valid");
-        passUser.classList.remove("border-dark");
-        passUser.classList.remove("border-danger");
-        passUser.classList.add("border-success");
     }
-    agregarUsuario(rut,pass);
-    console.log(usuarios);
-    setTimeout(()=> location.href="./Misdatos.html",2000);
 });
 
 //PARA QUE LOS DATOS SIGAN PRESENETES DESPUES DE ACTUALIZAR LA PAGINA
