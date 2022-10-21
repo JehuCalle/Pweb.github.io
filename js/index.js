@@ -47,7 +47,7 @@ formulario.addEventListener("submit",(e)=>{
         body: test2,
     })
     */
-    //SE ALMACENAN TODOS LOS DATOS DE LOS INPUT EN EL [...data.values()] Y SE TRANSLADAN A [todo]
+    //SE ALMACENAN TODOS LOS DATOS DE LOS INPUT EN EL [...data.values()] Y SE TRANSLADAN A [rut,pass]
     const[rut,pass] = [...data.values()];
 
     let i = 0
