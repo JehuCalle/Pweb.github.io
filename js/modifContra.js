@@ -30,7 +30,7 @@ btnIniciarSesion.addEventListener('click',(event) => {
 */
 btnCancelar.addEventListener('click',(event) => {
     event.preventDefault();
-    setTimeout(()=> location.href="./MisDatos.html");
+    setTimeout(()=> location.href="./Misdatos.html");
 });
 
 formulario.addEventListener("submit",(e)=>{
