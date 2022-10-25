@@ -8,7 +8,7 @@ const alerta = document.querySelector("#divAlerta");
 const test2 = document.querySelectorAll("select");
 const contenSelect = [];
 
-const test = document.querySelectorAll("input");
+const test = document.querySelectorAll(".shadow-sm");
 const contenImputs = [];
 ///////////////////////////////////////////////
 
@@ -58,8 +58,8 @@ formulario.addEventListener("submit",(e)=>{
     const[razonSocial,giro,direccion,regiones,provincias,comunas,telefono,telefonoContact,correo,correoContact,celular,celularContact,contactoPago] = [...data.values()];
 ///////////////////////////////////////////////
     let i = 0
-    contenImputs.splice(0,11);
-    while (i < 10) {
+    contenImputs.splice(0,7);
+    while (i < 6) {
         const inputCorr = test[i];
         contenImputs.push(inputCorr);
         if(contenImputs[i].value == ""){
@@ -96,12 +96,12 @@ formulario.addEventListener("submit",(e)=>{
         a++
     }
 
-    if(!contenImputs[0].value == "" && !contenImputs[1].value == "" && !contenImputs[2].value == "" && !contenImputs[3].value == "" && !contenImputs[4].value == "" && !contenImputs[5].value == "" && !contenImputs[6].value == "" && !contenImputs[7].value == "" && !contenSelect[0].value == "" && !contenSelect[1].value == "" && !contenSelect[2].value == ""){
+    if(!contenImputs[0].value == "" && !contenImputs[1].value == "" && !contenImputs[2].value == "" && !contenImputs[3].value == "" && !contenImputs[4].value == "" && !contenImputs[5].value == "" && !contenSelect[0].value == "" && !contenSelect[1].value == "" && !contenSelect[2].value == ""){
         console.log("FIN")
         agregarUsuario(razonSocial,giro,direccion,regiones,provincias,comunas,telefono,telefonoContact,correo,correoContact,celular,celularContact,contactoPago);
         alerta.classList.add("d-none");
         console.log(usuarios)
-        setTimeout(()=> location.href="./Misdatos.html",2000);
+        //setTimeout(()=> location.href="./Misdatos.html",2000);
         return;
     }
 ///////////////////////////////////////////////

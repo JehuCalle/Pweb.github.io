@@ -4,8 +4,10 @@ const formulario = document.querySelector("#formulario");
 //const btnLink = document.querySelector("#btnIniciarSesion");
 const alerta = document.querySelector("#divAlerta");
 
-const test = document.querySelectorAll("input");
-const contenImputs = [];
+const rutUser = document.querySelector("#rut");
+const contra = document.querySelector("#pass");
+const contenRut = [];
+const contenPass = [];
 /*
 const alertaRut = document.querySelector("#alertaRut");
 const validacionRut = /[0-9]/;
@@ -30,6 +32,28 @@ btnLink.addEventListener('click',(event) => {
     setTimeout(()=> location.href="./Misdatos.html");
 });
 */
+
+//VALIDAR RUT
+var Fn = {
+    validaRut : function (rutCompleto) {
+        if (!/^[0-9]+[-|‐]{1}[0-9kK]{1}$/.test( rutCompleto ))
+            return false;
+        var tmp 	= rutCompleto.split('-');
+        var digv	= tmp[1]; 
+        var rut 	= tmp[0];
+        if ( digv == 'K' ) digv = 'k' ;
+        return (Fn.dv(rut) == digv );
+    },
+    dv : function(T){
+        var M=0,S=1;
+        for(;T;T=Math.floor(T/10))
+            S=(S+T%10*(9-M++%6))%11;
+        return S?S-1:'k';
+    }
+}
+//VALIDAR RUT
+
+
 formulario.addEventListener("submit",(e)=>{
     e.preventDefault();
     alerta.classList.add("d-none");
@@ -49,35 +73,69 @@ formulario.addEventListener("submit",(e)=>{
     */
     //SE ALMACENAN TODOS LOS DATOS DE LOS INPUT EN EL [...data.values()] Y SE TRANSLADAN A [rut,pass]
     const[rut,pass] = [...data.values()];
-
     let i = 0
-    contenImputs.splice(0,3);
-    while (i < 2) {
-        const inputCorr = test[i];
-        contenImputs.push(inputCorr);
-        if(contenImputs[i].value == ""){
-            contenImputs[i].classList.remove("border-dark");
-            contenImputs[i].classList.add("border-danger");
-            alerta.classList.remove("d-none");
+    contenRut.splice(0,2);
+    while (i < 1) {
+        const inputCorr = rutUser;
+        contenRut.push(inputCorr);
+        if(Fn.validaRut(contenRut[i].value) == false){
+            contenRut[i].classList.remove("border-dark");
+            contenRut[i].classList.add("border-danger");
+            alerta.textContent = "RUT invalido";
             console.log("FALTAN-V1")
-        }else if(!contenImputs[i].value == ""){
-            contenImputs[i].classList.remove("border-danger");
-            contenImputs[i].classList.remove("border-dark");
-            contenImputs[i].classList.add("border-success");
-            alerta.classList.remove("d-none");
+        }else if(Fn.validaRut(contenRut[0].value) == true){
+            contenRut[i].classList.remove("border-danger");
+            contenRut[i].classList.remove("border-dark");
+            contenRut[i].classList.add("border-success");
             console.log("FALTAN-V2")
         }
         i++
     }
-    
-    if(!contenImputs[0].value == "" && !contenImputs[1].value == ""){
+    let a = 0
+    contenPass.splice(0,2);
+    while (a < 1) {
+        const selectCorr = contra;
+        contenPass.push(selectCorr);
+        if(contenPass[a].value == ""){
+            contenPass[a].classList.remove("border-dark");
+            contenPass[a].classList.add("border-danger");
+            alerta.classList.remove("d-none");
+            console.log("FALTAN-V1")
+        }else if(!contenPass[a].value == ""){
+            contenPass[a].classList.remove("border-danger");
+            contenPass[a].classList.remove("border-dark");
+            contenPass[a].classList.add("border-success");
+            alerta.classList.remove("d-none");
+            console.log("FALTAN-V2")
+        }
+        a++
+    }
+    if(!rutUser.value == "" && !contra.value == "" && Fn.validaRut(contenRut[0].value) == true){
         console.log("FIN")
         agregarUsuario(rut,pass);
         alerta.classList.add("d-none");
         console.log(usuarios)
-        setTimeout(()=> location.href="./Misdatos.html",2000);
+        //setTimeout(()=> location.href="./Misdatos.html",2000);
         return;
     }
+    /*
+    let i = 0
+    contenRut.splice(0,2);
+    contenPass.splice(0,2);
+
+
+
+    while (i < 2) {
+        const inputCorr = test[i];
+        contenRut.push(inputCorr);
+        contenPass.push(inputCorr);
+        valrut = Fn.validaRut(contenImputs[0].value);
+        console.log(valrut);
+
+        i++
+    }
+
+    */
 });
 
 //PARA QUE LOS DATOS SIGAN PRESENETES DESPUES DE ACTUALIZAR LA PAGINA

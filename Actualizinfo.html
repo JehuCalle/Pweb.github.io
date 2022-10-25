@@ -58,7 +58,7 @@
       </nav>
     </div>
     <main class="bg-primary bg-opacity-25 d-flex justify-content-center">
-      <div class="container row justify-content-center col-12">
+      <div class="container row justify-content-center col-12 mt-3 mb-3">
         <form id="formulario" class="col-6 bg-dark bg-opacity-75 col rounded rounded-1 border border-5 border-dark">
           <div class="border border-2 bg-warning bg-opacity-100 row justify-content-center "> 
             <div class="col-12 row justify-content-center">
@@ -80,11 +80,11 @@
             <div class="col-12">
               <label class="col-5 mx-3">Nombre/Razon social:<span class="text-danger">*</span></label>
               <label class="col-5 mx-3">Giro:<span class="text-danger">*</span></label>
-              <input type="text" id="razonSocial" name="razonSocial" class="rounded rounded-2 border border-2 border-dark col-5 mx-3">
-              <input type="text" id="giro" name="giro" class="rounded rounded-2 border border-2 border-dark col-5 mx-3">
+              <input type="text" id="razonSocial" name="razonSocial" class="shadow-sm rounded rounded-2 border border-2 border-dark col-5 mx-3">
+              <input type="text" id="giro" name="giro" class="shadow-sm rounded rounded-2 border border-2 border-dark col-5 mx-3">
               <label class="col-5 mx-3">Dirección:<span class="text-danger">*</span></label>
               <label class="col-5 mx-3" for="Regiones">Region:<span class="text-danger">*</span></label>
-              <input type="text" id="direccion" name="direccion" class="rounded rounded-2 border border-2 border-dark col-5 mx-3">
+              <input type="text" id="direccion" name="direccion" class="shadow-sm rounded rounded-2 border border-2 border-dark col-5 mx-3">
               <select name="regiones" class="rounded rounded-2 border border-2 border-dark col-5 mx-3 col-5 p-lg-1" id="Regiones">
                 <option></option>
                 <option>Metropolitana</option>
@@ -116,18 +116,18 @@
                 <option>Tome</option>
               </select>
               <label class="col-5 mx-3">Telefono:<span class="text-danger">*</span></label>
-              <label class="col-5 mx-3">Telefono contacto:<span class="text-danger">*</span></label>
-              <input type="text" id="telefono" name="telefono" class="rounded rounded-2 border border-2 border-dark col-5 mx-3">
+              <label class="col-5 mx-3">Telefono contacto:</label>
+              <input type="text" id="telefono" name="telefono" class="shadow-sm rounded rounded-2 border border-2 border-dark col-5 mx-3">
               <input type="text" id="telefonoContact" name="telefonoContact" class="rounded rounded-2 border border-2 border-dark col-5 mx-3">
               <label class="col-5 mx-3">Correo:<span class="text-danger">*</span></label>
-              <label class="col-5 mx-3">Correo contacto:<span class="text-danger">*</span></label>
-              <input type="text" id="correo" name="correo" class="rounded rounded-2 border border-2 border-dark col-5 mx-3">
+              <label class="col-5 mx-3">Correo contacto:</label>
+              <input type="text" id="correo" name="correo" class="shadow-sm rounded rounded-2 border border-2 border-dark col-5 mx-3">
               <input type="text" id="correoContact" name="correoContact" class="rounded rounded-2 border border-2 border-dark col-5 mx-3">
               <label class="col-5 mx-3">Celular:<span class="text-danger">*</span></label>
-              <label class="col-5 mx-3">Celular contacto:<span class="text-danger">*</span></label>
-              <input type="text" id="celular" name="celular" class="rounded rounded-2 border border-2 border-dark col-5 mx-3">
+              <label class="col-5 mx-3">Celular contacto:</label>
+              <input type="text" id="celular" name="celular" class="shadow-sm rounded rounded-2 border border-2 border-dark col-5 mx-3">
               <input type="text" id="celularContact" name="celularContact" class="rounded rounded-2 border border-2 border-dark col-5 mx-3">
-              <label class="col-12 mx-3">Contacto Pago:<span class="text-danger">*</span></label>
+              <label class="col-12 mx-3">Contacto Pago:</label>
               <input type="text" id="contactoPago" name="contactoPago" class="rounded rounded-2 border border-2 border-dark col-5 mx-3">
               <label class="col-8 mx-3">Referencia de la dirección<span class="text-danger">*</span></label>
               <button class="col-12 pb-2 pt-2">-----------------MAPA------------------</button>
@@ -166,30 +166,58 @@
         </form>
       </div>
     </main>
-    <section class="position-relative">
-      <footer class="position-relative top-1 pb-10 bg-warning">
-        
+    <section class="position-relative d-flex justify-content-center bg-warning">
+      <footer class="position-relative d-flex justify-content-center top-1 pb-4 col-12">
+        <div class="container row border border-5 border-success col-12 justify-content-center p-2">
+          <div class="border border-2 row col-4 align-items-center mx-2 px-0">
+              <div class="col-5 p-0">
+                  <img class="resize" src="./assets/img/Board.png">
+              </div>
+              <div class="row col-5 mx-4">
+                <a class="text-decoration-none text-dark p-0 mx-1" href="https://es-la.facebook.com/" target="_blank">
+                  <img class="resize2" src="./assets/img/Facebook2.png">Chevalier
+                </a>
+                <a class="text-decoration-none text-dark p-0 mx-1" href="https://www.instagram.com/" target="_blank">
+                  <img class="resize2" src="./assets/img/Instagram2.png">@Chevalier
+                </a>
+              </div>
+          </div>
+          <div class="border border-2 row col-2 mx-5 align-items-center px-0 pt-3">
+            <ul class="text-center list-group-numbered fw-bold">
+              <li>
+                Inicio
+              </li>
+              <li>
+                Mis Datos
+              </li>
+              <li>
+                Mis direcciones
+              </li>
+              <li>
+                Mis ordenes
+              </li>
+              <li>
+                Cuenta corriente
+              </li>
+              <li>
+                Retiros
+              </li>
+              <li>
+                Problemas
+              </li>
+            </ul>
+          </div>
+          <div class="align-items-center align-self-center border border-2 row col-4 mx-2 px-0">
+            <label class="col-12 fw-bold"><span class="col-5 mx-2">🗺</span>Direccion</label>
+            <label class="col-12 px-5">Av. O'higgins 1867, Chillan, Region de Ñuble, Chile.</label>
+            <label class="col-12 fw-bold"><span class="col-5 mx-2">🗺</span>Call Center</label>
+            <label class="col-12 px-5">Horario: Lunes a Viernes 09:00 a 17:00 hrs 600 3600 401.</label>
+            <label class="col-12 fw-bold"><span class="col-5 mx-2">🗺</span>Correo Electronico</label>
+            <label class="col-12 px-5">Contacto@Chevalier.cl.</label>
+          </div>
+        </div>
       </footer>
     </section>
-    <!--
-    <footer class="bg-warning border border-3 border-primary">
-      <div class="container row border border-5 border-success col-4">
-        <div class="border border-2 row col-12">
-            <div class="col-2">
-                <img class="resize" src="./img/Board.png">
-            </div>
-            <div class="row col-2">
-              <div class="col-12 align-content-start align-self-end">
-                <img class="resize2" src="./img/Facebook2.png">Chevalier
-              </div>
-              <div class="col-12 align-self-start">
-                <img class="resize2" src="./img/Instagram2.png">@Chevalier
-              </div> 
-            </div>
-        </div>
-      </div>
-    </footer>
-  -->
     <script src="./js/actualizInfo.js"></script>
     <script src="./bootstrap/js/bootstrap.bundle.min.js"></script>
 </body>

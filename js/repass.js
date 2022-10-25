@@ -11,6 +11,8 @@ const contenImputs = [];
 ///////////////////////////////////////////////
 let usuarios = [];
 
+const validacionUserEmail = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+
 const agregarUsuario = (correo) =>{
     const objetoTodo = {
         Correo: correo,
@@ -56,12 +58,21 @@ contenImputs.splice(0,2);
 while (i < 1) {
     const inputCorr = test[i];
     contenImputs.push(inputCorr);
-    if(contenImputs[i].value == ""){
+    if(contenImputs[0].value == ""){
+        alerta.classList.remove("d-none");
+        alerta.textContent = "Campos incompletos"
+        contenImputs[0].classList.remove("border-dark");
+        contenImputs[0].classList.add("border-danger");
+        return
+    }
+    if(!validacionUserEmail.test(contenImputs[0].value)){
         contenImputs[i].classList.remove("border-dark");
+        contenImputs[i].classList.remove("border-success");
         contenImputs[i].classList.add("border-danger");
         alerta.classList.remove("d-none");
+        alerta.textContent = "Formato del correo incorrecto"
         console.log("FALTAN-V1")
-    }else if(!contenImputs[i].value == ""){
+    }else if(validacionUserEmail.test(contenImputs[0].value)){
         contenImputs[i].classList.remove("border-danger");
         contenImputs[i].classList.remove("border-dark");
         contenImputs[i].classList.add("border-success");
@@ -71,7 +82,7 @@ while (i < 1) {
     i++
 }
 
-if(!contenImputs[0].value == ""){
+if(validacionUserEmail.test(contenImputs[0].value)){
     console.log("FIN")
     agregarUsuario(correo);
     alerta.classList.add("d-none");
