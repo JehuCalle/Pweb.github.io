@@ -55,7 +55,7 @@ formulario.addEventListener("submit",(e)=>{
             contenPass.push(inputCorr);
             if(contenPass[a].value == ""){
                 alerta.classList.remove("d-none");
-                alerta.textContent = "Campo contraseña "
+                alerta.textContent = "Campo contraseña incompleta"
                 contenPass[a].classList.remove("border-dark");
                 contenPass[a].classList.add("border-danger");
             }else if(!validacionUserPass.test(contenPass[0].value) === false){
@@ -109,11 +109,10 @@ formulario.addEventListener("submit",(e)=>{
         contenRut.push(inputCorr);
         if(contenRut[i].value == ""){
             alerta.classList.remove("d-none");
-            alerta.textContent = "Campos incompletos 1"
+            alerta.textContent = "Rut no ingresado"
             contenRut[i].classList.remove("border-dark");
             contenRut[i].classList.add("border-danger");
-        }else
-        if(Fn.validaRut(contenRut[i].value) == false || contenRut[i].value == ""){
+        }else if(Fn.validaRut(contenRut[i].value) == false || contenRut[i].value == ""){
             contenRut[i].classList.remove("border-dark");
             contenRut[i].classList.add("border-danger");
             alerta.textContent = "RUT invalido";
