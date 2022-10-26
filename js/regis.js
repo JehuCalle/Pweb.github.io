@@ -296,7 +296,7 @@ formulario.addEventListener("submit",(e)=>{
         agregarUsuario(rut,razonSocial,correo,telefono,pass,passRe,nombreContact,direccion,regiones,provincias,comunas,direcRef);
         alerta.classList.add("d-none");
         console.log(usuarios)
-        //setTimeout(()=> location.href="./Misdatos.html",2000);
+        setTimeout(()=> location.href="./Misdatos.html",2000);
         return;
     }
     //////////////////////////
