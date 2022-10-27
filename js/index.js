@@ -80,7 +80,7 @@ formulario.addEventListener("submit",(e)=>{
             agregarUsuario(rut,pass);
             alerta.classList.add("d-none");
             console.log(usuarios)
-            //setTimeout(()=> location.href="./Misdatos.html",2000);
+            setTimeout(()=> location.href="./Misdatos.html",2000);
             return;
         }
     }

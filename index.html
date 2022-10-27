@@ -58,15 +58,11 @@
     </div>
     <main class="bg-primary bg-opacity-25 d-flex justify-content-center">
       <div class="container row justify-content-center align-items-center col-12 mt-3 mb-3">
-        <form id="formulario" class="col-4 bg-dark bg-opacity-75 col rounded rounded-1 border border-5 border-dark">
+        <form id="formulario" class="col-10 col-xl-4 col-lg-4 col-md-6 col-sm-8 bg-dark bg-opacity-75 col rounded rounded-1 border border-5 border-dark">
           <div class="border border-2 bg-warning bg-opacity-100 row justify-content-center "> 
             <div class="col-12 row justify-content-center">
-              <div class="col-4">
-                <img src="./assets/img/Icon.png" alt="">
-              </div>
-              <div class="col-12 row">
-                <h4 class="text-center fw-bold" id="jvTest">Iniciar Sesion</h4>
-              </div>
+              <img class="img-fluid col-4 pt-2" src="./assets/img/Icon.png" alt="">
+              <h4 class="text-center fw-bold col-12" id="jvTest">Iniciar Sesion</h4>
             </div>
           </div>
           <div class="border border-2 bg-warning bg-opacity-75 row justify-content-center "> 
@@ -76,7 +72,7 @@
             </div>
           </div>
           <div class="border border-2 bg-warning bg-opacity-50 row justify-content-center pt-3 pb-3">
-            <div class="col-10">
+            <div class="col-10 px-0">
               <label class="col-3">RUT<span class="text-danger">*</span></label>
               <input type="text" name="rut" id="rut" class="rounded rounded-2 border border-2 border-dark col-12 p-1" placeholder="Ej: 12345678-9">
               <p class="text-dark mb-2" id="alertaRut"></p>
@@ -95,19 +91,19 @@
             </div>
           </div>
           <div class="border border-2 bg-warning bg-opacity-100 row justify-content-center pt-3">
-            <div class="col-10 row justify-content-evenly" id="aa">
+            <div class="col-10 row justify-content-evenly px-0" id="aa">
               <button class="col-8 pb-3 pt-3" id="a">----Captcha----</button>
             </div>
           </div>
           <div class="border border-2 bg-warning bg-opacity-100 row justify-content-center pt-2 ">
-            <div class="col-10 row justify-content-evenly">
-              <button type="submit" id="btnIniciarSesion" class="btn btn-light col-10 border border-dark border-2 p-1">Iniciar sesion</button>
+            <div class="col-10 row justify-content-evenly px-0">
+              <button type="submit" id="btnIniciarSesion" class="btn btn-light col-10 border border-dark border-2 p-1 px-0">Iniciar sesion</button>
             </div>
           </div>
-          <div class="border border-2 bg-warning bg-opacity-75 row justify-content-center pt-2 pb-2">
-            <div class="col-12 row justify-content-center">
-              <a class="text-dark text-opacity-75 text-center text-decoration-none" href="./Repass.html">¿Ha olvidado su contraseña?</a>
-              <a class="text-primary text-opacity-75 text-center text-decoration-none" href="./Regis.html">Registrarse</a>
+          <div class="border border-2 bg-warning bg-opacity-75 row justify-content-center pt-2 pb-2 px-0">
+            <div class="col-12 row justify-content-center px-0">
+              <a class="text-dark text-opacity-75 text-center text-decoration-none px-0" href="./Repass.html">¿Ha olvidado su contraseña?</a>
+              <a class="text-primary text-opacity-75 text-center text-decoration-none px-0" href="./Regis.html">Registrarse</a>
             </div>
           </div>
         </form>
@@ -115,12 +111,12 @@
     </main>
     <section class="position-relative d-flex justify-content-center bg-warning">
     <footer class="position-relative d-flex justify-content-center top-1 pb-4 col-12">
-      <div class="container row border border-5 border-success col-12 justify-content-center p-2">
-        <div class="border border-2 row col-4 align-items-center mx-2 px-0">
+      <div class="col-12 container row border border-5 border-success justify-content-center p-2">
+        <div class="border border-2 row col-12 col-md-4 col-xl-4 col-xxl-4 align-items-center mx-1 px-0">
             <div class="col-5 p-0">
-                <img class="resize" src="./assets/img/Board.png">
+                <img class="img-fluid p-0" src="./assets/img/Board.png">
             </div>
-            <div class="row col-5 mx-4">
+            <div class="row col-5 col-sm-5 col mx-1 p-0">
               <a class="text-decoration-none text-dark p-0 mx-1" href="https://es-la.facebook.com/" target="_blank">
                 <img class="resize2" src="./assets/img/Facebook2.png">Chevalier
               </a>
@@ -129,8 +125,8 @@
               </a>
             </div>
         </div>
-        <div class="border border-2 row col-2 mx-5 align-items-center px-0 pt-3">
-          <ul class="text-center list-group-numbered fw-bold">
+        <div class="border border-2 row col-12 col-md-2 col-xl-3 col-xxl-3 mx-4 align-items-center px-0 pt-3">
+          <ul class="text-center list-group-numbered fw-bold p-0">
             <li>
               Inicio
             </li>
@@ -154,7 +150,7 @@
             </li>
           </ul>
         </div>
-        <div class="align-items-center align-self-center border border-2 row col-4 mx-2 px-0">
+        <div class="align-items-center col-12 col-md-4 col-xl-4 col-xxl-4 align-self-center border border-2 row mx-1 px-0">
           <label class="col-12 fw-bold"><span class="col-5 mx-2">🗺</span>Direccion</label>
           <label class="col-12 px-5">Av. O'higgins 1867, Chillan, Region de Ñuble, Chile.</label>
           <label class="col-12 fw-bold"><span class="col-5 mx-2">🗺</span>Call Center</label>
