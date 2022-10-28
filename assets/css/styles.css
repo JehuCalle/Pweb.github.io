@@ -44,3 +44,11 @@ body{
 textarea{
   resize: none ;
 }
+
+.columnaDiv{
+  column-count: 2;
+}
+
+select{
+  padding: 2.5px !important;
+}
