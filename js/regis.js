@@ -31,8 +31,6 @@ const contenTel = [];
 const validacionUserTel = /^(\s?)(0?9)(\s?)[98765432]\d{7}$/;
 
 const tamañoPantalla = document.querySelector(".columnaDiv");
-
-
 if (screen.width < 767){
     console.log("Pequeña");
     tamañoPantalla.classList.remove("columnaDiv");

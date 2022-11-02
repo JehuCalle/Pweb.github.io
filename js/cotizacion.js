@@ -17,6 +17,14 @@ const test4 = document.querySelectorAll("input[type='radio']");
 const contenFlexRadio = [];
 ///////////////////////////////////////////////
 
+const tamañoPantalla = document.querySelector(".columnaDiv");
+const tamañoPantalla3 = document.querySelector(".columnaDiv3");
+if (screen.width < 767){
+    console.log("Pequeña");
+    tamañoPantalla.classList.remove("columnaDiv");
+    tamañoPantalla3.classList.remove("columnaDiv3");
+}
+
 let usuarios = [];
 
 const agregarUsuario = (aOrigen,aDestino,cDestino,tipoCarga,cantidad,alto,ancho,largo,tipoEmbalaje,valorComercial,peso,flexRadioSiNO,archivo) =>{

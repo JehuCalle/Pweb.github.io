@@ -59,7 +59,7 @@
     </div>
     <main class="bg-primary bg-opacity-25 d-flex justify-content-center">
         <div class="container row justify-content-center col-12 mt-3 mb-3">
-          <form id="formulario" class="col-6 bg-dark bg-opacity-75 col rounded rounded-1 border border-5 border-dark">
+          <form id="formulario" class="col-10 col-md-6 bg-dark bg-opacity-75 col rounded rounded-1 border border-5 border-dark">
             <div class="border border-2 bg-warning bg-opacity-100 row justify-content-center "> 
               <div class="col-12 row justify-content-center">
                 <div class="col-2">
@@ -80,15 +80,12 @@
               <h5 class="fw-bold col-12 ">Direccion</h5>
               <div class="col-12 mx-3 columnaDiv bg-light">
                 <label class="col-11 mx-3 mx-sm-2 h6 fw-normal mb-0" for="Agorigen">Agencia origen<span class="text-danger">*</span></label>
-                <select name="aOrigen" class="rounded rounded-2 border border-2 border-dark col-11 mx-3 mx-sm-2 h6 fw-normal" id="aOrigen">
+                <select name="aOrigen" class="rounded rounded-2 border border-2 border-dark col-11 mx-3 mx-sm-2 mb-2 mb-md-5 h6 fw-normal" id="aOrigen">
                   <option></option>
                   <option>Arauco</option>
                   <option>Bio-Bio</option>
                   <option>Ñuble</option>
                 </select>
-                <label class="col-11 h6 fw-bold mx-2"></label>
-                <label class="col-11 h6 fw-bold mx-2"></label>
-                <label class="col-11 h6 fw-bold mx-2"></label>
 
                 <label class="col-11 mx-3 mx-sm-2 h6 fw-normal mb-0" for="Adestino">Agencia destino<span class="text-danger">*</span></label>
                 <select name="aDestino" class="rounded rounded-2 border border-2 border-dark col-11 mx-3 mx-sm-2 h6 fw-normal" id="aDestino">
@@ -105,8 +102,8 @@
                   <option>Ñuble</option>
                 </select>
               </div>
-              <h5 class="fw-bold col-7">Cargas</h5>
-              <button class="h6 fw-normal col-5 rounded rounded-2 border border-dark border-2">Agregar otra carga</button>
+              <h5 class="fw-bold col-5 col-md-6 mb-0 mt-1">Cargas</h5>
+              <button class="h6 fw-normal col-6 col-md-5 mt-1 mb-0 mx-3 rounded rounded-3 border border-dark border-2">Agregar otra carga</button>
               <div class="col-12 mx-3 bg-light">
                 <div class="accordion col-12 h6 fw-normal" id="accordionExample">
                   <div class="accordion-item bg-secondary bg-opacity-25">
@@ -129,11 +126,9 @@
                       <input type="text" id="ancho" name="ancho" class="shadow-sm rounded rounded-2 border border-2 border-dark col-11 mx-3 mx-sm-2 mb-2 imputnormal">
 
                       <label class="col-12 mx-3 mx-sm-2 mb-1 h6 fw-normal">Valor comercial<span class="text-danger">*</span></label>
-                      <input type="text" id="valorComercial" name="valorComercial" class="shadow-sm rounded rounded-2 border border-2 border-dark col-11 mx-3 mx-sm-2 mb-2 imputnormal">
+                      <input type="text" id="valorComercial" name="valorComercial" class="shadow-sm rounded rounded-2 border border-2 border-dark col-11 mx-3 mx-sm-2 mb-2 mb-md-5 imputnormal">
 
-                      <label class="col-11 mx-3 mx-sm-2 h6 fw-normal mb-5"></label>
-
-                      <label class="col-11 mx-3 mx-sm-2 mt-2 mb-1 h6 fw-normal">Cantidad<span class="text-danger">*</span></label>
+                      <label class="col-11 mx-3 mx-sm-2 m-0 mt-md-2 mb-1 h6 fw-normal">Cantidad<span class="text-danger">*</span></label>
                       <input type="text" id="cantidad" name="cantidad" class="shadow-sm rounded rounded-2 border border-2 border-dark col-11 mx-3 mx-sm-2 mb-2 imputnormal">
 
                       <label class="col-11 mx-3 mx-sm-2 h6 fw-normal mb-1">Largo<span class="text-danger">*</span></label>
@@ -143,9 +138,9 @@
                       <input type="text" id="peso" name="peso" class="shadow-sm rounded rounded-2 border border-2 border-dark col-11 mx-3 mx-sm-2 mb-2 imputnormal">
 
                       <label class="col-11 mx-3 mx-sm-2 h6 fw-normal mb-1">Alto<span class="text-danger">*</span></label>
-                      <input type="text" id="alto" name="alto" class="shadow-sm rounded rounded-2 border border-2 border-dark col-11 mx-3 mx-sm-2 mb-2 imputnormal">
+                      <input type="text" id="alto" name="alto" class="shadow-sm rounded rounded-2 border border-2 border-dark col-11 mx-3 mx-sm-2 mb-0 imputnormal">
                       
-                      <label class="col-12 mx-3 mx-sm-2 mt-2 mb-1 h6 fw-normal" for="Tembalaje">Tipo embalaje<span class="text-danger">*</span></label>
+                      <label class="col-12 mx-3 mx-sm-2 mt-2 mt-md-2 mb-1 h6 fw-normal" for="Tembalaje">Tipo embalaje<span class="text-danger">*</span></label>
                       <select name="tipoEmbalaje" class="rounded rounded-2 border border-2 border-dark col-11 mx-3 mx-sm-2 mb-2" id="tEmbalaje">
                         <option></option>
                         <option>Tipo E 1</option>
@@ -154,14 +149,14 @@
                         <option>Tipo E 4</option>
                       </select>
                       
-                      <label class="col-11 mx-3 mx-sm-2 h6 fw-normal mb-0">Su pédido supera el pesó limite y será tomada como sobrecarga.</label>
+                      <label class="col-11 mx-3 mx-sm-2 h6 fw-normal mb-0">Su pedido supera el peso limite y será tomada como sobrecarga.</label>
                       <label class="col-11 mx-3 mx-sm-2 h6 fw-normal mb-0">¿Cuenta con herramientas?.</label>
                       
-                      <input class="form-check-input col-auto" type="radio" name="flexRadioSiNO" id="flexRadioDefault2" required>
+                      <input class="form-check-input col-auto border border-2 border-dark" type="radio" name="flexRadioSiNO" id="flexRadioDefault2" required>
                       <label class="" for="flexRadioDefault2">
                         Si
                       </label>
-                      <input class="form-check-input col-auto" type="radio" name="flexRadioSiNO" id="flexRadioDefault1" required>
+                      <input class="form-check-input col-auto border border-2 border-dark" type="radio" name="flexRadioSiNO" id="flexRadioDefault1" required>
                       <label class="form-check-label col-auto" for="flexRadioDefault1">
                         No
                       </label>

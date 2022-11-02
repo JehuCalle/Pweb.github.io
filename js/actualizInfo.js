@@ -12,6 +12,12 @@ const test = document.querySelectorAll(".shadow-sm");
 const contenImputs = [];
 ///////////////////////////////////////////////
 
+const tamañoPantalla = document.querySelector(".columnaDiv");
+if (screen.width < 767){
+    console.log("Pequeña");
+    tamañoPantalla.classList.remove("columnaDiv");
+}
+
 let usuarios = [];
 
 const agregarUsuario = (razonSocial,giro,direccion,regiones,provincias,comunas,telefono,telefonoContact,correo,correoContact,celular,celularContact,contactoPago) =>{

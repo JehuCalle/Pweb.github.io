@@ -15,6 +15,12 @@ const test3 = document.querySelectorAll("#comentario");
 const contenTextarea = [];
 ///////////////////////////////////////////////
 
+const tamañoPantalla = document.querySelector(".columnaDiv");
+if (screen.width < 767){
+    console.log("Pequeña");
+    tamañoPantalla.classList.remove("columnaDiv");
+}
+
 let usuarios = [];
 
 btnCancelar.addEventListener('click',(event) => {
