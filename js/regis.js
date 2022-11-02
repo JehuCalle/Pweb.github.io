@@ -34,7 +34,7 @@ const tamañoPantalla = document.querySelector(".columnaDiv");
 
 
 if (screen.width < 767){
-    console.log("Pequeña"); 
+    console.log("Pequeña");
     tamañoPantalla.classList.remove("columnaDiv");
 }
 
