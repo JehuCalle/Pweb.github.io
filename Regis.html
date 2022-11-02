@@ -57,24 +57,9 @@
         </div>
     </nav>
   </div>
-<!--
-  <div class="container my-5">
-    <h1>All</h1>
-    <section class="alert alert-danger w-50 d-none">
-      Por favor no deje campos vacios.
-    </section>
-    <form id="formulario2">
-      <input type="text" name="nombre" placeholder="Ingrese un Todo" class="form-control mb-2 w-50">
-      <button class="btn btn-primary w-50" type="submit">Agregar</button>
-    </form>
-    <section class="mt-3" id="verTodo">
-      
-    </section>
-  </div>
--->
   <main class="bg-primary bg-opacity-25 d-flex justify-content-center">
         <div class="container row justify-content-center col-12 mt-3 mb-3">
-          <form id="formulario" class="col-12 col-xl-6 col-lg-7 col-md-10 col-sm-12 bg-dark bg-opacity-75 col rounded rounded-1 border border-5 border-dark">
+          <form id="formulario" class="col-12 col-xl-6 col-lg-8 col-md-10 col-sm-12 bg-dark bg-opacity-75 col rounded rounded-1 border border-5 border-dark">
             <div class="border border-2 bg-warning bg-opacity-100 row justify-content-center "> 
               <div class="col-12 row justify-content-center">
                 <img class="img-fluid col-3 pt-2" src="./assets/img/Icon.png" alt="">
@@ -88,19 +73,19 @@
               </div>
             </div>
             <div class="border border-2 bg-warning bg-opacity-50 row justify-content-center pt-3">
-              <div class="col-12 mx-3">
-                <label class="col-5 mx-3">RUT:<span class="text-danger">*</span></label>
-                <label class="col-5 mx-3">Nombre/Razon social:<span class="text-danger">*</span></label>
-                <input type="text" id="rut" name="rut" class="rounded rounded-2 border border-2 border-dark col-5 mx-3" placeholder="Ej: 12345678-9">
-                <input type="text" id="razonSocial" name="razonSocial" class="shadow-sm rounded rounded-2 border border-2 border-dark col-5 mx-3" placeholder="Su nombre/Razon social">
-                <label class="col-5 mx-3">Correo:<span class="text-danger">*</span></label>
-                <label class="col-5 mx-3">Telefono:<span class="text-danger">*</span></label>
-                <input type="text"id="correo" name="correo" class="rounded rounded-2 border border-2 border-dark col-5 mx-3" placeholder="Ej: Paralelo@gmail.com">
-                <input type="text" id="telefono" name="telefono" class="rounded rounded-2 border border-2 border-dark col-5 mx-3" placeholder="Ej: 9 12345678">
-                <label class="col-5 mx-3">Contraseña:<span class="text-danger">*</span></label>
-                <label class="col-5 mx-3">Confirmar Contraseña:<span class="text-danger">*</span></label>
-                <input type="text" id="pass" name="pass" class="rounded rounded-2 border border-2 border-dark col-5 mx-3 bg-light" placeholder="Su contraseña">
-                <input type="text" id="passRe" name="passRe" class="rounded rounded-2 border border-2 border-dark col-5 mx-3 bg-light" placeholder="Repita su contraseña">
+              <div class="columnaDiv col-12 mx-3">
+                <label class="col-11 mx-3 mx-sm-2">RUT:<span class="text-danger">*</span></label>
+                <input type="text" id="rut" name="rut" class="rounded rounded-2 border border-2 border-dark col-11 mx-5 mx-sm-2" placeholder="Ej: 12345678-9">
+                <label class="col-11 mx-3 mx-sm-2">Nombre/Razon social:<span class="text-danger">*</span></label>
+                <input type="text" id="razonSocial" name="razonSocial" class="shadow-sm rounded rounded-2 border border-2 border-dark col-11 mx-5 mx-sm-2" placeholder="Su nombre/Razon social">
+                <label class="col-11 mx-3 mx-sm-2">Correo:<span class="text-danger">*</span></label>
+                <input type="text"id="correo" name="correo" class="rounded rounded-2 border border-2 border-dark col-11 mx-5 mx-sm-2" placeholder="Ej: Paralelo@gmail.com">
+                <label class="col-11 mx-3 mx-sm-2">Telefono:<span class="text-danger">*</span></label>
+                <input type="text" id="telefono" name="telefono" class="rounded rounded-2 border border-2 border-dark col-11 mx-5 mx-sm-2" placeholder="Ej: 9 12345678">
+                <label class="col-11 mx-3 mx-sm-2">Contraseña:<span class="text-danger">*</span></label>
+                <input type="text" id="pass" name="pass" class="rounded rounded-2 border border-2 border-dark col-11 mx-5 mx-sm-2 bg-light" placeholder="Su contraseña">
+                <label class="col-11 mx-3 mx-sm-2">Confirmar Contraseña:<span class="text-danger">*</span></label>
+                <input type="text" id="passRe" name="passRe" class="rounded rounded-2 border border-2 border-dark col-11 mx-5 mx-sm-2 bg-light" placeholder="Repita su contraseña">
                 <div class="col-12 mx-3">
                   <label>Para su mayor seguridad la contraseña debe de tener:</label>
                   <li>Una o más letras mayusculas</li>
@@ -108,27 +93,27 @@
                   <li>Simbolos especiales</li>
                   <li>Minimo 6 y maximo 20 caracteres</li>
                 </div>
-                <label class="col-5 mx-3">Nombre contacto:<span class="text-danger">*</span></label>
-                <label class="col-5 mx-3">Dirección:<span class="text-danger">*</span></label>
-                <input type="text" id="nombreContact" name="nombreContact" class="shadow-sm rounded rounded-2 border border-2 border-dark col-5 mx-3" placeholder="El nombre de contacto">
-                <input type="text" id="direccion" name="direccion" class="shadow-sm rounded rounded-2 border border-2 border-dark col-5 mx-3" placeholder="Su dirección">
-                <label class="col-5 mx-3" for="Regiones">Region:<span class="text-danger">*</span></label>
-                <label class="col-5 mx-3" for="Provincias">Provincia:<span class="text-danger">*</span></label>
-                <select name="regiones" class="rounded rounded-2 border border-2 border-dark col-5 mx-3 col-5 p-lg-1" id="Regiones">
+                <label class="col-11 mx-3 mx-sm-2">Nombre contacto:<span class="text-danger">*</span></label>
+                <input type="text" id="nombreContact" name="nombreContact" class="shadow-sm rounded rounded-2 border border-2 border-dark col-11 mx-5 mx-sm-2" placeholder="El nombre de contacto">
+                <label class="col-11 mx-3 mx-sm-2">Dirección:<span class="text-danger">*</span></label>
+                <input type="text" id="direccion" name="direccion" class="shadow-sm rounded rounded-2 border border-2 border-dark col-11 mx-5 mx-sm-2" placeholder="Su dirección">
+                <label class="col-11 mx-3 mx-sm-2" for="Regiones">Region:<span class="text-danger">*</span></label>
+                <select name="regiones" class="rounded rounded-2 border border-2 border-dark col-11 mx-sm-2" id="Regiones">
                   <option></option>
                   <option>Metropolitana</option>
                   <option>Bio-Bio</option>
                   <option>Maule</option>
                   <option>La araucania</option>
                 </select>
-                <select name="provincias" class="rounded rounded-2 border border-2 border-dark col-5 mx-3 col-5 p-lg-1" id="Provincias">
+                <label class="col-11 mx-3 mx-sm-2" for="Provincias">Provincia:<span class="text-danger">*</span></label>
+                <select name="provincias" class="rounded rounded-2 border border-2 border-dark col-11 mx-sm-2" id="Provincias">
                   <option></option>
                   <option>Arauco</option>
                   <option>Bio-Bio</option>
                   <option>Ñuble</option>
                 </select>
-                <label class="col-12 mx-3" for="Comunas">Comuna:<span class="text-danger">*</span></label>
-                <select name="comunas" class="rounded rounded-2 border border-2 border-dark col-5 mx-3 col-5 p-lg-1" id="Comunas">
+                <label class="col-11 mx-3 mx-sm-2" for="Comunas">Comuna:<span class="text-danger">*</span></label>
+                <select name="comunas" class="rounded rounded-2 border border-2 border-dark col-11 mx-sm-2" id="Comunas">
                   <option></option>
                   <option>Chiguayante</option>
                   <option>Concepcion</option>
@@ -143,9 +128,9 @@
                   <option>Talcahuano</option>
                   <option>Tome</option>
                 </select>
-                <label class="col-8 mx-3">Referencias de la dirección<span class="text-danger">*</span></label>
-                <textarea class="mb-2 rounded rounded-2 border border-2 border-dark col-5 mx-3 text-center" name="comentario" id="mapa" rows="3" disabled>--------MAPA--------</textarea>
-                <textarea class="mb-2 rounded rounded-2 border border-2 border-dark col-5 mx-3" name="comentario" id="comentario" rows="3"></textarea>
+                <label class="col-11 mx-3 mx-sm-2">Referencias de la dirección<span class="text-danger">*</span></label>
+                <textarea class="mb-2 rounded rounded-2 border border-2 border-dark col-11 mx-sm-2 text-center" name="comentario" id="mapa" rows="3" disabled>--------MAPA--------</textarea>
+                <textarea class="mb-2 rounded rounded-2 border border-2 border-dark col-11 mx-sm-2" name="comentario" id="comentario" rows="3"></textarea>
               <!--
                 <div class="col-6">
                   <div class="col-12">

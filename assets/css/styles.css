@@ -48,7 +48,13 @@ textarea{
 .columnaDiv{
   column-count: 2;
 }
+.columnaDiv3{
+  column-count: 3;
+}
 
 select{
+  padding: 2.5px !important;
+}
+.imputnormal{
   padding: 2.5px !important;
 }

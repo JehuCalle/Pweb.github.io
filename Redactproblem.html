@@ -78,27 +78,30 @@
                 </div>
               </div>
               <div class="border border-2 bg-warning bg-opacity-50 row justify-content-center">
+                <div class="col-12 mx-3 columnaDiv bg-light">
+                  <label class="col-11 mx-3 mx-sm-2 mb-0 h6 fw-normal " for="tipoProblem">Tipo de problema<span class="text-danger">*</span></label>
+                  <select name="tipoProblem" class="rounded rounded-2 border border-2 border-dark col-11 mx-3 mx-sm-2 h6 fw-normal" id="tipoProblem">
+                    <option></option>
+                    <option>Arauco</option>
+                    <option>Bio-Bio</option>
+                    <option>Ñuble</option>
+                  </select>
+
+                  <label class="col-11 mx-3 mx-sm-2 h6 fw-normal mb-0" for="Cdestino">N°Orden/Retiro<span class="text-danger">*</span></label>
+                  <input type="text" name="numOrdenRetiro" class="rounded rounded-2 border border-2 border-dark col-11 mx-3 mx-sm-2 mb-2">
+
+                  <label class="col-11 mx-3 mx-sm-2 h6 fw-normal mb-0" for="quienRedacta">¿Quien redacta?<span class="text-danger">*</span></label>
+                  <select name="quienRedacta" class="rounded rounded-2 border border-2 border-dark col-11 mx-3 mx-sm-2 h6 fw-normal" id="quienRedacta">
+                    <option></option>
+                    <option>Arauco</option>
+                    <option>Bio-Bio</option>
+                    <option>Ñuble</option>
+                  </select>
+
+                  <label class="col-11 mx-3 mx-sm-2 h6 fw-normal mb-0" for="Cdestino">Boleta/Factura/Guia<span class="text-danger">*</span></label>
+                  <input type="text" name="boletFacturGuia" class="rounded rounded-2 border border-2 border-dark col-11 mx-3 mx-sm-2 mb-2">
+                </div>
                 <div class="col-12 mx-3 bg-light">
-                  <label class="col-6 h6 fw-normal mx-2 mb-0" for="tipoProblem">Tipo de problema<span class="text-danger">*</span></label>
-                  <label class="col-5 h6 fw-normal mx-2 mb-0" for="quienRedacta">¿Quien redacta el problema?<span class="text-danger">*</span></label>
-                  <select name="tipoProblem" class="rounded rounded-2 border border-2 border-dark col-5 p-lg-0 h6 fw-normal mx-2" id="tipoProblem">
-                    <option></option>
-                    <option>Arauco</option>
-                    <option>Bio-Bio</option>
-                    <option>Ñuble</option>
-                  </select>
-                  <label class="col-1"></label>
-                  <select name="quienRedacta" class="rounded rounded-2 border border-2 border-dark col-5 p-lg-0 h6 fw-normal " id="quienRedacta">
-                    <option></option>
-                    <option>Arauco</option>
-                    <option>Bio-Bio</option>
-                    <option>Ñuble</option>
-                  </select>
-                  <label class="col-6 h6 fw-normal mx-2 mb-0" for="Cdestino">N°Orden/Retiro<span class="text-danger">*</span></label>
-                  <label class="col-5 h6 fw-normal mx-2 mb-0" for="Cdestino">Boleta/Factura/Guia<span class="text-danger">*</span></label>
-                  <input type="text" name="numOrdenRetiro" class="rounded rounded-2 border border-2 border-dark col-5 mx-2 h6 fw-normal">
-                  <label class="col-auto mx-3"></label>
-                  <input type="text" name="boletFacturGuia" class="rounded rounded-2 border border-2 border-dark col-5 mx-2 h6 fw-normal">
                   <label class="col-12 mb-0">Adjunte los archivos necesarios<span class="text-danger">*</span></label>
                   <input name="archivo" class="form-control rounded col-1 border border-2 border-dark" type="file" id="formFile" required>
                   <label class="col-12 h6 fw-normal p-0">Tamaño maximo de archivo rar: 10MB<span class="text-danger">*</span></label>
