@@ -59,7 +59,7 @@
     </div>
     <main class="bg-primary bg-opacity-25 d-flex justify-content-center">
       <div class="container row justify-content-center col-12 mt-3 mb-3">
-        <form id="formulario" class="col-6 bg-dark bg-opacity-75 col rounded rounded-1 border border-5 border-dark">
+        <form id="formulario" class="col-12 col-sm-12 col-md-11 col-lg-8 col-xl-6 bg-dark bg-opacity-75 col rounded rounded-1 border border-5 border-dark">
           <div class="border border-2 bg-warning bg-opacity-100 row justify-content-center "> 
             <div class="col-12 row justify-content-center">
               <div class="col-2">
@@ -79,7 +79,7 @@
           <div class="bg-light row justify-content-center">
             <div class="accordion col-12 h6 fw-normal mt-2" id="accordionExample2">
               <div>
-                <h6 class="accordion-header h6 fw-normal col-5" id="headineTermin">
+                <h6 class="accordion-header h6 fw-normal col-7 col-md-5" id="headineTermin">
                   <button class="h6 fw-normal col-11 rounded rounded-2 border border-dark border-2 p-0" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTermin"  aria-controls="collapseTermin">
                     -Terminos de retiro
                   </button>
@@ -91,20 +91,17 @@
             </div>
           </div>
           <div class="border border-2 bg-warning bg-opacity-50 row justify-content-center">
-            <h5 class="fw-bold col-12 mb-1 mt-1">Direccion</h5>
+            <h5 class="fw-bold col-12 mb-0 mt-1 mb-md-1">Direccion</h5>
             <div class="col-12 mx-3 columnaDiv bg-light">
-              <label class="col-11 mx-3 mx-sm-2 h6 fw-normal mb-0" for="Aorigen">Agencia origen<span class="text-danger">*</span></label>
-              <select name="aOrigen" class="rounded rounded-2 border border-2 border-dark col-11 mx-3 mx-sm-2 h6 fw-normal" id="Aorigen">
+              <label class="col-11 mb-0 mx-3 mx-sm-2 h6 fw-normal" for="Aorigen">Agencia origen<span class="text-danger">*</span></label>
+              <select name="aOrigen" class="rounded rounded-2 border border-2 border-dark col-11 mx-3 mx-sm-2 mb-md-5 h6 fw-normal" id="Aorigen">
                 <option></option>
                 <option>Arauco</option>
                 <option>Bio-Bio</option>
                 <option>Ñuble</option>
               </select>
-              <label class="col-11 h6 fw-bold mx-2"></label>
-              <label class="col-11 h6 fw-bold mx-2"></label>
-              <label class="col-11 h6 fw-bold mx-2"></label>
 
-              <label class="col-11 mx-3 mx-sm-2 h6 fw-normal mb-0" for="Adestino">Agencia destino<span class="text-danger">*</span></label>
+              <label class="col-11 mb-0 mx-3 mx-sm-2 h6 fw-normal" for="Adestino">Agencia destino<span class="text-danger">*</span></label>
               <select name="aDestino" class="rounded rounded-2 border border-2 border-dark col-11 mx-3 mx-sm-2 h6 fw-normal" id="Adestino">
                 <option></option>
                 <option>Arauco</option>
@@ -120,8 +117,8 @@
                 <option>Ñuble</option>
               </select>
             </div>
-            <h5 class="fw-bold col-7 mb-0 mt-1">Cargas</h5>
-            <button id="agregarCarga" class="h6 fw-normal col-5 rounded rounded-2 border border-dark border-2 mb-1 mt-1">Agregar otra carga</button>
+            <h5 class="fw-bold col-5 col-md-7 mb-0 mt-1">Cargas</h5>
+            <button id="agregarCarga" class="h6 fw-normal col-6 col-md-5 rounded rounded-2 border border-dark border-2 mb-0 mt-1">Agregar otra carga</button>
             <div class="col-12 mx-3 bg-light">
               <div class="accordion col-12 h6 fw-normal" id="accordionExample">
                 <div class="accordion-item bg-secondary bg-opacity-25">
@@ -131,8 +128,8 @@
                     </button>
                   </h6>
                   <div id="collapseOne" class="accordion-collapse collapse bg-secondary bg-opacity-25 columnaDiv3" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                    <label class="col-11 mx-3 mx-sm-2 mt-2 mb-1 h6 fw-normal" for="Tcarga">Tipo de carga<span class="text-danger">*</span></label>
-                    <select name="tipoCarga" class="rounded rounded-2 border border-2 border-dark h6 fw-normal col-11 mx-3 mx-sm-2 mb-2" id="Tcarga">
+                    <label class="col-11 mx-3 mx-sm-2 mt-2 mt-md-1 mb-1 h6 fw-normal" for="Tcarga">Tipo de carga<span class="text-danger">*</span></label>
+                    <select name="tipoCarga" class="rounded rounded-2 border border-2 border-dark h6 fw-normal col-11 mx-3 mx-sm-2 mb-2 mb-md-1" id="Tcarga">
                       <option></option>
                       <option>Tipo C 1</option>
                       <option>Tipo C 2</option>
@@ -141,26 +138,24 @@
                     </select>
 
                     <label class="col-11 mx-3 mx-sm-2 mt-0 mb-1 h6 fw-normal">Ancho<span class="text-danger">*</span></label>
-                    <input name="ancho" type="text" class="shadow-sm rounded rounded-2 border border-2 border-dark col-11 mx-3 mx-sm-2 mb-2 imputnormal">
+                    <input name="ancho" type="text" class="shadow-sm rounded rounded-2 border border-2 border-dark col-11 mx-3 mx-sm-2 mb-2 mb-md-1 imputnormal">
                     
                     <label class="col-12 mx-3 mx-sm-2 mt-0 mb-1 h6 fw-normal">Valor comercial<span class="text-danger">*</span></label>
-                    <input name="valorComercial" type="text" class="shadow-sm rounded rounded-2 border border-2 border-dark col-11 mx-3 mx-sm-2 mb-2 imputnormal">
-
-                    <label class="col-11 mx-3 mx-sm-2 mt-4"></label>
-
-                    <label class="col-11 mx-3 mx-sm-2 mt-2 mb-1 h6 fw-normal">Cantidad<span class="text-danger">*</span></label>
-                    <input name="cantidad" type="text" class="shadow-sm rounded rounded-2 border border-2 border-dark col-11 mx-3 mx-sm-2 mb-2 imputnormal">
+                    <input name="valorComercial" type="text" class="shadow-sm rounded rounded-2 border border-2 border-dark col-11 mx-3 mx-sm-2 mb-2 mb-md-5 imputnormal">
+                    
+                    <label class="col-11 mx-3 mx-sm-2 mt-0 mt-md-1 mb-md-1 mb-1 h6 fw-normal">Cantidad<span class="text-danger">*</span></label>
+                    <input name="cantidad" type="text" class="shadow-sm rounded rounded-2 border border-2 border-dark col-11 mx-3 mx-sm-2 mb-2 mb-md-1 imputnormal">
 
                     <label class="col-11 mx-3 mx-sm-2 mt-0 mb-1 h6 fw-normal">Largo<span class="text-danger">*</span></label>
-                    <input name="largo" type="text" class="shadow-sm rounded rounded-2 border border-2 border-dark col-11 mx-3 mx-sm-2 mb-2 imputnormal">
+                    <input name="largo" type="text" class="shadow-sm rounded rounded-2 border border-2 border-dark col-11 mx-3 mx-sm-2 mb-2 mb-md-1 imputnormal">
 
                     <label class="col-11 mx-3 mx-sm-2 mt-0 mb-1 h6 fw-normal">Peso(kg)<span class="text-danger">*</span></label>
-                    <input name="peso" type="text" class="shadow-sm rounded rounded-2 border border-2 border-dark col-11 mx-3 mx-sm-2 mb-2 imputnormal">
+                    <input name="peso" type="text" class="shadow-sm rounded rounded-2 border border-2 border-dark col-11 mx-3 mx-sm-2 mb-2 mb-md-1 imputnormal">
 
                     <label class="col-11 mx-3 mx-sm-2 mb-1 h6 fw-normal">Alto<span class="text-danger">*</span></label>
                     <input name="alto" type="text" class="shadow-sm rounded rounded-2 border border-2 border-dark col-11 mx-3 mx-sm-2 mb-0 imputnormal">
-                    
-                    <label class="col-12 mx-3 mx-sm-2 mt-2 mb-1 h6 fw-normal" for="Tembalaje">Tipo embalaje<span class="text-danger">*</span></label>
+
+                    <label class="col-12 mx-3 mx-sm-2 mt-2 mt-md-1 mb-1 h6 fw-normal" for="Tembalaje">Tipo embalaje<span class="text-danger">*</span></label>
                     <select name="tipoEmbalaje" class="rounded rounded-2 border border-2 border-dark h6 fw-normal col-11 mx-3 mx-sm-2 mb-2" id="Tembalaje">
                       <option></option>
                       <option>Tipo E 1</option>
@@ -168,8 +163,6 @@
                       <option>Tipo E 3</option>
                       <option>Tipo E 4</option>
                     </select>
-
-                    
                     <label class="col-11 mx-3 mx-sm-2 mb-0 h6 fw-normal">Su pedido supera el peso limite y será tomada como sobrecarga.</label>
                     <label class="col-11 mx-3 mx-sm-2 mb-0 h6 fw-normal">¿Cuenta con herramientas?.</label>
                     <input class="form-check-input col-auto border border-2 border-dark" type="radio" name="flexRadioSiNO" id="flexRadioDefault2" required>
@@ -193,8 +186,8 @@
             </div>
             <div class="border border-2 bg-warning bg-opacity-100 row justify-content-center pt-2 pb-2 ">
               <div class="col-12 row justify-content-evenly">
-                <button type="submit" id="btnCancelar" class="btn btn-light col-5 border border-dark border-2 h6 fw-normal">Cancelar</button>
-                <button type="submit" id="btnEnviar" class="btn btn-light col-5 border border-dark border-2 h6 fw-normal">Agendar</button>
+                <button type="submit" id="btnCancelar" class="col-10 col-md-5 btn btn-light border border-dark border-2 h6 fw-normal">Cancelar</button>
+                <button type="submit" id="btnEnviar" class="col-10 col-md-5 btn btn-light border border-dark border-2 h6 fw-normal">Agendar</button>
               </div>
             </div>
           </div>

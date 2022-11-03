@@ -59,7 +59,7 @@
     </div>
     <main class="bg-primary bg-opacity-25 d-flex justify-content-center">
         <div class="container row justify-content-center col-12 mt-3 mb-3">
-          <form id="formulario" class="col-10 col-md-6 bg-dark bg-opacity-75 col rounded rounded-1 border border-5 border-dark">
+          <form id="formulario" class="col-12 col-sm-12 col-md-10 col-lg-8 col-xl-6 bg-dark bg-opacity-75 col rounded rounded-1 border border-5 border-dark">
             <div class="border border-2 bg-warning bg-opacity-100 row justify-content-center "> 
               <div class="col-12 row justify-content-center">
                 <div class="col-2">
@@ -102,8 +102,8 @@
                   <option>Ñuble</option>
                 </select>
               </div>
-              <h5 class="fw-bold col-5 col-md-6 mb-0 mt-1">Cargas</h5>
-              <button class="h6 fw-normal col-6 col-md-5 mt-1 mb-0 mx-3 rounded rounded-3 border border-dark border-2">Agregar otra carga</button>
+              <h5 class="fw-bold col-6 col-md-6 mb-0 mt-1">Cargas</h5>
+              <button class="h6 fw-normal col-5 col-md-5 mt-1 mb-0 rounded rounded-3 border border-dark border-2">Agregar otra carga</button>
               <div class="col-12 mx-3 bg-light">
                 <div class="accordion col-12 h6 fw-normal" id="accordionExample">
                   <div class="accordion-item bg-secondary bg-opacity-25">
@@ -114,7 +114,7 @@
                     </h6>
                     <div id="collapseOne" class="accordion-collapse collapse bg-secondary bg-opacity-25 columnaDiv3" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                       <label class="col-11 mx-3 mx-sm-2 mt-2 mb-1 h6 fw-normal" for="tipoCarga">Tipo de carga<span class="text-danger">*</span></label>
-                      <select name="tipoCarga" class="rounded rounded-2 border border-2 border-dark col-11 mx-3 mx-sm-2 mb-2" id="tipoCarga">
+                      <select name="tipoCarga" class="rounded rounded-2 border border-2 border-dark col-11 mx-3 mx-sm-2 mb-2 mb-md-1" id="tipoCarga">
                         <option></option>
                         <option>Tipo C 1</option>
                         <option>Tipo C 2</option>
@@ -123,19 +123,19 @@
                       </select>
 
                       <label class="col-11 mx-3 mx-sm-2 mb-1 h6 fw-normal">Ancho<span class="text-danger">*</span></label>
-                      <input type="text" id="ancho" name="ancho" class="shadow-sm rounded rounded-2 border border-2 border-dark col-11 mx-3 mx-sm-2 mb-2 imputnormal">
+                      <input type="text" id="ancho" name="ancho" class="shadow-sm rounded rounded-2 border border-2 border-dark col-11 mx-3 mx-sm-2 mb-2 mb-md-1 imputnormal">
 
                       <label class="col-12 mx-3 mx-sm-2 mb-1 h6 fw-normal">Valor comercial<span class="text-danger">*</span></label>
                       <input type="text" id="valorComercial" name="valorComercial" class="shadow-sm rounded rounded-2 border border-2 border-dark col-11 mx-3 mx-sm-2 mb-2 mb-md-5 imputnormal">
 
                       <label class="col-11 mx-3 mx-sm-2 m-0 mt-md-2 mb-1 h6 fw-normal">Cantidad<span class="text-danger">*</span></label>
-                      <input type="text" id="cantidad" name="cantidad" class="shadow-sm rounded rounded-2 border border-2 border-dark col-11 mx-3 mx-sm-2 mb-2 imputnormal">
+                      <input type="text" id="cantidad" name="cantidad" class="shadow-sm rounded rounded-2 border border-2 border-dark col-11 mx-3 mx-sm-2 mb-2 mb-md-1 imputnormal">
 
                       <label class="col-11 mx-3 mx-sm-2 h6 fw-normal mb-1">Largo<span class="text-danger">*</span></label>
-                      <input type="text" id="largo" name="largo" class="shadow-sm rounded rounded-2 border border-2 border-dark col-11 mx-3 mx-sm-2 mb-2 imputnormal">
+                      <input type="text" id="largo" name="largo" class="shadow-sm rounded rounded-2 border border-2 border-dark col-11 mx-3 mx-sm-2 mb-2 mb-md-1 imputnormal">
 
                       <label class="col-11 mx-3 mx-sm-2 h6 fw-normal mb-1">Peso(kg)<span class="text-danger">*</span></label>
-                      <input type="text" id="peso" name="peso" class="shadow-sm rounded rounded-2 border border-2 border-dark col-11 mx-3 mx-sm-2 mb-2 imputnormal">
+                      <input type="text" id="peso" name="peso" class="shadow-sm rounded rounded-2 border border-2 border-dark col-11 mx-3 mx-sm-2 mb-2 mb-md-1s imputnormal">
 
                       <label class="col-11 mx-3 mx-sm-2 h6 fw-normal mb-1">Alto<span class="text-danger">*</span></label>
                       <input type="text" id="alto" name="alto" class="shadow-sm rounded rounded-2 border border-2 border-dark col-11 mx-3 mx-sm-2 mb-0 imputnormal">
@@ -171,8 +171,8 @@
               </div>
               <div class="border border-2 bg-warning bg-opacity-100 row justify-content-center pt-2 pb-2 ">
                 <div class="col-12 row justify-content-evenly">
-                  <button type="submit" id="btnCancelar" class="btn btn-light col-5 border border-dark border-2 h6 fw-normal">Cancelar</button>
-                  <button type="submit" id="btnEnviar" class="btn btn-light col-5 border border-dark border-2 h6 fw-normal">Agendar</button>
+                  <button type="submit" id="btnCancelar" class="col-10 col-md-5 btn btn-light border border-dark border-2 h6 fw-normal">Cancelar</button>
+                  <button type="submit" id="btnEnviar" class="col-10 col-md-5 btn btn-light border border-dark border-2 h6 fw-normal">Agendar</button>
                 </div>
               </div>
             </div>
