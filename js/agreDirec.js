@@ -67,12 +67,13 @@ formulario.addEventListener("submit",(e)=>{
         if(contenImputs[i].value == ""){
             contenImputs[i].classList.remove("border-dark");
             contenImputs[i].classList.add("border-danger");
-            console.log("FALTAN-V1")
+            console.log("INPUTS INC")
+            alerta.classList.remove("d-none");
         }else if(!contenImputs[i].value == ""){
             contenImputs[i].classList.remove("border-danger");
             contenImputs[i].classList.remove("border-dark");
             contenImputs[i].classList.add("border-success");
-            console.log("FALTAN-V2")
+            console.log("INPUTS CORR")
         }
         i++
     }
@@ -85,13 +86,12 @@ formulario.addEventListener("submit",(e)=>{
             contenSelect[a].classList.remove("border-dark");
             contenSelect[a].classList.add("border-danger");
             alerta.classList.remove("d-none");
-            console.log("FALTAN-V1")
+            console.log("SELECT INC")
         }else if(!contenSelect[a].value == ""){
             contenSelect[a].classList.remove("border-danger");
             contenSelect[a].classList.remove("border-dark");
             contenSelect[a].classList.add("border-success");
-            alerta.classList.remove("d-none");
-            console.log("FALTAN-V2")
+            console.log("SELECT CORR")
         }
         a++
     }
@@ -104,13 +104,12 @@ formulario.addEventListener("submit",(e)=>{
             contenTextarea[b].classList.remove("border-dark");
             contenTextarea[b].classList.add("border-danger");
             alerta.classList.remove("d-none");
-            console.log("FALTAN-V1")
+            console.log("TEXTAREA INC")
         }else if(!contenTextarea[b].value == ""){
             contenTextarea[b].classList.remove("border-danger");
             contenTextarea[b].classList.remove("border-dark");
             contenTextarea[b].classList.add("border-success");
-            alerta.classList.remove("d-none");
-            console.log("FALTAN-V2")
+            console.log("TEXTAREA CORR")
         }
         b++
     }

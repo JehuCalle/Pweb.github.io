@@ -87,9 +87,33 @@ formulario.addEventListener("submit",(e)=>{
     */
     //SE ALMACENAN TODOS LOS DATOS DE LOS INPUT EN EL [...data.values()] Y SE TRANSLADAN A [todo]
     const[rut,razonSocial,correo,telefono,pass,passRe,nombreContact,direccion,regiones,provincias,comunas,direcRef] = [...data.values()];
-///////////////////////////////////////////////
 
-    //VALIDAR RUT
+///////////////////////////////////////////////
+    function aaaa(){
+        let a = contenPass[0].value;
+        let b = contenPass[1].value;
+        console.log(contenPass[1].value)
+        if(a !== b){
+            contenPass[1].classList.remove("border-dark");
+            contenPass[1].classList.remove("border-success");
+            contenPass[1].classList.add("border-danger");
+            alerta.textContent = "Contraseña no coinciden"
+            alerta.classList.remove("d-none");
+            console.log("FALTA-CONTRA-COINCI")
+        }else if(!validacionUserPass.test(contenPass[1].value) === false && contenPass[1].value == ""){
+            contenPass[1].classList.remove("border-dark");
+            contenPass[1].classList.remove("border-success");
+            contenPass[1].classList.add("border-danger");
+            alerta.classList.remove("d-none");
+            alerta.textContent = "Contraseña no cumple con lo minimo"
+            console.log("FALTA-CONTRA2-MIN")
+        }else if(a === b && !contenPass[1].value == ""){
+            contenPass[1].classList.remove("border-danger");
+            contenPass[1].classList.remove("border-dark");
+            contenPass[1].classList.add("border-success");
+            console.log("CUMPLE-CONTRA-COINCI")
+        }
+    }
     var Fn = {
         validaRut : function (rutCompleto) {
             if (!/^[0-9]+[-|‐]{1}[0-9kK]{1}$/.test( rutCompleto ))
@@ -108,174 +132,7 @@ formulario.addEventListener("submit",(e)=>{
         }
     }
 
-    let i = 0
-    contenRut.splice(0,2);
-    while (i < 1) {
-        const inputCorr = rutUser;
-        contenRut.push(inputCorr);
-        if(Fn.validaRut(contenRut[0].value) == false){
-            contenRut[i].classList.remove("border-dark");
-            contenRut[i].classList.add("border-danger");
-            alerta.textContent = "RUT invalido";
-            console.log("FALTAN-V1")
-        }else if(Fn.validaRut(contenRut[0].value) == true){
-            contenRut[i].classList.remove("border-danger");
-            contenRut[i].classList.remove("border-dark");
-            contenRut[i].classList.add("border-success");
-            console.log("FALTAN-V2")
-        }
-        i++
-    }
-    //VALIDAR RUT
-
-    //VALIDAR EMAIL
-    let c = 0
-    contenEmail.splice(0,2);
-    while (c < 1) {
-    const inputCorr = emailUser;
-    contenEmail.push(inputCorr);
-    if(!validacionUserEmail.test(contenEmail[0].value)){
-        contenEmail[c].classList.remove("border-dark");
-        contenEmail[c].classList.add("border-danger");
-        alerta.classList.remove("d-none");
-        alerta.textContent = "Formato del correo incorrecto";
-        console.log("FALTAN-V1");
-    }else if(validacionUserEmail.test(contenEmail[0].value)){
-        contenEmail[c].classList.remove("border-danger");
-        contenEmail[c].classList.remove("border-dark");
-        contenEmail[c].classList.add("border-success");
-        alerta.classList.add("d-none");
-        console.log("FALTAN-V2");
-    }
-    c++
-    }
-    //VALIDAR EMAIL
-
-    //VALIDAR PASS
-    let p = 0
-    contenPass.splice(0,3);
-    while (p < 1) {
-        const inputCorr = passNomRe[p];
-        contenPass.push(inputCorr);
-        if(contenPass[p].value == ""){
-            alerta.classList.remove("d-none");
-            alerta.textContent = "Campos incompletos"
-            contenPass[p].classList.remove("border-dark");
-            contenPass[p].classList.add("border-danger");
-        }else if(!validacionUserPass.test(contenPass[0].value) === false){
-            contenPass[p].classList.remove("border-dark");
-            contenPass[p].classList.add("border-danger");
-            alerta.classList.remove("d-none");
-            console.log(!validacionUserPass.test(contenPass[0].value))
-            alerta.textContent = "Contraseña no cumple con lo minimo"
-            console.log("FALTA-CONTRA-MIN")
-        }else if(!validacionUserPass.test(contenPass[0].value) === true){
-            contenPass[0].classList.remove("border-dark");
-            contenPass[0].classList.remove("border-danger");
-            contenPass[0].classList.add("border-success");
-            alerta.classList.add("d-none");
-            console.log("CUMPLE-CONTRA-MIN");
-        }
-        if(p===0){
-            p++
-            const inputCorr = passNomRe[p];
-            contenPass.push(inputCorr);
-            aaaa();
-        }
-        p++
-    }
-
-    function aaaa(){
-        let a = contenPass[0].value;
-        let b = contenPass[1].value;
-        if(a !== b){
-            contenPass[1].classList.remove("border-dark");
-            contenPass[1].classList.remove("border-success");
-            contenPass[1].classList.add("border-danger");
-            alerta.textContent = "Contraseña no coinciden"
-            alerta.classList.remove("d-none");
-            console.log("FALTA-CONTRA-COINCI")
-        }else if(!validacionUserPass.test(contenPass[1].value) === false && contenPass[1].value == ""){
-            contenPass[1].classList.remove("border-dark");
-            contenPass[1].classList.add("border-danger");
-            alerta.classList.remove("d-none");
-            alerta.textContent = "Contraseña no cumple con lo minimo"
-            console.log("FALTA-CONTRA2-MIN")
-        }else if(a === b && !contenPass[1].value == ""){
-            contenPass[1].classList.remove("border-danger");
-            contenPass[1].classList.remove("border-dark");
-            contenPass[1].classList.add("border-success");
-            alerta.classList.remove("d-none");
-            console.log("CUMPLE-CONTRA-COINCI")
-        }
-    }
-    //VALIDAR PASS
-    
-    //VALIDAR TELEFONO
-    let m = 0
-    contenTel.splice(0,2);
-    while (m < 1) {
-    const inputCorr = telefUser[m];
-    contenTel.push(inputCorr);
-    console.log(validacionUserTel.test(contenTel[m].value))
-    if(validacionUserTel.test(contenTel[m].value) === false){
-        contenTel[m].classList.remove("border-dark");
-        contenTel[m].classList.add("border-danger");
-        alerta.classList.remove("d-none");
-        alerta.textContent = "Numero telefonico no valido";
-        console.log("FALTAN-V1");
-    }else if(validacionUserTel.test(contenTel[m].value) === true){
-        contenTel[m].classList.remove("border-danger");
-        contenTel[m].classList.remove("border-dark");
-        contenTel[m].classList.add("border-success");
-        alerta.classList.add("d-none");
-        console.log("FALTAN-V2");
-    }
-    m++
-    }
-    //VALIDAR TELEFONO
-
-    let x = 0
-    contenImputs.splice(0,4);
-    while (x < 3) {
-        const inputCorr = test[x];
-        contenImputs.push(inputCorr);
-        if(contenImputs[x].value == ""){
-            contenImputs[x].classList.remove("border-dark");
-            contenImputs[x].classList.add("border-danger");
-            alerta.classList.remove("d-none");
-            alerta.textContent = "Campos sin completar"
-            console.log("FALTAN-V1")
-        }else if(!contenImputs[x].value == ""){
-            contenImputs[x].classList.remove("border-danger");
-            contenImputs[x].classList.remove("border-dark");
-            contenImputs[x].classList.add("border-success");
-            alerta.classList.add("d-none");
-            console.log("FALTAN-V2")
-        }
-        x++
-    }
-    //////////////////////////
-
-    let l = 0
-    contenSelect.splice(0,3);
-    while (l < 3) {
-        const selectCorr = test2[l];
-        contenSelect.push(selectCorr);
-        if(contenSelect[l].value == ""){
-            contenSelect[l].classList.remove("border-dark");
-            contenSelect[l].classList.add("border-danger");
-            alerta.classList.remove("d-none");
-            console.log("FALTAN-V1")
-        }else if(!contenSelect[l].value == ""){
-            contenSelect[l].classList.remove("border-danger");
-            contenSelect[l].classList.remove("border-dark");
-            contenSelect[l].classList.add("border-success");
-            alerta.classList.remove("d-none");
-            console.log("FALTAN-V2")
-        }
-        l++
-    }
+    //VERIFICAR TEXTAREAS 7
     let t = 0
     contenTextarea.splice(0,2);
     while (t < 1) {
@@ -285,16 +142,168 @@ formulario.addEventListener("submit",(e)=>{
             contenTextarea[t].classList.remove("border-dark");
             contenTextarea[t].classList.add("border-danger");
             alerta.classList.remove("d-none");
-            console.log("FALTAN-V1")
+            console.log("TEXTAREA INC");
         }else if(!contenTextarea[t].value == ""){
             contenTextarea[t].classList.remove("border-danger");
             contenTextarea[t].classList.remove("border-dark");
             contenTextarea[t].classList.add("border-success");
-            alerta.classList.remove("d-none");
-            console.log("FALTAN-V2")
+            console.log("TEXTAREA CORR");
         }
-        t++
+        t++;
     }
+    //VERIFICAR TEXTAREAS
+
+    //VERIFICAR SELECTS 6
+    let l = 0
+    contenSelect.splice(0,3);
+    while (l < 3) {
+        const selectCorr = test2[l];
+        contenSelect.push(selectCorr);
+        if(contenSelect[l].value == ""){
+            contenSelect[l].classList.remove("border-dark");
+            contenSelect[l].classList.add("border-danger");
+            alerta.textContent = "Campos sin completar";
+            alerta.classList.remove("d-none");
+            console.log("SELECT INC");
+        }else if(!contenSelect[l].value == ""){
+            contenSelect[l].classList.remove("border-danger");
+            contenSelect[l].classList.remove("border-dark");
+            contenSelect[l].classList.add("border-success");
+            console.log("SELECT CORR");
+        }
+        l++;
+    }
+    //VERIFICAR SELECTS
+
+    //VERIFICAR INPUTS 5
+    let x = 0
+    contenImputs.splice(0,4);
+    while (x < 3) {
+        const inputCorr = test[x];
+        contenImputs.push(inputCorr);
+        if(contenImputs[x].value == ""){
+            contenImputs[x].classList.remove("border-dark");
+            contenImputs[x].classList.add("border-danger");
+            alerta.classList.remove("d-none");
+            alerta.textContent = "Campos sin completar";
+            console.log("INPUTS INC");
+        }else if(!contenImputs[x].value == ""){
+            contenImputs[x].classList.remove("border-danger");
+            contenImputs[x].classList.remove("border-dark");
+            contenImputs[x].classList.add("border-success");
+            console.log("INPUTS CORR");
+        }
+        x++;
+    }
+    //VERIFICAR INPUTS
+
+    //VALIDAR PASS  4
+    let p = 0
+    contenPass.splice(0,3);
+    while (p < 1) {
+        const inputCorr = passNomRe[p];
+        contenPass.push(inputCorr);
+        console.log(!validacionUserPass.test(contenPass[0].value))
+        if(contenPass[p].value == ""){
+            alerta.classList.remove("d-none");
+            alerta.textContent = "Ingrese su contraseña";
+            contenPass[p].classList.remove("border-dark");
+            contenPass[p].classList.add("border-danger");
+            console.log("FALTA-CONTRA");
+        }else if(!validacionUserPass.test(contenPass[0].value) === false){
+            console.log(!validacionUserPass.test(contenPass[0].value))
+            contenPass[p].classList.remove("border-dark");
+            contenPass[p].classList.add("border-danger");
+            alerta.classList.remove("d-none");
+            alerta.textContent = "Contraseña no cumple con lo minimo";
+            console.log("FALTA-CONTRA-MIN");
+        }else if(!validacionUserPass.test(contenPass[0].value) === true){
+            contenPass[0].classList.remove("border-dark");
+            contenPass[0].classList.remove("border-danger");
+            contenPass[0].classList.add("border-success");
+            console.log("CUMPLE-CONTRA-MIN");
+
+            p++;
+            const inputCorr = passNomRe[p];
+            contenPass.push(inputCorr);
+            aaaa();
+        }
+        /*
+        if(p===0){
+
+        }
+        */
+        p++;
+    }
+    //VALIDAR PASS
+
+    //VALIDAR TELEFONO  3
+    let m = 0;
+    contenTel.splice(0,2);
+    while (m < 1) {
+        const inputCorr = telefUser[m];
+        contenTel.push(inputCorr);
+        if(validacionUserTel.test(contenTel[m].value) === false){
+            contenTel[m].classList.remove("border-dark");
+            contenTel[m].classList.add("border-danger");
+            alerta.classList.remove("d-none");
+            alerta.textContent = "Numero telefonico no valido";
+            console.log("TEL INC");
+        }else if(validacionUserTel.test(contenTel[m].value) === true){
+            contenTel[m].classList.remove("border-danger");
+            contenTel[m].classList.remove("border-dark");
+            contenTel[m].classList.add("border-success");
+            console.log("TEL CORR");
+        }
+        m++;
+    }
+    //VALIDAR TELEFONO
+
+    //VALIDAR EMAIL 2
+    let c = 0;
+    contenEmail.splice(0,2);
+    while (c < 1) {
+    const inputCorr = emailUser;
+    contenEmail.push(inputCorr);
+    if(!validacionUserEmail.test(contenEmail[0].value)){
+        contenEmail[c].classList.remove("border-dark");
+        contenEmail[c].classList.add("border-danger");
+        alerta.classList.remove("d-none");
+        alerta.textContent = "Formato del correo incorrecto";
+        console.log("CORREO INC");
+    }else if(validacionUserEmail.test(contenEmail[0].value)){
+        contenEmail[c].classList.remove("border-danger");
+        contenEmail[c].classList.remove("border-dark");
+        contenEmail[c].classList.add("border-success");
+        console.log("CORREO CORR");
+    }
+    c++;
+    }
+    //VALIDAR EMAIL
+
+    //VALIDAR RUT   1
+    let i = 0;
+    contenRut.splice(0,2);
+    while (i < 1) {
+        const inputCorr = rutUser;
+        contenRut.push(inputCorr);
+        if(Fn.validaRut(contenRut[0].value) == false){
+            contenRut[i].classList.remove("border-dark");
+            contenRut[i].classList.add("border-danger");
+            alerta.textContent = "RUT invalido";
+            console.log("RUT INC");
+        }else if(Fn.validaRut(contenRut[0].value) == true){
+            contenRut[i].classList.remove("border-danger");
+            contenRut[i].classList.remove("border-dark");
+            contenRut[i].classList.add("border-success");
+            console.log("RUT CORR");
+        }
+        i++;
+    }
+    //VALIDAR RUT
+
+    //////////////////////////
+
 
     if(!contenImputs[0].value == "" && !contenImputs[1].value == "" && !contenImputs[2].value == "" &&  Fn.validaRut(contenRut[0].value) == true && validacionUserEmail.test(contenEmail[0].value) && validacionUserTel.test(contenTel[0].value) && !contenPass[0].value == "" && !contenPass[1].value == "" && !validacionUserPass.test(contenPass[0].value) === true && !validacionUserPass.test(contenPass[1].value) === true && !contenSelect[0].value == "" && !contenSelect[1].value == "" && !contenSelect[2].value == "" && !contenTextarea[0].value == ""){
         console.log("FIN")
