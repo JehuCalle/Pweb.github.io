@@ -10,8 +10,8 @@
   <title>Inicio</title>
   </head>
   <body>
-    <div class="bg-info center">
-      <nav class="navbar center navbar-expand-lg navbar-light bg-light">
+    <div class="bg-secondary bg-opacity-25 center">
+      <nav class="navbar center navbar-expand-lg">
         <div class="container-fluid align-content-center">
           <a class="navbar-brand" href="#">Navbar</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -19,69 +19,67 @@
           </button>
           <div class="collapse navbar-collapse justify-content-center" id="navbarNavDropdown">
             <ul class="navbar-nav me-auto">
-              <li class="nav-item bg-danger bg-opacity-100">
+              <li class="nav-item bg-transparent">
                   <a class="nav-link active" aria-current="page" href="./index.html">Inicio</a>
               </li>
-              <li class="nav-item bg-danger bg-opacity-75">
+              <li class="nav-item bg-transparent">
                 <a class="nav-link" href="./Misdatos.html">Mis datos</a>
               </li>
-              <li class="nav-item bg-danger bg-opacity-50">
+              <li class="nav-item bg-transparent">
                 <a class="nav-link" href="./Misdirecciones.html">Mis direcciones</a>
               </li>
-              <li class="nav-item bg-danger bg-opacity-75">
+              <li class="nav-item bg-transparent">
                 <a class="nav-link" href="./Misordenes.html">Mis Ordenes</a>
               </li>
-              <li class="nav-item bg-danger bg-opacity-100">
+              <li class="nav-item bg-transparent">
                 <a class="nav-link" href="./Cuencorri.html">Cuenta corriente</a>
               </li>
-              <li class="nav-item bg-danger bg-opacity-75">
+              <li class="nav-item bg-transparent">
                 <a class="nav-link" href="./Misretiros.html">Retiros</a>
               </li>
-              <li class="nav-item bg-danger bg-opacity-50">
+              <li class="nav-item bg-transparent">
                 <a class="nav-link" href="./Problemas.html">Problemas</a>
               </li>
             </ul>
             <div class="btn-group">
-              <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+              <button type="button" class="btn bg-secondary bg-opacity-25 dropdown-toggle text-secondary" data-bs-toggle="dropdown" aria-expanded="false">
                 Jehu Calle
               </button>
-              <ul class="dropdown-menu dropdown-menu-dark">
-                <li><a class="dropdown-item" href="./Misdatos.html">Mis datos</a></li>
-                <li><a class="dropdown-item" href="./Seguienvio.html">¿SeguiEnv?</a></li>
-                <li><a class="dropdown-item" href="./Seguiretiro.html">¿SeguiRet?</a></li>
-                <li><a class="dropdown-item" href="./index.html">Cerrar sesion</a></li>
+              <ul class="dropdown-menu dropdown-menu-dark bg-secondary bg-opacity-25">
+                <li><a class="dropdown-item text-secondary" href="./Misdatos.html">Mis datos</a></li>
+                <li><a class="dropdown-item text-secondary" href="./Seguienvio.html">¿SeguiEnv?</a></li>
+                <li><a class="dropdown-item text-secondary" href="./Seguiretiro.html">¿SeguiRet?</a></li>
+                <li><a class="dropdown-item text-secondary" href="./index.html">Cerrar sesion</a></li>
               </ul>
             </div>
           </div>
         </div>
       </nav>
     </div>
-    <main class="bg-primary bg-opacity-25 d-flex justify-content-center">
+    <main class="bg-light bg-opacity-25 d-flex justify-content-center">
       <div class="container row justify-content-center align-items-center col-12 mt-3 mb-3">
-        <form id="formulario" class="col-10 col-xl-4 col-lg-4 col-md-6 col-sm-8 bg-dark bg-opacity-75 col rounded rounded-1 border border-5 border-dark">
-          <div class="border border-2 bg-warning bg-opacity-100 row justify-content-center "> 
+        <form id="formulario" class="col-10 col-xl-4 col-lg-4 col-md-6 col-sm-8 bg-transparent col border border-3 rounded rounded-1">
+          <div class="row justify-content-center "> 
             <div class="col-12 row justify-content-center">
               <img class="img-fluid col-4 pt-2" src="./assets/img/Icon.png" alt="">
-              <h4 class="text-center fw-bold col-12" id="jvTest">Iniciar Sesion</h4>
+              <h4 class="text-center text-secondary fw-bold col-12" id="jvTest">Iniciar Sesion</h4>
             </div>
           </div>
-          <div class="border border-2 bg-warning bg-opacity-75 row justify-content-center "> 
+          <div class="row justify-content-center "> 
             <div class="col-12">
-              <label id="divAlerta" class="bg-light mb-2 border border-3 border-danger rounded rounded-3 p-1 col-12 d-none">Campos sin completar</label>
-              <span class="bg-light rounded rounded-3 border border-danger border-3">* = Campos obligatorios</span>
+              <label id="divAlerta" class="bg-light mb-2 border border-3 border-warning rounded rounded-3 p-1 col-12 d-none">Campos sin completar</label>
+              <span class="bg-light rounded rounded-3 border border-2 border-warning">* = Campos obligatorios</span>
             </div>
           </div>
-          <div class="border border-2 bg-warning bg-opacity-50 row justify-content-center pt-3 pb-3">
+          <div class="row justify-content-center pt-3 pb-3">
             <div class="col-10 px-0">
-              <label class="col-3">RUT<span class="text-danger">*</span></label>
-              <input type="text" name="rut" id="rut" class="rounded rounded-2 border border-2 border-dark col-12 p-1" placeholder="Ej: 12345678-9">
+              <input type="text" name="rut" id="rut" class="col-12 p-1 rounded rounded-2 border border-2 border-opacity-75 border-secondary bg-transparent fw-light fst-italic" placeholder="Rut* Ej: 12345678-9">
               <p class="text-dark mb-2" id="alertaRut"></p>
-              <label class="col-3">Contraseña<span class="text-danger">*</span></label>
-              <input type="text" name="pass" id="pass" class="rounded rounded-2 border border-2 border-dark col-12 p-1" placeholder="Contraseña">
+              <input type="text" name="pass" id="pass" class="col-12 p-1 rounded placeholder-glow rounded-2 border border-2 border-secondary border-opacity-75 bg-transparent fw-light fst-italic" placeholder="Contraseña*">
               <p class="text-dark mb-2" id="alertaPass"></p>
             </div>
           </div>
-          <div class="border border-2 bg-warning bg-opacity-75 row justify-content-center">
+          <div class="row justify-content-center">
             <p class="row justify-content-center">O</p>
             <div class="col-10 row justify-content-evenly">
               <button class="col-2">F</button>
@@ -90,42 +88,43 @@
               <button class="col-2">O</button>
             </div>
           </div>
-          <div class="border border-2 bg-warning bg-opacity-100 row justify-content-center pt-3">
+          <div class="row justify-content-center pt-3">
             <div class="col-10 row justify-content-evenly px-0" id="aa">
               <button class="col-8 pb-3 pt-3" id="a">----Captcha----</button>
             </div>
           </div>
-          <div class="border border-2 bg-warning bg-opacity-100 row justify-content-center pt-2 ">
+          <div class="row justify-content-center pt-2 ">
             <div class="col-10 row justify-content-evenly px-0">
-              <button type="submit" id="btnIniciarSesion" class="btn btn-light col-10 border border-dark border-2 p-1 px-0">Iniciar sesion</button>
+              <button type="submit" id="btnIniciarSesion" class="col-7 p-1 px-0 btn bg-warning bg-opacity-100 rounded rounded-5 fw-bold text-light">Iniciar sesion</button>
             </div>
           </div>
-          <div class="border border-2 bg-warning bg-opacity-75 row justify-content-center pt-2 pb-2 px-0">
+          <div class="row justify-content-center pt-2 pb-2 px-0">
             <div class="col-12 row justify-content-center px-0">
-              <a class="text-dark text-opacity-75 text-center text-decoration-none px-0" href="./Repass.html">¿Ha olvidado su contraseña?</a>
-              <a class="text-primary text-opacity-75 text-center text-decoration-none px-0" href="./Regis.html">Registrarse</a>
+              <a class="text-secondary text-opacity-75 text-center text-decoration-none px-0" href="./Repass.html">¿Ha olvidado su contraseña?</a>
+              <a class="text-secondary text-opacity-75 text-center text-decoration-none px-0" href="./Regis.html">Registrarse</a>
             </div>
           </div>
         </form>
       </div>
     </main>
-    <section class="position-relative d-flex justify-content-center bg-warning">
-    <footer class="position-relative d-flex justify-content-center top-1 pb-4 col-12">
-      <div class="col-12 container row border border-5 border-success justify-content-center p-2">
-        <div class="border border-2 row col-12 col-md-4 col-xl-4 col-xxl-4 align-items-center mx-1 px-0">
-            <div class="col-5 p-0">
-                <img class="img-fluid p-0" src="./assets/img/Board.png">
-            </div>
-            <div class="row col-5 col-sm-5 col mx-1 p-0">
-              <a class="text-decoration-none text-dark p-0 mx-1" href="https://es-la.facebook.com/" target="_blank">
-                <img class="resize2" src="./assets/img/Facebook2.png">Chevalier
-              </a>
-              <a class="text-decoration-none text-dark p-0 mx-1" href="https://www.instagram.com/" target="_blank">
-                <img class="resize2" src="./assets/img/Instagram2.png">@Chevalier
-              </a>
-            </div>
+    <footer class="position-relative d-flex justify-content-center bg-secondary bg-opacity-25">
+      <div class="col-12 d-flex col align-items-center text-secondary text-opacity-75">
+        <div class="row col-12 col-sm-10 col-md-4 col-xl-4 col-xxl-4 mx-1 mx-md-4 mx-xl-3 mx-xxl-5 px-0 px-xxl-5 justify-content-center">
+          <img class="col-9 col-md-12 col-xl-10 img-fluid p-0 mx-5 mx-md-3" src="./assets/img/Board.png">
+          <a class="col-1 text-decoration-none text-dark p-0 mx-3 d-flex justify-content-end" href="https://es-la.facebook.com/" target="_blank">
+            <img class="resize2" src="./assets/img/Facebook2.png">
+          </a>
+          <a class="col-1 text-decoration-none text-dark p-0 mx-3 d-flex justify-content-center" href="https://www.instagram.com/" target="_blank">
+            <img class="resize2" src="./assets/img/Instagram2.png">
+          </a>
+          <a class="col-1 text-decoration-none text-dark p-0 mx-3 d-flex justify-content-start" href="https://es-la.facebook.com/" target="_blank">
+            <img class="resize2" src="./assets/img/Facebook2.png">
+          </a>
         </div>
-        <div class="border border-2 row col-12 col-md-2 col-xl-3 col-xxl-3 mx-4 align-items-center px-0 pt-3">
+
+        <div class="vr h-75 opacity-100 align-self-center"></div>
+
+        <div class="row col-12 col-md-2 col-xl-3 col-xxl-2 mx-4 mx-xxl-5 px-0 pt-3 align-items-center">
           <ul class="text-center list-group-numbered fw-bold p-0">
             <li>
               Inicio
@@ -150,17 +149,22 @@
             </li>
           </ul>
         </div>
-        <div class="align-items-center col-12 col-md-4 col-xl-4 col-xxl-4 align-self-center border border-2 row mx-1 px-0">
-          <label class="col-12 fw-bold"><span class="col-5 mx-2">🗺</span>Direccion</label>
-          <label class="col-12 px-5">Av. O'higgins 1867, Chillan, Region de Ñuble, Chile.</label>
-          <label class="col-12 fw-bold"><span class="col-5 mx-2">🗺</span>Call Center</label>
-          <label class="col-12 px-5">Horario: Lunes a Viernes 09:00 a 17:00 hrs 600 3600 401.</label>
-          <label class="col-12 fw-bold"><span class="col-5 mx-2">🗺</span>Correo Electronico</label>
-          <label class="col-12 px-5">Contacto@Chevalier.cl.</label>
+
+        <div class="vr h-75 opacity-100 align-self-center"></div>
+
+        <div class="row col-12 col-md-4 col-xl-4 col-xxl-4 mx-1 mx-xxl-5 px-0 d-flex align-content-center justify-content-center align-items-center">
+          <label class="col-10 col-md-12 fw-bold"><span class="col-5 mx-2">🗺</span>Direccion</label>
+          <label class="col-10 col-md-12 px-5">Av. O'higgins 1867, Chillan, Región Ñuble, Chile.</label>
+          <label class="col-10 col-md-12 fw-bold"><span class="col-5 mx-2">🗺</span>Call Center</label>
+          <label class="col-10 col-md-12 px-5">Horario: Lunes a Viernes 09:00 a 17:00 hrs 600 3600 401.</label>
+          <label class="col-10 col-md-12 fw-bold"><span class="col-5 mx-2">🗺</span>Correo Electrónico</label>
+          <label class="col-10 col-md-12 px-5">Contacto@chevalier.cl.</label>
         </div>
       </div>
     </footer>
-    </section>
+    <div class="bg-dark bg-opacity-75 col-12">
+      <label class="col-12 mt-5 mb-4"></label>
+    </div>
     <script src="./js/index.js"></script>
     <script src="./bootstrap/js/bootstrap.bundle.min.js"></script>
   </body>

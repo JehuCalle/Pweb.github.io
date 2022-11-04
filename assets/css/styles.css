@@ -51,6 +51,9 @@ textarea{
 .columnaDiv3{
   column-count: 3;
 }
+.columnaDiv5{
+  column-count: 2;
+}
 
 select{
   padding: 2.5px !important;

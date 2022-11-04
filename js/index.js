@@ -13,6 +13,16 @@ const passUser = document.querySelector("#pass");
 const contenPass = [];
 const validacionUserPass = /^(\d|(([A-Za-zñÑáéíóúÁÉÍÓÚ\s])\3?(?!\3)))+$/;
 
+const tamañoPantalla = document.querySelector("footer");
+const tamañoPantalla2 = document.querySelector("footer div");
+const tamañoPantalla3 = document.querySelector("footer div .mx-4");
+if (screen.width < 767){
+    console.log("Pequeña");
+    tamañoPantalla.classList.remove("d-flex");
+    tamañoPantalla2.classList.remove("d-flex");
+    tamañoPantalla3.classList.remove("mx-4");
+}
+
 const agregarUsuario = (rut,pass) =>{
     const objetoTodo = {
         Rut: rut,
@@ -57,17 +67,17 @@ formulario.addEventListener("submit",(e)=>{
                 alerta.classList.remove("d-none");
                 alerta.textContent = "Campo contraseña incompleta"
                 contenPass[a].classList.remove("border-dark");
-                contenPass[a].classList.add("border-danger");
+                contenPass[a].classList.add("border-warning");
             }else if(!validacionUserPass.test(contenPass[0].value) === false){
                 contenPass[a].classList.remove("border-dark");
-                contenPass[a].classList.add("border-danger");
+                contenPass[a].classList.add("border-warning");
                 alerta.classList.remove("d-none");
                 console.log(!validacionUserPass.test(contenPass[0].value))
                 alerta.textContent = "Contraseña incorrecta"
                 console.log("FALTA-CONTRA-MIN")
             }else if(!validacionUserPass.test(contenPass[0].value) === true){
                 contenPass[0].classList.remove("border-dark");
-                contenPass[0].classList.remove("border-danger");
+                contenPass[0].classList.remove("border-warning");
                 contenPass[0].classList.add("border-success");
                 alerta.classList.add("d-none");
                 console.log("CUMPLE-CONTRA-MIN");
@@ -111,15 +121,15 @@ formulario.addEventListener("submit",(e)=>{
             alerta.classList.remove("d-none");
             alerta.textContent = "Rut no ingresado"
             contenRut[i].classList.remove("border-dark");
-            contenRut[i].classList.add("border-danger");
+            contenRut[i].classList.add("border-warning");
         }else if(Fn.validaRut(contenRut[i].value) == false || contenRut[i].value == ""){
             contenRut[i].classList.remove("border-dark");
-            contenRut[i].classList.add("border-danger");
+            contenRut[i].classList.add("border-warning");
             alerta.textContent = "RUT invalido";
             alerta.classList.remove("d-none");
             console.log("FALTAN-V1")
         }else if(Fn.validaRut(contenRut[0].value) == true){
-            contenRut[i].classList.remove("border-danger");
+            contenRut[i].classList.remove("border-warning");
             contenRut[i].classList.remove("border-dark");
             contenRut[i].classList.add("border-success");
             alerta.classList.add("d-none");
