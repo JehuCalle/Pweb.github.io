@@ -8,6 +8,7 @@ const rutUser = document.querySelector("#rut");
 const contenRut = [];
 
 let usuarios = [];
+let id = 0;
 
 const passUser = document.querySelector("#pass");
 const contenPass = [];
@@ -40,7 +41,6 @@ btnLink.addEventListener('click',(event) => {
 formulario.addEventListener("submit",(e)=>{
     e.preventDefault();
     alerta.classList.add("d-none");
-
     //PARA QUE NO SE PUEDA AGREGAR MÁS USUARIOS AL APRETAR INICIAR SESION REPETIDAS VECES
     usuarios.pop();
 
@@ -89,8 +89,14 @@ formulario.addEventListener("submit",(e)=>{
             console.log("FIN")
             agregarUsuario(rut,pass);
             alerta.classList.add("d-none");
+
+            // GUARDAR ID Y RUT EN LOCALSTORAGE
+            id++;
+            localStorage.setItem(id,rutUser.value);
+            //
+
             console.log(usuarios)
-            setTimeout(()=> location.href="./Misdatos.html",2000);
+            //setTimeout(()=> location.href="./Misdatos.html",2000);
             return;
         }
     }

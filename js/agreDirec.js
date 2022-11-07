@@ -15,10 +15,16 @@ const test3 = document.querySelectorAll("#comentario");
 const contenTextarea = [];
 ///////////////////////////////////////////////
 
+const porteFormulario1 = document.querySelector("#modalF");
+const porteFormulario2 = document.querySelector("#modal2");
 const tamañoPantalla = document.querySelector(".columnaDiv");
 if (screen.width < 767){
     console.log("Pequeña");
     tamañoPantalla.classList.remove("columnaDiv");
+}
+if (screen.width > 767){
+    console.log("Grande");
+    porteFormulario1.classList.remove("w-75");
 }
 
 let usuarios = [];
