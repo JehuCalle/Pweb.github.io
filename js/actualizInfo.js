@@ -23,6 +23,7 @@ const contenImputs = [];
 let nuevaInfor = [];
 ///////////////////////////////////////////////
 
+
 ///////////////////////////////////////////////
 const formulario2 = document.querySelector("#formulario2");
 const alerta3 = document.querySelector("#divAlerta3");
@@ -46,6 +47,45 @@ if (screen.width > 767){
     console.log("Grande");
     porteFormulario1.classList.remove("w-75");
 }
+
+    //=>=>=>=>=>=>=>2<=<=<=<=<=<=<=
+    let url = 'https://localhost:44385/rut?rut=17748040-1';
+    fetch(url)    
+    .then((res)=> res.json())
+    .then((data)=> mostrarData(data))
+    .catch(error =>console.log(error))
+
+    const mostrarData = (data) => {
+        console.log(data)
+        //const textest = document.querySelector("#rutTxt");    //OPCION 2?
+        const body = document.querySelector("body");
+        //textest.textContent = data.rut;                       //OPCION 1?
+        body.querySelector("#rutTxt").textContent = data.rut;   //OPCION 2?
+        body.querySelector("#razsocialTxt").textContent = data.razonSoc;
+        if (data.frecuente == 0){
+            frecuencia = "No"
+            body.querySelector("#clienFrecu").textContent = frecuencia;
+        }
+        if (data.frecuente == 1){
+            frecuencia = "Si"
+            body.querySelector("#clienFrecu").textContent = frecuencia;
+        }
+        body.querySelector("#giroTxt").textContent = data.giro;
+        body.querySelector("#direccionTxt").textContent = data.direccion;
+        body.querySelector("#comunaTxt").textContent = data.comuna;
+        body.querySelector("#ciudadTxt").textContent = data.ciudad;
+        body.querySelector("#provinciaTxt").textContent = data.provincia;
+        body.querySelector("#regionTxt").textContent = data.region;
+
+        body.querySelector("#telefonoTxt").textContent = data.telefono1;
+        body.querySelector("#correoTxt").textContent = data.mailCliente;
+        body.querySelector("#correoConTxt").textContent = data.contactoOpMail;
+        if(data.contactoOpMail == ""){
+            body.querySelector("#correoConTxt").textContent = "-";
+        }
+
+    }
+
 
 const actualizarInformacion = (razonSocial,direccion,provincias,telefono,correo,celular,contactoPago,giro,regiones,comunas,telefonoContact,correoContact,celularContact) =>{
     const objetoTodo = {
@@ -94,17 +134,6 @@ function limpiarForm(){
 btnActuaInfo.addEventListener("click",(e)=>{
     e.preventDefault();
     limpiarForm();
-
-    //=>=>=>=>=>=>=>2<=<=<=<=<=<=<=
-    let url = 'https://localhost:44385/rut?rut=17748040-1';
-    fetch(url)    
-    .then((res)=> res.json())
-    .then((data)=> console.log(data))
-    .catch(error =>console.log(error))
-
-    const mostrarData = (data) => {
-        console.log(data)
-    }
 });
 btnModifContra.addEventListener("click",(e)=>{
     e.preventDefault();

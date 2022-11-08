@@ -1,10 +1,15 @@
 console.log("😼");
 
-const formulario = document.querySelector("#formulario");
-//const btnIniciarSesion = document.querySelector("#btnIniciarSesion");
-const btnCancelar = document.querySelector("#btnCancelar");
+const btnCotizar = document.querySelector("#btnCotizar");
+const btnGenerarPreEnv = document.querySelector("#btnGenerarPreEnv");
+
+const formulario1 = document.querySelector("#formulario");
+const btnCancelar1 = document.querySelector("#btnCancelar1");
+const btnAceptar1 = document.querySelector("#btnAceptar1");
 const btnAgregarCarga = document.querySelector("#agregarCarga");
-const alerta = document.querySelector("#divAlerta");
+
+const alerta1 = document.querySelector("#divAlerta1");
+const alerta2 = document.querySelector("#divAlerta2");
 
 ///////////////////////////////////////////////
 const test = document.querySelectorAll(".shadow-sm");
@@ -15,8 +20,12 @@ const contenSelect = [];
 
 const test4 = document.querySelectorAll("input[type='radio']");
 const contenFlexRadio = [];
-///////////////////////////////////////////////
 
+//console.log(document.querySelector("#formulario1"));
+
+///////////////////////////////////////////////
+const porteFormulario1 = document.querySelector("#modal1");
+const porteFormulario2 = document.querySelector("#modal2");
 const tamañoPantalla = document.querySelector(".columnaDiv");
 const tamañoPantalla3 = document.querySelector(".columnaDiv3");
 if (screen.width < 767){
@@ -24,8 +33,94 @@ if (screen.width < 767){
     tamañoPantalla.classList.remove("columnaDiv");
     tamañoPantalla3.classList.remove("columnaDiv3");
 }
+if (screen.width > 767){
+    console.log("Grande");
+    porteFormulario1.classList.remove("w-75");
+}
 
 let usuarios = [];
+
+
+let url = 'https://localhost:44385/fechadocreferencia?fechaboleta=2016-03-02&fechaboleta2=2016-03-03&rutpagador=92475000-6';
+fetch(url)    
+.then((res)=> res.json())
+.then((data)=> mostrarData(data))
+.catch(error =>console.log(error))
+
+const mostrarData = (data) => {
+    console.log(data)
+    //const textest = document.querySelector("#rutTxt");    //OPCION 2?
+    let body = "";
+    console.log(data[0].despachoA)
+    console.log(data.length)
+    for(let h = 0; h<data.length; h++){
+        body += `<tr><td class=" rounded rounded-2 bg-light h6 fw-normal">${data[h].despachoA}</td></tr>`
+    }
+    //textest.textContent = data.rut;                       //OPCION 1?
+    //body.querySelector("#rutTxt").textContent = data.rut;   //OPCION 2?
+    document.querySelector("#tablaRemitente").innerHTML = body
+
+}
+
+function limpiarForm(){
+    ///////////////////////////////////////////////
+        alerta2.classList.add("d-none");
+        const limpiaForm1 = document.querySelectorAll("body input")
+        console.log(limpiaForm1)
+        const contenDelImputs = [];
+        let j=0;
+        while(j<22){
+            const inputCorr = limpiaForm1[j];
+            contenDelImputs.push(inputCorr);
+            contenDelImputs[j].value = "";
+            j++;
+        }
+
+        const limpiaForm2 = document.querySelectorAll("body .shadow-none")
+        console.log(limpiaForm2);
+        console.log(limpiaForm2[0].options[0]);
+        const contenDelSelect = [];
+        let v=0;
+        while(v<10){
+            const inputCorr2 = limpiaForm2[v];
+            contenDelSelect.push(inputCorr2);
+
+            console.log(inputCorr2);
+            console.log(contenDelSelect[v].value);
+            contenDelSelect[v].value = limpiaForm2[0].options[0].value;
+            v++;
+        }
+
+        /*
+        let i = 0
+        contenDelImputs.splice(0,14);
+        while (i < 13) {
+            const inputCorr = delInputs[i];
+            contenDelImputs.push(inputCorr);
+            contenDelImputs[i].value = "";
+            contenDelImputs[i].classList.add("border-dark");
+            i++
+        }
+        let a = 0
+        contenSelect.splice(0,3);
+        while (a < 3) {
+            const selectCorr = test2[a];
+            contenSelect.push(selectCorr);
+            contenSelect[a].value = "";
+            contenSelect[a].classList.add("border-dark");
+            a++
+        }
+        */
+    ///////////////////////////////////////////////
+}
+btnCotizar.addEventListener("click",(e)=>{
+    e.preventDefault();
+    limpiarForm();
+});
+btnGenerarPreEnv.addEventListener("click",(e)=>{
+    e.preventDefault();
+    limpiarForm();
+});
 
 const agregarUsuario = (aOrigen,aDestino,cDestino,tipoCarga,cantidad,alto,ancho,largo,tipoEmbalaje,valorComercial,peso,flexRadioSiNO,archivo) =>{
     const objetoTodo = {
@@ -45,18 +140,8 @@ const agregarUsuario = (aOrigen,aDestino,cDestino,tipoCarga,cantidad,alto,ancho,
     }
     usuarios.push(objetoTodo);
 }
-/*
-btnIniciarSesion.addEventListener('click',(event) => {
-    event.preventDefault();
-    setTimeout(()=> location.href="./index.html");
-});
-*/
-btnCancelar.addEventListener('click',(event) => {
-    event.preventDefault();
-    setTimeout(()=> location.href="./Misordenes.html");
-});
 
-formulario.addEventListener("submit",(e)=>{
+btnAceptar1.addEventListener("click",(e)=>{
     e.preventDefault();
     alerta.classList.add("d-none");
     //console.log("Testeo Formulario");
@@ -64,14 +149,7 @@ formulario.addEventListener("submit",(e)=>{
     usuarios.pop();
     //CAPTURA TODOS LOS INPUT DE FORMULARIO
     const data = new FormData(formulario);
-    /*
-    let test2 = JSON.stringify(usuarios);
 
-    fetch('http://127.0.0.1:5500/Regis.html',{
-        method: "POST",
-        body: test2,
-    })
-    */
     //SE ALMACENAN TODOS LOS DATOS DE LOS INPUT EN EL [...data.values()] Y SE TRANSLADAN A [todo]
     const[aOrigen,aDestino,cDestino,tipoCarga,cantidad,alto,ancho,largo,tipoEmbalaje,valorComercial,peso,flexRadioSiNO,archivo] = [...data.values()];
 ///////////////////////////////////////////////
