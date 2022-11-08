@@ -65,13 +65,8 @@ const actualizarInformacion = (razonSocial,direccion,provincias,telefono,correo,
     }
     nuevaInfor.push(objetoTodo);
 }
-/*  =>=>=>=>=>=>=>2<=<=<=<=<=<=<=
-let url = 'https://localhost:44385/rut?rut=17748040-1';
 
-fetch(url)    
-.then((res)=> res.json())
-.then((data)=> console.log(url));
-*/
+
 function limpiarForm(){
     ///////////////////////////////////////////////
         alerta2.classList.add("d-none");
@@ -99,6 +94,17 @@ function limpiarForm(){
 btnActuaInfo.addEventListener("click",(e)=>{
     e.preventDefault();
     limpiarForm();
+
+    //=>=>=>=>=>=>=>2<=<=<=<=<=<=<=
+    let url = 'https://localhost:44385/rut?rut=17748040-1';
+    fetch(url)    
+    .then((res)=> res.json())
+    .then((data)=> console.log(data))
+    .catch(error =>console.log(error))
+
+    const mostrarData = (data) => {
+        console.log(data)
+    }
 });
 btnModifContra.addEventListener("click",(e)=>{
     e.preventDefault();
@@ -123,7 +129,7 @@ btnAceptar1.addEventListener("click",(e)=>{
     })*/
 
 
-    
+
     
     
     //SE ALMACENAN TODOS LOS DATOS DE LOS INPUT EN EL [...data.values()] Y SE TRANSLADAN A [todo]
