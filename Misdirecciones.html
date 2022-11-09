@@ -59,7 +59,7 @@
   </div>
     <main class="bg-primary bg-opacity-25 d-flex justify-content-center">
         <div class="container row justify-content-center col-12 mt-3 mb-3">
-          <form class="col-12 col-md-10 bg-dark bg-opacity-75 col rounded rounded-1 border border-5 border-dark">
+          <div class="col-12 col-md-10 bg-dark bg-opacity-75 col rounded rounded-1 border border-5 border-dark">
             <h2 class="text-light">Mis direcciones / Transportes Chevalier</h2>
             <div class="border border-2 bg-warning bg-opacity-100 row justify-content-center "> 
               <div class="col-12 row justify-content-center">
@@ -107,54 +107,6 @@
                       </div>
                       <td class="rounded rounded-2 bg-light p-1">Accion1 Accion2</td>
                     </tr>
-                    <tr>
-                      <td class="rounded rounded-2 bg-light p-1">Camino las mariposas km 13.5 Villa mirasol Pasaje N°4 casa N°4</td>
-                      <td class="rounded rounded-2 bg-light p-1 d-flex justify-content-center"><a class="btn btn-dark p-1 p-1 mb-2 mt-2" data-bs-toggle="modal" href="#modal2" role="button">Referencia</a></td>
-                      <div aria-hidden="true" aria-labelledby="..." class="modal fade" id="modal2" tabindex="-1">
-                        <div class="modal-dialog modal-dialog-centered">
-                            <div class="modal-content p-2 border border-5 border-info">
-                              <a>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</a>
-                            </div>
-                        </div>
-                      </div>
-                      <td class="rounded rounded-2 bg-light p-1">Accion1 Accion2</td>
-                    </tr>
-                    <tr>
-                      <td class="rounded rounded-2 bg-light p-1">Camino las mariposas km 13.5 Villa mirasol Pasaje N°4 casa N°4</td>
-                      <td class="rounded rounded-2 bg-light p-1 d-flex justify-content-center"><a class="btn btn-dark p-1 p-1 mb-2 mt-2" data-bs-toggle="modal" href="#modal3" role="button">Referencia</a></td>
-                      <div aria-hidden="true" aria-labelledby="..." class="modal fade" id="modal3" tabindex="-1">
-                        <div class="modal-dialog modal-dialog-centered">
-                            <div class="modal-content p-2 border border-5 border-info">
-                              <a>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Blanditiis voluptas numquam aliquam?.</a>
-                            </div>
-                        </div>
-                      </div>
-                      <td class="rounded rounded-2 bg-light p-1">Accion1 Accion2</td>
-                    </tr>
-                    <tr>
-                      <td class="rounded rounded-2 bg-light p-1">Camino las mariposas km 13.5 Villa mirasol Pasaje N°4 casa N°4</td>
-                      <td class="rounded rounded-2 bg-light p-1 d-flex justify-content-center"><a class="btn btn-dark p-1 p-1 mb-2 mt-2" data-bs-toggle="modal" href="#modal4" role="button">Referencia</a></td>
-                      <div aria-hidden="true" aria-labelledby="..." class="modal fade" id="modal4" tabindex="-1">
-                        <div class="modal-dialog modal-dialog-centered">
-                            <div class="modal-content p-2 border border-5 border-info">
-                              <a>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Blanditiis voluptas numquam aliquam? Atque earum praesentium id.</a>
-                            </div>
-                        </div>
-                      </div>
-                      <td class="rounded rounded-2 bg-light p-1">Accion1 Accion2</td>
-                    </tr>
-                    <tr>
-                      <td class="rounded rounded-2 bg-light p-1">Camino las mariposas km 13.5 Villa mirasol Pasaje N°4 casa N°4</td>
-                      <td class="rounded rounded-2 bg-light p-1 d-flex justify-content-center"><a class="btn btn-dark p-1 p-1 mb-2 mt-2" data-bs-toggle="modal" href="#modal5" role="button">Referencia</a></td>
-                      <div aria-hidden="true" aria-labelledby="..." class="modal fade" id="modal5" tabindex="-1">
-                        <div class="modal-dialog modal-dialog-centered">
-                            <div class="modal-content p-2 border border-5 border-info">
-                              <a>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Blanditiis voluptas numquam aliquam? Atque earum praesentium id, cum omnis nesciunt dolore porro ea aliquid voluptatibus debitis, adipisci culpa laboriosam nemo exercitationem.</a>
-                            </div>
-                        </div>
-                      </div>
-                      <td class="rounded rounded-2 bg-light p-1">Accion1 Accion2</td>
-                    </tr>
                   </tbody>
                 </table>
               </div>
@@ -164,7 +116,7 @@
                 <a name="" id="btnAgreDirec" data-bs-toggle="modal" data-bs-target="#exampleModal1" class="btn btn-light col-10 col-md-7 bg-warning bg-opacity-100 rounded rounded-5 fw-bold text-light" role="button">Agregar Direccion</a>
               </div>
 
-              <div class="modal-dialog modal-dialog-scrollable m-0 p-0">
+              <div class="modal-dialog modal-dialog-scrollable m-0 p-0 hiding">
                 <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                   <div class="modal-dialog modal-dialog-centered d-flex justify-content-center">
                     <div id="modalF" class="modal-content w-75">
@@ -173,7 +125,7 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                       </div>
                       <div class="modal-body p-2">
-                        <form id="formulario" class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 bg-warning bg-opacity-75 col rounded rounded-1 border border-2 border-dark">
+                        <form id="formulario1" class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 bg-warning bg-opacity-75 col rounded rounded-1 border border-2 border-dark">
                           <div class="col-12">
                             <label id="divAlerta2" class="bg-light mb-2 border border-3 border-danger rounded rounded-3 p-1 col-12 d-none">Campos sin completar</label>
                             <span class="bg-light rounded rounded-3 border border-danger border-3">* = Campos obligatorios</span>
@@ -303,7 +255,7 @@
                 </li>
               </ul>
             </div>
-          </form>
+          </div>
         </div>
     </main>
     <section class="position-relative d-flex justify-content-center bg-warning">

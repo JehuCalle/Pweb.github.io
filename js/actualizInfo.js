@@ -42,6 +42,8 @@ const tamañoPantalla = document.querySelector(".columnaDiv");
 if (screen.width < 767){
     console.log("Pequeña");
     tamañoPantalla.classList.remove("columnaDiv");
+    porteFormulario1.classList.add("w-100");
+    porteFormulario2.classList.add("w-100");
 }
 if (screen.width > 767){
     console.log("Grande");
@@ -86,7 +88,6 @@ if (screen.width > 767){
 
     }
 
-
 const actualizarInformacion = (razonSocial,direccion,provincias,telefono,correo,celular,contactoPago,giro,regiones,comunas,telefonoContact,correoContact,celularContact) =>{
     const objetoTodo = {
         RazonSocial: razonSocial,
@@ -105,7 +106,6 @@ const actualizarInformacion = (razonSocial,direccion,provincias,telefono,correo,
     }
     nuevaInfor.push(objetoTodo);
 }
-
 
 function limpiarForm(){
     ///////////////////////////////////////////////
@@ -208,7 +208,7 @@ btnAceptar1.addEventListener("click",(e)=>{
         actualizarInformacion(razonSocial,giro,direccion,regiones,provincias,comunas,telefono,telefonoContact,correo,correoContact,celular,celularContact,contactoPago);
         alerta1.classList.remove("d-none");
         alerta1.textContent = "Informacion actualizada correctamente"
-
+        
         alerta2.classList.add("d-none");
         console.log(nuevaInfor)
         //setTimeout(()=> location.href="./Misdatos.html",2000);

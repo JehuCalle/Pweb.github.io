@@ -1,8 +1,11 @@
 console.log("😼");
 
-const formulario = document.querySelector("#formulario");
-const btnCancelar = document.querySelector("#btnCancelar");
+const formulario1 = document.querySelector("#formulario1");
+const btnCancelar1 = document.querySelector("#btnCancelar1");
+const btnAceptar1 = document.querySelector("#btnAceptar1");
 const alerta = document.querySelector("#divAlerta");
+
+console.log(formulario1);
 
 ///////////////////////////////////////////////
 const test = document.querySelectorAll("input");
@@ -29,7 +32,7 @@ if (screen.width > 767){
 
 let usuarios = [];
 
-btnCancelar.addEventListener('click',(event) => {
+btnCancelar1.addEventListener('click',(event) => {
     event.preventDefault();
     setTimeout(()=> location.href="./Misdirecciones.html");
 });
@@ -47,13 +50,13 @@ const agregarUsuario = (secPobVill,calle,numCasaDept,regiones,provincias,comunas
     usuarios.push(objetoTodo);
 }
 
-formulario.addEventListener("submit",(e)=>{
+btnAceptar1.addEventListener("click",(e)=>{
     e.preventDefault();
     alerta.classList.add("d-none");
     //console.log("Testeo Formulario");
 
     //CAPTURA TODOS LOS INPUT DE FORMULARIO
-    const data = new FormData(formulario);
+    const data = new FormData(formulario1);
     /*
     let test2 = JSON.stringify(usuarios);
 
