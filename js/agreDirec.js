@@ -3,19 +3,20 @@ console.log("😼");
 const formulario1 = document.querySelector("#formulario1");
 const btnCancelar1 = document.querySelector("#btnCancelar1");
 const btnAceptar1 = document.querySelector("#btnAceptar1");
-const alerta = document.querySelector("#divAlerta");
+const alerta2 = document.querySelector("#divAlerta2");
 
-console.log(formulario1);
+const alerta1 = document.querySelector("#divAlerta1");
+
+const btnAgreDirec = document.querySelector("#btnAgreDirec");
 
 ///////////////////////////////////////////////
-const test = document.querySelectorAll("input");
+const test = document.querySelectorAll("input.shadow-none");
 const contenImputs = [];
-
-const test2 = document.querySelectorAll("select");
+const test2 = document.querySelectorAll("select.shadow-none");
 const contenSelect = [];
-
 const test3 = document.querySelectorAll("#comentario");
 const contenTextarea = [];
+
 ///////////////////////////////////////////////
 
 const porteFormulario1 = document.querySelector("#modalF");
@@ -24,17 +25,56 @@ const tamañoPantalla = document.querySelector(".columnaDiv");
 if (screen.width < 767){
     console.log("Pequeña");
     tamañoPantalla.classList.remove("columnaDiv");
+    porteFormulario1.classList.remove("w-75");
+    porteFormulario1.classList.add("w-650");
 }
 if (screen.width > 767){
     console.log("Grande");
     porteFormulario1.classList.remove("w-75");
+    porteFormulario1.classList.add("w-650");
 }
 
 let usuarios = [];
 
-btnCancelar1.addEventListener('click',(event) => {
-    event.preventDefault();
-    setTimeout(()=> location.href="./Misdirecciones.html");
+function limpiarForm(){
+    ///////////////////////////////////////////////
+        const limpiaForm1 = document.querySelectorAll("input.shadow-none")
+        const contenDelImputs1 = [];
+        let j=0;
+        while(j<3){
+            const inputCorr = limpiaForm1[j];
+            contenDelImputs1.push(inputCorr);
+            contenDelImputs1[j].value = "";
+            contenDelImputs1[j].classList.add("border-dark");
+            j++;
+        }
+
+        const limpiaForm2 = document.querySelectorAll("select.shadow-none")
+        const contenDelSelect = [];
+        let v=0;
+        while(v<3){
+            const inputCorr2 = limpiaForm2[v];
+            contenDelSelect.push(inputCorr2);
+            contenDelSelect[v].value = limpiaForm2[0].options[0].value;
+            contenDelSelect[v].classList.add("border-dark");
+            v++;
+        }
+        const limpiaForm3 = document.querySelectorAll("#comentario")
+        const contenDelTextarea = [];
+        let g=0;
+        while(g<1){
+            const inputCorr2 = limpiaForm3[g];
+            contenDelTextarea.push(inputCorr2);
+            contenDelTextarea[g].value = "";
+            contenDelTextarea[g].classList.add("border-dark");
+            g++;
+        }
+    ///////////////////////////////////////////////
+}
+btnAgreDirec.addEventListener("click",(e)=>{
+    alerta2.classList.add("d-none");
+    e.preventDefault();
+    limpiarForm();
 });
 
 const agregarUsuario = (secPobVill,calle,numCasaDept,regiones,provincias,comunas,direcRef) =>{
@@ -52,7 +92,7 @@ const agregarUsuario = (secPobVill,calle,numCasaDept,regiones,provincias,comunas
 
 btnAceptar1.addEventListener("click",(e)=>{
     e.preventDefault();
-    alerta.classList.add("d-none");
+    alerta2.classList.add("d-none");
     //console.log("Testeo Formulario");
 
     //CAPTURA TODOS LOS INPUT DE FORMULARIO
@@ -77,7 +117,7 @@ btnAceptar1.addEventListener("click",(e)=>{
             contenImputs[i].classList.remove("border-dark");
             contenImputs[i].classList.add("border-danger");
             console.log("INPUTS INC")
-            alerta.classList.remove("d-none");
+            alerta2.classList.remove("d-none");
         }else if(!contenImputs[i].value == ""){
             contenImputs[i].classList.remove("border-danger");
             contenImputs[i].classList.remove("border-dark");
@@ -94,7 +134,7 @@ btnAceptar1.addEventListener("click",(e)=>{
         if(contenSelect[a].value == ""){
             contenSelect[a].classList.remove("border-dark");
             contenSelect[a].classList.add("border-danger");
-            alerta.classList.remove("d-none");
+            alerta2.classList.remove("d-none");
             console.log("SELECT INC")
         }else if(!contenSelect[a].value == ""){
             contenSelect[a].classList.remove("border-danger");
@@ -112,7 +152,7 @@ btnAceptar1.addEventListener("click",(e)=>{
         if(contenTextarea[b].value == ""){
             contenTextarea[b].classList.remove("border-dark");
             contenTextarea[b].classList.add("border-danger");
-            alerta.classList.remove("d-none");
+            alerta2.classList.remove("d-none");
             console.log("TEXTAREA INC")
         }else if(!contenTextarea[b].value == ""){
             contenTextarea[b].classList.remove("border-danger");
@@ -126,9 +166,11 @@ btnAceptar1.addEventListener("click",(e)=>{
 if(!contenImputs[0].value == "" && !contenImputs[1].value == "" && !contenImputs[2].value == "" && !contenSelect[0].value == "" && !contenSelect[1].value == "" && !contenSelect[2].value == "" && !contenTextarea[0].value == ""){
     console.log("FIN")
     agregarUsuario(secPobVill,calle,numCasaDept,regiones,provincias,comunas,direcRef);
-    alerta.classList.add("d-none");
+    alerta2.classList.add("d-none");
+    alerta1.textContent = "Dirección agregada correctamente";
+    alerta1.classList.remove("d-none");
     console.log(usuarios)
-    setTimeout(()=> location.href="./Misdirecciones.html",2000);
+    //setTimeout(()=> location.href="./Misdirecciones.html",2000);
     return;
 }
 ///////////////////////////////////////////////

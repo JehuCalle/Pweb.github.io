@@ -59,7 +59,7 @@
   </div>
     <main class="bg-primary bg-opacity-25 d-flex justify-content-center">
       <div class="container row justify-content-center col-12 mt-3 mb-3">
-        <form class="col-12 bg-dark bg-opacity-75 col rounded rounded-1 border border-5 border-dark">
+        <label class="col-12 bg-dark bg-opacity-75 col rounded rounded-1 border border-5 border-dark">
           <h2 class="text-light">Cuenta corriente / Transportes Chevalier</h2>
           <div class="border border-2 bg-warning bg-opacity-100 row justify-content-center "> 
             <div class="col-12 row justify-content-center">
@@ -73,7 +73,7 @@
           </div>
           <div class="border border-2 bg-warning bg-opacity-75 row justify-content-center"> 
             <div class="col-12">
-              <label id="divAlerta" class="bg-light mb-2 border border-3 border-success rounded rounded-3 p-1 col-12">Cuenta corriente solicitada correctamente</label>
+              <label id="divAlerta1" class="bg-light mb-2 border border-3 border-success rounded rounded-3 p-1 col-12 d-none">Cuenta corriente solicitada correctamente</label>
             </div>
           </div>
           <div class="border border-2 bg-warning bg-opacity-50 row justify-content-center pt-3">
@@ -151,7 +151,141 @@
                     </table>
                   </div>
                 </div>
-                <a name="" id="" class="btn col-8 col-md-6 col-lg-4 bg-warning bg-opacity-100 rounded rounded-5 fw-bold text-light mt-4" href="./Solicicuencorr.html" role="button">Solicitar cuenta corriente</a>
+                <a name="" id="btnSolicicuencorr" data-bs-toggle="modal" data-bs-target="#exampleModal1" class="btn col-8 col-md-6 col-lg-4 bg-warning bg-opacity-100 rounded rounded-5 fw-bold text-light mt-4" role="button">Solicitar cuenta corriente</a>
+
+                <div class="modal-dialog modal-dialog-scrollable m-0 p-0 hiding">
+                  <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered d-flex justify-content-center">
+                      <div id="modalF" class="modal-content w-650">
+                        <div class="modal-header p-1">
+                          <h4 class="text-center fw-bold mb-0">Solicitar cuenta corriente</h4>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body p-2">
+                          <form id="formulario1" class="col-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 bg-warning bg-opacity-75 col rounded rounded-1 border border-5 border-dark p-2">
+                            <div class="">
+                              <p class="h6 fw-normal p-0 bg-light bg-opacity-75 rounded rounded-2 p-1">Estimado cliente. Complete los siguientes recuadros del formulario con su información y un ejecutivo nuestro se podrá en contacto con usted, gracias por preferir Transportes Chevalier.</p>
+                              <div class="col-12">
+                                <label id="divAlerta2" class="bg-light mb-2 border border-3 border-danger rounded rounded-3 p-1 col-12 d-none">Campos sin completar</label>
+                                <span class="bg-light rounded rounded-3 border border-danger border-3">* = Campos obligatorios</span>
+                              </div>
+                            </div>
+                            <div class="col-12 columnaDiv">
+                              <label class="col-11 mx-3 mx-sm-2">RUT Empresa<span class="text-danger">*</span></label>
+                              <input type="text" id="rut" name="rut" class="shadow-none rounded rounded-2 border border-2 border-dark col-11 mx-3 mx-sm-2">
+                
+                              <label class="col-11 mx-3 mx-sm-2">Dirección<span class="text-danger">*</span></label>
+                              <input type="text" id="direccion" name="direccion" class="shadow-none rounded rounded-2 border border-2 border-dark col-11 mx-3 mx-sm-2">
+                
+                              <label class="col-11 mx-3 mx-sm-2" for="Provincias">Provincia<span class="text-danger">*</span></label>
+                              <select name="provincias" class="shadow-none rounded rounded-2 border border-2 border-dark col-11 mx-3 mx-sm-2" id="Provincias">
+                                <option></option>
+                                <option>Arauco</option>
+                                <option>Bio-Bio</option>
+                                <option>Ñuble</option>
+                              </select>
+                
+                              <label class="col-11 mx-3 mx-sm-2" for="Tcarga">Tipo de carga<span class="text-danger">*</span></label>
+                              <select name="tipoCarga" class="shadow-none rounded rounded-2 border border-2 border-dark col-11 mx-3 mx-sm-2" id="TipoCarga">
+                                <option></option>
+                                <option>Caja</option>
+                                <option>Sobre</option>
+                                <option>T 3</option>
+                                <option>T 4</option>
+                                <option>T 5</option>
+                              </select>
+                
+                              <label class="col-11 mx-3 mx-sm-2">RUT Contacto<span class="text-danger">*</span></label>
+                              <input type="text" id="rutContact" name="rutContact" class="shadow-none rounded rounded-2 border border-2 border-dark col-11 mx-3 mx-sm-2">
+                
+                              <label class="col-11 mx-3 mx-sm-2">Apellidos<span class="text-danger">*</span></label>
+                              <input type="text" id="apellidos" name="apellidos" class="shadow-none rounded rounded-2 border border-2 border-dark col-11 mx-3 mx-sm-2">
+                
+                              <label class="col-11 mx-3 mx-sm-2">Email contacto<span class="text-danger">*</span></label>
+                              <input type="text" id="emailContacto" name="emailContacto" class="shadow-none rounded rounded-2 border border-2 border-dark col-11 mx-3 mx-sm-2">
+                
+                              <label class="col-11 mx-3 mx-sm-2">Nombre/Razon social<span class="text-danger">*</span></label>
+                              <input type="text" id="razonSocial" name="razonSocial" class="shadow-none rounded rounded-2 border border-2 border-dark col-11 mx-3 mx-sm-2">
+                              
+                              <label class="col-11 mx-3 mx-sm-2" for="Regiones">Region<span class="text-danger">*</span></label>
+                              <select name="regiones" class="shadow-none rounded rounded-2 border border-2 border-dark col-5 mx-3 col-11 mx-3 mx-sm-2" id="Regiones">
+                                <option></option>
+                                <option>Metropolitana</option>
+                                <option>Bio-Bio</option>
+                                <option>Maule</option>
+                                <option>La araucania</option>
+                              </select>
+                              
+                              <label class="col-11 mx-3 mx-sm-2" for="Comunas">Comuna<span class="text-danger">*</span></label>
+                              <select name="comunas" class="shadow-none rounded rounded-2 border border-2 border-dark col-11 mx-3 mx-sm-2" id="Comunas">
+                                <option></option>
+                                <option>Chiguayante</option>
+                                <option>Concepcion</option>
+                                <option>Coronel</option>
+                                <option>Florida</option>
+                                <option>Hualpen</option>
+                                <option>Hualqui</option>
+                                <option>Lota</option>
+                                <option>Penco</option>
+                                <option>San pedro de la paz</option>
+                                <option>Santa juana</option>
+                                <option>Talcahuano</option>
+                                <option>Tome</option>
+                              </select>
+                              
+                              <label class="col-11 mx-3 mx-sm-2">Kilos diarios<span class="text-danger">*</span></label>
+                              <input type="text" id="kilosDiarios" name="kilosDiarios" class="shadow-none rounded rounded-2 border border-2 border-dark col-11 mx-3 mx-sm-2">
+                
+                              <label class="col-11 mx-3 mx-sm-2">Nombres<span class="text-danger">*</span></label>
+                              <input type="text" name="nombres" class="shadow-none rounded rounded-2 border border-2 border-dark col-11 mx-3 mx-sm-2">
+                              
+                              <label class="col-11 mx-3 mx-sm-2">Telefono<span class="text-danger">*</span></label>
+                              <input type="text" id="telefono" name="telefono" class="shadow-none rounded rounded-2 border border-2 border-dark col-11 mx-3 mx-sm-2">
+                              <label class="col-11 mx-3 mx-sm-2"></label>
+                              <!--
+                              <div class="col-6">
+                               <div class="col-12">
+                                  
+                                <div class="container">
+                                  <div class="form-group">
+                                    <label class="control-label">Location:</label>
+                                    <input type="text" class="form-control" id="us3-address" />
+                                  </div>
+                                  <div class="form-group row">
+                                    <div class="col-sm-6">
+                                      <label class="control-label">Lat.:</label>
+                                      <input type="text" class="form-control" id="us3-lat" />
+                                    </div>
+                                    <div class="col-sm-6">
+                                      <label>Long.:</label>
+                                      <input type="text" class="form-control" id="us3-lon" />
+                                    </div>
+                                  </div>
+                                  
+                                  <div id="us3" style="height: 200px; width: 200px;"></div>
+                                </div>
+                                
+                                </div>
+                              </div>
+                              -->
+                            </div>
+                            <div>
+                              <label class="col-12 fw-bold">Adjunte los archivos necesarios<span class="text-danger">*</span></label>
+                              <input class="shadow-none form-control col-1 border border-2 border-dark" name="archivos" type="file" id="archivo">
+                              <label class="col-12">Tamaño maximo de archivo rar: 10MB</label>
+                              <label class="col-12 fw-bold">Comentarios<span class="text-danger">*</span></label>
+                              <textarea class="shadow-none form-control mb-2 border border-2 border-dark" name="comentario" id="comentario" rows="3"></textarea>
+                            </div>
+                          </form>
+                        </div>
+                        <div class="modal-footer border border-2 bg-warning bg-opacity-25 row justify-content-center pt-2 pb-1 px-0">
+                          <button type="" id="btnCancelar1" class="col-10 col-md-5 btn mb-2 mx-2 p-1 bg-warning bg-opacity-100 rounded rounded-5 fw-bold text-light" data-bs-dismiss="modal">Cancelar</button>
+                          <button type="submit" id="btnAceptar1" class="col-10 col-md-5 btn mb-2 mx-2 p-1 bg-warning bg-opacity-100 rounded rounded-5 fw-bold text-light">Aceptar</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -177,7 +311,7 @@
               </li>
             </ul>
           </div>
-        </form>
+        </label>
       </div>
     </main>
     <section class="position-relative d-flex justify-content-center bg-warning">
@@ -233,6 +367,7 @@
       </footer>
     </section>
     <!--<script src="./js/jsmap.js"></script>-->
+    <script src="./js/soliCuenCorr.js"></script>
     <script src="./bootstrap/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

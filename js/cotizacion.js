@@ -152,19 +152,19 @@ btnGenerarPreEnv.addEventListener("click",(e)=>{
     limpiarForm();
 });
 
-const agregarUsuario = (aOrigen,aDestino,cDestino,tipoCarga,cantidad,alto,ancho,largo,tipoEmbalaje,valorComercial,peso,flexRadioSiNO,archivo) =>{
+const agregarUsuario = (aOrigen,aDestino,cDestino,tipoCarga,ancho,valorComercial,cantidad,largo,peso,alto,tipoEmbalaje,flexRadioSiNO,archivo) =>{
     const objetoTodo = {
         AgenciaOrigen: aOrigen,
         AgenciaDestino: aDestino,
         ComunaDestino: cDestino,
         TipoCarg: tipoCarga,
-        Cantidad: cantidad,
-        Alto: alto,
         Ancho: ancho,
-        Largo: largo,
-        TipoEmbalaje: tipoEmbalaje,
         ValorComercial: valorComercial,
+        Cantidad: cantidad,
+        Largo: largo,
         Peso: peso,
+        Alto: alto,
+        TipoEmbalaje: tipoEmbalaje,
         ConSinHerramientas: flexRadioSiNO,
         Archivo: archivo,
     }
@@ -181,7 +181,7 @@ btnAceptar1.addEventListener("click",(e)=>{
     const data = new FormData(formulario1);
 
     //SE ALMACENAN TODOS LOS DATOS DE LOS INPUT EN EL [...data.values()] Y SE TRANSLADAN A [todo]
-    const[aOrigen,aDestino,cDestino,tipoCarga,cantidad,alto,ancho,largo,tipoEmbalaje,valorComercial,peso,flexRadioSiNO,archivo] = [...data.values()];
+    const[aOrigen,aDestino,cDestino,tipoCarga,ancho,valorComercial,cantidad,largo,peso,alto,tipoEmbalaje,flexRadioSiNO,archivo] = [...data.values()];
 ///////////////////////////////////////////////
     let i = 0
     contenImputs1.splice(0,8);
@@ -240,7 +240,7 @@ btnAceptar1.addEventListener("click",(e)=>{
 
     if((!contenImputs1[0].value == "" && !contenImputs1[1].value == "" && !contenImputs1[2].value == "" && !contenImputs1[3].value == "" && !contenImputs1[4].value == "" && !contenImputs1[5].value == "" && !contenImputs1[6].value == "" &&  !contenSelect1[0].value == "" && !contenSelect1[1].value == "" && !contenSelect1[2].value == "" && !contenSelect1[3].value == "" && !contenSelect1[4].value == "") && (!contenFlexRadio1[0].checked === false || !contenFlexRadio1[1].checked === false)){
         console.log("FIN")
-        agregarUsuario(aOrigen,aDestino,cDestino,tipoCarga,cantidad,alto,ancho,largo,tipoEmbalaje,valorComercial,peso,flexRadioSiNO,archivo);
+        agregarUsuario(aOrigen,aDestino,cDestino,tipoCarga,ancho,valorComercial,cantidad,largo,peso,alto,tipoEmbalaje,flexRadioSiNO,archivo);
         alerta2.classList.add("d-none");
         alerta1.textContent = "Cotizacion enviada correctamente";
         alerta1.classList.remove("d-none");
@@ -253,19 +253,19 @@ btnAceptar1.addEventListener("click",(e)=>{
 ///////////////////////////////////////////////
 });
 
-const agregarUsuario2 = (aOrigen2,aDestino2,cDestino2,tipoCarga2,cantidad2,alto2,ancho2,largo2,tipoEmbalaje2,valorComercial2,peso2,flexRadioSiNO2,archivo2) =>{
+const agregarUsuario2 = (aOrigen2,aDestino2,cDestino2,tipoCarga2,ancho2,valorComercial2,cantidad2,largo2,peso2,alto2,tipoEmbalaje2,flexRadioSiNO2,archivo2) =>{
     const objetoTodo = {
         AgenciaOrigen: aOrigen2,
         AgenciaDestino: aDestino2,
         ComunaDestino: cDestino2,
         TipoCarg: tipoCarga2,
-        Cantidad: cantidad2,
-        Alto: alto2,
         Ancho: ancho2,
-        Largo: largo2,
-        TipoEmbalaje: tipoEmbalaje2,
         ValorComercial: valorComercial2,
+        Cantidad: cantidad2,
+        Largo: largo2,
         Peso: peso2,
+        Alto: alto2,
+        TipoEmbalaje: tipoEmbalaje2,
         ConSinHerramientas: flexRadioSiNO2,
         Archivo: archivo2,
     }

@@ -59,7 +59,7 @@
   </div>
     <main class="bg-primary bg-opacity-25 d-flex justify-content-center">
       <div class="container row justify-content-center col-12 mt-3 mb-3">
-        <form class="col-12 col-sm-12 col-md-10 col-lg-8 col-xl-12 bg-dark bg-opacity-75 col rounded rounded-1 border border-5 border-dark">
+        <div class="col-12 col-sm-12 col-md-10 col-lg-8 col-xl-12 bg-dark bg-opacity-75 col rounded rounded-1 border border-5 border-dark">
           <h2 class="text-light">Mis reclamos / Transportes Chevalier</h2>
           <div class="border border-2 bg-warning bg-opacity-100 row justify-content-center "> 
             <div class="col-12 row justify-content-center">
@@ -87,12 +87,89 @@
                   <label class="col-10 col-md-10 col-xl-8 mx-0 p-0 h6 fw-bold">Fecha hasta:</label>
                   <input type="text" class="rounded rounded-2 border border-2 border-dark col-10 col-md-10 col-xl-8 px-0 p-lg-0 h6 fw-normal text-center" placeholder="dd/mm/yyyy">
 
-                  <label class="col-10 col-md-12 col-xl-10 p-0 h6 fw-bold">Documento de referencia:</label>
-                  <input type="text" class="rounded rounded-2 border border-2 border-dark col-10 col-md-12 col-xl-10 col-lg-12 px-0 mx-0 p-lg-0 h6 fw-normal text-center" placeholder="Guia/Factura/Boleta">
+                  <label class="col-10 col-md-12 col-xl-8 p-0 h6 fw-bold">Documento de referencia:</label>
+                  <input type="text" class="rounded rounded-2 border border-2 border-dark col-10 col-md-12 col-lg-12 col-xl-8  px-0 mx-0 p-lg-0 h6 fw-normal text-center" placeholder="Guia/Factura/Boleta">
                   <a name="" id="" class="btn bg-warning bg-opacity-100 rounded rounded-5 fw-bold text-light mt-0 mx-3 mx-md-5 h6 fw-normal col-6" href="#" role="button">Buscar</a>
                 </div>
                 <div class="col-4 col-md-4 p-0 row justify-content-center align-items-center">
-                  <a name="" id="" class="btn bg-warning bg-opacity-100 rounded rounded-5 fw-bold text-light col-12 col-md-7 mb-3 mt-1" href="./Redactproblem.html" role="button">Agregar problema</a>
+                  <a name="" id="btnAgregarProblema" data-bs-toggle="modal" data-bs-target="#exampleModal1" class="btn bg-warning bg-opacity-100 rounded rounded-5 fw-bold text-light col-12 col-md-7 mb-3 mt-1" role="button">Agregar problema</a>
+
+                  <div class="modal-dialog modal-dialog-scrollable m-0 p-0 hiding">
+                    <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <div class="modal-dialog modal-dialog-centered d-flex justify-content-center">
+                        <div id="modalF" class="modal-content w-650">
+                          <div class="modal-header p-1">
+                            <h4 class="text-center fw-bold mb-0">Solicitar cuenta corriente</h4>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body p-2">
+                            <form id="formulario" class="col-12 col-sm-12 col-md-10 col-lg-8 col-xl-6 bg-dark bg-opacity-75 col rounded rounded-1 border border-5 border-dark">
+                              <div class="border border-2 bg-warning bg-opacity-100 row justify-content-center "> 
+                                <div class="col-12 row justify-content-center">
+                                  <div class="col-2">
+                                    <img src="./assets/img/Icon.png" alt="">
+                                  </div>
+                                  <div class="col-12 row">
+                                    <h4 class="text-center fw-bold">Agregar problema</h4>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="border border-2 bg-warning bg-opacity-75 row justify-content-center "> 
+                                <div class="col-12">
+                                  <label id="divAlerta" class="bg-light mb-2 border border-3 border-danger rounded rounded-3 p-1 col-12 d-none">Campos sin completar</label>
+                                  <span class="bg-light rounded rounded-3 border border-danger border-3">* = Campos obligatorios</span>
+                                </div>
+                              </div>
+                              <div class="border border-2 bg-warning bg-opacity-50 row justify-content-center">
+                                <div class="col-12 mx-3 columnaDiv bg-light">
+                                  <label class="col-11 mx-3 mx-sm-2 mb-0 h6 fw-normal " for="tipoProblem">Tipo de problema<span class="text-danger">*</span></label>
+                                  <select name="tipoProblem" class="rounded rounded-2 border border-2 border-dark col-11 mx-3 mx-sm-2 mb-1 mb-md-2 h6 fw-normal" id="tipoProblem">
+                                    <option></option>
+                                    <option>Arauco</option>
+                                    <option>Bio-Bio</option>
+                                    <option>Ñuble</option>
+                                  </select>
+                
+                                  <label class="col-11 mx-3 mx-sm-2 h6 fw-normal mb-0" for="Cdestino">N°Orden/Retiro<span class="text-danger">*</span></label>
+                                  <input type="text" name="numOrdenRetiro" class="rounded rounded-2 border border-2 border-dark col-11 mx-3 mx-sm-2 mb-1 mb-md-2">
+                
+                                  <label class="col-11 mx-3 mx-sm-2 h6 fw-normal mb-0" for="quienRedacta">¿Quien redacta?<span class="text-danger">*</span></label>
+                                  <select name="quienRedacta" class="rounded rounded-2 border border-2 border-dark col-11 mx-3 mx-sm-2 mb-1 mb-md-2 h6 fw-normal" id="quienRedacta">
+                                    <option></option>
+                                    <option>Arauco</option>
+                                    <option>Bio-Bio</option>
+                                    <option>Ñuble</option>
+                                  </select>
+                
+                                  <label class="col-11 mx-3 mx-sm-2 h6 fw-normal mb-0" for="Cdestino">Boleta/Factura/Guia<span class="text-danger">*</span></label>
+                                  <input type="text" name="boletFacturGuia" class="rounded rounded-2 border border-2 border-dark col-11 mx-3 mx-sm-2 mb-2">
+                                </div>
+                                <div class="col-12 mx-3 bg-light">
+                                  <label class="col-12 mb-0">Adjunte los archivos necesarios<span class="text-danger">*</span></label>
+                                  <input name="archivo" class="form-control rounded col-1 border border-2 border-dark" type="file" id="formFile" required>
+                                  <label class="col-12 h6 fw-normal p-0">Tamaño maximo de archivo rar: 10MB<span class="text-danger">*</span></label>
+                                  <label class="col-12 fw-bold mb-0">Comentario<span class="text-danger">*</span></label>
+                                  <textarea name="comentario" class="form-control mb-2 border border-2 border-dark" id="exampleTextarea" rows="3"></textarea>
+                                </div>
+                
+                                <div class="border border-2 bg-warning bg-opacity-25 row justify-content-center pt-2 pb-0">
+                                  <div class="col-12 row justify-content-evenly">
+                                    <button type="submit" id="btnCancelar" class="col-12 col-md-5 p-0 p-md-2 btn bg-warning bg-opacity-100 rounded rounded-5 fw-bold text-light h6 fw-normal">Cancelar</button>
+                                    <button type="submit" id="btnAgenProblem" class="col-12 col-md-5 p-0 p-md-2 btn bg-warning bg-opacity-100 rounded rounded-5 fw-bold text-light h6 fw-normal">Agendar problema</button>
+                                  </div>
+                                </div>
+                              </div>
+                            </form>
+                          </div>
+                          <div class="modal-footer border border-2 bg-warning bg-opacity-25 row justify-content-center pt-2 pb-1 px-0">
+                            <button type="" id="btnCancelar1" class="col-10 col-md-5 btn mb-2 mx-2 p-1 bg-warning bg-opacity-100 rounded rounded-5 fw-bold text-light" data-bs-dismiss="modal">Cancelar</button>
+                            <button type="submit" id="btnAceptar1" class="col-10 col-md-5 btn mb-2 mx-2 p-1 bg-warning bg-opacity-100 rounded rounded-5 fw-bold text-light">Aceptar</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
                 </div>
               </div>
               <div class="container p-0">
@@ -203,7 +280,7 @@
               </li>
             </ul>
           </div>
-        </form>
+        </div>
       </div>
 
     </main>
@@ -260,6 +337,7 @@
       </footer>
     </section>
     <!--<script src="./js/jsmap.js"></script>-->
+    <script src="./js/redactProblem.js"></script>
     <script src="./bootstrap/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
