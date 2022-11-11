@@ -89,13 +89,14 @@
             </div>
           </div>
           <div class="row justify-content-center pt-3">
-            <div class="col-10 row justify-content-evenly px-0" id="aa">
-              <button class="col-8 pb-3 pt-3" id="a">----Captcha----</button>
+            <div class="col-9 row justify-content-evenly px-0" id="aa">
+              <div id="divRecaptcha" class="g-recaptcha" data-sitekey="6LfJtPsiAAAAAHZdvaBKGFBJAUD92ksKqLv8JKDd">
+              </div>
             </div>
           </div>
           <div class="row justify-content-center pt-2 ">
             <div class="col-10 row justify-content-evenly px-0">
-              <button type="submit" id="btnIniciarSesion" class="col-7 p-1 px-0 btn bg-warning bg-opacity-100 rounded rounded-5 fw-bold text-light">Iniciar sesion</button>
+                <button type="submit" id="btnIniciarSesion" class="col-7 p-1 px-0 btn bg-warning bg-opacity-100 rounded rounded-5 fw-bold text-light">Iniciar sesion</button>
             </div>
           </div>
           <div class="row justify-content-center pt-2 pb-2 px-0">
@@ -163,8 +164,17 @@
       </div>
     </footer>
     <div class="bg-dark bg-opacity-75 col-12">
-      <label class="col-12 mt-5 mb-4"></label>
+      <label class="col-12 mt-4 mb-3"></label>
     </div>
+    <script>
+      function onLoadCallback(){
+        grecaptcha.render('divRecaptcha',{
+          sitekey:'6LfJtPsiAAAAAHZdvaBKGFBJAUD92ksKqLv8JKDd',
+          callback: successCallback,
+        });
+      }
+    </script>
+    <script src="https://www.google.com/recaptcha/api.js"></script>
     <script src="./js/index.js"></script>
     <script src="./bootstrap/js/bootstrap.bundle.min.js"></script>
   </body>

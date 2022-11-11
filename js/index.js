@@ -7,6 +7,9 @@ const alerta = document.querySelector("#divAlerta");
 const rutUser = document.querySelector("#rut");
 const contenRut = [];
 
+const captcha = document.querySelector(".g-recaptcha");
+console.log(captcha);
+
 let usuarios = [];
 let id = 0;
 
@@ -17,6 +20,13 @@ const validacionUserPass = /^(\d|(([A-Za-zñÑáéíóúÁÉÍÓÚ\s])\3?(?!\3))
 const tamañoPantalla = document.querySelector("footer");
 const tamañoPantalla2 = document.querySelector("footer div");
 const tamañoPantalla3 = document.querySelector("footer div .mx-4");
+
+//TESTEO 
+    function successCallback(){
+        debugger;
+    }
+//TESTEO
+
 if (screen.width < 767){
     console.log("Pequeña");
     tamañoPantalla.classList.remove("d-flex");

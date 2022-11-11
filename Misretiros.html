@@ -73,7 +73,7 @@
           </div>
           <div class="border border-2 bg-warning bg-opacity-75 row justify-content-center"> 
             <div class="col-12">
-              <label id="divAlerta1" class="bg-light mb-2 border border-3 border-success rounded rounded-3 p-1 col-12">Retiro agendado correctamente</label>
+              <label id="divAlerta1" class="bg-light mb-2 border border-3 border-success rounded rounded-3 p-1 col-12 d-none">Retiro agendado correctamente</label>
             </div>
           </div>
   
@@ -91,7 +91,9 @@
                 </div>
                 <div class="col-7 col-md-6 col-lg-5 col-xl-4 p-0 row justify-content-center">
                   <label class="col-10 mb-1 h6 fw-bold text-center">Carga masiva</label>
+
                   <a name="" id="" class="btn bg-warning bg-opacity-100 rounded rounded-5 fw-bold text-light col-10 col-md-8 mt-md-1 mb-1 mx-md-4 p-0" href="https://github.com/twbs/bootstrap/releases/download/v5.1.3/bootstrap-5.1.3-dist.zip" role="button">Descargar plantilla Excel</a>
+
                   <a name="" id="btnAgendarRetiro1" data-bs-toggle="modal" data-bs-target="#exampleModal1" class="btn bg-warning bg-opacity-100 rounded rounded-5 fw-bold text-light col-10 col-md-8 mt-1 mb-1 mx-md-4 p-0" role="button">Agendar retiro</a>
 
                   <div class="modal-dialog modal-dialog-scrollable m-0 mx-0 p-0">
@@ -223,9 +225,6 @@
                       </div>
                     </div>
                   </div>
-
-
-
 
                   <label class="col-10 mb-1 mt-0 mt-md-1 h6 fw-bold text-center">Carga simple</label>
                   <a name="" id="btnAgendarRetiro2" data-bs-toggle="modal" data-bs-target="#exampleModal2" class="btn bg-warning bg-opacity-100 rounded rounded-5 fw-bold text-light col-10 col-md-8 mt-0 mt-md-1 mb-1 p-0" href="./Generet.html" role="button">Agendar retiro</a>
@@ -397,11 +396,131 @@
                           <td class=" rounded rounded-2 bg-light h6 fw-normal text-center p-0">Lorem ipsum dolor sit amet consectetur adipisicing elit.</td>
                           <td class=" rounded rounded-2 bg-light h6 fw-normal text-center">Cancelado</td>
                           <td class=" rounded rounded-2 bg-light h6 fw-normal"></td>
-                          <td class=" rounded rounded-2 bg-light h6 fw-normal text-center fw-bold pt-2"><a class="text-danger text-decoration-none" href="./Detaretiro.html">Ver detalles</a></td>
+                          <td class=" rounded rounded-2 bg-light h6 fw-normal text-center fw-bold pt-2">
+                            <a class="text-danger text-decoration-none" type="button">Ver detalles</a>
+                          </td>
                         </tr>
                       </tbody>
                     </table>
                   </div>
+                  <!--DETALLES DE LA BOLETA
+                    CONVERTIRLO EN UN TEMPLATE PARA QUE LOS DETALLES DE CADA BOLETA SE OBTENGAN DE MANERA DINAMICA Y ASÍ NO RE-HACER EL MODAL DE CADA DETALLE.
+
+                  <div class="modal-dialog modal-dialog-scrollable m-0 mx-0 p-0">
+                    <div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <div class="modal-dialog modal-dialog-centered d-flex justify-content-center">
+                        <div id="modal2" class="modal-content w-650">
+                          <div class="modal-header p-1">
+                            <h4 class="text-center fw-bold mb-0">Agendar pre-envío</h4>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body p-2">
+
+                            <div class="col-7 bg-secondary bg-opacity-50 col rounded rounded-1 border border-5 border-dark">
+                              <div class="mx-1 mb-1 col-12 row justify-content-center">
+                                <div class="row justify-content-end pt-3 col-12">
+                                  <label class="fw-bold h5 mb-1">Informacion General</label>
+                                  <div class="col-12 bg-light rounded rounded-2">
+                                    <label class="col-4 mb-0">N°Orden</label>
+                                    <label class="col-3"></label>
+                                    <label class="col-4 mb-0">Boleta/factura/guia</label>
+                                    <label class="bg-light rounded rounded-2 border border-2 border-dark col-4 h6 fw-normal p-lg-0">123214125412</label>
+                                    <label class="col-3"></label>
+                                    <label class="bg-light rounded rounded-2 border border-2 border-dark col-4 h6 fw-normal p-lg-0">123214125412</label>
+                                    <label class="col-2 mb-0">Fecha</label>
+                                    <label class="col-2 mb-0 mx-2">Hora</label>
+                                    <label class="col-3 mb-0 mx-2">Tipo de pago</label>
+                                    <label class="col-3 mb-0">tipo de entrega</label>
+                                    <label class="bg-light rounded rounded-2 border border-2 border-dark col-2 h6 fw-normal p-lg-0">12/12/12</label>
+                                    <label class="bg-light rounded rounded-2 border border-2 border-dark col-2 h6 fw-normal p-lg-0 mx-2">12:12:12</label>
+                                    <label class="bg-light rounded rounded-2 border border-2 border-dark col-3 h6 fw-normal p-lg-0 mx-2">Cta Cte</label>
+                                    <label class="bg-light rounded rounded-2 border border-2 border-dark col-3 h6 fw-normal p-lg-0">Bodega</label>
+                                  </div>
+                                  <label class="col-6 fw-bold h5 mb-1 mt-2">Datos origen</label>
+                                  <label class="col-6 fw-bold h5 mb-1 mt-2">Datos destino</label>
+                                  <div class="col-6 bg-light rounded rounded-2">
+                                    <label class="col-5 h6 fw-normal mb-0">Ciudad origen</label> 
+                                    <label class="col-5 h6 fw-normal mb-0">Agencia origen</label>
+                                    <label class="bg-light rounded rounded-2 border border-2 border-dark col-5 h6 fw-normal p-lg-0">Chillan</label>
+                                    <label class="bg-light rounded rounded-2 border border-2 border-dark col-5 h6 fw-normal p-lg-0">Chillan</label>
+                                    <label class="col-12 fw-bold h5 mb-1">Datos Remitente</label>
+                                    <label class="col-12 h6 fw-normal mb-0">Nombre</label>
+                                    <label class="bg-light rounded rounded-2 border border-2 border-dark col-12 h6 fw-normal p-lg-0">Inversiones inversores invesos</label>
+                                    <label class="col-12 h6 fw-normal mb-0">RUT</label>
+                                    <label class="bg-light rounded rounded-2 border border-2 border-dark col-12 h6 fw-normal p-lg-0">12345678-9</label>
+                                  </div>
+                                  <div class="col-6 bg-light rounded rounded-2">
+                                    <label class="col-5 h6 fw-normal mb-0">Ciudad destino</label>
+                                    <label class="col-6 h6 fw-normal mb-0">Agencia destino</label>
+                                    <label class="bg-light rounded rounded-2 border border-2 border-dark col-5 h6 fw-normal p-lg-0">Curanilahue</label>
+                                    <label class="bg-light rounded rounded-2 border border-2 border-dark col-5 h6 fw-normal p-lg-0">Curanilahue</label>
+                                    <label class="col-12 fw-bold h5 mb-1">Datos Remitente</label>
+                                    <label class="col-12 h6 fw-normal mb-0">Nombre</label>
+                                    <label class="bg-light rounded rounded-2 border border-2 border-dark col-12 h6 fw-normal p-lg-0">Inversiones inversores invesos</label>
+                                    <label class="col-12 h6 fw-normal mb-0">RUT</label>
+                                    <label class="bg-light rounded rounded-2 border border-2 border-dark col-12 h6 fw-normal p-lg-0">12345678-9</label>
+                                    <label class="col-12 h6 fw-normal mb-0">Fono contacto</label>
+                                    <label class="bg-light rounded rounded-2 border border-2 border-dark col-12 h6 fw-normal p-lg-0">9 88906865</label>
+                                    <label class="col-12 h6 fw-normal mb-0">Recive</label>
+                                    <label class="bg-light rounded rounded-2 border border-2 border-dark col-12 h6 fw-normal p-lg-0">Inversiones inversores invesos</label>
+                                  </div>
+                                  <label class="fw-bold h5 mb-1 mt-2">Direccion despacho</label>
+                                  <div class="col-12 bg-light rounded rounded-2">
+                                    <label class="col-6 mb-0">Dirección</label>
+                                    <label class="col-5 mx-1 mb-0">Comuna</label>
+                                    <label class="bg-light rounded rounded-2 border border-2 border-dark col-5 h6 fw-normal p-lg-0">Camino las mariposas km 13.5 Villa mirasol pasaje 4 casa 4</label>
+                                    <label class="col-1"></label>
+                                    <label class="bg-light rounded rounded-2 border border-2 border-dark col-5 h6 fw-normal p-lg-0">Curanilahue</label>
+                                    <label class="col-12 mb-0">Documentos de referencia</label>
+                                    <label class="bg-light rounded rounded-2 border border-2 border-dark col-5 h6 fw-normal p-lg-4">
+                                      <li>Documentos.rar</li>
+                                    </label>
+                                  </div>
+                                  <label class="fw-bold h5 mb-1 mt-2">Detalles de la carga</label>
+                                  <div class="tab-pane col-12 bg-light rounded rounded-2 p-0" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                                    <table class="table table-hover table-responsive table-borderless justify-content-center">
+                                      <thead>
+                                        <tr>
+                                          <th scope="col" class="text-center col-1 rounded rounded-2 bg-dark bg-opacity-25 h6 fw-bold">Tipo</th>
+                                          <th scope="col" class="text-center col-1 rounded rounded-2 bg-dark bg-opacity-25 h6 fw-bold">Cantidad</th>
+                                          <th scope="col" class="text-center col-1 rounded rounded-2 bg-dark bg-opacity-25 h6 fw-bold">Peso(kg)</th>
+                                          <th scope="col" class="text-center col-1 rounded rounded-2 bg-dark bg-opacity-25 h6 fw-bold">Dimensiones</th>
+                                          <th scope="col" class="text-center col-1 rounded rounded-2 bg-dark bg-opacity-25 h6 fw-bold">Valor</th>
+                                        </tr>
+                                      </thead>
+                                      <tbody>
+                                        <tr>
+                                          <td class=" rounded rounded-2 bg-light h6 fw-normal text-center">Caja</td>
+                                          <td class=" rounded rounded-2 bg-light h6 fw-normal text-center">3</td>
+                                          <td class=" rounded rounded-2 bg-light h6 fw-normal text-center">50kg</td>
+                                          <td class=" rounded rounded-2 bg-light h6 fw-normal text-center">1x2x3</td>
+                                          <td class=" rounded rounded-2 bg-light h6 fw-normal text-center">$300000</td>
+                                        </tr>
+                                      </tbody>
+                                    </table>
+                                  </div>
+                                  <div class="col-5 bg-light rounded rounded-2 mt-2 mb-2 justify-content-end" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                                    <label class="Col-5 h6 fw-normal p-lg-0">Valor carga:</label>
+                                    <label class="Col-5 h6 fw-normal p-lg-0">$3000000</label>
+                                    <label class="Col-5 h6 fw-normal p-lg-0">Valor reparto:</label>
+                                    <label class="Col-5 h6 fw-normal p-lg-0">$3000000</label>
+                                    <label class="Col-5 h6 fw-normal p-lg-0">Valor a pagar:</label>
+                                    <label class="Col-5 h6 fw-normal p-lg-0">$3000000</label>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+
+                          </div>
+                          <div class="modal-footer border border-2 bg-warning bg-opacity-25 row justify-content-center pt-2 pb-1 px-0">
+                            <button type="" id="btnCancelar2" class="col-10 col-md-5 btn bg-warning bg-opacity-100 rounded rounded-5 fw-bold text-light h6 fw-normal" data-bs-dismiss="modal">Cancelar</button>
+                            <button type="submit" id="btnAceptar2" class="col-10 col-md-5 btn bg-warning bg-opacity-100 rounded rounded-5 fw-bold text-light h6 fw-normal">Aceptar</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  -->
                 </div>
               </div>
             </div>
