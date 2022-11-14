@@ -65,7 +65,7 @@ function limpiarForm(){
 btnSolicicuencorr.addEventListener("click",(e)=>{
     alerta2.classList.add("d-none");
     e.preventDefault();
-    limpiarForm();
+    //limpiarForm();
 });
 
 const agregarUsuario = (rut,direccion,provincias,tipoCarga,rutContact,apellidos,emailContacto,razonSocial,regiones,comunas,kilosDiarios,nombres,telefono,archivos,comentario) =>{
@@ -110,20 +110,92 @@ btnAceptar1.addEventListener("click",(e)=>{
     //SE ALMACENAN TODOS LOS DATOS DE LOS INPUT EN EL [...data.values()] Y SE TRANSLADAN A [todo]
     const[rut,direccion,provincias,tipoCarga,rutContact,apellidos,emailContacto,razonSocial,regiones,comunas,kilosDiarios,nombres,telefono,archivos,comentario] = [...data.values()];
 ///////////////////////////////////////////////
+
+        //VALIDAR RUT   1
+        const rutUser = document.querySelector("#rut");
+        const rutCont = document.querySelector("#rutContact");
+        const contenRut = [];
+        var Fn = {
+            validaRut : function (rutCompleto) {
+                if (!/^[0-9]+[-|‐]{1}[0-9kK]{1}$/.test( rutCompleto ))
+                    return false;
+                var tmp 	= rutCompleto.split('-');
+                var digv	= tmp[1]; 
+                var rut 	= tmp[0];
+                if ( digv == 'K' ) digv = 'k' ;
+                return (Fn.dv(rut) == digv );
+            },
+            dv : function(T){
+                var M=0,S=1;
+                for(;T;T=Math.floor(T/10))
+                    S=(S+T%10*(9-M++%6))%11;
+                return S?S-1:'k';
+            }
+        }
+    
+        
+        let r = 0;
+        contenRut.splice(0,3);
+        while (r < 2) {
+            const inputCorr = rutUser;
+            contenRut.push(inputCorr);
+            contenRut.push(rutCont);
+            console.log(contenRut)
+            if(Fn.validaRut(contenRut[r].value) == false){
+                contenRut[r].classList.remove("border-dark");
+                contenRut[r].classList.add("border-danger");
+                alerta2.textContent = "RUT invalido";
+                console.log("RUT INC");
+            }else if(Fn.validaRut(contenRut[r].value) == true){
+                contenRut[r].classList.remove("border-danger");
+                contenRut[r].classList.remove("border-dark");
+                contenRut[r].classList.add("border-success");
+                console.log("RUT CORR");
+            }
+            r++;
+        }
+        //VALIDAR RUT
+
+    //VALIDAR TELEFONO  3
+    const telefUser = document.querySelectorAll("#telefono");
+    const contenTel = [];
+    const validacionUserTel = /^(\s?)(0?9)(\s?)[98765432]\d{7}$/;
+    let m = 0;
+    contenTel.splice(0,2);
+    while (m < 1) {
+        const inputCorr = telefUser[m];
+        contenTel.push(inputCorr);
+        if(validacionUserTel.test(contenTel[m].value) === false){
+            contenTel[m].classList.remove("border-dark");
+            contenTel[m].classList.add("border-danger");
+            alerta2.classList.remove("d-none");
+            alerta2.textContent = "Numero telefonico no valido";
+            console.log("TEL INC");
+        }else if(validacionUserTel.test(contenTel[m].value) === true){
+            contenTel[m].classList.remove("border-danger");
+            contenTel[m].classList.remove("border-dark");
+            contenTel[m].classList.add("border-success");
+            console.log("TEL CORR");
+        }
+        m++;
+    }
+    //VALIDAR TELEFONO
+
+
     let i = 0
-    contenImputs.splice(0,11);
-    while (i < 10) {
+    contenImputs.splice(0,7);
+    while (i < 6) {
         const inputCorr = test[i];
         contenImputs.push(inputCorr);
         if(contenImputs[i].value == ""){
             contenImputs[i].classList.remove("border-dark");
             contenImputs[i].classList.add("border-danger");
-            console.log("FALTAN-V1")
+            console.log("FALTAN INPUTS")
         }else if(!contenImputs[i].value == ""){
             contenImputs[i].classList.remove("border-danger");
             contenImputs[i].classList.remove("border-dark");
             contenImputs[i].classList.add("border-success");
-            console.log("FALTAN-V2")
+            console.log("NO FALTAN INPUTS")
         }
         i++
     }
@@ -136,13 +208,13 @@ btnAceptar1.addEventListener("click",(e)=>{
             contenSelect[a].classList.remove("border-dark");
             contenSelect[a].classList.add("border-danger");
             alerta2.classList.remove("d-none");
-            console.log("FALTAN-V1")
+            console.log("FALTAN SELECT")
         }else if(!contenSelect[a].value == ""){
             contenSelect[a].classList.remove("border-danger");
             contenSelect[a].classList.remove("border-dark");
             contenSelect[a].classList.add("border-success");
             alerta2.classList.remove("d-none");
-            console.log("FALTAN-V2")
+            console.log("NO FALTAN SELECT")
         }
         a++
     }
@@ -155,18 +227,18 @@ btnAceptar1.addEventListener("click",(e)=>{
             contenTextarea[b].classList.remove("border-dark");
             contenTextarea[b].classList.add("border-danger");
             alerta2.classList.remove("d-none");
-            console.log("FALTAN-V1")
+            console.log("FALTA TEXTAREA")
         }else if(!contenTextarea[b].value == ""){
             contenTextarea[b].classList.remove("border-danger");
             contenTextarea[b].classList.remove("border-dark");
             contenTextarea[b].classList.add("border-success");
             alerta2.classList.remove("d-none");
-            console.log("FALTAN-V2")
+            console.log("NO FALTAN TEXTAREA")
         }
         b++
     }
 
-    if(!contenImputs[0].value == "" && !contenImputs[1].value == "" && !contenImputs[2].value == "" && !contenImputs[3].value == "" && !contenImputs[4].value == "" && !contenImputs[5].value == "" && !contenImputs[6].value == "" && !contenImputs[7].value == "" && !contenImputs[8].value == "" && !contenImputs[9].value == "" && !contenSelect[0].value == "" && !contenSelect[1].value == "" && !contenSelect[2].value == "" && !contenTextarea[0].value == ""){
+    if(!contenImputs[0].value == "" && !contenImputs[1].value == "" && !contenImputs[2].value == "" && !contenImputs[3].value == "" && !contenImputs[4].value == "" && !contenImputs[5].value == "" && !contenSelect[0].value == "" && !contenSelect[1].value == "" && !contenSelect[2].value == "" && !contenTextarea[0].value == "" && Fn.validaRut(contenRut[0].value) == true && Fn.validaRut(contenRut[1].value) == true && validacionUserTel.test(contenTel[0].value) === true){
         console.log("FIN")
         agregarUsuario(rut,direccion,provincias,tipoCarga,rutContact,apellidos,emailContacto,razonSocial,regiones,comunas,kilosDiarios,nombres,telefono,archivos,comentario);
         alerta2.classList.add("d-none");

@@ -52,7 +52,7 @@ function limpiarForm(){
         const limpiaForm1 = document.querySelectorAll("input.shadow-none")
         const contenDelImputs1 = [];
         let j=0;
-        while(j<7){
+        while(j<4){
             const inputCorr = limpiaForm1[j];
             contenDelImputs1.push(inputCorr);
             contenDelImputs1[j].value = "";
@@ -84,7 +84,7 @@ function limpiarForm(){
         const limpiaForm4 = document.querySelectorAll("input.shadow-sm")
         const contenDelImputs2 = [];
         let y=0;
-        while(y<7){
+        while(y<4){
             const inputCorr = limpiaForm4[y];
             contenDelImputs2.push(inputCorr);
             contenDelImputs2[y].value = "";
@@ -118,7 +118,7 @@ btnAgregarProblema.addEventListener("click",(e)=>{
     alerta2.classList.add("d-none");
     alerta3.classList.add("d-none");
     e.preventDefault();
-    limpiarForm();
+    //limpiarForm();
 });
 
 const agregarUsuario1 = (Envi_UsRut,Envi_UsCelular,tipoProblem,numOrden,Envi_UsNombre,Envi_UsCorreo,boletFacturGuia,archivo,comentario) =>{
@@ -163,22 +163,117 @@ btnAceptar1.addEventListener("click",(e)=>{
     const[Envi_UsRut,Envi_UsCelular,tipoProblem,numOrden,Envi_UsNombre,Envi_UsCorreo,boletFacturGuia,archivo,comentario] = [...data.values()];
     
     ///////////////////////////////////////////////
+
+    //VALIDAR EMAIL 
+    const emailUser = document.querySelector("#Envi_UsCorreo");
+    const contenEmail = [];
+    const validacionUserEmail = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+
+    let c = 0;
+    contenEmail.splice(0,2);
+    while (c < 1) {
+    const inputCorr = emailUser;
+    contenEmail.push(inputCorr);
+    if(!validacionUserEmail.test(contenEmail[0].value)){
+        contenEmail[c].classList.remove("border-dark");
+        contenEmail[c].classList.add("border-danger");
+        alerta2.classList.remove("d-none");
+        alerta2.textContent = "Formato del correo incorrecto";
+        console.log("CORREO INC");
+    }else if(validacionUserEmail.test(contenEmail[0].value)){
+        contenEmail[c].classList.remove("border-danger");
+        contenEmail[c].classList.remove("border-dark");
+        contenEmail[c].classList.add("border-success");
+        console.log("CORREO CORR");
+    }
+    c++;
+    }
+    //VALIDAR EMAIL
+
+    //VALIDAR TELEFONO  
+    const telefUser = document.querySelectorAll("#Envi_UsCelular");
+    const contenTel = [];
+    const validacionUserTel = /^(\s?)(0?9)(\s?)[98765432]\d{7}$/;
+
+    let m = 0;
+    contenTel.splice(0,2);
+    while (m < 1) {
+        const inputCorr = telefUser[m];
+        contenTel.push(inputCorr);
+        if(validacionUserTel.test(contenTel[m].value) === false){
+            contenTel[m].classList.remove("border-dark");
+            contenTel[m].classList.add("border-danger");
+            alerta2.classList.remove("d-none");
+            alerta2.textContent = "Numero telefonico no valido";
+            console.log("TEL INC");
+        }else if(validacionUserTel.test(contenTel[m].value) === true){
+            contenTel[m].classList.remove("border-danger");
+            contenTel[m].classList.remove("border-dark");
+            contenTel[m].classList.add("border-success");
+            console.log("TEL CORR");
+        }
+        m++;
+    }
+    //VALIDAR TELEFONO
+
+    //VALIDAR RUT
+    var Fn = {
+        validaRut : function (rutCompleto) {
+            if (!/^[0-9]+[-|‐]{1}[0-9kK]{1}$/.test( rutCompleto ))
+                return false;
+            var tmp 	= rutCompleto.split('-');
+            var digv	= tmp[1]; 
+            var rut 	= tmp[0];
+            if ( digv == 'K' ) digv = 'k' ;
+            return (Fn.dv(rut) == digv );
+        },
+        dv : function(T){
+            var M=0,S=1;
+            for(;T;T=Math.floor(T/10))
+                S=(S+T%10*(9-M++%6))%11;
+            return S?S-1:'k';
+        }
+    }
+    
+    const rutUser = document.querySelector("#Envi_UsRut");
+    const contenRut = [];
+
     let i = 0;
-    contenImputs.splice(0,4);
-    while (i < 7) {
-        const inputCorr = test[i];
-        contenImputs.push(inputCorr);
-        if(contenImputs[i].value == ""){
-            contenImputs[i].classList.remove("border-dark");
-            contenImputs[i].classList.add("border-danger");
-            console.log("FALTAN-V1")
-        }else if(!contenImputs[i].value == ""){
-            contenImputs[i].classList.remove("border-danger");
-            contenImputs[i].classList.remove("border-dark");
-            contenImputs[i].classList.add("border-success");
-            console.log("FALTAN-V2")
+    contenRut.splice(0,2);
+    while (i < 1) {
+        const inputCorr = rutUser;
+        contenRut.push(inputCorr);
+        if(Fn.validaRut(contenRut[0].value) == false){
+            contenRut[i].classList.remove("border-dark");
+            contenRut[i].classList.add("border-danger");
+            alerta2.textContent = "RUT invalido";
+            console.log("RUT INC");
+        }else if(Fn.validaRut(contenRut[0].value) == true){
+            contenRut[i].classList.remove("border-danger");
+            contenRut[i].classList.remove("border-dark");
+            contenRut[i].classList.add("border-success");
+            console.log("RUT CORR");
         }
         i++;
+    }
+    //VALIDAR RUT
+
+    let t = 0;
+    contenImputs.splice(0,4);
+    while (t < 4) {
+        const inputCorr = test[t];
+        contenImputs.push(inputCorr);
+        if(contenImputs[t].value == ""){
+            contenImputs[t].classList.remove("border-dark");
+            contenImputs[t].classList.add("border-danger");
+            console.log("FALTAN-V1")
+        }else if(!contenImputs[t].value == ""){
+            contenImputs[t].classList.remove("border-danger");
+            contenImputs[t].classList.remove("border-dark");
+            contenImputs[t].classList.add("border-success");
+            console.log("FALTAN-V2")
+        }
+        t++;
     }
     let a = 0;
     contenSelect.splice(0,3);
@@ -220,7 +315,7 @@ btnAceptar1.addEventListener("click",(e)=>{
         }
         b++;
     }
-    if(!contenImputs[0].value == "" && !contenImputs[1].value == "" && !contenImputs[2].value == "" && !contenImputs[3].value == "" && !contenImputs[4].value == "" && !contenImputs[5].value == "" && !contenImputs[6].value == "" && !contenSelect[0].value == "" && !contenTextarea[0].value == ""){
+    if(!contenImputs[0].value == "" && !contenImputs[1].value == "" && !contenImputs[2].value == "" && !contenImputs[3].value == "" && !contenSelect[0].value == "" && !contenTextarea[0].value == "" && validacionUserTel.test(contenTel[0].value) === true && Fn.validaRut(contenRut[0].value) == true && validacionUserEmail.test(contenEmail[0].value)){
         console.log("FIN")
         agregarUsuario1(Envi_UsRut,Envi_UsCelular,tipoProblem,numOrden,Envi_UsNombre,Envi_UsCorreo,boletFacturGuia,archivo,comentario);
         alerta2.classList.add("d-none");
@@ -269,9 +364,104 @@ btnAceptar2.addEventListener("click",(e)=>{
     const[Reti_UsRut,Reti_UsCelular,tipoProblem2,numRetiro,Reti_UsNombre,Reti_UsCorreo,boletFacturGuia2,archivo2,comentario2] = [...data.values()];
     
     ///////////////////////////////////////////////
+
+    //VALIDAR EMAIL 
+    const emailUser = document.querySelector("#Reti_UsCorreo");
+    const contenEmail = [];
+    const validacionUserEmail = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+
+    let c = 0;
+    contenEmail.splice(0,2);
+    while (c < 1) {
+    const inputCorr = emailUser;
+    contenEmail.push(inputCorr);
+    if(!validacionUserEmail.test(contenEmail[0].value)){
+        contenEmail[c].classList.remove("border-dark");
+        contenEmail[c].classList.add("border-danger");
+        alerta3.classList.remove("d-none");
+        alerta3.textContent = "Formato del correo incorrecto";
+        console.log("CORREO INC");
+    }else if(validacionUserEmail.test(contenEmail[0].value)){
+        contenEmail[c].classList.remove("border-danger");
+        contenEmail[c].classList.remove("border-dark");
+        contenEmail[c].classList.add("border-success");
+        console.log("CORREO CORR");
+    }
+    c++;
+    }
+    //VALIDAR EMAIL
+
+    //VALIDAR TELEFONO  
+    const telefUser = document.querySelectorAll("#Reti_UsCelular");
+    const contenTel = [];
+    const validacionUserTel = /^(\s?)(0?9)(\s?)[98765432]\d{7}$/;
+
+    let m = 0;
+    contenTel.splice(0,2);
+    while (m < 1) {
+        const inputCorr = telefUser[m];
+        contenTel.push(inputCorr);
+        if(validacionUserTel.test(contenTel[m].value) === false){
+            contenTel[m].classList.remove("border-dark");
+            contenTel[m].classList.add("border-danger");
+            alerta3.classList.remove("d-none");
+            alerta3.textContent = "Numero telefonico no valido";
+            console.log("TEL INC");
+        }else if(validacionUserTel.test(contenTel[m].value) === true){
+            contenTel[m].classList.remove("border-danger");
+            contenTel[m].classList.remove("border-dark");
+            contenTel[m].classList.add("border-success");
+            console.log("TEL CORR");
+        }
+        m++;
+    }
+    //VALIDAR TELEFONO
+
+    //VALIDAR RUT
+    var Fn = {
+        validaRut : function (rutCompleto) {
+            if (!/^[0-9]+[-|‐]{1}[0-9kK]{1}$/.test( rutCompleto ))
+                return false;
+            var tmp 	= rutCompleto.split('-');
+            var digv	= tmp[1]; 
+            var rut 	= tmp[0];
+            if ( digv == 'K' ) digv = 'k' ;
+            return (Fn.dv(rut) == digv );
+        },
+        dv : function(T){
+            var M=0,S=1;
+            for(;T;T=Math.floor(T/10))
+                S=(S+T%10*(9-M++%6))%11;
+            return S?S-1:'k';
+        }
+    }
+
+    const rutUser = document.querySelector("#Reti_UsRut");
+    const contenRut = [];
+
+    let i = 0;
+    contenRut.splice(0,2);
+    while (i < 1) {
+        const inputCorr = rutUser;
+        contenRut.push(inputCorr);
+        if(Fn.validaRut(contenRut[0].value) == false){
+            contenRut[i].classList.remove("border-dark");
+            contenRut[i].classList.add("border-danger");
+            alerta3.textContent = "RUT invalido";
+            console.log("RUT INC");
+        }else if(Fn.validaRut(contenRut[0].value) == true){
+            contenRut[i].classList.remove("border-danger");
+            contenRut[i].classList.remove("border-dark");
+            contenRut[i].classList.add("border-success");
+            console.log("RUT CORR");
+        }
+        i++;
+    }
+    //VALIDAR RUT
+
     let t = 0;
     contenImputs2.splice(0,4);
-    while (t < 7) {
+    while (t < 4) {
         const inputCorr = test4[t];
         contenImputs2.push(inputCorr);
         if(contenImputs2[t].value == ""){
@@ -328,7 +518,7 @@ btnAceptar2.addEventListener("click",(e)=>{
         }
         q++;
     }
-    if(!contenImputs2[0].value == "" && !contenImputs2[1].value == "" && !contenImputs2[2].value == "" && !contenImputs2[3].value == "" && !contenImputs2[4].value == "" && !contenImputs2[5].value == "" && !contenImputs2[6].value == "" && !contenSelect2[0].value == "" && !contenTextarea2[0].value == ""){
+    if(!contenImputs2[0].value == "" && !contenImputs2[1].value == "" && !contenImputs2[2].value == "" && !contenImputs2[3].value == "" && !contenSelect2[0].value == "" && !contenTextarea2[0].value == "" && validacionUserTel.test(contenTel[0].value) === true && Fn.validaRut(contenRut[0].value) == true && validacionUserEmail.test(contenEmail[0].value)){
         console.log("FIN")
         agregarUsuario2(Reti_UsRut,Reti_UsCelular,tipoProblem2,numRetiro,Reti_UsNombre,Reti_UsCorreo,boletFacturGuia2,archivo2,comentario2);
         alerta3.classList.add("d-none");

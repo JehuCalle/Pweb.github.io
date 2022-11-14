@@ -9,10 +9,22 @@ const btnModifContra = document.querySelector("#btnModifContra");
 
 const alerta1 = document.querySelector("#divAlerta1");
 const alerta2 = document.querySelector("#divAlerta2");
-
+// INPUTS
 const delInputs = document.querySelectorAll("input");
 const contenDelImputs = [];
 
+const emailUser1 = document.querySelector("#correo");
+const emailUser2 = document.querySelector("#correoContact");
+const contenEmail = [];
+const validacionUserEmail = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+
+const telefUser = document.querySelector("#telefono");
+const telefContUser = document.querySelector("#telefonoContact");
+const celularUser = document.querySelector("#celular");
+const celularContactUser = document.querySelector("#celularContact");
+const contenTelCel = [];
+const validacionUserTel = /^(\s?)(0?9)(\s?)[98765432]\d{7}$/;
+// INPUTS
 ///////////////////////////////////////////////
 const test2 = document.querySelectorAll("select");
 const contenSelect = [];
@@ -35,6 +47,8 @@ const contenModContra = [];
 const test3 = document.querySelectorAll(".shadow-none");
 let nuevaContra = [];
 ///////////////////////////////////////////////
+const validacionUserPass = /^(\d|(([A-Za-zñÑáéíóúÁÉÍÓÚ\s])\3?(?!\3)))+$/;
+
 
 const porteFormulario1 = document.querySelector("#modal1");
 const porteFormulario2 = document.querySelector("#modal2");
@@ -137,7 +151,7 @@ btnActuaInfo.addEventListener("click",(e)=>{
 });
 btnModifContra.addEventListener("click",(e)=>{
     e.preventDefault();
-    limpiarForm();
+    //limpiarForm();
 });
 
 btnAceptar1.addEventListener("click",(e)=>{
@@ -160,18 +174,18 @@ btnAceptar1.addEventListener("click",(e)=>{
 
 
     
-    
     //SE ALMACENAN TODOS LOS DATOS DE LOS INPUT EN EL [...data.values()] Y SE TRANSLADAN A [todo]
     const[razonSocial,giro,direccion,regiones,provincias,comunas,telefono,telefonoContact,correo,correoContact,celular,celularContact,contactoPago] = [...data.values()];
 ///////////////////////////////////////////////
     let i = 0
-    contenImputs.splice(0,7);
-    while (i < 6) {
+    contenImputs.splice(0,4);
+    while (i < 3) {
         const inputCorr = test[i];
         contenImputs.push(inputCorr);
         if(contenImputs[i].value == ""){
             contenImputs[i].classList.remove("border-dark");
             contenImputs[i].classList.add("border-danger");
+            alerta2.textContent = "Campos sin completar";
             alerta2.classList.remove("d-none");
             console.log("INPUTS INC")
         }else if(!contenImputs[i].value == ""){
@@ -183,6 +197,117 @@ btnAceptar1.addEventListener("click",(e)=>{
         }
         i++
     }
+
+            //VALIDAR EMAIL
+        let c = 0;
+        contenEmail.splice(0,2);
+        while (c < 1) {
+        const inputCorr = emailUser1;
+        contenEmail.push(inputCorr);
+        if(!validacionUserEmail.test(contenEmail[0].value) || contenEmail[0].value == ""){
+            contenEmail[c].classList.remove("border-dark");
+            contenEmail[c].classList.add("border-danger");
+            alerta2.classList.remove("d-none");
+            alerta2.textContent = "Formato del correo incorrecto";
+            console.log("CORREO INC");
+        }else if(validacionUserEmail.test(contenEmail[0].value)){
+            contenEmail[c].classList.remove("border-danger");
+            contenEmail[c].classList.remove("border-dark");
+            contenEmail[c].classList.add("border-success");
+            console.log("CORREO CORR");
+        }
+        
+        if(!emailUser2.value == ""){
+            if(!validacionUserEmail.test(emailUser2.value)){
+                emailUser2.classList.remove("border-dark");
+                emailUser2.classList.add("border-danger");
+                alerta2.classList.remove("d-none");
+                alerta2.textContent = "Formato del correo opcional incorrecto";
+                console.log("CORREO OPC INC");
+            }else if(validacionUserEmail.test(emailUser2.value)){
+                emailUser2.classList.remove("border-danger");
+                emailUser2.classList.remove("border-dark");
+                emailUser2.classList.add("border-success");
+                alerta2.classList.remove("d-none");
+                console.log("CORREO OPC CORR");
+            }
+        }else{
+            console.log("Correo opcional no deseado")
+            emailUser2.classList.remove("border-danger");
+            emailUser2.classList.remove("border-success");
+            emailUser2.classList.add("border-dark");
+        }
+        
+        c++;
+        }
+        //VALIDAR EMAIL
+
+        //VALIDAR TELEFONO-CELULAR
+    let m = 0;
+    contenTelCel.splice(0,2);
+    while (m < 2) {
+        contenTelCel.push(telefUser);
+        contenTelCel.push(celularUser);
+        if(validacionUserTel.test(contenTelCel[m].value) === false){
+            contenTelCel[m].classList.remove("border-dark");
+            contenTelCel[m].classList.add("border-danger");
+            alerta2.classList.remove("d-none");
+            alerta2.textContent = "Formato de numero telefonico o celular incorrecto";
+            console.log("TEL INC");
+        }else if(validacionUserTel.test(contenTelCel[m].value) === true){
+            contenTelCel[m].classList.remove("border-danger");
+            contenTelCel[m].classList.remove("border-dark");
+            contenTelCel[m].classList.add("border-success");
+            console.log("TEL CORR");
+        }
+        m++;
+    }
+    /*
+    if(!telefContUser.value == ""){
+        if(!validacionUserTel.test(telefContUser.value) === true){
+            telefContUser.classList.remove("border-dark");
+            telefContUser.classList.add("border-danger");
+            telefContUser.classList.remove("d-none");
+            telefContUser.textContent = "Formato del telefono opcional incorrecto";
+            console.log("CORREO OPC INC");
+        }else if(validacionUserEmail.test(telefContUser.value) === true){
+            telefContUser.classList.remove("border-danger");
+            telefContUser.classList.remove("border-dark");
+            telefContUser.classList.add("border-success");
+            alerta2.classList.remove("d-none");
+            console.log("CORREO OPC CORR");
+        }
+    }else{
+        console.log("Correo opcional no deseado")
+        telefContUser.classList.remove("border-danger");
+        telefContUser.classList.remove("border-success");
+        telefContUser.classList.add("border-dark");
+    }
+
+    if(!celularContactUser.value == ""){
+        if(!validacionUserTel.test(celularContactUser.value) === true){
+            celularContactUser.classList.remove("border-dark");
+            celularContactUser.classList.add("border-danger");
+            celularContactUser.classList.remove("d-none");
+            celularContactUser.textContent = "Formato del celular opcional incorrecto";
+            console.log("CORREO OPC INC");
+        }else if(validacionUserEmail.test(celularContactUser.value) === true){
+            celularContactUser.classList.remove("border-danger");
+            celularContactUser.classList.remove("border-dark");
+            celularContactUser.classList.add("border-success");
+            alerta2.classList.remove("d-none");
+            console.log("CORREO OPC CORR");
+        }
+    }
+    else{
+        console.log("Correo opcional no deseado")
+        telefContUser.classList.remove("border-danger");
+        telefContUser.classList.remove("border-success");
+        telefContUser.classList.add("border-dark");
+    }
+    */
+    //VALIDAR TELEFONO
+
     let a = 0
     contenSelect.splice(0,3);
     while (a < 3) {
@@ -191,6 +316,7 @@ btnAceptar1.addEventListener("click",(e)=>{
         if(contenSelect[a].value == ""){
             contenSelect[a].classList.remove("border-dark");
             contenSelect[a].classList.add("border-danger");
+            alerta2.textContent = "Campos sin completar";
             alerta2.classList.remove("d-none");
             console.log("SELECT INC")
         }else if(!contenSelect[a].value == ""){
@@ -203,20 +329,36 @@ btnAceptar1.addEventListener("click",(e)=>{
         a++
     }
 
-    if(!contenImputs[0].value == "" && !contenImputs[1].value == "" && !contenImputs[2].value == "" && !contenImputs[3].value == "" && !contenImputs[4].value == "" && !contenImputs[5].value == "" && !contenSelect[0].value == "" && !contenSelect[1].value == "" && !contenSelect[2].value == ""){
-        console.log("FIN")
-        actualizarInformacion(razonSocial,giro,direccion,regiones,provincias,comunas,telefono,telefonoContact,correo,correoContact,celular,celularContact,contactoPago);
-        alerta1.classList.remove("d-none");
-        alerta1.textContent = "Informacion actualizada correctamente"
-        
-        alerta2.classList.add("d-none");
-        console.log(nuevaInfor)
-        //setTimeout(()=> location.href="./Misdatos.html",2000);
-        return;
+    if(!emailUser2.value == "" /*|| !telefContUser.value == "" || !celularContactUser.value == "" */){
+        if((!contenImputs[0].value == "" && !contenImputs[1].value == "" && !contenImputs[2].value == "" && validacionUserEmail.test(contenEmail[0].value) && !contenSelect[0].value == "" && !contenSelect[1].value == "" && !contenSelect[2].value == "" && validacionUserTel.test(contenTelCel[0].value) === true && validacionUserTel.test(contenTelCel[1].value) === true) /*OPCIONALES OBLIGATORIAS =>*/ && (validacionUserEmail.test(emailUser2.value) === true /* || !validacionUserTel.test(telefContUser.value) === true || !validacionUserTel.test(celularContactUser.value) === true */)){
+            console.log("FIN")
+            actualizarInformacion(razonSocial,giro,direccion,regiones,provincias,comunas,telefono,telefonoContact,correo,correoContact,celular,celularContact,contactoPago);
+            alerta1.classList.remove("d-none");
+            alerta1.textContent = "Informacion actualizada correctamente"
+            
+            alerta2.classList.add("d-none");
+            console.log(nuevaInfor)
+            //setTimeout(()=> location.href="./Misdatos.html",2000);
+            return;
+        }
+    }else if(emailUser2.value == "" /*&& telefContUser.value == "" && celularContactUser.value == "" */){
+        if(!contenImputs[0].value == "" && !contenImputs[1].value == "" && !contenImputs[2].value == "" && validacionUserEmail.test(contenEmail[0].value) && !contenSelect[0].value == "" && !contenSelect[1].value == "" && !contenSelect[2].value == "" && validacionUserTel.test(contenTelCel[0].value) === true && validacionUserTel.test(contenTelCel[1].value) === true){
+            console.log("FIN")
+            actualizarInformacion(razonSocial,giro,direccion,regiones,provincias,comunas,telefono,telefonoContact,correo,correoContact,celular,celularContact,contactoPago);
+            alerta1.classList.remove("d-none");
+            alerta1.textContent = "Informacion actualizada correctamente"
+            
+            alerta2.classList.add("d-none");
+            console.log(nuevaInfor)
+            //setTimeout(()=> location.href="./Misdatos.html",2000);
+            return;
+        }
     }
 
 ///////////////////////////////////////////////
 });
+
+////////////////////////////////// MODIFICAR CONTRASEÑA //////////////////////////////////////
 
 const modContra = (passActual,nuevaPass,passRe) =>{
     const objetoTodo = {
@@ -251,23 +393,57 @@ btnAceptar2.addEventListener("click",(e)=>{
     contenModContra.splice(0,4);
     while (c < 3) {
         const inputCorr = test3[c];
+        
         contenModContra.push(inputCorr);
+        console.log(validacionUserPass.test(contenModContra[c].value))
         if(contenModContra[c].value == ""){
             contenModContra[c].classList.remove("border-dark");
+            contenModContra[c].classList.remove("border-success");
             contenModContra[c].classList.add("border-danger");
+            alerta3.textContent = "Campos incompletos";
             alerta3.classList.remove("d-none");
-            console.log("FALTAN-V1")
-        }else if(!contenModContra[c].value == ""){
-            contenModContra[c].classList.remove("border-danger");
+            console.log("IMPUTS VACIOS")
+        }else if(validacionUserPass.test(contenModContra[c].value)){
             contenModContra[c].classList.remove("border-dark");
-            contenModContra[c].classList.add("border-success");
+            contenModContra[c].classList.remove("border-success");
+            contenModContra[c].classList.add("border-danger");
+            alerta3.textContent = "Contraseña no cumple con lo minimo";
             alerta3.classList.remove("d-none");
-            console.log("FALTAN-V2")
+            console.log("FALTAN MINIMO")
+        }else{
+            contenModContra[c].classList.remove("border-dark");
+            contenModContra[c].classList.remove("border-danger");
+            contenModContra[c].classList.add("border-success");
         }
         c++
     }
     
-    if(!contenModContra[0].value == "" && !contenModContra[1].value == "" && !contenModContra[2].value == ""){
+
+    if((contenModContra[1].value === contenModContra[2].value) && (!contenModContra[1].value == "" && !contenModContra[2].value == "") && (validacionUserPass.test(contenModContra[1].value) === false && validacionUserPass.test(contenModContra[2].value) === false)){
+            contenModContra[1].classList.remove("border-dark");
+            contenModContra[1].classList.remove("border-danger");
+            contenModContra[1].classList.add("border-success");
+            contenModContra[2].classList.remove("border-dark");
+            contenModContra[2].classList.remove("border-danger");
+            contenModContra[2].classList.add("border-success");
+            console.log("FIN")
+            modContra(passActual,nuevaPass,passRe);
+            alerta3.classList.add("d-none");
+            console.log(nuevaContra);
+        }else if (contenModContra[1].value !== contenModContra[2].value){
+            alerta3.textContent = "Nuevas contraseñas no coinciden";
+            alerta3.classList.remove("d-none");
+            contenModContra[1].classList.remove("border-dark");
+            contenModContra[1].classList.remove("border-success");
+            contenModContra[1].classList.add("border-danger");
+            contenModContra[2].classList.remove("border-dark");
+            contenModContra[2].classList.remove("border-success");
+            contenModContra[2].classList.add("border-danger");
+        } 
+    
+    
+    /*
+    if(!contenModContra[0].value == "" && !contenModContra[1].value == "" && !contenModContra[2].value == "" && !validacionUserPass.test(contenModContra[0].value) === true && !validacionUserPass.test(contenModContra[1].value) === true && !validacionUserPass.test(contenModContra[2].value) === true){
         console.log("FIN")
         modContra(passActual,nuevaPass,passRe);
         alerta3.classList.add("d-none");
@@ -275,6 +451,7 @@ btnAceptar2.addEventListener("click",(e)=>{
         //setTimeout(()=> location.href="./Misdatos.html",2000);
         return;
     }
+    */
 ///////////////////////////////////////////////
 });
 

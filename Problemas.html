@@ -121,10 +121,10 @@
                                 </div>
                                 <div class="col-12 columnaDiv bg-light">
                                   <label class="col-11 mx-3 mx-sm-2 h6 fw-normal mb-0" for="quienRedacta2">Rut<span class="text-danger">*</span></label>
-                                  <input type="text" name="Envi_UsRut" class="shadow-none rounded rounded-2 border border-2 border-dark col-11 mx-3 mx-sm-2 mb-1 mb-md-2">
+                                  <input type="text" id="Envi_UsRut" name="Envi_UsRut" class="rounded rounded-2 border border-2 border-dark col-11 mx-3 mx-sm-2 mb-1 mb-md-2">
                                   
                                   <label class="col-11 mx-3 mx-sm-2 h6 fw-normal mb-0" for="quienRedacta2">Celular<span class="text-danger">*</span></label>
-                                  <input type="text" name="Envi_UsCelular" class="shadow-none rounded rounded-2 border border-2 border-dark col-11 mx-3 mx-sm-2 mb-1 mb-md-2">
+                                  <input type="text" id="Envi_UsCelular" name="Envi_UsCelular" class="rounded rounded-2 border border-2 border-dark col-11 mx-3 mx-sm-2 mb-1 mb-md-2">
 
                                   <label class="col-11 mx-3 mx-sm-2 mb-0 h6 fw-normal " for="tipoProblem">Tipo de problema<span class="text-danger">*</span></label>
                                   <select name="tipoProblem" class="shadow-none rounded rounded-2 border border-2 border-dark col-11 mx-3 mx-sm-2 mb-1 mb-md-2 h6 fw-normal" id="tipoProblem">
@@ -139,14 +139,11 @@
                                   <label class="col-11 mx-3 mx-sm-2 h6 fw-normal mb-0" for="numOrden">N°Orden<span class="text-danger">*</span></label>
                                   <input type="text" name="numOrden" class="shadow-none rounded rounded-2 border border-2 border-dark col-11 mx-3 mx-sm-2 mb-1 mb-md-2">
                       
-
                                   <label class="col-11 mx-3 mx-sm-2 h6 fw-normal mb-0" for="quienRedacta2">Nombre<span class="text-danger">*</span></label>
                                   <input type="text" name="Envi_UsNombre" class="shadow-none rounded rounded-2 border border-2 border-dark col-11 mx-3 mx-sm-2 mb-1 mb-md-2">
                                   <label class="col-11 mx-3 mx-sm-2 h6 fw-normal mb-0" for="quienRedacta2">Correo<span class="text-danger">*</span></label>
-                                  <input type="text" name="Envi_UsCorreo" class="shadow-none rounded rounded-2 border border-2 border-dark col-11 mx-3 mx-sm-2 mb-1 mb-md-2">
+                                  <input type="text" id="Envi_UsCorreo" name="Envi_UsCorreo" class="rounded rounded-2 border border-2 border-dark col-11 mx-3 mx-sm-2 mb-1 mb-md-2">
 
-
-                      
                                   <label class="col-11 mx-3 mx-sm-2 h6 fw-normal mb-0" for="boletFacturGuia">Boleta/Factura/Guia<span class="text-danger">*</span></label>
                                   <input type="text" name="boletFacturGuia" class="shadow-none rounded rounded-2 border border-2 border-dark col-11 mx-3 mx-sm-2 mb-2">
                                 
@@ -166,6 +163,9 @@
                               </div>
                             </div>
 
+
+
+
                             <div class="tab-pane" id="retiro" role="tabpanel" aria-labelledby="retiro-tab">
                               <form id="formulario2" class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 p-2 bg-warning bg-opacity-75 col rounded rounded-1 border border-5 border-dark">
                                 <div class="col-12">
@@ -174,10 +174,10 @@
                                 </div>
                                 <div class="col-12 columnaDiv bg-light">
                                   <label class="col-11 mx-3 mx-sm-2 h6 fw-normal mb-0" for="quienRedacta2">Rut<span class="text-danger">*</span></label>
-                                  <input type="text" name="Reti_UsRut" class="shadow-sm rounded rounded-2 border border-2 border-dark col-11 mx-3 mx-sm-2 mb-1 mb-md-2">
+                                  <input type="text" id="Reti_UsRut" name="Reti_UsRut" class="rounded rounded-2 border border-2 border-dark col-11 mx-3 mx-sm-2 mb-1 mb-md-2">
                                   
                                   <label class="col-11 mx-3 mx-sm-2 h6 fw-normal mb-0" for="quienRedacta2">Celular<span class="text-danger">*</span></label>
-                                  <input type="text" name="Reti_UsCelular" class="shadow-sm rounded rounded-2 border border-2 border-dark col-11 mx-3 mx-sm-2 mb-1 mb-md-2">
+                                  <input type="text" id="Reti_UsCelular" name="Reti_UsCelular" class="rounded rounded-2 border border-2 border-dark col-11 mx-3 mx-sm-2 mb-1 mb-md-2">
 
                                   <label class="col-11 mx-3 mx-sm-2 mb-0 h6 fw-normal " for="tipoProblem2">Tipo de problema<span class="text-danger">*</span></label>
                                   <select name="tipoProblem2" class="shadow-sm rounded rounded-2 border border-2 border-dark col-11 mx-3 mx-sm-2 mb-1 mb-md-2 h6 fw-normal" id="tipoProblem2">
@@ -195,7 +195,7 @@
                                   <input type="text" name="Reti_UsNombre" class="shadow-sm rounded rounded-2 border border-2 border-dark col-11 mx-3 mx-sm-2 mb-1 mb-md-2">
                           
                                   <label class="col-11 mx-3 mx-sm-2 h6 fw-normal mb-0" for="quienRedacta2">Correo<span class="text-danger">*</span></label>
-                                  <input type="text" name="Reti_UsCorreo" class="shadow-sm rounded rounded-2 border border-2 border-dark col-11 mx-3 mx-sm-2 mb-1 mb-md-2">
+                                  <input type="text" id="Reti_UsCorreo" name="Reti_UsCorreo" class="rounded rounded-2 border border-2 border-dark col-11 mx-3 mx-sm-2 mb-1 mb-md-2">
                     
                                   <label class="col-11 mx-3 mx-sm-2 h6 fw-normal mb-0" for="boletFacturGuia2">Boleta/Factura/Guia<span class="text-danger">*</span></label>
                                   <input type="text" name="boletFacturGuia2" class="shadow-sm rounded rounded-2 border border-2 border-dark col-11 mx-3 mx-sm-2 mb-2">
