@@ -141,6 +141,7 @@ btnAceptar1.addEventListener("click",(e)=>{
             contenRut.push(inputCorr);
             contenRut.push(rutCont);
             console.log(contenRut)
+            console.log(contenRut)
             if(Fn.validaRut(contenRut[r].value) == false){
                 contenRut[r].classList.remove("border-dark");
                 contenRut[r].classList.add("border-danger");
@@ -190,6 +191,8 @@ btnAceptar1.addEventListener("click",(e)=>{
         if(contenImputs[i].value == ""){
             contenImputs[i].classList.remove("border-dark");
             contenImputs[i].classList.add("border-danger");
+            alerta2.textContent = "Campos sin completar";
+            alerta2.classList.remove("d-none");
             console.log("FALTAN INPUTS")
         }else if(!contenImputs[i].value == ""){
             contenImputs[i].classList.remove("border-danger");
@@ -207,6 +210,7 @@ btnAceptar1.addEventListener("click",(e)=>{
         if(contenSelect[a].value == ""){
             contenSelect[a].classList.remove("border-dark");
             contenSelect[a].classList.add("border-danger");
+            alerta2.textContent = "Campos sin completar";
             alerta2.classList.remove("d-none");
             console.log("FALTAN SELECT")
         }else if(!contenSelect[a].value == ""){
@@ -226,6 +230,7 @@ btnAceptar1.addEventListener("click",(e)=>{
         if(contenTextarea[b].value == ""){
             contenTextarea[b].classList.remove("border-dark");
             contenTextarea[b].classList.add("border-danger");
+            alerta2.textContent = "Campos sin completar";
             alerta2.classList.remove("d-none");
             console.log("FALTA TEXTAREA")
         }else if(!contenTextarea[b].value == ""){
@@ -238,7 +243,7 @@ btnAceptar1.addEventListener("click",(e)=>{
         b++
     }
 
-    if(!contenImputs[0].value == "" && !contenImputs[1].value == "" && !contenImputs[2].value == "" && !contenImputs[3].value == "" && !contenImputs[4].value == "" && !contenImputs[5].value == "" && !contenSelect[0].value == "" && !contenSelect[1].value == "" && !contenSelect[2].value == "" && !contenTextarea[0].value == "" && Fn.validaRut(contenRut[0].value) == true && Fn.validaRut(contenRut[1].value) == true && validacionUserTel.test(contenTel[0].value) === true){
+    if(!contenImputs[0].value == "" && !contenImputs[1].value == "" && !contenImputs[2].value == "" && !contenImputs[3].value == "" && !contenImputs[4].value == "" && !contenImputs[5].value == "" && !contenSelect[0].value == "" && !contenSelect[1].value == "" && !contenSelect[2].value == "" && !contenSelect[3].value == "" && !contenTextarea[0].value == "" && Fn.validaRut(contenRut[0].value) == true && Fn.validaRut(contenRut[1].value) == true && validacionUserTel.test(contenTel[0].value) === true){
         console.log("FIN")
         agregarUsuario(rut,direccion,provincias,tipoCarga,rutContact,apellidos,emailContacto,razonSocial,regiones,comunas,kilosDiarios,nombres,telefono,archivos,comentario);
         alerta2.classList.add("d-none");

@@ -10,7 +10,7 @@ const btnAgregarProblema = document.querySelector("#btnAgregarProblema");
 const alerta2 = document.querySelector("#divAlerta2");
 const alerta1 = document.querySelector("#divAlerta1");
 ///////////////////////////////////////////////
-const test = document.querySelectorAll("input.shadow-none");
+const test = document.querySelectorAll("input[name='inputComun1']");
 const contenImputs = [];
 
 const test2 = document.querySelectorAll("select.shadow-none");

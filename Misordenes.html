@@ -383,6 +383,79 @@
                           <td class=" rounded rounded-2 bg-light h6 fw-normal text-center">Agendado</td>
                           <td class=" rounded rounded-2 bg-light h6 fw-normal text-center fw-bold">
                             <a id="btnVerDeta1" data-bs-toggle="modal" data-bs-target="#exampleModal3" class="text-danger text-decoration-none" type="button">Ver detalles</a>
+
+                            <a name="" id="btnProblema" data-bs-toggle="modal" data-bs-target="#exampleModal3" class="btn col-10 col-md-10 mb-3 mb-md-1 mt-1 mt-md-2 mx-md-1 bg-warning bg-opacity-100 rounded rounded-5 fw-bold text-light" role="button">Reclamo</a>
+
+                            <!---->
+                            <!---->
+                            <!---->
+                            <!---->
+
+                            <div class="modal-dialog modal-dialog-scrollable m-0 p-0 hiding">
+                              <div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered d-flex justify-content-center">
+                                  <div id="modalF" class="modal-content w-650">
+                                    <div class="modal-header p-1 border-secondary">
+                                      <h4 class="text-center fw-bold mb-0">Agregar Reclamo</h4>
+                                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body p-2 text-start">
+                                      <form id="formulario3" class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 p-2 bg-warning bg-opacity-75 col rounded rounded-1 border border-5 border-dark">
+                                        <div class="col-12 mb-1">
+                                          <label id="divAlerta4" class="bg-light mb-2 border border-3 border-danger rounded rounded-3 p-1 col-12 d-none">Campos sin completar</label>
+                                          <span class="bg-light rounded rounded-3 border border-danger border-3">* = Campos obligatorios</span>
+                                        </div>
+                                        <div class="col-12 columnaDiv bg-light">
+                                          <label class="col-11 mx-3 mx-sm-2 h6 fw-normal mb-0" for="quienRedacta2">Rut<span class="text-danger">*</span></label>
+                                          <input type="text" id="Envi_UsRut" name="Envi_UsRut" class="rounded rounded-2 border border-2 border-dark col-11 mx-3 mx-sm-2 mb-1 mb-md-1" placeholder="Ej: 12345678-9">
+                                          
+                                          <label class="col-11 mx-3 mx-sm-2 h6 fw-normal mb-0" for="quienRedacta2">Celular<span class="text-danger">*</span></label>
+                                          <input type="text" id="Envi_UsCelular" name="Envi_UsCelular" class="rounded rounded-2 border border-2 border-dark col-11 mx-3 mx-sm-2 mb-1 mb-md-1" placeholder="Ej: 9 12345678">
+        
+                                          <label class="col-11 mx-3 mx-sm-2 mb-0 h6 fw-normal " for="tipoProblem">Tipo de problema<span class="text-danger">*</span></label>
+                                          <select name="selectComun1" class="shadow-none rounded rounded-2 border border-2 border-dark col-11 mx-3 mx-sm-2 mb-1 mb-md-1 h6 fw-normal" id="tipoProblem">
+                                            <option></option>
+                                            <option>Carga faltante</option>
+                                            <option>Carga intercambiada</option>
+                                            <option>Doble cobro</option>
+                                            <option>Carga dañada</option>
+                                            <option>Carga extraviada</option>
+                                          </select>
+                              
+                                          <label class="col-11 mx-3 mx-sm-2 h6 fw-normal mb-0" for="numOrden">N°Orden<span class="text-danger">*</span></label>
+                                          <input type="text" id="numOrden" name="inputComun1" class="rounded rounded-2 border border-2 border-dark col-11 mx-3 mx-sm-2 mb-1 mb-md-1">
+                              
+                                          <label class="col-11 mx-3 mx-sm-2 h6 fw-normal mb-0" for="quienRedacta2">Nombre<span class="text-danger">*</span></label>
+                                          <input type="text" id="Envi_UsNombre" name="inputComun1" class="shadow-none rounded rounded-2 border border-2 border-dark col-11 mx-3 mx-sm-2 mb-1 mb-md-1">
+                                          <label class="col-11 mx-3 mx-sm-2 h6 fw-normal mb-0" for="quienRedacta2">Correo<span class="text-danger">*</span></label>
+                                          <input type="text" id="Envi_UsCorreo" name="Envi_UsCorreo" class="rounded rounded-2 border border-2 border-dark col-11 mx-3 mx-sm-2 mb-1 mb-md-1" placeholder="Ej: Ejemplo@gmail.com">
+        
+                                          <label class="col-11 mx-3 mx-sm-2 h6 fw-normal mb-0" for="boletFacturGuia">Boleta/Factura/Guia<span class="text-danger">*</span></label>
+                                          <input type="text" id="boletFacturGuia" name="inputComun1" class="shadow-none rounded rounded-2 border border-2 border-dark col-11 mx-3 mx-sm-2 mb-2">
+                                        
+                                          <label class="col-11 mx-3 mx-sm-2 h6 fw-normal mb-0" for="quienRedacta2"></label>
+                                        </div>
+                                        <div class="col-12 bg-light">
+                                          <label class="col-12 mb-0">Adjunte los archivos necesarios<span class="text-danger">*</span></label>
+                                          <input id="archivo" name="inputComun1" class="shadow-none form-control rounded col-1 border border-2 border-dark" type="file" required>
+                                          <label class="col-12 h6 fw-normal p-0">Tamaño maximo de archivo rar: 10MB<span class="text-danger">*</span></label>
+                                          <label class="col-12 fw-bold mb-0">Comentario<span class="text-danger">*</span></label>
+                                          <textarea name="comentario" class="shadow-none form-control mb-2 border border-2 border-dark" id="comentario1" rows="3"></textarea>
+                                        </div>
+                                      </form>
+                                    </div>
+                                    <div class="modal-footer border border-2 border-secondary bg-warning bg-opacity-25 row justify-content-center pt-2 pb-1 mx-1">
+                                      <button type="" id="btnCancelar3" class="col-10 col-md-5 btn mb-2 mx-2 p-1 bg-warning bg-opacity-100 rounded rounded-5 fw-bold text-light" data-bs-dismiss="modal">Cancelar3</button>
+                                      <button type="submit" id="btnAceptar3" class="col-10 col-md-5 btn mb-2 mx-2 p-1 bg-warning bg-opacity-100 rounded rounded-5 fw-bold text-light">Aceptar3</button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+
+                            <!---->
+                            <!---->
+                            <!---->
                           </td>
                         </tr>
                       </tbody>
