@@ -80,15 +80,15 @@
           <div class="border border-2 bg-warning bg-opacity-50 row justify-content-center pt-3 p-0">
             <div class="col-12 row justify-content-center">
               <div class="row justify-content-end col-12 px-0">
-                <div class="col-5 col-md-6 col-xl-4 col-xxl-4 mx-2 p-0 row justify-content-center ">
+                <form id="formulario0" class="col-5 col-md-6 col-xl-4 col-xxl-4 mx-2 p-0 row justify-content-center ">
                   <label class="col-12 col-md-8 mt-0 mb-0 mx-0 p-0 h6 fw-bold ">Fecha desde:</label>
-                  <input type="text" class="rounded rounded-2 border border-2 border-dark col-12 col-md-8 mx-0 mx-md-2 p-0 h6 fw-normal text-center" placeholder="dd/mm/yyyy">
+                  <input type="date" name="inputRndm" class="rounded rounded-2 border border-2 border-dark col-12 col-md-8 mx-0 mx-md-2 p-0 h6 fw-normal text-center" placeholder="dd/mm/yyyy">
 
                   <label class="col-12 col-md-8 mt-0 mb-0 mx-0 p-0 h6 fw-bold">Fecha hasta:</label>
-                  <input type="text" class="rounded rounded-2 border border-2 border-dark col-12 col-md-8 mx-0 mb-4 mx-md-2 p-0 h6 fw-normal text-center" placeholder="dd/mm/yyyy">
+                  <input type="date" name="inputRndm" class="rounded rounded-2 border border-2 border-dark col-12 col-md-8 mx-0 mb-4 mx-md-2 p-0 h6 fw-normal text-center" placeholder="dd/mm/yyyy">
 
-                  <a name="" id="" class="btn bg-warning bg-opacity-100 rounded rounded-5 fw-bold text-light h6 fw-normal col-12 col-md-6 p-0 mx-4 mb-1" href="#" role="button">Buscar</a>
-                </div>
+                  <a name="" id="btnBuscar1" class="btn bg-warning bg-opacity-100 rounded rounded-5 fw-bold text-light h6 fw-normal col-12 col-md-6 p-0 mx-4 mb-1" href="#" role="button">Buscar</a>
+                </form>
                 <div class="col-7 col-md-6 col-lg-5 col-xl-4 p-0 row justify-content-center">
                   <label class="col-10 mb-1 h6 fw-bold text-center">Carga masiva</label>
 
@@ -179,10 +179,10 @@
                   
                                       <label class="col-11 mx-3 mx-sm-2 mt-0 mb-1 h6 fw-normal">Largo<span class="text-danger">*</span></label>
                                       <input id="largo" name="formu1" type="text" class="shadow-none rounded rounded-2 border border-2 border-dark col-11 mx-3 mx-sm-2 mb-2 mb-md-1 imputnormal">
-                  
+
                                       <label class="col-11 mx-3 mx-sm-2 mt-0 mb-1 h6 fw-normal">Peso(kg)<span class="text-danger">*</span></label>
-                                      <input id="peso" name="formu1" type="text" class="shadow-none rounded rounded-2 border border-2 border-dark col-11 mx-3 mx-sm-2 mb-2 mb-md-1 imputnormal">
-                  
+                                      <input id="peso" onkeyup="mostrar(this.value)" name="formu1" type="text" class="shadow-none rounded rounded-2 border border-2 border-dark col-11 mx-3 mx-sm-2 mb-2 mb-md-1 imputnormal">
+
                                       <label class="col-11 mx-3 mx-sm-2 mb-1 h6 fw-normal">Alto<span class="text-danger">*</span></label>
                                       <input id="alto" name="formu1" type="text" class="shadow-none rounded rounded-2 border border-2 border-dark col-11 mx-3 mx-sm-2 mb-0 imputnormal">
                   
@@ -194,18 +194,43 @@
                                         <option>Tipo E 3</option>
                                         <option>Tipo E 4</option>
                                       </select>
-                                      <label class="col-11 mx-3 mx-sm-2 mb-0 h6 fw-normal">Su pedido supera el peso limite y será tomada como sobrecarga.</label>
-                                      <label class="col-11 mx-3 mx-sm-2 mb-0 h6 fw-normal">¿Cuenta con herramientas?.</label>
-                                      <input class="form-check-input col-auto border border-2 border-dark" type="radio" name="flexRadioSiNO" id="flexRadioDefault2" value="Si" required>
-                                      <label class="" for="flexRadioDefault2">
-                                        Si
-                                      </label>
-                                      <input class="form-check-input col-auto border border-2 border-dark" type="radio" name="flexRadioSiNO" id="flexRadioDefault1" value="No" required>
-                                      <label class="form-check-label col-auto" for="flexRadioDefault1">
-                                        No
-                                      </label>
+                                      <div id="sobrecarga" class="border border-2 border-danger rounded rounded-2 d-none">
+                                        <label class="col-11 mx-3 mx-sm-2 mb-0 h6 fw-bold text-danger">Su pedido supera el peso limite y será tomada como sobrecarga.</label>
+                                        <label class="col-11 mx-3 mx-sm-2 mb-0 h6 fw-bold text-danger">¿Cuenta con herramientas?.</label>
+                                        <label class="mx-1"></label>
+                                        <input class="form-check-input col-auto border border-2 border-dark" type="radio" name="flexRadioSiNO" id="flexRadioSiNO" value="Si" required>
+                                        <label class="" for="flexRadioSiNO">
+                                          Si
+                                        </label>
+                                        <input class="form-check-input col-auto border border-2 border-dark" type="radio" name="flexRadioSiNO" id="flexRadioSiNO2" value="No" required>
+                                        <label class="form-check-label col-auto" for="flexRadioSiNO2s">
+                                          No
+                                        </label>
+                                      </div>
+                                      <div id="sobrecargaFal" class="">
+                                        <label class="mb-5 mt-5 col-12"></label>
+                                      </div>
                                     </div>
+
                                     <div id="collapseOne" class="accordion-collapse collapse bg-secondary bg-opacity-25" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                      <div class="col-12 bg-light border border-2 border-dark rounded rounded-2 p-1">
+                                        <label class="col-12">¿Desea enrutar?</label>
+                                        <input class="form-check-input col-auto border border-2 border-dark" type="radio" name="flexRadioSiNO5" id="flexRadioSiNO8" value="Si" required>
+                                        <label class="" for="flexRadioSiNO8">
+                                          Si
+                                        </label>
+                                        <input class="form-check-input col-auto border border-2 border-dark" type="radio" name="flexRadioSiNO5" id="flexRadioSiNO9" value="No" required>
+                                        <label class="form-check-label col-auto" for="flexRadioSiNO9">
+                                          No
+                                        </label>
+                                      </div>
+                                      <div id="divEnrutar" class="col-12 bg-light border border-2 border-dark rounded rounded-2 px-0 pt-2 pb-1 columnaDiv d-none">
+                                        <label class="col-11 mx-3 mx-sm-2 mt-0 mb-1 h6 fw-normal">Nombre<span class="text-danger">*</span></label>
+                                        <input id="nombreEnru" name="a" type="text" class="rounded rounded-2 border border-2 border-dark col-11 mx-3 mx-sm-2 mb-2 mb-md-1 ">
+
+                                        <label class="col-11 mx-3 mx-sm-1 mt-0 mb-1 h6 fw-normal">Telefono<span class="text-danger">*</span></label>
+                                        <input id="TelefonoEnru" name="b" type="text" class="rounded rounded-2 border border-2 border-dark col-11 mx-3 mx-sm-1 mb-2 mb-md-1 ">
+                                      </div>
                                       <label class="col-12">Documentos e imagenes de referencia<span class="text-danger">*</span></label>
                                       <input id="archivo" name="formu1" class="shadow-none form-control rounded col-1 border border-2 border-dark" type="file" id="formFile" required>
                                       <label class="col-12">Tamaño maximo de archivo rar: 10MB<span class="text-danger">*</span></label>
@@ -329,12 +354,12 @@
                                       </select>
                                       <label class="col-11 mx-3 mx-sm-2 mb-0 h6 fw-normal">Su pedido supera el peso limite y será tomada como sobrecarga.</label>
                                       <label class="col-11 mx-3 mx-sm-2 mb-0 h6 fw-normal">¿Cuenta con herramientas?.</label>
-                                      <input class="form-check-input col-auto border border-2 border-dark" type="radio" name="flexRadioSiNO2" id="flexRadioDefault2" value="Si" required>
-                                      <label class="" for="flexRadioDefault2">
+                                      <input class="form-check-input col-auto border border-2 border-dark" type="radio" name="flexRadioSiNO2" id="flexRadioSiNO3" value="Si" required>
+                                      <label class="" for="flexRadioSiNO3">
                                         Si
                                       </label>
-                                      <input class="form-check-input col-auto border border-2 border-dark" type="radio" name="flexRadioSiNO2" id="flexRadioDefault1" value="No" required>
-                                      <label class="form-check-label col-auto" for="flexRadioDefault1">
+                                      <input class="form-check-input col-auto border border-2 border-dark" type="radio" name="flexRadioSiNO2" id="flexRadioSiNO4" value="No" required>
+                                      <label class="form-check-label col-auto" for="flexRadioSiNO4">
                                         No
                                       </label>
                                     </div>

@@ -61,6 +61,10 @@ const contenTextarea3 = [];
 ///////////////////////////////////////////////
 let problemasRetiros = [];
 
+
+const FlexOpcion = document.querySelectorAll("input[name='flexRadioSiNO5']")
+
+
 const tamañoPantalla = document.querySelector(".columnaDiv");
 const tamañoPantalla3 = document.querySelector(".columnaDiv3");
 if (screen.width < 767){
@@ -72,6 +76,137 @@ if (screen.width < 767){
 const btnAgendarRetiro1 = document.querySelector("#btnAgendarRetiro1");
 const btnAgendarRetiro2 = document.querySelector("#btnAgendarRetiro2");
 const btnProblema = document.querySelector("#btnProblema");
+
+//CleanFiltro
+const txtfiltroFecha = document.querySelectorAll("input[name='inputRndm']");
+ds = 0;
+function limpiarFiltro(){
+    ///////////////////////////////////////////////
+    while(ds < 2){
+        txtfiltroFecha[ds].value = "";
+        ds++
+    }
+    ///////////////////////////////////////////////
+}
+limpiarFiltro();
+//CleanFiltro
+
+const formulario0 = document.querySelector("#formulario0");
+const btnBuscar1 = document.querySelector("#btnBuscar1");
+const fechasFiltro = [];
+let almacenaFechaDoc = [];
+const filtroListProblem1 = (filtroFechaDes,filtroFechaHas) =>{
+    const objetoTodo = {
+        FiltroFechaDes: filtroFechaDes,
+        FiltroFechaHas: filtroFechaHas,
+    }
+    almacenaFechaDoc.push(objetoTodo);
+}
+btnBuscar1.addEventListener("click",(e)=>{
+    e.preventDefault();
+    alerta1.classList.add("d-none");
+    //console.log("Testeo Formulario");
+    //PARA QUE NO SE PUEDA AGREGAR MÁS USUARIOS AL APRETAR BUSCAR REPETIDAS VECES
+    almacenaFechaDoc.pop();
+    //CAPTURA TODOS LOS INPUT DE FORMULARIO
+    const data = new FormData(formulario0);
+    /*
+    let test2 = JSON.stringify(almacenaFechaDoc);
+
+    fetch('http://127.0.0.1:5500/Regis.html',{
+        method: "POST",
+        body: test2,
+    })
+    */
+
+    //SE ALMACENAN TODOS LOS DATOS DE LOS INPUT EN EL [...data.values()] Y SE TRANSLADAN A [todo]
+    const[filtroFechaDes,filtroFechaHas,docRef] = [...data.values()];
+
+    let a = 0
+    fechasFiltro.splice(0,3);
+    fechasFiltro.push(txtfiltroFecha);
+
+    const valfecha = /^(19|20)(((([02468][048])|([13579][26]))-02-29)|(\d{2})-((02-((0[1-9])|1\d|2[0-8]))|((((0[13456789])|1[012]))-((0[1-9])|((1|2)\d)|30))|(((0[13578])|(1[02]))-31)))$/
+
+    while (a < 2) {
+        if(txtfiltroFecha[a].value == ""){
+            alerta1.classList.remove("d-none");
+            alerta1.textContent = "Campos incompletos"
+            txtfiltroFecha[a].classList.remove("border-dark");
+            txtfiltroFecha[a].classList.add("border-danger");
+        }else{
+            txtfiltroFecha[a].classList.remove("border-dark");
+            txtfiltroFecha[a].classList.remove("border-danger");
+            txtfiltroFecha[a].classList.add("border-success");
+        }
+        a++
+    }
+
+    if(!txtfiltroFecha[0].value == "" && !txtfiltroFecha[1].value == ""){
+        console.log("FIN")
+        filtroListProblem1(filtroFechaDes,filtroFechaHas);
+        alerta1.classList.add("d-none");
+        console.log(almacenaFechaDoc)
+        //setTimeout(()=> location.href="./problemasEnvios.html",2000);
+        return;
+    }
+});
+
+
+const divSobrecarga = document.querySelector("#sobrecarga")
+const divSobrecargaFal = document.querySelector("#sobrecargaFal")
+function mostrar(valor){
+    if(valor.length > 3 && valor > 900){
+        console.log("Sobrecarga")
+        divSobrecarga.classList.remove("d-none")
+        divSobrecargaFal.classList.add("d-none");
+    }else{
+        console.log("🐱‍🏍")
+        divSobrecargaFal.classList.remove("d-none");
+        divSobrecarga.classList.add("d-none")
+    }
+}
+
+//MOSTRAR DIV ENROLAR INFORMACION EX
+const divOpcion = document.querySelector("#divEnrutar")
+FlexOpcion[0].addEventListener("click",(e)=>{
+    divOpcion.classList.remove("d-none")
+});
+FlexOpcion[1].addEventListener("click",(e)=>{
+    divOpcion.classList.add("d-none")
+});
+//DIV ENROLAR INFORMACION EX
+
+function capturar1(valor){
+    console.log(valor)
+    console.log(valor.checked)
+    /*
+    if(valor.checked > 3 && valor > 900){
+        console.log("Sobrecarga")
+        divSobrecarga.classList.remove("d-none")
+        divSobrecargaFal.classList.add("d-none");
+    }else{
+        console.log("🐱‍🏍")
+        divSobrecargaFal.classList.remove("d-none");
+        divSobrecarga.classList.add("d-none")
+    }
+    */
+}
+
+function capturar2(valor){
+    /*
+    if(valor.length > 3 && valor > 900){
+        console.log("Sobrecarga")
+        divSobrecarga.classList.remove("d-none")
+        divSobrecargaFal.classList.add("d-none");
+    }else{
+        console.log("🐱‍🏍")
+        divSobrecargaFal.classList.remove("d-none");
+        divSobrecarga.classList.add("d-none")
+    }
+    */
+}
+
 //CleanFormularios
 function limpiarForm(){
     ///////////////////////////////////////////////
@@ -86,16 +221,6 @@ function limpiarForm(){
             contenDelImputs1[ja].classList.add("border-dark");
             ja++;
         }
-        const limpiaForm5 = document.querySelectorAll("input[name='flexRadioSiNO']")
-        const contenDelImputs3 = [];
-        let jb=0;
-        while(jb<2){
-            const inputCorr = limpiaForm5[jb];
-            contenDelImputs3.push(inputCorr);
-            contenDelImputs3[jb].value = "";
-            contenDelImputs3[jb].classList.add("border-dark");
-            jb++;
-        }
         const limpiaForm3 = document.querySelectorAll("select.shadow-none")
         const contenDelSelect2 = [];
         let g=0;
@@ -106,6 +231,12 @@ function limpiarForm(){
             contenDelSelect2[g].classList.add("border-dark");
             g++;
         }
+        
+        test4[0].checked = false;
+        test4[1].checked = false;
+
+        FlexOpcion[0].checked = false;
+        FlexOpcion[1].checked = false;
 
         //LIMPIAR TEXTAREA FORMULARIO 1
         test3.value = "";
@@ -123,16 +254,6 @@ function limpiarForm(){
             contenDelImputs2[f].classList.add("border-dark");
             f++;
         }
-        const limpiaForm7 = document.querySelectorAll("input[name='flexRadioSiNO2']")
-        const contenDelImputs5 = [];
-        let jc=0;
-        while(jc<2){
-            const inputCorr = limpiaForm7[jc];
-            contenDelImputs5.push(inputCorr);
-            contenDelImputs5[jc].value = "";
-            contenDelImputs5[jc].classList.add("border-dark");
-            jc++;
-        }
         const limpiaForm2 = document.querySelectorAll("select.shadow-sm")
         const contenDelSelect = [];
         let v=0;
@@ -144,6 +265,10 @@ function limpiarForm(){
             v++;
         }
         test7.value = "";
+
+        test8[0].checked = false;
+        test8[1].checked = false;
+
         // FORMULARIO N2
     
         // FORMULARIO N3
@@ -217,7 +342,7 @@ btnProblema.addEventListener("click",(e)=>{
 //CleanFormularios
 
 
-const agregarUsuario = (aOrigen,aDestino,cDestino,tipoCarga,ancho,valorComercial,cantidad,largo,peso,alto,tipoEmbalaje,flexRadioSiNO,archivo,descripcion) =>{
+const agregarUsuario = (aOrigen,aDestino,cDestino,tipoCarga,ancho,valorComercial,cantidad,largo,peso,alto,tipoEmbalaje,flexRadioSiNO,flexRadioSiNO5,nombreEnru,TelefonoEnru,archivo,descripcion) =>{
     const objetoTodo = {
         AgenciaOrigen: aOrigen,
         AgenciaDestino: aDestino,
@@ -231,25 +356,20 @@ const agregarUsuario = (aOrigen,aDestino,cDestino,tipoCarga,ancho,valorComercial
         Alto: alto,
         TipoEmbalaje: tipoEmbalaje,
         ConSinHerramientas: flexRadioSiNO,
+        EnrutarONo: flexRadioSiNO5,
+        NombreEnru: nombreEnru,
+        TelefonoEnru: TelefonoEnru,
         Archivo: archivo,
         Descripcion: descripcion,
     }
     agendarRetiroCM.push(objetoTodo);
 }
-
 /*
 btnAgregarCarga.addEventListener('click',(event) => {
     event.preventDefault();
     console.log("Paralalepipedo");
 });
 */
-/*
-btnIniciarSesion.addEventListener('click',(event) => {
-    event.preventDefault();
-    setTimeout(()=> location.href="./index.html");
-});
-*/
-
 btnAceptar1.addEventListener("click",(e)=>{
     e.preventDefault();
     alerta2.classList.add("d-none");
@@ -269,7 +389,9 @@ btnAceptar1.addEventListener("click",(e)=>{
     })
     */
     //SE ALMACENAN TODOS LOS DATOS DE LOS INPUT EN EL [...data.values()] Y SE TRANSLADAN A [todo]
-    const[aOrigen,aDestino,cDestino,tipoCarga,ancho,valorComercial,cantidad,largo,peso,alto,tipoEmbalaje,flexRadioSiNO,archivo,descripcion] = [...data.values()];
+    const[aOrigen,aDestino,cDestino,tipoCarga,ancho,valorComercial,cantidad,largo,peso,alto,tipoEmbalaje,flexRadioSiNO,flexRadioSiNO5,nombreEnru,TelefonoEnru,archivo,descripcion] = [...data.values()];
+
+    console.log(document.querySelectorAll("input[name='flexRadioSiNO']"))
 
 ///////////////////////////////////////////////
     let i = 0;
@@ -346,9 +468,20 @@ btnAceptar1.addEventListener("click",(e)=>{
         console.log("F1 NO FALTAN FLEX RADIO");
     }
 
+
+    //FLEX ENROLAMIENTO EX
+    if(FlexOpcion[0].checked == true){
+        //PONER QUE SE DEBE DE COMPROBAR QUE ESTAN COMPLETOS LOS NOMBRE Y TELEFONO Y COMPROBAR QUE EL TELEFONO SEA UN TELEFONO MEDIANTE REGEX
+        console.log("AAAAAAAAA")
+    }else if(FlexOpcion[1].checked == true){
+        //NO PONER NADA
+    }
+    //FLEX ENROLAMIENTO EX
+
+
     if((!contenImputs[0].value == "" && !contenImputs[1].value == "" && !contenImputs[2].value == "" && !contenImputs[3].value == "" && !contenImputs[4].value == "" && !contenImputs[5].value == "" && !contenImputs[6].value == "" && !contenSelect[0].value == "" && !contenSelect[1].value == "" && !contenSelect[2].value == "" && !contenSelect[3].value == "" && !contenSelect[4].value == "" && !contenTextarea[0].value == "") && (!contenFlexRadio[0].checked === false || !contenFlexRadio[1].checked === false)){
         console.log("FIN")
-        agregarUsuario(aOrigen,aDestino,cDestino,tipoCarga,ancho,valorComercial,cantidad,largo,peso,alto,tipoEmbalaje,flexRadioSiNO,archivo,descripcion);
+        agregarUsuario(aOrigen,aDestino,cDestino,tipoCarga,ancho,valorComercial,cantidad,largo,peso,alto,tipoEmbalaje,flexRadioSiNO,flexRadioSiNO5,nombreEnru,TelefonoEnru,archivo,descripcion);
         alerta2.classList.add("d-none");
         alerta1.textContent = "Retiro agendado correctamente 1"
         alerta1.classList.remove("d-none");
@@ -378,7 +511,6 @@ const agregarUsuario2 = (aOrigen2,aDestino2,cDestino2,tipoCarga2,ancho2,valorCom
     }
     agendarRetiroCS.push(objetoTodo);
 }
-
 btnAceptar2.addEventListener("click",(e)=>{
     e.preventDefault();
     alerta2.classList.add("d-none");
@@ -504,7 +636,6 @@ const agregarUsuario3 = (Reti_UsRut,Reti_UsCelular,tipoProblem2,numRetiro,Reti_U
     }
     problemasRetiros.push(objetoTodo);
 }
-
 btnAceptar3.addEventListener("click",(e)=>{
     e.preventDefault();
     alerta4.classList.add("d-none");
