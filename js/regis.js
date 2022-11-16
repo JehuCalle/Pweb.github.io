@@ -76,14 +76,15 @@ formulario.addEventListener("submit",(e)=>{
     usuarios.pop();
 
     //CAPTURA TODOS LOS INPUT DE FORMULARIO
-    const data = new FormData(formulario);
+    let data = new FormData(formulario);
     /*
-    let test2 = JSON.stringify(usuarios);
-
-    fetch('http://127.0.0.1:5500/Regis.html',{
+    //let test2 = JSON.stringify(usuarios);
+    fetch('https://localhost:44385/api/v2/ClientesV2',{
         method: "POST",
-        body: test2,
+        body: data,
     })
+    //.then(res => res.json())
+    //.then(console.log(text))
     */
     //SE ALMACENAN TODOS LOS DATOS DE LOS INPUT EN EL [...data.values()] Y SE TRANSLADAN A [todo]
     const[rut,razonSocial,correo,telefono,pass,passRe,nombreContact,direccion,regiones,provincias,comunas,direcRef] = [...data.values()];
@@ -310,7 +311,7 @@ formulario.addEventListener("submit",(e)=>{
         agregarUsuario(rut,razonSocial,correo,telefono,pass,passRe,nombreContact,direccion,regiones,provincias,comunas,direcRef);
         alerta.classList.add("d-none");
         console.log(usuarios)
-        setTimeout(()=> location.href="./Misdatos.html",2000);
+        //setTimeout(()=> location.href="./Misdatos.html",2000);
         return;
     }
     //////////////////////////

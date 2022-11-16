@@ -17,7 +17,7 @@ const contenSelect = [];
 const test3 = document.querySelector("#descripcion");
 const contenTextarea = [];
 
-const test4 = document.querySelectorAll("input[name='flexRadioSiNO']");
+const test4 = document.querySelector("input[name=flexRadioSiNo]:checked");
 const contenFlexRadio = [];
 
 let agendarRetiroCM = [];
@@ -60,10 +60,6 @@ const test11 = document.querySelector("#comentario2");
 const contenTextarea3 = [];
 ///////////////////////////////////////////////
 let problemasRetiros = [];
-
-
-const FlexOpcion = document.querySelectorAll("input[name='flexRadioSiNO5']")
-
 
 const tamañoPantalla = document.querySelector(".columnaDiv");
 const tamañoPantalla3 = document.querySelector(".columnaDiv3");
@@ -152,11 +148,11 @@ btnBuscar1.addEventListener("click",(e)=>{
     }
 });
 
-
 const divSobrecarga = document.querySelector("#sobrecarga")
 const divSobrecargaFal = document.querySelector("#sobrecargaFal")
+
 function mostrar(valor){
-    if(valor.length > 3 && valor > 900){
+    if(valor > 900){
         console.log("Sobrecarga")
         divSobrecarga.classList.remove("d-none")
         divSobrecargaFal.classList.add("d-none");
@@ -169,48 +165,23 @@ function mostrar(valor){
 
 //MOSTRAR DIV ENROLAR INFORMACION EX
 const divOpcion = document.querySelector("#divEnrutar")
-FlexOpcion[0].addEventListener("click",(e)=>{
+const radiosEnrolar = document.querySelectorAll("input[name=flexRadioSiNO5]")
+
+radiosEnrolar[0].addEventListener("click",(e)=>{
     divOpcion.classList.remove("d-none")
 });
-FlexOpcion[1].addEventListener("click",(e)=>{
+radiosEnrolar[1].addEventListener("click",(e)=>{
     divOpcion.classList.add("d-none")
 });
+
 //DIV ENROLAR INFORMACION EX
 
-function capturar1(valor){
-    console.log(valor)
-    console.log(valor.checked)
-    /*
-    if(valor.checked > 3 && valor > 900){
-        console.log("Sobrecarga")
-        divSobrecarga.classList.remove("d-none")
-        divSobrecargaFal.classList.add("d-none");
-    }else{
-        console.log("🐱‍🏍")
-        divSobrecargaFal.classList.remove("d-none");
-        divSobrecarga.classList.add("d-none")
-    }
-    */
-}
-
-function capturar2(valor){
-    /*
-    if(valor.length > 3 && valor > 900){
-        console.log("Sobrecarga")
-        divSobrecarga.classList.remove("d-none")
-        divSobrecargaFal.classList.add("d-none");
-    }else{
-        console.log("🐱‍🏍")
-        divSobrecargaFal.classList.remove("d-none");
-        divSobrecarga.classList.add("d-none")
-    }
-    */
-}
 
 //CleanFormularios
 function limpiarForm(){
     ///////////////////////////////////////////////
         // FORMULARIO N1
+/*
         const limpiaForm1 = document.querySelectorAll("input[name='formu1']")
         const contenDelImputs1 = [];
         let ja=0;
@@ -231,8 +202,11 @@ function limpiarForm(){
             contenDelSelect2[g].classList.add("border-dark");
             g++;
         }
-        
-        test4[0].checked = false;
+*/
+        if(test4 != null){
+            test4.checked = false;
+        }
+/*
         test4[1].checked = false;
 
         FlexOpcion[0].checked = false;
@@ -320,6 +294,7 @@ function limpiarForm(){
             test11.classList.add("border-dark");
             b++;
         }
+*/
         // FORMULARIO N3
     ///////////////////////////////////////////////
 }
@@ -341,8 +316,12 @@ btnProblema.addEventListener("click",(e)=>{
 });
 //CleanFormularios
 
+const FlexOpcion = document.querySelector("input[name=flexRadioSiNO5]:checked")
+console.log(test4)
+console.log(FlexOpcion)
 
-const agregarUsuario = (aOrigen,aDestino,cDestino,tipoCarga,ancho,valorComercial,cantidad,largo,peso,alto,tipoEmbalaje,flexRadioSiNO,flexRadioSiNO5,nombreEnru,TelefonoEnru,archivo,descripcion) =>{
+
+const agregarUsuario = (aOrigen,aDestino,cDestino,tipoCarga,ancho,valorComercial,cantidad,largo,peso,alto,tipoEmbalaje,flexRadioSiNo,flexRadioSiNO5,nombreEnru,TelefonoEnru,archivo,descripcion) =>{
     const objetoTodo = {
         AgenciaOrigen: aOrigen,
         AgenciaDestino: aDestino,
@@ -355,7 +334,29 @@ const agregarUsuario = (aOrigen,aDestino,cDestino,tipoCarga,ancho,valorComercial
         Peso: peso,
         Alto: alto,
         TipoEmbalaje: tipoEmbalaje,
-        ConSinHerramientas: flexRadioSiNO,
+        ConSinHerramientas: flexRadioSiNo,
+        EnrutarONo: flexRadioSiNO5,
+        NombreEnru: nombreEnru,
+        TelefonoEnru: TelefonoEnru,
+        Archivo: archivo,
+        Descripcion: descripcion,
+    }
+    agendarRetiroCM.push(objetoTodo);
+}
+
+const agregarUsuarioExt = (aOrigen,aDestino,cDestino,tipoCarga,ancho,valorComercial,cantidad,largo,peso,alto,tipoEmbalaje,flexRadioSiNO5,nombreEnru,TelefonoEnru,archivo,descripcion) =>{
+    const objetoTodo = {
+        AgenciaOrigen: aOrigen,
+        AgenciaDestino: aDestino,
+        ComunaDestino: cDestino,
+        TipoCarg: tipoCarga,
+        Ancho: ancho,
+        ValorComercial: valorComercial,
+        Cantidad: cantidad,
+        Largo: largo,
+        Peso: peso,
+        Alto: alto,
+        TipoEmbalaje: tipoEmbalaje,
         EnrutarONo: flexRadioSiNO5,
         NombreEnru: nombreEnru,
         TelefonoEnru: TelefonoEnru,
@@ -372,6 +373,13 @@ btnAgregarCarga.addEventListener('click',(event) => {
 */
 btnAceptar1.addEventListener("click",(e)=>{
     e.preventDefault();
+
+    const test4 = document.querySelector("input[name=flexRadioSiNo]:checked");
+    const FlexOpcion = document.querySelector("input[name=flexRadioSiNO5]:checked")
+
+
+
+
     alerta2.classList.add("d-none");
     //console.log("Testeo Formulario");
 
@@ -387,11 +395,10 @@ btnAceptar1.addEventListener("click",(e)=>{
         method: "POST",
         body: test2,
     })
+    
     */
     //SE ALMACENAN TODOS LOS DATOS DE LOS INPUT EN EL [...data.values()] Y SE TRANSLADAN A [todo]
-    const[aOrigen,aDestino,cDestino,tipoCarga,ancho,valorComercial,cantidad,largo,peso,alto,tipoEmbalaje,flexRadioSiNO,flexRadioSiNO5,nombreEnru,TelefonoEnru,archivo,descripcion] = [...data.values()];
-
-    console.log(document.querySelectorAll("input[name='flexRadioSiNO']"))
+    const[aOrigen,aDestino,cDestino,tipoCarga,ancho,valorComercial,cantidad,largo,peso,alto,tipoEmbalaje,flexRadioSiNo,flexRadioSiNO5,nombreEnru,TelefonoEnru,archivo,descripcion] = [...data.values()];
 
 ///////////////////////////////////////////////
     let i = 0;
@@ -402,12 +409,12 @@ btnAceptar1.addEventListener("click",(e)=>{
         if(contenImputs[i].value == ""){
             contenImputs[i].classList.remove("border-dark");
             contenImputs[i].classList.add("border-danger");
-            console.log("FALTAN-V1")
+            console.log("FALTAN INPUTS")
         }else if(!contenImputs[i].value == ""){
             contenImputs[i].classList.remove("border-danger");
             contenImputs[i].classList.remove("border-dark");
             contenImputs[i].classList.add("border-success");
-            console.log("FALTAN-V2")
+            console.log("NO FALTAN INPUTS")
         }
         i++;
     }
@@ -420,13 +427,13 @@ btnAceptar1.addEventListener("click",(e)=>{
             contenSelect[a].classList.remove("border-dark");
             contenSelect[a].classList.add("border-danger");
             alerta2.classList.remove("d-none");
-            console.log("FALTAN-V1")
+            console.log("FALTAN SELECT")
         }else if(!contenSelect[a].value == ""){
             contenSelect[a].classList.remove("border-danger");
             contenSelect[a].classList.remove("border-dark");
             contenSelect[a].classList.add("border-success");
             alerta2.classList.remove("d-none");
-            console.log("FALTAN-V2")
+            console.log("NO FALTAN SELECT")
         }
         a++;
     }
@@ -441,13 +448,13 @@ btnAceptar1.addEventListener("click",(e)=>{
             contenTextarea[b].classList.remove("border-dark");
             contenTextarea[b].classList.add("border-danger");
             alerta2.classList.remove("d-none");
-            console.log("FALTAN-V1")
+            console.log("FALTA TEXTAREA")
         }else if(!contenTextarea[b].value == ""){
             contenTextarea[b].classList.remove("border-danger");
             contenTextarea[b].classList.remove("border-dark");
             contenTextarea[b].classList.add("border-success");
             alerta2.classList.remove("d-none");
-            console.log("FALTAN-V2")
+            console.log("NO FALTA TEXTAREA")
         }
         b++;
     }
@@ -455,33 +462,76 @@ btnAceptar1.addEventListener("click",(e)=>{
     contenFlexRadio.splice(0,3);
     //console.log(contenTextarea)
     //contenTextarea[0].value == "on"
-    while (c < 2) {
+    /*
+    while (c < 1) {
         const selectCorr = test4[c];
         contenFlexRadio.push(selectCorr);
         c++;
     }
-    if(contenFlexRadio[0].checked === false && contenFlexRadio[1].checked === false){
-        alerta2.classList.remove("d-none");
-        console.log("F1 FALTAN FLEX RADIO");
-    }else if(!contenFlexRadio[0].checked === false || !contenFlexRadio[1].checked === false){
-        alerta2.classList.remove("d-none");
-        console.log("F1 NO FALTAN FLEX RADIO");
+    */
+    const contenInputEx = document.querySelectorAll("input[name='inputEnrola']");
+    console.log(contenInputEx[0])
+    console.log(contenInputEx[1])
+
+    if((contenImputs[4].value > 900) && (!contenImputs[0].value == "" && !contenImputs[1].value == "" && !contenImputs[2].value == "" && !contenImputs[3].value == "" && !contenImputs[4].value == "" && !contenImputs[5].value == "" && !contenImputs[6].value == "" && !contenSelect[0].value == "" && !contenSelect[1].value == "" && !contenSelect[2].value == "" && !contenSelect[3].value == "" && !contenSelect[4].value == "" && !contenTextarea[0].value == "")){
+
+        if(FlexOpcion.value === "Si" && !contenInputEx[0].value == "" && !contenInputEx[1].value == ""){
+            console.log("FIN")
+            agregarUsuario(contenSelect[0].value,contenSelect[1].value,contenSelect[2].value,contenSelect[3].value,contenImputs[0].value,contenImputs[1].value,contenImputs[2].value,contenImputs[3].value,contenImputs[4].value,contenImputs[5].value,contenSelect[4].value,test4.value,FlexOpcion.value,contenInputEx[0].value,contenInputEx[1].value,contenImputs[6].value,contenTextarea[0].value);
+            alerta2.classList.add("d-none");
+            contenInputEx[0].classList.remove("border-dark");
+            contenInputEx[0].classList.remove("border-danger");
+            contenInputEx[0].classList.add("border-success")
+            contenInputEx[1].classList.remove("border-dark");
+            contenInputEx[1].classList.remove("border-danger");
+            contenInputEx[1].classList.add("border-success")
+            alerta1.textContent = "Retiro agendado correctamente 1.1"
+            alerta1.classList.remove("d-none");
+            console.log(agendarRetiroCM)
+        }else if(FlexOpcion.value === "Si" && (contenInputEx[0].value == "" || contenInputEx[1].value == "")){
+            alerta2.classList.remove("d-none")
+            contenInputEx[0].classList.remove("border-dark");
+            contenInputEx[0].classList.remove("border-success");
+            contenInputEx[0].classList.add("border-danger")
+            contenInputEx[1].classList.remove("border-dark");
+            contenInputEx[1].classList.remove("border-success");
+            contenInputEx[1].classList.add("border-danger")
+            alerta2.textContent = "AAAAAAAAAAAA"
+        }
+
+
+
+
+
     }
+    /*
+    else if((contenImputs[4].value < 900) && (!contenImputs[0].value == "" && !contenImputs[1].value == "" && !contenImputs[2].value == "" && !contenImputs[3].value == "" && !contenImputs[4].value == "" && !contenImputs[5].value == "" && !contenImputs[6].value == "" && !contenSelect[0].value == "" && !contenSelect[1].value == "" && !contenSelect[2].value == "" && !contenSelect[3].value == "" && !contenSelect[4].value == "" && !contenTextarea[0].value == "")){
+        console.log("FIN")
+        agregarUsuarioExt(aOrigen,aDestino,cDestino,tipoCarga,ancho,valorComercial,cantidad,largo,peso,alto,tipoEmbalaje,FlexOpcion.value,contenInputEx[0].value,contenInputEx[1].value,contenImputs[6].value,contenTextarea[0].value);
+        alerta2.classList.add("d-none");
+        alerta1.textContent = "Retiro agendado correctamente 1.2"
+        alerta1.classList.remove("d-none");
+        console.log(agendarRetiroCM)
+    }
+*/
+    /*
 
 
     //FLEX ENROLAMIENTO EX
     if(FlexOpcion[0].checked == true){
         //PONER QUE SE DEBE DE COMPROBAR QUE ESTAN COMPLETOS LOS NOMBRE Y TELEFONO Y COMPROBAR QUE EL TELEFONO SEA UN TELEFONO MEDIANTE REGEX
-        console.log("AAAAAAAAA")
+
+        const contenInputEx = document.querySelectorAll("input[name='inputEnrola']");
+
     }else if(FlexOpcion[1].checked == true){
-        //NO PONER NADA
+        
     }
     //FLEX ENROLAMIENTO EX
-
-
+*/
+/*
     if((!contenImputs[0].value == "" && !contenImputs[1].value == "" && !contenImputs[2].value == "" && !contenImputs[3].value == "" && !contenImputs[4].value == "" && !contenImputs[5].value == "" && !contenImputs[6].value == "" && !contenSelect[0].value == "" && !contenSelect[1].value == "" && !contenSelect[2].value == "" && !contenSelect[3].value == "" && !contenSelect[4].value == "" && !contenTextarea[0].value == "") && (!contenFlexRadio[0].checked === false || !contenFlexRadio[1].checked === false)){
         console.log("FIN")
-        agregarUsuario(aOrigen,aDestino,cDestino,tipoCarga,ancho,valorComercial,cantidad,largo,peso,alto,tipoEmbalaje,flexRadioSiNO,flexRadioSiNO5,nombreEnru,TelefonoEnru,archivo,descripcion);
+        agregarUsuario(aOrigen,aDestino,cDestino,tipoCarga,ancho,valorComercial,cantidad,largo,peso,alto,tipoEmbalaje,test4.value,FlexOpcion.value,nombreEnru,TelefonoEnru,contenImputs[6].value,contenTextarea[0].value);
         alerta2.classList.add("d-none");
         alerta1.textContent = "Retiro agendado correctamente 1"
         alerta1.classList.remove("d-none");
@@ -489,6 +539,7 @@ btnAceptar1.addEventListener("click",(e)=>{
         //setTimeout(()=> location.href="./Misretiros.html",2000);
         return;
     }
+    */
 ///////////////////////////////////////////////
 });
 
@@ -601,6 +652,7 @@ btnAceptar2.addEventListener("click",(e)=>{
         contenFlexRadio2.push(selectCorr);
         f++;
     }
+
     if(contenFlexRadio2[0].checked === false && contenFlexRadio2[1].checked === false){
         alerta3.classList.remove("d-none");
         console.log("FALTAN FLEX RADIO");
@@ -608,6 +660,7 @@ btnAceptar2.addEventListener("click",(e)=>{
         alerta3.classList.remove("d-none");
         console.log("NO FALTAN FLEX RADIO");
     }
+
 
     if((!contenImputs2[0].value == "" && !contenImputs2[1].value == "" && !contenImputs2[2].value == "" && !contenImputs2[3].value == "" && !contenImputs2[4].value == "" && !contenImputs2[5].value == "" && !contenImputs2[6].value == "" && !contenSelect2[0].value == "" && !contenSelect2[1].value == "" && !contenSelect2[2].value == "" && !contenSelect2[3].value == "" && !contenSelect2[4].value == "" && !contenTextarea2[0].value == "") && (!contenFlexRadio2[0].checked === false || !contenFlexRadio2[1].checked === false)){
         console.log("FIN")
