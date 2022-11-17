@@ -107,7 +107,7 @@
                           <div class="modal-body p-2">
                             <form id="formulario1" class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 px-1 pt-2 bg-warning bg-opacity-75 col rounded rounded-1 border border-5 border-dark">
                               <div class="col-12">
-                                <label id="divAlerta2" class="bg-light mb-2 border border-3 border-danger rounded rounded-3 p-1 col-12 d-none">Campos sin completar</label>
+                                <label id="divAlerta2" class="bg-light mb-2 border border-3 border-danger rounded rounded-3 p-1 col-12 d-none">ALERTA N°2</label>
                                 <span class="bg-light rounded rounded-3 border border-danger border-3">* = Campos obligatorios</span>
                               </div>
                               <div class="accordion col-12 h6 fw-normal mt-2" id="accordionExample2">
@@ -224,12 +224,12 @@
                                           No
                                         </label>
                                       </div>
-                                      <div id="divEnrutar" class="col-12 bg-light border border-2 border-dark rounded rounded-2 px-0 pt-2 pb-1 columnaDiv d-none">
+                                      <div id="divEnrolar" class="col-12 bg-light border border-2 border-dark rounded rounded-2 px-0 pt-2 pb-1 columnaDiv d-none">
                                         <label class="col-11 mx-3 mx-sm-2 mt-0 mb-1 h6 fw-normal">Nombre<span class="text-danger">*</span></label>
                                         <input id="nombreEnru" name="inputEnrola" type="text" class="rounded rounded-2 border border-2 border-dark col-11 mx-3 mx-sm-2 mb-2 mb-md-1 imputnormal">
 
                                         <label class="col-11 mx-3 mx-sm-1 mt-0 mb-1 h6 fw-normal">Telefono<span class="text-danger">*</span></label>
-                                        <input id="TelefonoEnru" name="inputEnrola" type="text" class="rounded rounded-2 border border-2 border-dark col-11 mx-3 mx-sm-1 mb-2 mb-md-1 imputnormal">
+                                        <input id="TelefonoEnru" name="inputEnrola" type="text" class="rounded rounded-2 border border-2 border-dark col-11 mx-3 mx-sm-1 mb-2 mb-md-1 imputnormal" placeholder="Ej: 9 88906865">
                                       </div>
                                       <label class="col-12">Documentos e imagenes de referencia<span class="text-danger">*</span></label>
                                       <input id="archivo" name="formu1" class="shadow-none form-control rounded col-1 border border-2 border-dark" type="file" id="formFile" required>
@@ -265,7 +265,7 @@
                           <div class="modal-body p-2">
                             <form id="formulario2" class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 px-1 pt-2 bg-warning bg-opacity-75 col rounded rounded-1 border border-5 border-dark">
                               <div class="col-12">
-                                <label id="divAlerta3" class="bg-light mb-2 border border-3 border-danger rounded rounded-3 p-1 col-12 d-none">Campos sin completar</label>
+                                <label id="divAlerta3" class="bg-light mb-2 border border-3 border-danger rounded rounded-3 p-1 col-12 d-none">ALERTA N°3</label>
                                 <span class="bg-light rounded rounded-3 border border-danger border-3">* = Campos obligatorios</span>
                               </div>
                               <div class="accordion col-12 h6 fw-normal mt-2" id="accordionExample3">
@@ -339,7 +339,7 @@
                                       <input id="largo2" name="formu2" type="text" class="shadow-sm rounded rounded-2 border border-2 border-dark col-11 mx-3 mx-sm-2 mb-2 mb-md-1 imputnormal">
                   
                                       <label class="col-11 mx-3 mx-sm-2 mt-0 mb-1 h6 fw-normal">Peso(kg)<span class="text-danger">*</span></label>
-                                      <input id="peso2" name="formu2" type="text" class="shadow-sm rounded rounded-2 border border-2 border-dark col-11 mx-3 mx-sm-2 mb-2 mb-md-1 imputnormal">
+                                      <input id="peso2" onkeyup="mostrar2(this.value)" name="formu2" type="text" class="shadow-sm rounded rounded-2 border border-2 border-dark col-11 mx-3 mx-sm-2 mb-2 mb-md-1 imputnormal">
                   
                                       <label class="col-11 mx-3 mx-sm-2 mb-1 h6 fw-normal">Alto<span class="text-danger">*</span></label>
                                       <input id="alto2" name="formu2" type="text" class="shadow-sm rounded rounded-2 border border-2 border-dark col-11 mx-3 mx-sm-2 mb-0 imputnormal">
@@ -352,18 +352,43 @@
                                         <option>Tipo E 3</option>
                                         <option>Tipo E 4</option>
                                       </select>
-                                      <label class="col-11 mx-3 mx-sm-2 mb-0 h6 fw-normal">Su pedido supera el peso limite y será tomada como sobrecarga.</label>
-                                      <label class="col-11 mx-3 mx-sm-2 mb-0 h6 fw-normal">¿Cuenta con herramientas?.</label>
-                                      <input class="form-check-input col-auto border border-2 border-dark" type="radio" name="flexRadioSiNO2" id="flexRadioSiNO3" value="Si" required>
-                                      <label class="" for="flexRadioSiNO3">
-                                        Si
-                                      </label>
-                                      <input class="form-check-input col-auto border border-2 border-dark" type="radio" name="flexRadioSiNO2" id="flexRadioSiNO4" value="No" required>
-                                      <label class="form-check-label col-auto" for="flexRadioSiNO4">
-                                        No
-                                      </label>
+                                      <div id="sobrecarga2" class="border border-2 border-danger rounded rounded-2 d-none">
+                                        <label class="col-11 mx-3 mx-sm-2 mb-0 h6 fw-bold text-danger">Su pedido supera el peso limite y será tomada como sobrecarga.</label>
+                                        <label class="col-11 mx-3 mx-sm-2 mb-0 h6 fw-bold text-danger">¿Cuenta con herramientas?.</label>
+                                        <label class="mx-1"></label>
+                                        <input class="form-check-input col-auto border border-2 border-dark" type="radio" name="flexRadioSiNo2" id="flexRadioSiNO3" value="Si" required>
+                                        <label class="" for="flexRadioSiNO3">
+                                          Si
+                                        </label>
+                                        <input class="form-check-input col-auto border border-2 border-dark" type="radio" name="flexRadioSiNo2" id="flexRadioSiNO4" value="No" required>
+                                        <label class="form-check-label col-auto" for="flexRadioSiNO4">
+                                          No
+                                        </label>
+                                      </div>
+                                      <div id="sobrecargaFal2" class="">
+                                        <label class="mb-5 mt-5 col-12"></label>
+                                      </div>
                                     </div>
                                     <div id="collapseTwo" class="accordion-collapse collapse bg-secondary bg-opacity-25" aria-labelledby="headingTwo" data-bs-parent="#accordionExample4">
+                                      <div class="col-12 bg-light border border-2 border-dark rounded rounded-2 p-1">
+                                        <label class="col-12">¿Desea enrutar?</label>
+                                        <input class="form-check-input col-auto border border-2 border-dark" type="radio" name="flexRadioSiNO11" id="flexRadioSiNO14" value="Si" required>
+                                        <label class="" for="flexRadioSiN14">
+                                          Si
+                                        </label>
+                                        <input class="form-check-input col-auto border border-2 border-dark" type="radio" name="flexRadioSiNO11" id="flexRadioSiNO15" value="No" checked required>
+                                        <label class="form-check-label col-auto" for="flexRadioSiN15">
+                                          No
+                                        </label>
+                                      </div>
+                                      <div id="divEnrolar2" class="col-12 bg-light border border-2 border-dark rounded rounded-2 px-0 pt-2 pb-1 columnaDiv d-none">
+                                        <label class="col-11 mx-3 mx-sm-2 mt-0 mb-1 h6 fw-normal">Nombre<span class="text-danger">*</span></label>
+                                        <input id="nombreEnru2" name="inputEnrola2" type="text" class="rounded rounded-2 border border-2 border-dark col-11 mx-3 mx-sm-2 mb-2 mb-md-1 imputnormal">
+
+                                        <label class="col-11 mx-3 mx-sm-1 mt-0 mb-1 h6 fw-normal">Telefono<span class="text-danger">*</span></label>
+                                        <input id="TelefonoEnru2" name="inputEnrola2" type="text" class="rounded rounded-2 border border-2 border-dark col-11 mx-3 mx-sm-1 mb-2 mb-md-1 imputnormal" placeholder="Ej: 9 88906865">
+                                      </div>
+
                                       <label class="col-12">Documentos e imagenes de referencia<span class="text-danger">*</span></label>
                                       <input id="archivo2" name="formu2" class="shadow-sm form-control rounded col-1 border border-2 border-dark" type="file" required>
                                       <label class="col-12">Tamaño maximo de archivo rar: 10MB<span class="text-danger">*</span></label>
@@ -422,7 +447,9 @@
                           <td class=" rounded rounded-2 bg-light h6 fw-normal text-center">Cancelado</td>
                           <td class=" rounded rounded-2 bg-light h6 fw-normal"></td>
                           <td class=" rounded rounded-2 bg-light h6 fw-normal text-center fw-bold pt-2">
-                            <a class="text-danger text-decoration-none" type="button">Ver detalles</a>
+                            
+                            <a class="text-danger text-decoration-none" data-bs-toggle="modal" data-bs-target="#exampleModal6" type="button">Ver detalles</a>
+
                             <a name="" id="btnProblema" data-bs-toggle="modal" data-bs-target="#exampleModal3" class="btn col-10 col-md-10 mb-3 mb-md-1 mt-1 mt-md-2 mx-md-1 bg-warning bg-opacity-100 rounded rounded-5 fw-bold text-light" role="button">Reclamo</a>
 
                             <!---->
@@ -500,10 +527,10 @@
                     </table>
                   </div>
                   <!--DETALLES DE LA BOLETA
-                    CONVERTIRLO EN UN TEMPLATE PARA QUE LOS DETALLES DE CADA BOLETA SE OBTENGAN DE MANERA DINAMICA Y ASÍ NO RE-HACER EL MODAL DE CADA DETALLE.
+                    CONVERTIRLO EN UN TEMPLATE PARA QUE LOS DETALLES DE CADA BOLETA SE OBTENGAN DE MANERA DINAMICA Y ASÍ NO RE-HACER EL MODAL DE CADA DETALLE.-->
 
                   <div class="modal-dialog modal-dialog-scrollable m-0 mx-0 p-0">
-                    <div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal fade" id="exampleModal6" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                       <div class="modal-dialog modal-dialog-centered d-flex justify-content-center">
                         <div id="modal2" class="modal-content w-650">
                           <div class="modal-header p-1">
@@ -512,7 +539,7 @@
                           </div>
                           <div class="modal-body p-2">
 
-                            <div class="col-7 bg-secondary bg-opacity-50 col rounded rounded-1 border border-5 border-dark">
+                            <div class="col-12 bg-secondary bg-opacity-50 col rounded rounded-1 border border-5 border-dark">
                               <div class="mx-1 mb-1 col-12 row justify-content-center">
                                 <div class="row justify-content-end pt-3 col-12">
                                   <label class="fw-bold h5 mb-1">Informacion General</label>
@@ -568,7 +595,7 @@
                                     <label class="col-1"></label>
                                     <label class="bg-light rounded rounded-2 border border-2 border-dark col-5 h6 fw-normal p-lg-0">Curanilahue</label>
                                     <label class="col-12 mb-0">Documentos de referencia</label>
-                                    <label class="bg-light rounded rounded-2 border border-2 border-dark col-5 h6 fw-normal p-lg-4">
+                                    <label class="bg-light rounded rounded-2 border border-2 border-dark col-5 h6 fw-normal px-4 pt-4 pb-4">
                                       <li>Documentos.rar</li>
                                     </label>
                                   </div>
@@ -608,15 +635,14 @@
                             </div>
 
                           </div>
-                          <div class="modal-footer border border-2 bg-warning bg-opacity-25 row justify-content-center pt-2 pb-1 px-0">
-                            <button type="" id="btnCancelar2" class="col-10 col-md-5 btn bg-warning bg-opacity-100 rounded rounded-5 fw-bold text-light h6 fw-normal" data-bs-dismiss="modal">Cancelar</button>
-                            <button type="submit" id="btnAceptar2" class="col-10 col-md-5 btn bg-warning bg-opacity-100 rounded rounded-5 fw-bold text-light h6 fw-normal">Aceptar</button>
-                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                  -->
+                  <!--DETALLES DE LA BOLETA
+                    CONVERTIRLO EN UN TEMPLATE PARA QUE LOS DETALLES DE CADA BOLETA SE OBTENGAN DE MANERA DINAMICA Y ASÍ NO RE-HACER EL MODAL DE CADA DETALLE.-->
+
+
                 </div>
               </div>
             </div>

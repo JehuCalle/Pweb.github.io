@@ -383,11 +383,11 @@
                           <td class=" rounded rounded-2 bg-light h6 fw-normal text-center">Agendado</td>
                           <td class=" rounded rounded-2 bg-light h6 fw-normal text-center fw-bold">
                             <a id="btnVerDeta1" data-bs-toggle="modal" data-bs-target="#exampleModal3" class="text-danger text-decoration-none" type="button">Ver detalles</a>
-
-                            <a name="" id="btnProblema" data-bs-toggle="modal" data-bs-target="#exampleModal3" class="btn col-10 col-md-10 mb-3 mb-md-1 mt-1 mt-md-2 mx-md-1 bg-warning bg-opacity-100 rounded rounded-5 fw-bold text-light" role="button">Reclamo</a>
+                            
+                            <a name="" id="btnProblema" data-bs-toggle="modal" data-bs-target="#exampleModalBoleta" class="btn col-10 col-md-10 mb-3 mb-md-1 mt-1 mt-md-2 mx-md-1 bg-warning bg-opacity-100 rounded rounded-5 fw-bold text-light" role="button">Reclamo</a>
 
                             <div class="modal-dialog modal-dialog-scrollable m-0 p-0 hiding">
-                              <div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                              <div class="modal fade" id="exampleModalBoleta" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                 <div class="modal-dialog modal-dialog-centered d-flex justify-content-center">
                                   <div id="modalF" class="modal-content w-650">
                                     <div class="modal-header p-1 border-secondary">
@@ -483,8 +483,9 @@
                       </tbody>
                     </table>
                   </div>
+
                   <!--DETALLES DE LA BOLETA
-                    CONVERTIRLO EN UN TEMPLATE PARA QUE LOS DETALLES DE CADA BOLETA SE OBTENGAN DE MANERA DINAMICA Y ASÍ NO RE-HACER EL MODAL DE CADA DETALLE.
+                    CONVERTIRLO EN UN TEMPLATE PARA QUE LOS DETALLES DE CADA BOLETA SE OBTENGAN DE MANERA DINAMICA Y ASÍ NO RE-HACER EL MODAL DE CADA DETALLE.-->
 
                   <div class="modal-dialog modal-dialog-scrollable m-0 mx-0 p-0">
                     <div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -496,7 +497,7 @@
                           </div>
                           <div class="modal-body p-2">
 
-                            <div class="col-7 bg-secondary bg-opacity-50 col rounded rounded-1 border border-5 border-dark">
+                            <div class="col-12 bg-secondary bg-opacity-50 col rounded rounded-1 border border-5 border-dark">
                               <div class="mx-1 mb-1 col-12 row justify-content-center">
                                 <div class="row justify-content-end pt-3 col-12">
                                   <label class="fw-bold h5 mb-1">Informacion General</label>
@@ -592,15 +593,14 @@
                             </div>
 
                           </div>
-                          <div class="modal-footer border border-2 bg-warning bg-opacity-25 row justify-content-center pt-2 pb-1 px-0">
-                            <button type="" id="btnCancelar2" class="col-10 col-md-5 btn bg-warning bg-opacity-100 rounded rounded-5 fw-bold text-light h6 fw-normal" data-bs-dismiss="modal">Cancelar</button>
-                            <button type="submit" id="btnAceptar2" class="col-10 col-md-5 btn bg-warning bg-opacity-100 rounded rounded-5 fw-bold text-light h6 fw-normal">Aceptar</button>
-                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                  -->
+                  
+                  <!--DETALLES DE LA BOLETA
+                    CONVERTIRLO EN UN TEMPLATE PARA QUE LOS DETALLES DE CADA BOLETA SE OBTENGAN DE MANERA DINAMICA Y ASÍ NO RE-HACER EL MODAL DE CADA DETALLE.-->
+
                 </div>
               </div>
             </div>

@@ -137,7 +137,7 @@
                           <td class=" rounded rounded-2 bg-light h6 fw-normal text-center">textoejemplo</td>
                           <td class=" rounded rounded-2 bg-light h6 fw-normal text-center">Agendado</td>
                           <td class=" rounded rounded-2 bg-light h6 fw-normal text-center fw-bold pt-2">
-                            <a class="text-danger text-decoration-none" type="button">Ver detalles</a>
+                            <a class="text-danger text-decoration-none" data-bs-toggle="modal" data-bs-target="#exampleModal6" type="button">Ver detalles</a>
                           </td>
                         </tr>
                       </tbody>
@@ -168,7 +168,7 @@
                           <td class=" rounded rounded-2 bg-light h6 fw-normal text-center">textoejemplo</td>
                           <td class=" rounded rounded-2 bg-light h6 fw-normal text-center">Agendado</td>
                           <td class=" rounded rounded-2 bg-light h6 fw-normal text-center fw-bold pt-2">
-                            <a class="text-danger text-decoration-none" type="button">Ver detalles</a>
+                            <a class="text-danger text-decoration-none" data-bs-toggle="modal" data-bs-target="#exampleModal3" type="button">Ver detalles</a>
                           </td>
                         </tr>
                       </tbody>
@@ -176,49 +176,65 @@
                   </div>
                 </div>
                 
-                  <!--DETALLES DE LA BOLETA
-                    CONVERTIRLO EN UN TEMPLATE PARA QUE LOS DETALLES DE CADA BOLETA SE OBTENGAN DE MANERA DINAMICA Y ASÍ NO RE-HACER EL MODAL DE CADA DETALLE.
-
-                    <form class="col-6 bg-secondary bg-opacity-75 col rounded rounded-1 border border-5 border-dark">
-                      <div class="m-3">
-                        <div class="border border-2 bg-warning bg-opacity-100 row justify-content-center "> 
-                          <div class="col-12 row justify-content-center">
-                            <div class="col-2">
-                              <img src="./assets/img/Icon.png" alt="">
+                  <!--DETALLES DEL PROBLEMA
+                    CONVERTIRLO EN UN TEMPLATE PARA QUE LOS DETALLES DE CADA BOLETA SE OBTENGAN DE MANERA DINAMICA Y ASÍ NO RE-HACER EL MODAL DE CADA DETALLE.-->
+                    <div class="modal-dialog modal-dialog-scrollable m-0 mx-0 p-0">
+                      <div class="modal fade" id="exampleModal6" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered d-flex justify-content-center">
+                          <div id="modal2" class="modal-content w-650">
+                            <div class="modal-header p-1">
+                              <h4 class="text-center fw-bold mb-0">Agendar pre-envío</h4>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
-                            <div class="col-12 row">
-                              <h4 class="text-center fw-bold">Ticket N°1234567891011</h4>
+                            <div class="modal-body p-2">
+  
+                              <form class="col-12 bg-secondary bg-opacity-75 col rounded rounded-1 border border-5 border-dark">
+                                <div class="m-3">
+                                  <div class="border border-2 bg-warning bg-opacity-100 row justify-content-center "> 
+                                    <div class="col-12 row justify-content-center">
+                                      <div class="col-2">
+                                        <img src="./assets/img/Icon.png" alt="">
+                                      </div>
+                                      <div class="col-12 row">
+                                        <h4 class="text-center fw-bold">Ticket N°1234567891011</h4>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="border border-2 bg-warning bg-opacity-50 row justify-content-center">
+                                    <div class="col-12 mx-3 bg-light row justify-content-center">
+                                      <label class="col-5 h6 fw-normal mx-2">N°orden/retiro</label>
+                                      <label class="col-5 h6 fw-normal mx-2">N°1234567891011</label>
+                                      <label class="col-5 h6 fw-normal mx-2">Boleta/Factura/Guia</label>
+                                      <label class="col-5 h6 fw-normal mx-2">N°1234567891011</label>
+                                      <label class="col-5 h6 fw-normal mx-2">N°1234567891011</label>
+                                      <label class="col-5 h6 fw-normal mx-2">N°1234567891011</label>
+                                      <label class="col-5 h6 fw-normal mx-2">Quien redacta</label>
+                                      <label class="col-5 h6 fw-normal mx-2">N°1234567891011</label>
+                                      <label class="col-7 fw-bold">Comentario</label>
+                                      <label class="col-5 fw-bold">Archivos adjuntos</label>
+                                      <textarea class="mb-2 col-6 h6 fw-normal rounded rounded-2" id="exampleTextarea" rows="2">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem voluptas ea illo atque nisi accusantium at explicabo harum quas enim! Quas porro optio fuga dolore. Nesciunt ab eius facilis? Quas!
+                                      </textarea>
+                                      <label class="col-1 h6 fw-normal"></label>
+                                      <textarea class="mb-2 col-4 rounded rounded-2" id="exampleTextarea" rows="2"></textarea>
+                                      <label class="col-4 h6 fw-normal p-0">Respondido el</label>
+                                      <label class="rounded rounded-2 border border-2 border-dark col-2 h6 fw-normal p-0">12/12/12</label>
+                                      <label class="col-2 h6 fw-normal p-0 text-center">a las</label>
+                                      <label class="rounded rounded-2 border border-2 border-dark col-2 h6 fw-normal p-0">12:12:12</label>
+                                      <label class="col-12 fw-bold">Respuesta</label>
+                                      <textarea class="form-control mb-2" id="exampleTextarea" rows="4">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Temporibus veritatis quas eius saepe quidem exercitationem, ipsam, quis fugiat officia sapiente atque illo ducimus quaerat rem quos, accusantium incidunt facilis ab.</textarea>
+                                    </div>
+                                  </div>
+                                </div>
+                              </form>
+  
                             </div>
-                          </div>
-                        </div>
-                        <div class="border border-2 bg-warning bg-opacity-50 row justify-content-center">
-                          <div class="col-12 mx-3 bg-light row justify-content-center">
-                            <label class="col-5 h6 fw-normal mx-2">N°orden/retiro</label>
-                            <label class="col-5 h6 fw-normal mx-2">N°1234567891011</label>
-                            <label class="col-5 h6 fw-normal mx-2">Boleta/Factura/Guia</label>
-                            <label class="col-5 h6 fw-normal mx-2">N°1234567891011</label>
-                            <label class="col-5 h6 fw-normal mx-2">N°1234567891011</label>
-                            <label class="col-5 h6 fw-normal mx-2">N°1234567891011</label>
-                            <label class="col-5 h6 fw-normal mx-2">Quien redacta</label>
-                            <label class="col-5 h6 fw-normal mx-2">N°1234567891011</label>
-                            <label class="col-7 fw-bold">Comentario</label>
-                            <label class="col-5 fw-bold ">Archivos adjuntos</label>
-                            <textarea class="mb-2 col-6 h6 fw-normal rounded rounded-2" id="exampleTextarea" rows="2">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem voluptas ea illo atque nisi accusantium at explicabo harum quas enim! Quas porro optio fuga dolore. Nesciunt ab eius facilis? Quas!
-                            </textarea>
-                            <label class="col-1 h6 fw-normal"></label>
-                            <textarea class="mb-2 col-4 rounded rounded-2" id="exampleTextarea" rows="2">
-                            </textarea>
-                            <label class="col-3 h6 fw-normal mx-2 p-0">Respondido el</label>
-                            <label class="rounded rounded-2 border border-2 border-dark col-2 h6 fw-normal p-0">12/12/12</label>
-                            <label class="col-2 h6 fw-normal p-0 text-center">a las</label>
-                            <label class="rounded rounded-2 border border-2 border-dark col-2 h6 fw-normal p-0">12:12:12</label>
-                            <label class="col-12 fw-bold">Respuesta</label>
-                            <textarea class="form-control mb-2" id="exampleTextarea" rows="4">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Temporibus veritatis quas eius saepe quidem exercitationem, ipsam, quis fugiat officia sapiente atque illo ducimus quaerat rem quos, accusantium incidunt facilis ab.</textarea>
                           </div>
                         </div>
                       </div>
-                    </form>
-                  -->
+                    </div>
+
+                  <!--DETALLES DEL PROBLEMA
+                    CONVERTIRLO EN UN TEMPLATE PARA QUE LOS DETALLES DE CADA BOLETA SE OBTENGAN DE MANERA DINAMICA Y ASÍ NO RE-HACER EL MODAL DE CADA DETALLE.-->
 
               </div>
             </div>

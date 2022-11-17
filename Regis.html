@@ -9,6 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio</title>
+
 </head>
 <body>
   <div class="bg-info center">
@@ -86,7 +87,7 @@
                 <input type="text" id="pass" name="pass" class="rounded rounded-2 border border-2 border-dark col-11 mx-3 mx-sm-2 bg-light" placeholder="Su contraseña">
                 <label class="col-11 mx-3 mx-sm-2">Confirmar Contraseña:<span class="text-danger">*</span></label>
                 <input type="text" id="passRe" name="passRe" class="rounded rounded-2 border border-2 border-dark col-11 mx-3 mx-sm-2 bg-light" placeholder="Repita su contraseña">
-                <div class="col-12 mx-3 mb-md-5">
+                <div class="col-12 mx-3">
                   <label>Para su mayor seguridad la contraseña debe de tener:</label>
                   <li>Una o más letras mayusculas</li>
                   <li>Dos o más numeros no consecutivos</li>
@@ -96,7 +97,7 @@
                 <label class="col-11 mx-3 mx-sm-2">Nombre contacto:<span class="text-danger">*</span></label>
                 <input type="text" id="nombreContact" name="nombreContact" class="shadow-sm rounded rounded-2 border border-2 border-dark col-11 mx-3 mx-sm-2" placeholder="El nombre de contacto">
                 <label class="col-11 mx-3 mx-sm-2">Dirección:<span class="text-danger">*</span></label>
-                <input type="text" id="direccion" name="direccion" class="shadow-sm rounded rounded-2 border border-2 border-dark col-11 mx-3 mx-sm-2" placeholder="Su dirección">
+                <input type="text" id="direccion" name="direccion" class="shadow-sm rounded rounded-2 border border-2 border-dark col-11 mx-3 mx-sm-2 mb-md-5" placeholder="Su dirección">
                 <label class="col-11 mx-3 mx-sm-2" for="Regiones">Region:<span class="text-danger">*</span></label>
                 <select name="regiones" class="rounded rounded-2 border border-2 border-dark col-11 mx-sm-2 mx-3" id="Regiones">
                   <option></option>
@@ -129,10 +130,24 @@
                   <option>Tome</option>
                 </select>
                 <label class="col-11 mx-3 mx-sm-2">Referencias de la dirección<span class="text-danger">*</span></label>
-                <textarea class="mb-2 rounded rounded-2 border border-2 border-dark col-11 mx-sm-2 mx-3 text-center" name="comentario" id="mapa" rows="3" disabled>--------MAPA--------</textarea>
-                <textarea class="mb-2 rounded rounded-2 border border-2 border-dark col-11 mx-sm-2 mx-3" name="comentario" id="comentario" rows="4
+                
+
+                <iframe class="rounded rounded-3 mx-2 border border-4 border-dark"
+                  width="280"
+                  height="350"
+                  frameborder="0" style="border:0"
+                  referrerpolicy="no-referrer-when-downgrade"
+                  src="https://www.google.com/maps/embed/v1/view?key=AIzaSyD5FTk9UYnnFyEtojZaxw8gvhk0IzdT4f0&center=-33.442226,-70.653923&zoom=16&maptype=satellite"
+                  >
+                </iframe>
+
+
+                <textarea class="mb-2 rounded rounded-2 border border-2 border-dark col-11 mx-sm-2 mx-3" name="comentario" id="comentario" rows="3
                 "></textarea>
               <!--
+                
+
+
                 <div class="col-6">
                   <div class="col-12">
                     
@@ -159,9 +174,10 @@
                 </div>
               -->
             </div>
-            <div class="border border-2 bg-warning bg-opacity-75 row justify-content-center pt-2 ">
-              <div class="col-10 row justify-content-evenly">
-                <button class="col-8 pb-3 pt-3" type="null">----Captcha----</button>
+            <div class="border border-2 bg-warning bg-opacity-100 row justify-content-center pt-2 pb-2">
+              <div class="col-9 col-lg-12 col-xl-10 col-xxl-6 row justify-content-evenly px-0" id="aa">
+                <div id="divRecaptcha" class="g-recaptcha px-0" data-sitekey="6LfJtPsiAAAAAHZdvaBKGFBJAUD92ksKqLv8JKDd">
+                </div>
               </div>
             </div>
             <div class="border border-2 bg-warning bg-opacity-25 row justify-content-center pt-2 pb-2">
@@ -226,6 +242,20 @@
       </div>
     </footer>
   </section>
+
+      <!--SCRIPT CAPTCHA-->
+        <script>
+          function onLoadCallback(){
+            grecaptcha.render('divRecaptcha',{
+              sitekey:'6LfJtPsiAAAAAHZdvaBKGFBJAUD92ksKqLv8JKDd',
+              callback: successCallback,
+            });
+          }
+        </script>
+      <!--SCRIPT CAPTCHA-->
+
+      <script src="https://www.google.com/recaptcha/api.js"></script>
+
   <script src="./js/regis.js"></script>
   <script src="./bootstrap/js/bootstrap.bundle.min.js"></script>
 </body>

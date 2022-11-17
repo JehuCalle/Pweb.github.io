@@ -62,6 +62,10 @@ select{
   padding: 2.5px !important;
 }
 
+.w-650{
+  width: 650px !important;
+}
+
 .modal2 {
   --bs-modal-zindex: 1055;
   --bs-modal-width: 600px;

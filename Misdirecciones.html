@@ -114,7 +114,7 @@
             </div>
             <div class="border border-2 bg-warning bg-opacity-25 row justify-content-center pt-1 pb-3">
               <div class="col-10 col-md-8 p-0 row justify-content-center">
-                <a name="" id="btnAgreDirec" data-bs-toggle="modal" data-bs-target="#exampleModal1" class="btn btn-light col-10 col-md-7 bg-warning bg-opacity-100 rounded rounded-5 fw-bold text-light" role="button">Agregar Direccion</a>
+                <a name="" id="btnAgreDirec" data-bs-toggle="modal" data-bs-target="#exampleModal1" class="btn col-10 col-md-7 bg-warning bg-opacity-100 rounded rounded-5 fw-bold text-light" role="button">Agregar Direccion</a>
               </div>
 
               <div class="modal-dialog modal-dialog-scrollable m-0 p-0 hiding">
@@ -147,14 +147,14 @@
                               <option>La araucania</option>
                             </select>
                             <label class="shadow-none col-11 mx-3 mx-sm-2" for="Provincias">Provincia<span class="text-danger">*</span></label>
-                            <select name="provincias" class="shadow-none rounded rounded-2 border border-2 border-dark col-11 mx-3 mx-sm-2 mb-md-5" id="Provincias">
+                            <select name="provincias" class="shadow-none rounded rounded-2 border border-2 border-dark col-11 mx-3 mx-sm-2" id="Provincias">
                               <option></option>
                               <option>Arauco</option>
                               <option>Bio-Bio</option>
                               <option>Ñuble</option>
                             </select>
                             <label class="col-11 mx-3 mx-sm-2" for="Comunas">Comuna<span class="text-danger">*</span></label>
-                            <select name="comunas" class="shadow-none rounded rounded-2 border border-2 border-dark col-11 mx-3 mx-sm-2" id="Comunas">
+                            <select name="comunas" class="shadow-none rounded rounded-2 border border-2 border-dark col-11 mx-3 mx-sm-2 mb-md-5" id="Comunas">
                               <option></option>
                               <option>Chiguayante</option>
                               <option>Concepcion</option>
@@ -170,7 +170,16 @@
                               <option>Tome</option>
                             </select>
                             <label class="col-11 mx-3 mx-sm-2">Referencias de la dirección<span class="text-danger">*</span></label>
-                            <textarea class="mb-2 rounded rounded-2 border border-2 border-dark col-11 mx-3 mx-sm-2 text-center" name="comentario" id="mapa" rows="3" disabled>--------MAPA--------</textarea>
+
+                            <iframe class="rounded rounded-3 mx-2 border border-4 border-dark"
+                            width="210"
+                            height="240"
+                            frameborder="0" style="border:0"
+                            referrerpolicy="no-referrer-when-downgrade"
+                            src="https://www.google.com/maps/embed/v1/view?key=AIzaSyD5FTk9UYnnFyEtojZaxw8gvhk0IzdT4f0&center=-33.442226,-70.653923&zoom=16&maptype=satellite"
+                            >
+                            </iframe>
+
                             <textarea class="mb-2 rounded rounded-2 border border-2 border-dark col-11 mx-3 mx-sm-2" name="comentario" id="comentario" rows="3"></textarea>
                           <div class="col-6">
                             <div class="col-12">

@@ -204,7 +204,6 @@ formulario.addEventListener("submit",(e)=>{
     while (p < 1) {
         const inputCorr = passNomRe[p];
         contenPass.push(inputCorr);
-        console.log(!validacionUserPass.test(contenPass[0].value))
         if(contenPass[p].value == ""){
             alerta.classList.remove("d-none");
             alerta.textContent = "Ingrese su contraseña";
@@ -305,6 +304,18 @@ formulario.addEventListener("submit",(e)=>{
 
     //////////////////////////
 
+        //TOKEN ¿?
+        const reCaptcha = document.querySelector(".g-recaptcha-response");
+
+        console.log(reCaptcha.value);
+        //TOKEN ¿?
+    
+        if(reCaptcha.value !== ""){
+            console.log("Captcha verificado")
+        }else{
+            alerta.textContent = "Porfavor complete el captcha";
+            alerta.classList.remove("d-none");
+        }
 
     if(!contenImputs[0].value == "" && !contenImputs[1].value == "" && !contenImputs[2].value == "" &&  Fn.validaRut(contenRut[0].value) == true && validacionUserEmail.test(contenEmail[0].value) && validacionUserTel.test(contenTel[0].value) && !contenPass[0].value == "" && !contenPass[1].value == "" && !validacionUserPass.test(contenPass[0].value) === true && !validacionUserPass.test(contenPass[1].value) === true && !contenSelect[0].value == "" && !contenSelect[1].value == "" && !contenSelect[2].value == "" && !contenTextarea[0].value == ""){
         console.log("FIN")
