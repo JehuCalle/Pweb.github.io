@@ -1,23 +1,18 @@
 console.log("😼");
-
 const formulario1 = document.querySelector("#formulario");
 const btnCancelar1 = document.querySelector("#btnCancelar1");
 const btnAceptar1 = document.querySelector("#btnAceptar1");
-
 const btnActuaInfo = document.querySelector("#btnActuaInfo");
 const btnModifContra = document.querySelector("#btnModifContra");
-
 const alerta1 = document.querySelector("#divAlerta1");
 const alerta2 = document.querySelector("#divAlerta2");
 // INPUTS
 const delInputs = document.querySelectorAll("input");
 const contenDelImputs = [];
-
 const emailUser1 = document.querySelector("#correo");
 const emailUser2 = document.querySelector("#correoContact");
 const contenEmail = [];
 const validacionUserEmail = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
-
 const telefUser = document.querySelector("#telefono");
 const telefContUser = document.querySelector("#telefonoContact");
 const celularUser = document.querySelector("#celular");
@@ -28,13 +23,10 @@ const validacionUserTel = /^(\s?)(0?9)(\s?)[98765432]\d{7}$/;
 ///////////////////////////////////////////////
 const test2 = document.querySelectorAll("select");
 const contenSelect = [];
-
 const test = document.querySelectorAll(".shadow-sm");
 const contenImputs = [];
-
 let nuevaInfor = [];
 ///////////////////////////////////////////////
-
 
 ///////////////////////////////////////////////
 const formulario2 = document.querySelector("#formulario2");
@@ -48,8 +40,6 @@ const test3 = document.querySelectorAll(".shadow-none");
 let nuevaContra = [];
 ///////////////////////////////////////////////
 const validacionUserPass = /^(\d|(([A-Za-zñÑáéíóúÁÉÍÓÚ\s])\3?(?!\3)))+$/;
-
-
 const porteFormulario1 = document.querySelector("#modal1");
 const porteFormulario2 = document.querySelector("#modal2");
 const tamañoPantalla = document.querySelector(".columnaDiv");
@@ -63,14 +53,12 @@ if (screen.width > 767){
     console.log("Grande");
     porteFormulario1.classList.remove("w-75");
 }
-
     //=>=>=>=>=>=>=>2<=<=<=<=<=<=<=
     let url = 'https://localhost:44385/rut?rut=17748040-1';
     fetch(url)    
     .then((res)=> res.json())
     .then((data)=> mostrarData(data))
     .catch(error =>console.log(error))
-
     const mostrarData = (data) => {
         console.log(data)
         //const textest = document.querySelector("#rutTxt");    //OPCION 2?
@@ -92,17 +80,16 @@ if (screen.width > 767){
         body.querySelector("#ciudadTxt").textContent = data.ciudad;
         body.querySelector("#provinciaTxt").textContent = data.provincia;
         body.querySelector("#regionTxt").textContent = data.region;
-
         body.querySelector("#telefonoTxt").textContent = data.telefono1;
         body.querySelector("#correoTxt").textContent = data.mailCliente;
         body.querySelector("#correoConTxt").textContent = data.contactoOpMail;
         if(data.contactoOpMail == ""){
             body.querySelector("#correoConTxt").textContent = "-";
         }
-
     }
-
-const actualizarInformacion = (razonSocial,direccion,provincias,telefono,correo,celular,contactoPago,giro,regiones,comunas,telefonoContact,correoContact,celularContact) =>{
+const actualizarInformacion = (razonSocial,direccion,provincias,
+    telefono,correo,celular,contactoPago,giro,regiones,comunas,
+    telefonoContact,correoContact,celularContact) =>{
     const objetoTodo = {
         RazonSocial: razonSocial,
         Direccion: direccion,
@@ -120,7 +107,6 @@ const actualizarInformacion = (razonSocial,direccion,provincias,telefono,correo,
     }
     nuevaInfor.push(objetoTodo);
 }
-
 function limpiarForm(){
     ///////////////////////////////////////////////
         alerta2.classList.add("d-none");
@@ -153,29 +139,21 @@ btnModifContra.addEventListener("click",(e)=>{
     e.preventDefault();
     //limpiarForm();
 });
-
 btnAceptar1.addEventListener("click",(e)=>{
     e.preventDefault();
     alerta2.classList.add("d-none");
 
-    //console.log("Testeo Formulario");
-    //PARA QUE NO SE PUEDA AGREGAR MÁS USUARIOS AL APRETAR INICIAR SESION REPETIDAS VECES
+    //PARA QUE NO SE PUEDA AGREGAR MÁS USUARIOS AL 
+    //APRETAR INICIAR SESION REPETIDAS VECES
     nuevaInfor.pop();
     //CAPTURA TODOS LOS INPUT DE FORMULARIO
     const data = new FormData(formulario1);
-    /*  =>=>=>=>=>=>=>1<=<=<=<=<=<=<=
-    let test2 = JSON.stringify(usuarios);
-
-    fetch('http://127.0.0.1:5500/Regis.html',{
-        method: "POST",
-        body: test2,
-    })*/
-
-
-
     
-    //SE ALMACENAN TODOS LOS DATOS DE LOS INPUT EN EL [...data.values()] Y SE TRANSLADAN A [todo]
-    const[razonSocial,giro,direccion,regiones,provincias,comunas,telefono,telefonoContact,correo,correoContact,celular,celularContact,contactoPago] = [...data.values()];
+    //SE ALMACENAN TODOS LOS DATOS DE LOS INPUT EN 
+    //EL [...data.values()] Y SE TRANSLADAN A [todo]
+    const[razonSocial,giro,direccion,regiones,provincias,
+        comunas,telefono,telefonoContact,correo,correoContact,
+        celular,celularContact,contactoPago] = [...data.values()];
 ///////////////////////////////////////////////
     let i = 0
     contenImputs.splice(0,4);
@@ -198,7 +176,7 @@ btnAceptar1.addEventListener("click",(e)=>{
         i++
     }
 
-            //VALIDAR EMAIL
+        //VALIDAR EMAIL
         let c = 0;
         contenEmail.splice(0,2);
         while (c < 1) {
@@ -262,7 +240,7 @@ btnAceptar1.addEventListener("click",(e)=>{
         }
         m++;
     }
-    /*
+    
     if(!telefContUser.value == ""){
         if(!validacionUserTel.test(telefContUser.value) === true){
             telefContUser.classList.remove("border-dark");
@@ -305,8 +283,7 @@ btnAceptar1.addEventListener("click",(e)=>{
         telefContUser.classList.remove("border-success");
         telefContUser.classList.add("border-dark");
     }
-    */
-    //VALIDAR TELEFONO
+    //VALIDAR TELEFONO-CELULAR
 
     let a = 0
     contenSelect.splice(0,3);
@@ -359,7 +336,6 @@ btnAceptar1.addEventListener("click",(e)=>{
 });
 
 ////////////////////////////////// MODIFICAR CONTRASEÑA //////////////////////////////////////
-
 const modContra = (passActual,nuevaPass,passRe) =>{
     const objetoTodo = {
         PassActual: passActual,
@@ -373,20 +349,14 @@ btnAceptar2.addEventListener("click",(e)=>{
     alerta3.classList.add("d-none");
     //console.log("Testeo Formulario");
 
-    //PARA QUE NO SE PUEDA AGREGAR MÁS USUARIOS AL APRETAR INICIAR SESION REPETIDAS VECES
+    //PARA QUE NO SE PUEDA AGREGAR MÁS USUARIOS AL 
+    //APRETAR INICIAR SESION REPETIDAS VECES
     nuevaContra.pop();
 
     //CAPTURA TODOS LOS INPUT DE FORMULARIO
     const data = new FormData(formulario2);
-    /*
-    let test2 = JSON.stringify(usuarios);
-
-    fetch('http://127.0.0.1:5500/Regis.html',{
-        method: "POST",
-        body: test2,
-    })
-    */
-    //SE ALMACENAN TODOS LOS DATOS DE LOS INPUT EN EL [...data.values()] Y SE TRANSLADAN A [todo]
+    //SE ALMACENAN TODOS LOS DATOS DE LOS INPUT EN 
+    //EL [...data.values()] Y SE TRANSLADAN A [todo]
     const[passActual,nuevaPass,passRe] = [...data.values()];
 ///////////////////////////////////////////////
     let c = 0
@@ -418,8 +388,9 @@ btnAceptar2.addEventListener("click",(e)=>{
         c++
     }
     
-
-    if((contenModContra[1].value === contenModContra[2].value) && (!contenModContra[1].value == "" && !contenModContra[2].value == "") && (validacionUserPass.test(contenModContra[1].value) === false && validacionUserPass.test(contenModContra[2].value) === false)){
+    if((contenModContra[1].value === contenModContra[2].value) && (!contenModContra[1].value == "" && 
+    !contenModContra[2].value == "") && (validacionUserPass.test(contenModContra[1].value) === false && 
+    validacionUserPass.test(contenModContra[2].value) === false)){
             contenModContra[1].classList.remove("border-dark");
             contenModContra[1].classList.remove("border-danger");
             contenModContra[1].classList.add("border-success");
@@ -440,8 +411,6 @@ btnAceptar2.addEventListener("click",(e)=>{
             contenModContra[2].classList.remove("border-success");
             contenModContra[2].classList.add("border-danger");
         } 
-    
-    
     /*
     if(!contenModContra[0].value == "" && !contenModContra[1].value == "" && !contenModContra[2].value == "" && !validacionUserPass.test(contenModContra[0].value) === true && !validacionUserPass.test(contenModContra[1].value) === true && !validacionUserPass.test(contenModContra[2].value) === true){
         console.log("FIN")
@@ -454,11 +423,3 @@ btnAceptar2.addEventListener("click",(e)=>{
     */
 ///////////////////////////////////////////////
 });
-
-//PARA QUE LOS DATOS SIGAN PRESENETES DESPUES DE ACTUALIZAR LA PAGINA
-document.addEventListener("DOMContentLoaded", (e) => {
-    if(localStorage.getItem("nuevaInfor")){
-        nuevaInfor = JSON.parse(localStorage.getItem("nuevaInfor"));
-
-    }
-})

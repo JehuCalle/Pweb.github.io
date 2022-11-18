@@ -1,22 +1,15 @@
 console.log("😼");
-
 const formulario = document.querySelector("#formulario");
-//const btnIniciarSesion = document.querySelector("#btnIniciarSesion");
 const btnCancelar = document.querySelector("#btnCancelar");
 const alerta = document.querySelector("#divAlerta");
-
 const nuevaPassUser = document.querySelector("#nuevaPass");
 const passReUser = document.querySelector("#passRe");
-
 const validacionUserPass = /^(\d|(([A-Za-zñÑáéíóúÁÉÍÓÚ\s])\3?(?!\3)))+$/;
-
 ///////////////////////////////////////////////
 const test = document.querySelectorAll("input");
 const contenImputs = [];
 ///////////////////////////////////////////////
-
 let usuarios = [];
-
 const agregarUsuario = (nuevaPass,passRe) =>{
     const objetoTodo = {
         NuevaPass: nuevaPass,
@@ -24,35 +17,18 @@ const agregarUsuario = (nuevaPass,passRe) =>{
     }
     usuarios.push(objetoTodo);
 }
-/*
-btnIniciarSesion.addEventListener('click',(event) => {
-    event.preventDefault();
-    setTimeout(()=> location.href="./index.html");
-});
-*/
 btnCancelar.addEventListener('click',(event) => {
     event.preventDefault();
     setTimeout(()=> location.href="./index.html");
 });
-
 formulario.addEventListener("submit",(e)=>{
     e.preventDefault();
     alerta.classList.add("d-none");
     //console.log("Testeo Formulario");
-
     //PARA QUE NO SE PUEDA AGREGAR MÁS USUARIOS AL APRETAR INICIAR SESION REPETIDAS VECES
     usuarios.pop();
-
     //CAPTURA TODOS LOS INPUT DE FORMULARIO
     const data = new FormData(formulario);
-    /*
-    let test2 = JSON.stringify(usuarios);
-
-    fetch('http://127.0.0.1:5500/Regis.html',{
-        method: "POST",
-        body: test2,
-    })
-    */
     //SE ALMACENAN TODOS LOS DATOS DE LOS INPUT EN EL [...data.values()] Y SE TRANSLADAN A [todo]
     const[NuevaPass,PassRe] = [...data.values()];
 ///////////////////////////////////////////////
@@ -88,7 +64,6 @@ formulario.addEventListener("submit",(e)=>{
         }
         i++
     }
-    
     function aaaa(){
         let a = contenImputs[0].value;
         let b = contenImputs[1].value;
@@ -100,7 +75,8 @@ formulario.addEventListener("submit",(e)=>{
             alerta.textContent = "Contraseña no coinciden"
             alerta.classList.remove("d-none");
             console.log("FALTA-CONTRA-COINCI")
-        }else if(!validacionUserPass.test(contenImputs[1].value) === false && contenImputs[1].value == ""){
+        }else if(!validacionUserPass.test(contenImputs[1].value) === false && 
+        contenImputs[1].value == ""){
             contenImputs[1].classList.remove("border-dark");
             contenImputs[1].classList.add("border-danger");
             alerta.classList.remove("d-none");
@@ -113,7 +89,9 @@ formulario.addEventListener("submit",(e)=>{
             alerta.classList.remove("d-none");
             console.log("CUMPLE-CONTRA-COINCI")
         }
-        if(!contenImputs[0].value == "" && !contenImputs[1].value == "" && a === b && !validacionUserPass.test(contenImputs[0].value) === true && a === b && !validacionUserPass.test(contenImputs[1].value) === true){
+        if(!contenImputs[0].value == "" && !contenImputs[1].value == "" && a === b && 
+        !validacionUserPass.test(contenImputs[0].value) === true && a === b && 
+        !validacionUserPass.test(contenImputs[1].value) === true){
             console.log("FIN")
             agregarUsuario(NuevaPass,PassRe);
             alerta.classList.add("d-none");
@@ -124,10 +102,11 @@ formulario.addEventListener("submit",(e)=>{
     }
 ///////////////////////////////////////////////
 });
-
 //PARA QUE LOS DATOS SIGAN PRESENETES DESPUES DE ACTUALIZAR LA PAGINA
+/*
 document.addEventListener("DOMContentLoaded", (e) => {
     if(localStorage.getItem("usuarios")){
         usuarios = JSON.parse(localStorage.getItem("usuarios"));
     }
 })
+*/

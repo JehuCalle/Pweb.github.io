@@ -1,44 +1,35 @@
 console.log("😼");
-
 const formulario = document.querySelector("#formulario");
 const btnCancelar = document.querySelector("#btnCancelar");
 //const btnEnviar = document.querySelector("#btnEnviar");
 const alerta = document.querySelector("#divAlerta");
-
 ///////////////////////////////////////////////
 const test2 = document.querySelectorAll("select");
 const contenSelect = [];
-
 const test = document.querySelectorAll(".shadow-sm");
 const contenImputs = [];
-
 const test3 = document.querySelectorAll("#comentario");
 const contenTextarea = [];
 ///////////////////////////////////////////////
 const rutUser = document.querySelector("#rut");
 const contenRut = [];
-
 const emailUser = document.querySelector("#correo");
 const contenEmail = [];
 const validacionUserEmail = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
-
 const passNomRe = document.querySelectorAll("input.bg-light");
 const contenPass = [];
 const validacionUserPass = /^(\d|(([A-Za-zñÑáéíóúÁÉÍÓÚ\s])\3?(?!\3)))+$/;
-
 const telefUser = document.querySelectorAll("#telefono");
 const contenTel = [];
 const validacionUserTel = /^(\s?)(0?9)(\s?)[98765432]\d{7}$/;
-
 const tamañoPantalla = document.querySelector(".columnaDiv");
 if (screen.width < 767){
     console.log("Pequeña");
     tamañoPantalla.classList.remove("columnaDiv");
 }
-
 let usuarios = [];
-
-const agregarUsuario = (rut,razonSocial,correo,telefono,pass,passRe,nombreContact,direccion,regiones,provincias,comunas,direcRef) =>{
+const agregarUsuario = (rut,razonSocial,correo,telefono,pass,passRe,
+    nombreContact,direccion,regiones,provincias,comunas,direcRef) =>{
     const objetoTodo = {
         Rut: rut,
         RazonSocial: razonSocial,
@@ -55,40 +46,27 @@ const agregarUsuario = (rut,razonSocial,correo,telefono,pass,passRe,nombreContac
     }
     usuarios.push(objetoTodo);
 }
-
 btnCancelar.addEventListener('click',(event) => {
     event.preventDefault();
     setTimeout(()=> location.href="./index.html");
 });
-/*
-btnEnviar.addEventListener('click',(event) => {
-    event.preventDefault();
-    setTimeout(()=> location.href="./Misdatos.html");
-});
-*/
-
 formulario.addEventListener("submit",(e)=>{
     e.preventDefault();
     alerta.classList.add("d-none");
     //console.log("Testeo Formulario");
 
-    //PARA QUE NO SE PUEDA AGREGAR MÁS USUARIOS AL APRETAR INICIAR SESION REPETIDAS VECES
+    //PARA QUE NO SE PUEDA AGREGAR MÁS USUARIOS AL 
+    //APRETAR INICIAR SESION REPETIDAS VECES
     usuarios.pop();
 
     //CAPTURA TODOS LOS INPUT DE FORMULARIO
     let data = new FormData(formulario);
-    /*
-    //let test2 = JSON.stringify(usuarios);
-    fetch('https://localhost:44385/api/v2/ClientesV2',{
-        method: "POST",
-        body: data,
-    })
-    //.then(res => res.json())
-    //.then(console.log(text))
-    */
-    //SE ALMACENAN TODOS LOS DATOS DE LOS INPUT EN EL [...data.values()] Y SE TRANSLADAN A [todo]
-    const[rut,razonSocial,correo,telefono,pass,passRe,nombreContact,direccion,regiones,provincias,comunas,direcRef] = [...data.values()];
 
+    //SE ALMACENAN TODOS LOS DATOS DE LOS INPUT EN 
+    //EL [...data.values()] Y SE TRANSLADAN A [todo]
+    const[rut,razonSocial,correo,telefono,pass,passRe,
+        nombreContact,direccion,regiones,provincias,
+        comunas,direcRef] = [...data.values()];
 ///////////////////////////////////////////////
     function aaaa(){
         let a = contenPass[0].value;
@@ -101,7 +79,8 @@ formulario.addEventListener("submit",(e)=>{
             alerta.textContent = "Contraseña no coinciden"
             alerta.classList.remove("d-none");
             console.log("FALTA-CONTRA-COINCI")
-        }else if(!validacionUserPass.test(contenPass[1].value) === false && contenPass[1].value == ""){
+        }else if(!validacionUserPass.test(contenPass[1].value) === false && 
+        contenPass[1].value == ""){
             contenPass[1].classList.remove("border-dark");
             contenPass[1].classList.remove("border-success");
             contenPass[1].classList.add("border-danger");
@@ -132,7 +111,6 @@ formulario.addEventListener("submit",(e)=>{
             return S?S-1:'k';
         }
     }
-
     //VERIFICAR TEXTAREAS 7
     let t = 0
     contenTextarea.splice(0,2);
@@ -153,7 +131,6 @@ formulario.addEventListener("submit",(e)=>{
         t++;
     }
     //VERIFICAR TEXTAREAS
-
     //VERIFICAR SELECTS 6
     let l = 0
     contenSelect.splice(0,3);
@@ -175,7 +152,6 @@ formulario.addEventListener("submit",(e)=>{
         l++;
     }
     //VERIFICAR SELECTS
-
     //VERIFICAR INPUTS 5
     let x = 0
     contenImputs.splice(0,4);
@@ -197,7 +173,6 @@ formulario.addEventListener("submit",(e)=>{
         x++;
     }
     //VERIFICAR INPUTS
-
     //VALIDAR PASS  4
     let p = 0
     contenPass.splice(0,3);
@@ -222,21 +197,14 @@ formulario.addEventListener("submit",(e)=>{
             contenPass[0].classList.remove("border-danger");
             contenPass[0].classList.add("border-success");
             console.log("CUMPLE-CONTRA-MIN");
-
             p++;
             const inputCorr = passNomRe[p];
             contenPass.push(inputCorr);
             aaaa();
         }
-        /*
-        if(p===0){
-
-        }
-        */
         p++;
     }
     //VALIDAR PASS
-
     //VALIDAR TELEFONO  3
     let m = 0;
     contenTel.splice(0,2);
@@ -258,7 +226,6 @@ formulario.addEventListener("submit",(e)=>{
         m++;
     }
     //VALIDAR TELEFONO
-
     //VALIDAR EMAIL 2
     let c = 0;
     contenEmail.splice(0,2);
@@ -280,7 +247,6 @@ formulario.addEventListener("submit",(e)=>{
     c++;
     }
     //VALIDAR EMAIL
-
     //VALIDAR RUT   1
     let i = 0;
     contenRut.splice(0,2);
@@ -301,38 +267,30 @@ formulario.addEventListener("submit",(e)=>{
         i++;
     }
     //VALIDAR RUT
-
-    //////////////////////////
-
         //TOKEN ¿?
         const reCaptcha = document.querySelector(".g-recaptcha-response");
-
         console.log(reCaptcha.value);
         //TOKEN ¿?
-    
         if(reCaptcha.value !== ""){
             console.log("Captcha verificado")
         }else{
             alerta.textContent = "Porfavor complete el captcha";
             alerta.classList.remove("d-none");
         }
-
-    if(!contenImputs[0].value == "" && !contenImputs[1].value == "" && !contenImputs[2].value == "" &&  Fn.validaRut(contenRut[0].value) == true && validacionUserEmail.test(contenEmail[0].value) && validacionUserTel.test(contenTel[0].value) && !contenPass[0].value == "" && !contenPass[1].value == "" && !validacionUserPass.test(contenPass[0].value) === true && !validacionUserPass.test(contenPass[1].value) === true && !contenSelect[0].value == "" && !contenSelect[1].value == "" && !contenSelect[2].value == "" && !contenTextarea[0].value == ""){
+    if(!contenImputs[0].value == "" && !contenImputs[1].value == "" && 
+    !contenImputs[2].value == "" &&  Fn.validaRut(contenRut[0].value) == true && 
+    validacionUserEmail.test(contenEmail[0].value) && validacionUserTel.test(contenTel[0].value) && 
+    !contenPass[0].value == "" && !contenPass[1].value == "" && 
+    !validacionUserPass.test(contenPass[0].value) === true && 
+    !validacionUserPass.test(contenPass[1].value) === true && !contenSelect[0].value == "" && 
+    !contenSelect[1].value == "" && !contenSelect[2].value == "" && !contenTextarea[0].value == ""){
         console.log("FIN")
-        agregarUsuario(rut,razonSocial,correo,telefono,pass,passRe,nombreContact,direccion,regiones,provincias,comunas,direcRef);
+        agregarUsuario(rut,razonSocial,correo,telefono,pass,passRe,nombreContact,
+            direccion,regiones,provincias,comunas,direcRef);
         alerta.classList.add("d-none");
         console.log(usuarios)
         //setTimeout(()=> location.href="./Misdatos.html",2000);
         return;
     }
-    //////////////////////////
 ///////////////////////////////////////////////
 });
-
-//PARA QUE LOS DATOS SIGAN PRESENETES DESPUES DE ACTUALIZAR LA PAGINA
-document.addEventListener("DOMContentLoaded", (e) => {
-    if(localStorage.getItem("usuarios")){
-        usuarios = JSON.parse(localStorage.getItem("usuarios"));
-
-    }
-})

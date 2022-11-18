@@ -1,39 +1,29 @@
 console.log("😼");
-
 const formulario = document.querySelector("#formulario");
 //const btnLink = document.querySelector("#btnIniciarSesion");
 const alerta = document.querySelector("#divAlerta");
-
 const rutUser = document.querySelector("#rut");
 const contenRut = [];
-
 const captcha = document.querySelector(".g-recaptcha");
-console.log(captcha);
-
 let usuarios = [];
 let id = 0;
-
 const passUser = document.querySelector("#pass");
 const contenPass = [];
 const validacionUserPass = /^(\d|(([A-Za-zñÑáéíóúÁÉÍÓÚ\s])\3?(?!\3)))+$/;
-
 const tamañoPantalla = document.querySelector("footer");
 const tamañoPantalla2 = document.querySelector("footer div");
 const tamañoPantalla3 = document.querySelector("footer div .mx-4");
-
 //TESTEO 
     function successCallback(){
         debugger;
     }
 //TESTEO
-
 if (screen.width < 767){
     console.log("Pequeña");
     tamañoPantalla.classList.remove("d-flex");
     tamañoPantalla2.classList.remove("d-flex");
     tamañoPantalla3.classList.remove("mx-4");
 }
-
 const agregarUsuario = (rut,pass) =>{
     const objetoTodo = {
         Rut: rut,
@@ -41,30 +31,17 @@ const agregarUsuario = (rut,pass) =>{
     }
     usuarios.push(objetoTodo);
 }
-/*
-btnLink.addEventListener('click',(event) => {
-    event.preventDefault();
-    setTimeout(()=> location.href="./Misdatos.html");
-});
-*/
 
 formulario.addEventListener("submit",(e)=>{
     e.preventDefault();
     alerta.classList.add("d-none");
-    //PARA QUE NO SE PUEDA AGREGAR MÁS USUARIOS AL APRETAR INICIAR SESION REPETIDAS VECES
+    //PARA QUE NO SE PUEDA AGREGAR MÁS USUARIOS AL
+    //APRETAR INICIAR SESION REPETIDAS VECES
     usuarios.pop();
-
     //CAPTURA TODOS LOS INPUT DE FORMULARIO
     const data = new FormData(formulario);
-    /*
-    let test2 = JSON.stringify(usuarios);
-
-    fetch('http://127.0.0.1:5500/Regis.html',{
-        method: "POST",
-        body: test2,
-    })
-    */
-    //SE ALMACENAN TODOS LOS DATOS DE LOS INPUT EN EL [...data.values()] Y SE TRANSLADAN A [rut,pass]
+    //SE ALMACENAN TODOS LOS DATOS EN 
+    //EL [...data.values()] Y SE TRANSLADAN A [rut,pass]
     const[rut,pass] = [...data.values()];
     
     function b(){
@@ -95,22 +72,21 @@ formulario.addEventListener("submit",(e)=>{
             a++
         }
         console.log(!validacionUserPass.test(contenPass[0].value));
-        if(!rutUser.value == "" && !passUser.value == "" && !validacionUserPass.test(contenPass[0].value) === true && Fn.validaRut(contenRut[0].value) == true){
+        if(!rutUser.value == "" && !passUser.value == "" && 
+        !validacionUserPass.test(contenPass[0].value) === true && 
+        Fn.validaRut(contenRut[0].value) == true){
             console.log("FIN")
             agregarUsuario(rut,pass);
             alerta.classList.add("d-none");
-
             // GUARDAR ID Y RUT EN LOCALSTORAGE
             id++;
             localStorage.setItem(id,rutUser.value);
             //
-
             console.log(usuarios)
             //setTimeout(()=> location.href="./Misdatos.html",2000);
             return;
         }
     }
-
     var Fn = {
         validaRut : function (rutCompleto) {
             if (!/^[0-9]+[-|‐]{1}[0-9kK]{1}$/.test( rutCompleto ))

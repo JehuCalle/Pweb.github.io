@@ -1,14 +1,10 @@
 console.log("😼");
-
 const formulario1 = document.querySelector("#formulario1");
 const btnCancelar1 = document.querySelector("#btnCancelar1");
 const btnAceptar1 = document.querySelector("#btnAceptar1");
 const alerta2 = document.querySelector("#divAlerta2");
-
 const alerta1 = document.querySelector("#divAlerta1");
-
 const btnAgreDirec = document.querySelector("#btnAgreDirec");
-
 ///////////////////////////////////////////////
 const test = document.querySelectorAll("input.shadow-none");
 const contenImputs = [];
@@ -16,9 +12,7 @@ const test2 = document.querySelectorAll("select.shadow-none");
 const contenSelect = [];
 const test3 = document.querySelectorAll("#comentario");
 const contenTextarea = [];
-
 ///////////////////////////////////////////////
-
 const porteFormulario1 = document.querySelector("#modalF");
 const porteFormulario2 = document.querySelector("#modal2");
 const tamañoPantalla = document.querySelector(".columnaDiv");
@@ -33,7 +27,6 @@ if (screen.width > 767){
     porteFormulario1.classList.remove("w-75");
     porteFormulario1.classList.add("w-650");
 }
-
 let usuarios = [];
 
 function limpiarForm(){
@@ -48,7 +41,6 @@ function limpiarForm(){
             contenDelImputs1[j].classList.add("border-dark");
             j++;
         }
-
         const limpiaForm2 = document.querySelectorAll("select.shadow-none")
         const contenDelSelect = [];
         let v=0;
@@ -77,7 +69,8 @@ btnAgreDirec.addEventListener("click",(e)=>{
     limpiarForm();
 });
 
-const agregarUsuario = (secPobVill,calle,numCasaDept,regiones,provincias,comunas,direcRef) =>{
+const agregarUsuario = (secPobVill,calle,numCasaDept,regiones,
+    provincias,comunas,direcRef) =>{
     const objetoTodo = {
         SectorPoblaVilla: secPobVill,
         Calle: calle,
@@ -97,16 +90,10 @@ btnAceptar1.addEventListener("click",(e)=>{
 
     //CAPTURA TODOS LOS INPUT DE FORMULARIO
     const data = new FormData(formulario1);
-    /*
-    let test2 = JSON.stringify(usuarios);
-
-    fetch('http://127.0.0.1:5500/Regis.html',{
-        method: "POST",
-        body: test2,
-    })
-    */
-    //SE ALMACENAN TODOS LOS DATOS DE LOS INPUT EN EL [...data.values()] Y SE TRANSLADAN A [todo]
-    const[secPobVill,calle,numCasaDept,regiones,provincias,comunas,direcRef] = [...data.values()];
+    //SE ALMACENAN TODOS LOS DATOS DE LOS INPUT EN 
+    //EL [...data.values()] Y SE TRANSLADAN A [todo]
+    const[secPobVill,calle,numCasaDept,regiones,provincias,
+        comunas,direcRef] = [...data.values()];
 ///////////////////////////////////////////////
     let i = 0
     contenImputs.splice(0,4);
@@ -163,7 +150,10 @@ btnAceptar1.addEventListener("click",(e)=>{
         b++
     }
 
-if(!contenImputs[0].value == "" && !contenImputs[1].value == "" && !contenImputs[2].value == "" && !contenSelect[0].value == "" && !contenSelect[1].value == "" && !contenSelect[2].value == "" && !contenTextarea[0].value == ""){
+if(!contenImputs[0].value == "" && !contenImputs[1].value == "" && 
+!contenImputs[2].value == "" && !contenSelect[0].value == "" && 
+!contenSelect[1].value == "" && !contenSelect[2].value == "" && 
+!contenTextarea[0].value == ""){
     console.log("FIN")
     agregarUsuario(secPobVill,calle,numCasaDept,regiones,provincias,comunas,direcRef);
     alerta2.classList.add("d-none");
@@ -175,10 +165,3 @@ if(!contenImputs[0].value == "" && !contenImputs[1].value == "" && !contenImputs
 }
 ///////////////////////////////////////////////
 });
-
-//PARA QUE LOS DATOS SIGAN PRESENETES DESPUES DE ACTUALIZAR LA PAGINA
-document.addEventListener("DOMContentLoaded", (e) => {
-    if(localStorage.getItem("usuarios")){
-        usuarios = JSON.parse(localStorage.getItem("usuarios"));
-    }
-})
